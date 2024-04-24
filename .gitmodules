@@ -1,0 +1,3 @@
+[submodule "NIST/oscal-content"]
+	path = NIST/oscal-content
+	url = https://github.com/usnistgov/oscal-content.git
