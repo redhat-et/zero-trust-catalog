@@ -1,0 +1,176 @@
+* Exploring OSCAL
+
+** NIST SP 800-53 rev5
+
+*** Exploring Controls and Component Definitions
+
+**** Parameters
+
+#+begin_src dot :file images/sample-dep.png :exports results
+digraph component_dependency {
+        fontname="Arial"
+        node [fontname="Arial"; shape=box]
+        edge [fontname="Arial"]
+
+        subgraph entities {
+                control [label="sc-8.1"]
+                impl [label="impl\nuuid=..."]
+                rank=same
+        }
+
+        subgraph depends {
+                param
+                setting
+                rank=same
+        }
+
+        control -> param [label="params"]
+        control -> impl [dir=back; label="implements"]
+        impl -> setting [label="set-parameters"]
+        param -> setting [dir=back; label="selects value"]
+
+        subgraph values {
+                value [label="prevent unauthorized\ndisclosure of information"]
+                choices [label="- prevent unauthorized disclosure of /\n- detect changes to information\l"]
+                rank=same
+        }
+
+        param -> choices [label="choices"]
+        setting -> value [label="value"]
+
+        choices -> value [dir=back; label="one-or-more"]
+}
+#+end_src
+
+#+RESULTS:
+[[file:images/sample-dep.png]]
+
+**** Parts
+
+#+begin_src dot :file images/control-parts.png :exports results
+digraph control_parts {
+        fontname="Arial"
+        node [fontname="Arial"; shape=box]
+        edge [fontname="Arial"]
+
+        control -> statement
+        control -> guidance
+        control -> objective
+        control -> methods
+        methods [shape=oval]
+
+        methods -> examine
+        methods -> interview
+        methods -> test
+}
+#+end_src
+
+#+RESULTS:
+[[file:images/control-parts.png]]
+
+
+#+begin_src dot :file images/component-parts.png :exports results
+digraph component_parts {
+        fontname="Arial"
+        node [fontname="Arial"; shape=box]
+        edge [fontname="Arial"]
+
+        component -> protocol [headlabel="*"]
+        component -> implementation [headlabel="*   "]
+        implementation -> control_id
+        implementation -> set_param [headlabel="*  "]
+        implementation -> statement [headlabel="*"]
+}
+#+end_src
+
+#+RESULTS:
+[[file:images/component-parts.png]]
+
+
+
+#+begin_src plantuml :file images/cryptographic-protection.png :exports results
+@startyaml
+id: sc-8.1
+title: Cryptographic Protection
+params:
+  id: sc-8.1_prm_1
+  choice: |
+    ,* prevent unauthorized disclosure of information\n
+    ,* detect changes to information
+parts:
+  - id: sc-8.1_smt
+    name: statement
+    prose: 'Implement cryptographic mechanisms to {sc-8.1_prm_1} ...'
+  - id: sc-8.1_gdn
+    name: guidance
+    prose: 'Encryption protects information from unauthorized ...'
+  - id: sc-8.1_obj
+    name: "assessment objective"
+    prose: 'cryptographic mechanisms are implemented to {sc-8.1_prm_1} ...'
+  - id: sc-8.1_asm-examine
+    prose: |
+      ,* System and communications protection policy\n
+      ,* procedures addressing transmission confidentiality and integrity\n
+      ,* system design documentation\n
+      ,* system configuration settings and associated documentation\n
+      ,* system audit records\n
+      ,* system security plan\n
+      ,* other relevant documents or records
+  - id: sc-8.1_asm-interview
+    prose: |
+      ,* System/network administrators\n
+      ,* organizational personnel with information security responsibilities\n
+      ,* system developer
+
+  - id: sc-8.1_asm-test
+    prose: |
+      ,* Cryptographic mechanisms ... transmission confidentiality and/or integrity\n
+      ,* mechanisms ... alternative physical safeguards\n
+      ,* organizational processes for ... alternative physical safeguards
+
+@endyaml
+#+end_src
+
+#+RESULTS:
+[[file:images/cryptographic-protection.png]]
+
+#+begin_src plantuml :file images/mongodb.png :exports results
+@startyaml
+title: MongoDB
+purpose: Provides a NoSQL database service
+responsible-roles: |
+  ,* provider\n
+  ,* customer
+protocols:
+  - name: mongodb
+    start: 27017
+    end: 27017
+    transport: TCP
+  - name: mongodb-shardsrv
+    start: 27018
+    end: 27018
+    transport: TCP
+  - name: mongodb-configsvr
+    start: 27019
+    end: 27019
+    transport: TCP
+control-implementations:
+  - control-id: sc-8
+    parameters:
+      param-id: sc-8_prm_1
+      values: "* confidentiality"
+    statements: "* MongoDB implements TLS 1.x to protect ..."
+  - control-id: sc-8.1
+    parameters:
+      param-id: sc-8.1_prm_1
+      values: "* prevent unauthorized disclosure of information"
+    statements:
+      description: |
+        ,* To implement cryptographic mechanisms ...\n
+          set the `PEMKeyFile` option in the configuration\n
+          file `/etc/mongod.conf
+@endyaml
+#+end_src
+
+#+RESULTS:
+[[file:images/mongodb.png]]
