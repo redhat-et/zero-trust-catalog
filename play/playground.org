@@ -1,0 +1,44 @@
+* OSCAL Playground
+
+** Display control groupings
+
+#+begin_src python :results output
+import yaml
+
+with open('NIST/oscal-content/nist.gov/SP800-53/rev5/yaml/NIST_SP-800-53_rev5_catalog.yaml', 'r') as file:
+    catalog = yaml.safe_load(file).get('catalog')
+    groups = catalog.get('groups')
+    print(f"Groups: {len(groups)}")
+    for g in groups:
+        print(f"    {g['id']}: {len(g['controls']):2} - {g['title']}")
+
+    total = sum([len(g['controls']) for g in groups])
+    print(f"Total controls: {total}")
+#+end_src
+
+#+RESULTS:
+#+begin_example
+Groups: 20
+    ac: 25 - Access Control
+    at:  6 - Awareness and Training
+    au: 16 - Audit and Accountability
+    ca:  9 - Assessment, Authorization, and Monitoring
+    cm: 14 - Configuration Management
+    cp: 13 - Contingency Planning
+    ia: 13 - Identification and Authentication
+    ir: 10 - Incident Response
+    ma:  7 - Maintenance
+    mp:  8 - Media Protection
+    pe: 23 - Physical and Environmental Protection
+    pl: 11 - Planning
+    pm: 32 - Program Management
+    ps:  9 - Personnel Security
+    pt:  8 - Personally Identifiable Information Processing and Transparency
+    ra: 10 - Risk Assessment
+    sa: 23 - System and Services Acquisition
+    sc: 51 - System and Communications Protection
+    si: 23 - System and Information Integrity
+    sr: 12 - Supply Chain Risk Management
+Total controls: 323
+#+end_example
+
