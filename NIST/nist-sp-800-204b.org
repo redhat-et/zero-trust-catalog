@@ -1,0 +1,131 @@
+* NIST Special Publication 800-204B
+
+Attribute-based Access Control for Microservices-based Applications Using a Service Mesh.
+
+https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-204B.pdf
+
+** Service Mesh Configuration (Section 4.2)
+
+These requirements or recommendations come under initial service mesh configuration and are
+numbered using the acronym ISMC-SR-X, where ISMC stands for initial service mesh configuration,
+SR stands for security recommendation, and X is the sequence number.
+
++ ISMC-SR-1 :: If certificate-based authentication is used for authenticating service calls, the
+  signing certificate used by the service mesh’s CA module should be rooted in the
+  organization’s existing Public Key Infrastructure (PKI) to allow for auditability, rotation,
+  and revocation.
+
++ ISMC-SR-2 :: Communication between the service mesh control plane and the application
+  orchestration and resource management platform’s configuration server must be authenticated
+  and authorized.
+
+** Higher-level Security Configuration Parameters for Applications (Section 4.3)
+
+The recommendations for these flag values are numbered using the acronym AHLC- SR-X, where AHLC
+stands for application higher-level configuration, SR stands for security recommendation, and X
+is the sequence number.
+
++ AHLC-SR-1 :: Containers and applications should not be run as root (thus becoming privileged
+  containers).
+
+In Kubernetes, the configuration setting for this is to set the value TRUE for
+“MustRunAsNonRoot” flag.
+
++ AHLC-SR-2 :: Host path volumes should not be used, because they create tight coupling between
+  the container and the node on which it is hosted, constraining the migration and flexible
+  resource scheduling process.
+
++ AHLC-SR-3 :: Configure the container file system as read-only by default for all applications,
+  overriding only when the underlying application (e.g., database) must write to disk.
+
+In Kubernetes, the configuration setting for this is to set the value of TRUE to
+“readOnlyRootFilesystem” flag.
+
++ AHLC-SR-4 :: Explicitly prevent privilege escalation for containers. In Kubernetes, this is
+  achieved by setting the value FALSE for the “allowPrivilegeEscalation” flag.
+
+** Service-level Authentication (Section 4.4.2)
+
+These requirements are enablers for service- level authentication and are numbered using the
+acronym SAUN-SR-X, where SAUN stands for service-level authentication, SR stands for security
+recommendation, and X is the sequence number.
+
++ SAUN-SR-1 :: A policy object relating to service-level authentication should be defined that
+  requires mTLS be used for communication. The policy object should be expressive enough to be
+  defined at various levels (given below) with features for overrides at the lower levels or
+  inheritance of the requirement specified at the higher levels. The following are the minimum
+  required levels [6]:
+
+  + Global level or the service mesh level
+  + Namespace level
+  + Workload or microservices level, used for applying authentication and authorization policies
+    for a subset of traffic to a subset of resources (e.g., particular microservices, hosts or
+    ports)
+  + Port level, taking into account that certain traffic is designed for communicating through
+    designated ports
+
++ SAUN-SR-2 :: If the certificate used for mTLS carries server identity, then the service mesh
+  should provide a secure naming service that maps the server identity to the microservice name
+  that is provided by the secure discovery service or DNS. This requirement is needed to ensure
+  that the server is the authorized location for the microservices and to protect against
+  network hijacking.
+
+** End User Authentication (Section 4.4.3)
+
++ EAUN-SR-1 :: A request authentication policy must, at the minimum, provide the following
+  information and must be enforced by the sidecar proxy:
+
+  + Instructions for extracting the credential from the request
+  + Instructions for validating the credential
+
+** Service-level Authorization Policies (Section 4.5.1)
+
++ SAUZ-SR-1 :: “A policy object describing service-to-service access should be in place for all
+  services in the mesh. At a minimum, these policies should restrict access to the namespace
+  level (e.g., “services in namespace A can call services in namespace B”). Ideally, policies
+  should restrict access to individual services (e.g., “service Foo in namespace A can call
+  service Bar in namespace B”).”
+
+** End-user Level Authorization Policies (Section 4.5.2)
+
++ EUAZ-SR-1 :: When a sidecar communicates with an authentication or authorization system, that
+  communication must be secured with either the mesh’s built-in service-to-service
+  authentication and authorization capabilities or using an existing enterprise Identity and
+  Access Management (IAM) that is not part of the service mesh.
+
++ EUAZ-SR-2 :: The sidecar should generate logs for every service request to ensure that
+  authentication and authorization policies are enforced and relay telemetry data for the
+  generation of metrics to ensure no degradation of service that will impact availability.
+
++ EUAZ-SR-3 :: All application traffic should carry end user credentials, and there should be a
+  policy in the mesh enforcing that credentials are present.
+
+** Authorization Policy Elements (Section 4.6)
+
++ APE-SR-1 :: The authorization policy should, at the minimum, contain the following policy
+  elements:
+
+  + Policy types – Positive (ALLOW) or Negative (DENY)
+  + Policy target or authorization scope – the namespace, a particular service (application
+    name), and version
+  + Policy sources – covers the set of authorized services
+  + Policy operations – specifies the operations on the target resources that are covered under
+    the policy
+  + Policy conditions – the metadata associated with the request that must be met for the
+    application or invocation of the policy
+
+
++ APE-SR-2 :: The policy should cover all of the operations that are part of the application
+  type. For example, if the application is implemented as a REST API, all of the operations
+  (also called HTTP verbs or HTTP methods) that are part of the REST API must be included:
+
+  + POST :: This is equivalent to creating a resource.
+  + GET :: This is equivalent to reading the contents of the resource.
+  + PUT :: This is equivalent to updating the resource by replacing.
+  + PATCH :: This is equivalent to updating the resource by modifying.
+  + DELETE :: This is equivalent to deleting the resource.
+
++ APE-SR-3 :: A default policy should be authored in the system that rejects all requests that
+  are unauthenticated, mandates that service and end-user credentials be present on every
+  request, restricts all communication to services within the application’s own namespace, and
+  allows service communication across namespaces only through an explicit policy.

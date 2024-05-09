@@ -1,0 +1,89 @@
+* NIST SP 800-207A
+
+A Zero Trust Architecture Model for Access Control in Cloud-Native Applications in
+Multi-Location Environments
+
+** Requirements for Identity-Based Segmentation Policies for ZTA (Section 3.1)
+
++ ID-SEG-REC-1 :: Encrypted connection between service endpoints — Service endpoints can be
+  located in different subnets, different availability zones or regions in a cloud provider
+  environment, in different clouds, or on-premises. Wherever they are located, communication
+  between any two should be encrypted to ensure eavesdropping protection and message
+  authenticity.
+
++ ID-SEG-REC-2 :: Service authentication — Each service should present a short-lived
+  cryptographically verifiable identity credential to other services that is authenticated per
+  connection and reauthenticated regularly.
+
+  + Note on the above recommendation: In an ideal situation, services would be authenticated for
+    each service request. Since this is highly disruptive from the point of view of application
+    transaction response, this authentication is accomplished at the connection level via mutual
+    Transport Layer Security (mTLS) when a service makes an initial connection establishment as
+    part of its inter-service call. This authentication is not performed again in subsequent
+    calls. However, the security of this operation is ensured by not allowing the connections to
+    be very long (usually as long as the time to live [TTL] of the service’s identity
+    certificate or as short as 15-30 minutes, depending on the configuration).
+
++ ID-SEG-REC-3 :: Service to service authorization — Services should leverage runtime service
+  identity (ID-SEG-REC-2) to enforce granular policies and have the capability to call external
+  authorization services if the mesh-level proxies are insufficient to enforce dynamic
+  authorization policies.
+
++ ID-SEG-REC-4 :: End user authentication — Since all application requests are triggered by user
+  actions, a robust identity management system is required to assign and maintain user
+  identities and enforce robust protocols with phishing-resistant multi-factor authentication
+  (MFA). This system should be used to issue a cryptographically verifiable runtime token that
+  represents the user principal to the rest of the infrastructure (e.g., a JSON Web Token
+  [JWT]), and services should authenticate the credential at each hop.
+
+  + Note on the above recommendation: Authenticating the user in session at every hop is
+    impractical at scale. Therefore, NIST recommends using short-lived end user credentials
+    (e.g., OAuth 2.0 tokens) for external users and exchanging them for a locally
+    authenticatable token, like a JWT, that is authenticated at each hop.
+
++ ID-SEG-REC-5 :: End user to resource authorization — As part of each service access request, the
+  system must ensure that the authenticated end user principal (ID-SEG-REC- 4) is authorized to
+  act on the resources designated in the request. This authorization may be performed by the
+  application itself or checked locally (e.g., by checking against a set of claims in a JWT) or
+  externally against an authorization system’s policy decision point. The JWT libraries that
+  process the token must be enabled to both decode (base64url encoding) and verify the
+  signature. Enforcing end user authorization via the service mesh’s sidecar PEP is particularly
+  effective [3].
+
+** Support for Multi-tier Policies Through a Monitoring Framework (Section 5)
+
+*** Cloud Native Apps
+
++ MON-CNA-REQ-1 :: Resource monitoring should cover all categories of resources, including those
+  that are enterprise-owned, not managed by the enterprise, and personally owned.
+
++ MON-CNA-REQ-2 :: Monitoring should cover application targets (e.g., containers), application
+  infrastructure elements (e.g., control plane elements of a service mesh), and data plane
+  elements (e.g., sidecar proxies).
+
++ MON-CNA-REQ-3 :: Monitoring should cover every user access request and the subsequent series of
+  service calls needed to complete the user request as in microservices-based applications.
+
++ MON-CNA-REQ-4 :: Monitoring should cover changes to data in enterprise directories to ensure
+  that all changes to directory entries are associated with valid requests and valid
+  transactions for carrying out the change requests.
+
+*** Data Use
+
++ MON-DATA-USE-1 :: Access enforcement in the context of identity-tier policies in ZTA should be
+  based on access decisions that rely on assigned permissions as well as the contextual
+  information about each connection or access request. A key piece of contextual information is
+  the behavioral data associated with the user and/or devices from which the request originates.
+  This behavioral data can only be generated from the visibility information on network traffic
+  flows, which help verify that the users and resources are behaving in a way that is consistent
+  with their roles and are, therefore trustworthy.
+
++ MON-DATA-USE-2 :: The telemetry data generated from monitoring activity should be used in the
+  following ways:
+
+  + To fine-tune access rights data, such as granting, revoking, and restricting access [6]
+
+  + To implement step-up authentication by asking for more information from users or resorting
+    to a stronger form of authentication (e.g., phishing-resistant MFA). This verification
+    establishes trust in them and grants permission to proceed with authorization after their
+    identity is verified.
