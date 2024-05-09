@@ -10,3 +10,8 @@ Trust architectural state. The controls defined in [[https://nvlpubs.nist.gov/ni
 
 The catalog of controls in this project is derived from the NIST maintained OSCAL content in:
 https://github.com/usnistgov/oscal-content.
+
+** Requirements from NIST specifications
+
++ [[file:NIST/nist-sp-800-204b.org][NIST SP 800-204B]]
++ [[file:NIST/nist-sp-800-207a.org][NIST SP 800-207A]]
