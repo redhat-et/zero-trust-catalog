@@ -2,7 +2,7 @@
 
 ** Display control groupings
 
-#+begin_src python :results output
+#+begin_src python :results output :exports both
 import yaml
 
 with open('NIST/oscal-content/nist.gov/SP800-53/rev5/yaml/NIST_SP-800-53_rev5_catalog.yaml', 'r') as file:
