@@ -45,7 +45,7 @@ digraph component_dependency {
 #+RESULTS:
 [[file:images/sample-dep.png]]
 
-**** Parts
+**** Control Parts
 
 #+begin_src dot :file images/control-parts.png :exports results
 digraph control_parts {
@@ -68,6 +68,7 @@ digraph control_parts {
 #+RESULTS:
 [[file:images/control-parts.png]]
 
+**** Component Parts
 
 #+begin_src dot :file images/component-parts.png :exports results
 digraph component_parts {
@@ -86,7 +87,7 @@ digraph component_parts {
 #+RESULTS:
 [[file:images/component-parts.png]]
 
-
+**** A Control Example
 
 #+begin_src plantuml :file images/cryptographic-protection.png :exports results
 @startyaml
@@ -133,6 +134,8 @@ parts:
 
 #+RESULTS:
 [[file:images/cryptographic-protection.png]]
+
+**** A Component Example
 
 #+begin_src plantuml :file images/mongodb.png :exports results
 @startyaml
