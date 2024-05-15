@@ -169,6 +169,8 @@ controls:
         value: This can be achieved through the use of identity documents and tokens.
       - name: refs
         value: SC-7(19) Boundary Protection | Block Communication from Non-Organizationally Configured Hosts
+      - name: zta-tenet
+        value: 4 - Access to resources is determined by dynamic policy ...
   - id: control-206
     class_: CNSWP-v2.0
     title: All cluster and workloads operators are authenticated
@@ -183,6 +185,8 @@ controls:
         value: IA-7 Cryptographic Module Authentication
       - name: zta-tenet
         value: 1 - All data sources and computing services are considered resources
+      - name: zta-tenet
+        value: 4 - Access to resources is determined by dynamic policy ...
   - id: control-207
     class_: CNSWP-v2.0
     title: cluster and worklods operate actions are evaluated against access control policies governing context, purpose, and output
@@ -197,6 +201,8 @@ controls:
         value: IA-7 Cryptographic Module Authentication
       - name: zta-tenet
         value: 1 - All data sources and computing services are considered resources
+      - name: zta-tenet
+        value: 4 - Access to resources is determined by dynamic policy ...
   - id: control-208
     class_: CNSWP-v2.0
     title: Identity federation uses multi-factor authentication for human users
