@@ -6,12 +6,18 @@ Red Hat products.
 The OSCAL architecture is described in https://pages.nist.gov/OSCAL/resources/concepts/layer/.
 
 This project uses [[https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-207.pdf][NIST SP 800-207 - Zero Trust Architecture]] as the definition of a desired Zero
-Trust architectural state. The controls defined in [[https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-53r5.pdf][NIST SP 800-53 rev5]] are used as a baseline.
+Trust architectural state. The controls defined in [[https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-53r5.pdf][NIST SP 800-53 rev5]] and
+[[https://github.com/cloud-native-security-controls/controls-catalog][Cloud Native Security Controls]] are used as a basis and cross-referenced with the architectural
+tenets described in NIST SP 800-207.
 
 The catalog of controls in this project is derived from the NIST maintained OSCAL content in:
 https://github.com/usnistgov/oscal-content.
 
-** Requirements from NIST specifications
+** Background Material
+
++ [[doc/README.org][OSCAL Notes]]
+
+*** Requirements from NIST specifications
 
 + [[file:NIST/nist-sp-800-204b.org][NIST SP 800-204B]]
 + [[file:NIST/nist-sp-800-207a.org][NIST SP 800-207A]]
