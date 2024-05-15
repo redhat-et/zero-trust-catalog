@@ -22,14 +22,14 @@ https://github.com/usnistgov/oscal-content.
 + [[file:NIST/nist-sp-800-204b.org][NIST SP 800-204B]]
 + [[file:NIST/nist-sp-800-207a.org][NIST SP 800-207A]]
 
-*** Sample Queries
+** Sample Queries
 
-You need to install `yq` to make use of these queries.
+You need to install ~yq~ to make use of these queries.
 
-+ [[https://github.com/mikefarah/yq?tab=readme-ov-file#install][Installation instructions]]
-+ [[https://mikefarah.gitbook.io/yq][Documentation]]
++ [[https://github.com/mikefarah/yq?tab=readme-ov-file#install][yq - Installation instructions]]
++ [[https://mikefarah.gitbook.io/yq][yq - Documentation]]
 
-**** Controls linked to ZTA Tenet 1
+*** Controls linked to ZTA Tenet 1
 
 Find all controls that have been linked to *ZTA Tenet 1* with a ~zta-tenet~ property annotation:
 
@@ -71,7 +71,7 @@ yq '[.controls[]
       value: 1 - All data sources and computing services are considered resources
 #+end_example
 
-**** No zta-tenet annotation
+*** No zta-tenet annotation
 
 Find all controls that don't have a ~zta-tenet~ property annotation
 
