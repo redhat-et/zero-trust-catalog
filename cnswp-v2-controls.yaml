@@ -17,6 +17,8 @@ controls:
         value: N/A
       - name: refs
         value: IA-5(7) Authenticator Management | No Embedded Unencrypted Static Authenticators
+      - name: x-note
+        value: Need to consider key rotation requirements in id:control-197
   - id: control-196
     class_: CNSWP-v2.0
     title: Applications and workloads are explicitly authorized to communicate with each other using mutual authentication
@@ -29,6 +31,10 @@ controls:
         value: N/A
       - name: refs
         value: IA-9 Service Identification and Authentication
+      - name: zta-tenet
+        value: 2 - All communication is secured regardless of network location
+      - name: zta-tenet
+        value: 3 - Access to individual enterprise resources is granted on a per-session basis
   - id: control-197
     class_: CNSWP-v2.0
     title: Keys are rotated frequently
@@ -41,6 +47,10 @@ controls:
         value: N/A
       - name: refs
         value: SC-12 Cryptographic Key Establishment and Management
+      - name: zta-tenet
+        value: 2 - All communication is secured regardless of network location
+      - name: zta-tenet
+        value: 4 - Access to resources is determined by dynamic policy ...
   - id: control-198
     class_: CNSWP-v2.0
     title: Key lifespan is short
@@ -53,6 +63,8 @@ controls:
         value: N/A
       - name: refs
         value: SC-12(3) Cryptographic Key Establishment and Management | Asymetric Key
+      - name: zta-tenet
+        value: 4 - Access to resources is determined by dynamic policy ...
   - id: control-199
     class_: CNSWP-v2.0
     title: Credentials and keys protecting sensitive workloads (health/finance/etc) are customer managed (e.g. generated and managed independent of a cloud service provider)
@@ -67,6 +79,8 @@ controls:
         value: KMS and HMS are common technologies to achieve this. FIPS 140-2 compliance is strongly suggested. Cloud KMS tends to be FIPS 140-2 Level 2 or greater.
       - name: refs
         value: IA-2(12) Identification and Authentication (Organizational Users) | Acceptance of PIV Credentials
+      - name: zta-tenet
+        value: 6 - All resource auth and authz are dynamic and strictly enforced before access is allowed
   - id: control-200
     class_: CNSWP-v2.0
     title: Authentication and authorization are determined independently
@@ -79,6 +93,8 @@ controls:
         value: N/A
       - name: refs
         value: IA-2(6) Identification and Authentication (Organizational Users) | Access to Accounts - Separate Devices
+      - name: zta-tenet
+        value: 6 - All resource auth and authz are dynamic and strictly enforced before access is allowed
   - id: control-201
     class_: CNSWP-v2.0
     title: Authentication and authorization are enforced independently
@@ -91,6 +107,8 @@ controls:
         value: N/A
       - name: refs
         value: IA-2(6) Identification and Authentication (Organizational Users) | Access to Accounts - Separate Devices
+      - name: zta-tenet
+        value: 6 - All resource auth and authz are dynamic and strictly enforced before access is allowed
   - id: control-202
     class_: CNSWP-v2.0
     title: Access control and file permissions are updated in real-time
@@ -105,9 +123,13 @@ controls:
         value: where possible as caching may permit unauthorized access
       - name: refs
         value: SI-4(2) System Monitoring | Automated Tools and Mechanisms for Real-Time Analysis
+      - name: zta-tenet
+        value: 4 - Access to resources is determined by dynamic policy ...
+      - name: zta-tenet
+        value: 6 - All resource auth and authz are dynamic and strictly enforced before access is allowed
   - id: control-203
     class_: CNSWP-v2.0
-    title: Authorization for workloads is granted based on attributs and roles/permissions previously assigned
+    title: Authorization for workloads is granted based on attributes and roles/permissions previously assigned
     props:
       - name: section
         value: Access
@@ -117,6 +139,8 @@ controls:
         value: N/A
       - name: refs
         value: AC-3(13) Access Enforcement | Attribute-Based Access Control
+      - name: zta-tenet
+        value: 6 - All resource auth and authz are dynamic and strictly enforced before access is allowed
   - id: control-204
     class_: CNSWP-v2.0
     title: ABAC and RBAC are used
@@ -129,6 +153,8 @@ controls:
         value: N/A
       - name: refs
         value: AC-3(13) Access Enforcement | Attribute-Based Access Control, AC-3(7) Access Enforcement | Role-Based Access Control
+      - name: zta-tenet
+        value: 6 - All resource auth and authz are dynamic and strictly enforced before access is allowed
   - id: control-205
     class_: CNSWP-v2.0
     title: End user identity is capable of being accepted, consumed, and forwarded on for contextual or dynamic authorization
@@ -155,6 +181,8 @@ controls:
         value: N/A
       - name: refs
         value: IA-7 Cryptographic Module Authentication
+      - name: zta-tenet
+        value: 1 - All data sources and computing services are considered resources
   - id: control-207
     class_: CNSWP-v2.0
     title: cluster and worklods operate actions are evaluated against access control policies governing context, purpose, and output
@@ -167,6 +195,8 @@ controls:
         value: N/A
       - name: refs
         value: IA-7 Cryptographic Module Authentication
+      - name: zta-tenet
+        value: 1 - All data sources and computing services are considered resources
   - id: control-208
     class_: CNSWP-v2.0
     title: Identity federation uses multi-factor authentication for human users
@@ -179,6 +209,8 @@ controls:
         value: N/A
       - name: refs
         value: IA-2(1)(2) Identification and Authentication (organizational Users) | Multi-Factor Authenticaiton to Priviledged & Non Priveledged Accounts
+      - name: zta-tenet
+        value: 6 - All resource auth and authz are dynamic and strictly enforced before access is allowed
   - id: control-209
     class_: CNSWP-v2.0
     title: HSMs are used to physically protect cryptographic secrets with an encryption key residing in the HSM
@@ -315,6 +347,8 @@ controls:
         value: Preventative controls should be the primary control. Detective controls monitoring filesystem changes should be used to verify primary controls are operating properly.
       - name: refs
         value: CM-2(2) Baseline Configuration | Automation Support for Accuracy and Currency CM-3(7) Configuration Change Control | Review System Changes
+      - name: zta-tenet
+        value: 5 - The enterprise monitors and measures integrity / security posture ...
   - id: control-219
     class_: CNSWP-v2.0
     title: API auditing is enabled with a filter for a specific set of API Groups or verbs
@@ -329,6 +363,8 @@ controls:
         value: API audits of the application, kubernetes API server, and kernel should be implemented.
       - name: refs
         value: AU-2 Event Logging
+      - name: zta-tenet
+        value: 5 - The enterprise monitors and measures integrity / security posture ...
   - id: control-220
     class_: CNSWP-v2.0
     title: Container specific operating systems are in use
@@ -371,6 +407,8 @@ controls:
         value: Enure both users and pods have the minimum necessary access
       - name: refs
         value: AC-6 Least Privilege
+      - name: zta-tenet
+        value: 6 - All resource auth and authz are dynamic and strictly enforced before access is allowed
   - id: control-223
     class_: CNSWP-v2.0
     title: Object level and resource requests and limits are controlled through cgroups
@@ -413,6 +451,8 @@ controls:
         value: In unfederated clusters, the CA should be used exclusively for the current cluster.
       - name: refs
         value: AC-3 Access Enforcement
+      - name: zta-tenet
+        value: 2 - All communication is secured regardless of network location
   - id: control-226
     class_: CNSWP-v2.0
     title: Only sanctioned capabilities and system calls (e.g. seccomp filters), are allowed to execute or be invoked in a container by the host operating system
@@ -463,6 +503,8 @@ controls:
         value: N/A
       - name: refs
         value: SC-7 Boundary Protection
+      - name: zta-tenet
+        value: 4 - Access to resources is determined by dynamic policy ...
   - id: control-230
     class_: CNSWP-v2.0
     title: Policies are defined that restrict communications to only occur between sanctioned microservice pairs
@@ -475,6 +517,10 @@ controls:
         value: N/A
       - name: refs
         value: SC-7 Boundary Protection
+      - name: zta-tenet
+        value: 4 - Access to resources is determined by dynamic policy ...
+      - name: zta-tenet
+        value: 6 - All resource auth and authz are dynamic and strictly enforced before access is allowed
   - id: control-231
     class_: CNSWP-v2.0
     title: Use a policy agent to control and enforce authorized, signed container images
@@ -511,6 +557,8 @@ controls:
         value: N/A
       - name: refs
         value: SC-7 Boundary Protection
+      - name: zta-tenet
+        value: 6 - All resource auth and authz are dynamic and strictly enforced before access is allowed
   - id: control-234
     class_: CNSWP-v2.0
     title: Use components that detect, track, aggregate and report system calls and network traffic from a container
@@ -525,6 +573,8 @@ controls:
         value: should be leveraged to look for unexpected or malicious behavior
       - name: refs
         value: SI-4 System Monitoring
+      - name: zta-tenet
+        value: 7 - The enterprise collects as much info as possible .. to improve security posture
   - id: control-235
     class_: CNSWP-v2.0
     title: Workloads should be dynamically scanned to detect malicious or insidious behavior for which no known occurrence yet exists
@@ -539,6 +589,8 @@ controls:
         value: Events such as an extended sleep command that executes data exfiltration from etcd after the workload has been running for X amount of days are not expected in the majority of environments and therefore are not included in security tests. The aspect that workloads can have time or event delayed trojan horses is only detectable by comparing to baseline expected behavior, often discovered during thorough activity and scan monitoring
       - name: refs
         value: SI-3 Malicious Code Protection
+      - name: zta-tenet
+        value: 7 - The enterprise collects as much info as possible .. to improve security posture
   - id: control-236
     class_: CNSWP-v2.0
     title: Environments are continuously scanned to detect new vulnerabilities in workloads
@@ -553,6 +605,8 @@ controls:
         value: Vulnerabilities are constantly being discovered, just because it wasnt vulnerable at deploy, doesn't mean it won't be vulnerable in two weeks
       - name: refs
         value: RA-5 Vulnerability Monitoring and Scanning
+      - name: zta-tenet
+        value: 5 - The enterprise monitors and measures integrity / security posture ...
   - id: control-237
     class_: CNSWP-v2.0
     title: Actionable audit events are generated that correlate/contextualize data from logs into "information" that can drive decision trees/incident response
@@ -565,6 +619,8 @@ controls:
         value: N/A
       - name: refs
         value: AU-3 Content of Audit Records
+      - name: zta-tenet
+        value: 7 - The enterprise collects as much info as possible .. to improve security posture
   - id: control-238
     class_: CNSWP-v2.0
     title: Segregation of duties and the principle of least privilege is enforced
@@ -589,6 +645,8 @@ controls:
         value: N/A
       - name: refs
         value: SI-7 Software, Firmware, and Information Integrity
+      - name: zta-tenet
+        value: 5 - The enterprise monitors and measures integrity / security posture ...
   - id: control-240
     class_: CNSWP-v2.0
     title: Native secret stores encrypt with keys from an external Key Management Store (KMS)
@@ -701,6 +759,8 @@ controls:
         value: N/A
       - name: refs
         value: SI-4 System Monitoring
+      - name: zta-tenet
+        value: 2 - All communication is secured regardless of network location
   - id: control-249
     class_: CNSWP-v2.0
     title: Ingress network inspection is employed detect and remove malicious payloads and commands
@@ -715,6 +775,8 @@ controls:
         value: For instance, SQL injection attacks can be detected using inspection.
       - name: refs
         value: SI-4 System Monitoring
+      - name: zta-tenet
+        value: 2 - All communication is secured regardless of network location
   - id: control-250
     class_: CNSWP-v2.0
     title: Serverless functions are run in tenant-based resource or performance isolation for similar data classifications
@@ -777,6 +839,8 @@ controls:
         value: N/A
       - name: refs
         value: CM-3 CONFIGURATION CHANGE CONTROL
+      - name: zta-tenet
+        value: 7 - The enterprise collects as much info as possible .. to improve security posture
   - id: control-255
     class_: CNSWP-v2.0
     title: Forensics capabilities are integrated into an incident response plan and procedures
@@ -801,6 +865,8 @@ controls:
         value: N/A
       - name: refs
         value: SI-3 SYSTEM AND INFORMATION INTEGRITY
+      - name: zta-tenet
+        value: 7 - The enterprise collects as much info as possible .. to improve security posture
   - id: control-257
     class_: CNSWP-v2.0
     title: Establish a dedicated Production environment
@@ -1267,6 +1333,8 @@ controls:
         value: N/A
       - name: refs
         value: IA-3(1) CRYPTOGRAPHIC BIDIRECTIONAL AUTHENTICATION
+      - name: zta-tenet
+        value: 6 - All resource auth and authz are dynamic and strictly enforced before access is allowed
   - id: control-296
     class_: CNSWP-v2.0
     title: Image and metadata are signed
@@ -1409,6 +1477,8 @@ controls:
         value: N/A
       - name: refs
         value: AC-6(3) LEAST PRIVILEGE | NETWORK ACCESS TO PRIVILEGED COMMANDS
+      - name: zta-tenet
+        value: 6 - All resource auth and authz are dynamic and strictly enforced before access is allowed
   - id: control-308
     class_: CNSWP-v2.0
     title: Image encryption is coupled with key management attestation and/or authorization and credential distribution
@@ -1447,6 +1517,12 @@ controls:
         value: N/A
       - name: refs
         value: AC-6(3) LEAST PRIVILEGE | NETWORK ACCESS TO PRIVILEGED COMMANDS
+      - name: zta-tenet
+        value: 2 - All communication is secured regardless of network location
+      - name: zta-tenet
+        value: 4 - Access to resources is determined by dynamic policy ...
+      - name: zta-tenet
+        value: 6 - All resource auth and authz are dynamic and strictly enforced before access is allowed
   - id: control-311
     class_: CNSWP-v2.0
     title: Incident reponse considers cloud native workloads
@@ -1493,6 +1569,8 @@ controls:
         value: N/A
       - name: risk-categories
         value: N/A
+      - name: zta-tenet
+        value: 4 - Access to resources is determined by dynamic policy ...
   - id: control-315
     class_: CNSWP-v2.0
     title: MAC implementations are employed
@@ -1507,6 +1585,8 @@ controls:
         value: SELinux, AppArmor
       - name: refs
         value: AC-3(3) ACCESS ENFORCEMENT | MANDATORY ACCESS CONTROL
+      - name: zta-tenet
+        value: 6 - All resource auth and authz are dynamic and strictly enforced before access is allowed
   - id: control-316
     class_: CNSWP-v2.0
     title: Threat model code and infrastructure
@@ -1535,6 +1615,10 @@ controls:
         value: Public Key Infrastructure
       - name: refs
         value: IA-9 SERVICE IDENTIFICATION AND AUTHENTICATION
+      - name: zta-tenet
+        value: 4 - Access to resources is determined by dynamic policy ...
+      - name: zta-tenet
+        value: 6 - All resource auth and authz are dynamic and strictly enforced before access is allowed
   - id: control-318
     class_: CNSWP-v2.0
     title: Each entity can create proof of who the identity is
@@ -1713,6 +1797,8 @@ controls:
         value: N/A
       - name: refs
         value: SC-8 TRANSMISSION CONFIDENTIALITY AND INTEGRITY
+      - name: zta-tenet
+        value: 2 - All communication is secured regardless of network location
   - id: control-333
     class_: CNSWP-v2.0
     title: Data availability is achieved through parity or mirroring, erasure coding or replicas
@@ -1809,6 +1895,10 @@ controls:
         value: N/A
       - name: refs
         value: SC-7 BOUNDARY PROTECTION, SA-8 SECURITY AND PRIVACY ENGINEERING PRINCIPLES, CM-6 CONFIGURATION SETTINGS
+      - name: zta-tenet
+        value: 3 - Access to individual enterprise resources is granted on a per-session basis
+      - name: zta-tenet
+        value: 4 - Access to resources is determined by dynamic policy ...
   - id: control-341
     class_: CNSWP-v2.0
     title: Security policies are used enforce authorized worker node access to volumes
@@ -1821,6 +1911,8 @@ controls:
         value: N/A
       - name: refs
         value: SC-7 BOUNDARY PROTECTION, SA-8 SECURITY AND PRIVACY ENGINEERING PRINCIPLES, CM-6 CONFIGURATION SETTINGS
+      - name: zta-tenet
+        value: 3 - Access to individual enterprise resources is granted on a per-session basis
   - id: control-342
     class_: CNSWP-v2.0
     title: Volume UID and GID are inaccessible to containers
