@@ -21,3 +21,61 @@ https://github.com/usnistgov/oscal-content.
 
 + [[file:NIST/nist-sp-800-204b.org][NIST SP 800-204B]]
 + [[file:NIST/nist-sp-800-207a.org][NIST SP 800-207A]]
+
+*** Sample Queries
+
+You need to install `yq` to make use of these queries.
+
++ [[https://github.com/mikefarah/yq?tab=readme-ov-file#install][Installation instructions]]
++ [[https://mikefarah.gitbook.io/yq][Documentation]]
+
+**** Controls linked to ZTA Tenet 1
+
+Find all controls that have been linked to *ZTA Tenet 1* with a ~zta-tenet~ property annotation:
+
+#+begin_src sh :results output :exports both
+yq '[.controls[]
+   | select(contains({"props":[{"name":"zta-tenet","value":"1 -"}]}))]' \
+   cnswp-v2-controls.yaml
+#+end_src
+
+#+RESULTS:
+#+begin_example
+- id: control-206
+  class_: CNSWP-v2.0
+  title: All cluster and workloads operators are authenticated
+  props:
+    - name: section
+      value: Access
+    - name: assurance-level
+      value: N/A
+    - name: risk-categories
+      value: N/A
+    - name: refs
+      value: IA-7 Cryptographic Module Authentication
+    - name: zta-tenet
+      value: 1 - All data sources and computing services are considered resources
+- id: control-207
+  class_: CNSWP-v2.0
+  title: cluster and worklods operate actions are evaluated against access control policies governing context, purpose, and output
+  props:
+    - name: section
+      value: Access
+    - name: assurance-level
+      value: N/A
+    - name: risk-categories
+      value: N/A
+    - name: refs
+      value: IA-7 Cryptographic Module Authentication
+    - name: zta-tenet
+      value: 1 - All data sources and computing services are considered resources
+#+end_example
+
+**** No zta-tenet annotation
+
+Find all controls that don't have a ~zta-tenet~ property annotation
+
+#+begin_src sh :results output code
+yq '[.controls[] | select(contains({"props":[{"name":"zta-tenet"}]}) == false)]' \
+   cnswp-v2-controls.yaml
+#+end_src
