@@ -1,3 +1,6 @@
 [submodule "NIST/oscal-content"]
 	path = NIST/oscal-content
 	url = https://github.com/usnistgov/oscal-content.git
+[submodule "CNCF/controls-catalog"]
+	path = CNCF/controls-catalog
+	url = https://github.com/cloud-native-security-controls/controls-catalog.git
