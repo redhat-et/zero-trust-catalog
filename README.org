@@ -75,7 +75,7 @@ yq '[.controls[]
 
 Count the number of ~zta-tenet~ annotations.
 
-#+begin_src sh :results output
+#+begin_src sh :results output :exports both
 yq '[.controls[] | select(contains({"props":[{"name":"zta-tenet"}]}))] | length' \
    cnswp-v2-controls.yaml
 #+end_src
@@ -87,7 +87,7 @@ yq '[.controls[] | select(contains({"props":[{"name":"zta-tenet"}]}))] | length'
 
 Find all controls that don't have a ~zta-tenet~ property annotation
 
-#+begin_src sh :results output
+#+begin_src sh :results output :exports results
 yq '[.controls[]
    | select(contains({"props":[{"name":"zta-tenet"}]}) == false)
    ] | length' \
@@ -101,34 +101,40 @@ yq '[.controls[]
 
 List the number of controls in each CNSWP section.
 
-#+begin_src sh :results output
+#+begin_src sh :results output :exports both
 for s in Access Compute Deploy Develop Distribute Security\ Assurance
 do
-    /bin/echo -n "${s} - "
-    yq "[.controls[] | select(contains({\"props\":[{\"value\":\"${s}\"}]}))] | length" \
-       cnswp-v2-controls.yaml
+    C=`yq "[.controls[]
+    | select(contains({\"props\":[{\"value\":\"${s}\"}]}))
+    ] | length" cnswp-v2-controls.yaml`
+
+    N=`yq "[.controls[]
+    | select(contains({\"props\":[{\"value\":\"${s}\"}]}))
+    | select(contains({\"props\":[{\"name\":\"zta-tenet\"}]}))
+    ] | length" cnswp-v2-controls.yaml`
+
+    echo "${s}:  ${N} of ${C} are mapped"
 done
 #+end_src
 
 #+RESULTS:
-: Access - 35
-: Compute - 35
-: Deploy - 6
-: Develop - 17
-: Distribute - 36
-: Security Assurance - 22
+: Access:  21 of 35 are mapped
+: Compute:  14 of 35 are mapped
+: Deploy:  2 of 6 are mapped
+: Develop:  0 of 17 are mapped
+: Distribute:  2 of 36 are mapped
+: Security Assurance:  4 of 22 are mapped
 
 *** Tenet mappings
 
 List the number of mappings for each ZTA Tenet.
 
-#+begin_src sh :results output
+#+begin_src sh :results output :exports both
 for n in 1 2 3 4 5 6 7
 do
-    /bin/echo -n "Tenet ${n} - "
-    ack -c "${n} - " cnswp-v2-controls.yaml
+    MAPPINGS=`ack -c "${n} - " cnswp-v2-controls.yaml`
+    echo "Tenet ${n} - ${MAPPINGS}"
 done
-true
 #+end_src
 
 #+RESULTS:
@@ -139,3 +145,4 @@ true
 : Tenet 5 - 4
 : Tenet 6 - 15
 : Tenet 7 - 5
+
