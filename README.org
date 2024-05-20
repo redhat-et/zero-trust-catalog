@@ -71,11 +71,71 @@ yq '[.controls[]
       value: 1 - All data sources and computing services are considered resources
 #+end_example
 
+*** Count of annotated controls
+
+Count the number of ~zta-tenet~ annotations.
+
+#+begin_src sh :results output
+yq '[.controls[] | select(contains({"props":[{"name":"zta-tenet"}]}))] | length' \
+   cnswp-v2-controls.yaml
+#+end_src
+
+#+RESULTS:
+: 38
+
 *** No zta-tenet annotation
 
 Find all controls that don't have a ~zta-tenet~ property annotation
 
-#+begin_src sh :results output code
-yq '[.controls[] | select(contains({"props":[{"name":"zta-tenet"}]}) == false)]' \
+#+begin_src sh :results output
+yq '[.controls[]
+   | select(contains({"props":[{"name":"zta-tenet"}]}) == false)
+   ] | length' \
    cnswp-v2-controls.yaml
 #+end_src
+
+#+RESULTS:
+: 113
+
+*** Controls per section
+
+List the number of controls in each CNSWP section.
+
+#+begin_src sh :results output
+for s in Access Compute Deploy Develop Distribute Security\ Assurance
+do
+    /bin/echo -n "${s} - "
+    yq "[.controls[] | select(contains({\"props\":[{\"value\":\"${s}\"}]}))] | length" \
+       cnswp-v2-controls.yaml
+done
+#+end_src
+
+#+RESULTS:
+: Access - 35
+: Compute - 35
+: Deploy - 6
+: Develop - 17
+: Distribute - 36
+: Security Assurance - 22
+
+*** Tenet mappings
+
+List the number of mappings for each ZTA Tenet.
+
+#+begin_src sh :results output
+for n in 1 2 3 4 5 6 7
+do
+    /bin/echo -n "Tenet ${n} - "
+    ack -c "${n} - " cnswp-v2-controls.yaml
+done
+true
+#+end_src
+
+#+RESULTS:
+: Tenet 1 - 2
+: Tenet 2 - 7
+: Tenet 3 - 3
+: Tenet 4 - 12
+: Tenet 5 - 4
+: Tenet 6 - 15
+: Tenet 7 - 5
