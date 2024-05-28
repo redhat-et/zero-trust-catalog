@@ -231,6 +231,8 @@ controls:
         value: If this is not possible, software-based credential managers should be used.
       - name: refs
         value: AC-4(4) Information Flow Enforcement | Flow Control of Encrypted Information, SC-3(1) Security Function Isolation | Hardware Separation
+      - name: x-query
+        value: Is there a relevant zero trust tenet to link with HSM secret storage
   - id: control-210
     class_: CNSWP-v2.0
     title: Secrets should have a short expiration period or time to live
@@ -245,6 +247,8 @@ controls:
         value: Leverage tool-specific capabilities of secret manager
       - name: refs
         value: SI-12 Information Management and Retention
+      - name: x-note
+        value: Not directly related to tenets of zero trust
   - id: control-211
     class_: CNSWP-v2.0
     title: Time to live and expiration period on secrets is verfied to prevent reuse
@@ -259,6 +263,8 @@ controls:
         value: Leverage tool-specific capabilities of secret manager
       - name: refs
         value: AC-16(3) Security and Privacy Attributes | Maintenance of Attribute Associations by System
+      - name: x-note
+        value: Not directly related to tenets of zero trust
   - id: control-212
     class_: CNSWP-v2.0
     title: Secrets management systems are highly available
@@ -271,6 +277,8 @@ controls:
         value: N/A
       - name: refs
         value: SC-12(1) Cryptographic Key Establishment and Management | Availability
+      - name: x-note
+        value: Not directly related to tenets of zero trust
   - id: control-213
     class_: CNSWP-v2.0
     title: Long-lived secrets adhere to periodic rotation and revocation
@@ -285,6 +293,8 @@ controls:
         value: Long-lived secrets are not recommended, but some capabilities require them
       - name: refs
         value: SI-12 Information Management and Retention
+      - name: x-note
+        value: Not directly related to tenets of zero trust
   - id: control-214
     class_: CNSWP-v2.0
     title: Secrets are distributed through secured communication channels protected commensurate with the level of access or data they are protecting
@@ -297,6 +307,8 @@ controls:
         value: N/A
       - name: refs
         value: AC-16 Security and Privacy Atributes
+      - name: zta-tenet
+        value: 2 - All communication is secured regardless of network location
   - id: control-215
     class_: CNSWP-v2.0
     title: Secrets injected are runtime are masqued or dropped from logs, audit, or system dumps
@@ -311,6 +323,8 @@ controls:
         value: Even short lived secrets may be resused if caught in time by an interested attacker. Logs, audit, and systems dumps (i.e. in-memory shared volumes instead of environment variables) are all areas where runtime injected secrets show up
       - name: refs
         value: AU-9(3) Protection of Audit Information | Cryptographic Protection
+      - name: x-note
+        value: Not directly related to tenets of zero trust
   - id: control-216
     class_: CNSWP-v2.0
     title: Bootstrapping is employed to verify correct physical and logical location of compute
@@ -325,6 +339,8 @@ controls:
         value: Secure Boot with TPM 2.0 or similar control
       - name: refs
         value: SI-7(9) Software, Firmware, and Information Integrity | Verify Boot Process
+      - name: zta-tenet
+        value: 4 - Access to resources is determined by dynamic policy ...
   - id: control-217
     class_: CNSWP-v2.0
     title: Disparate data sensitive workloads are not run on the same host OS kernel
@@ -339,6 +355,8 @@ controls:
         value: 'There are at least three implementing controls possible: workloads may be separated by running in a separate cluster, on a separate node, or by implementing pods in independent VMs. It is also possible to emulate the kernel via an application kernel (e.g. gvisor)'
       - name: refs
         value: SC-7 Boundary Protection
+      - name: x-note
+        value: resource isolation is not explicitly mentioned in tenets of zero trust
   - id: control-218
     class_: CNSWP-v2.0
     title: Monitor and detect any changes to the initial configurations made in runtime
@@ -385,6 +403,8 @@ controls:
         value: a read-only OS with other services disabled. This provides isolation and resource confinement that enables developers to run isolated applications on a shared host kernel
       - name: refs
         value: CM-2 Baseline Configuration CM-7 Least Functionality
+      - name: x-note
+        value: resource isolation
   - id: control-221
     class_: CNSWP-v2.0
     title: The hardware root of trust is based in a Trusted Platform Module (TPM) or virtual TPM (vTPM)
@@ -399,6 +419,10 @@ controls:
         value: Ensure HW root of trust extends to the host OS kernel, modules, system images, container runtimes, and all software on the system.
       - name: refs
         value: SI-7 Software, Firmware, and Information Integrity
+      - name: zta-tenet
+        value: 4 - Access to resources is determined by dynamic policy ...
+      - name: zta-tenet
+        value: 6 - All resource auth and authz are dynamic and strictly enforced before access is allowed
   - id: control-222
     class_: CNSWP-v2.0
     title: Minimize administrative access to the control plane
@@ -415,6 +439,8 @@ controls:
         value: AC-6 Least Privilege
       - name: zta-tenet
         value: 6 - All resource auth and authz are dynamic and strictly enforced before access is allowed
+      - name: zta-tenet
+        value: 4 - Access to resources is determined by dynamic policy ...
   - id: control-223
     class_: CNSWP-v2.0
     title: Object level and resource requests and limits are controlled through cgroups
@@ -429,6 +455,8 @@ controls:
         value: helps prevent exhaustion of node and cluster level resources by one misbehaving workload due to an intentional (e.g., fork bomb attack or cryptocurrency mining) or unintentional (e.g., reading a large file in memory without input validation, horizontal autoscaling to exhaust compute resources) issue
       - name: refs
         value: SI-7(16) Software, Firmware, and Information Integrity | Time Limit on Process Execution Without Supervision, SI-7(17) Software, Firmware, and Information Integrity | Runtime Application Self-protection
+      - name: zta-tenet
+        value: 4 - Access to resources is determined by dynamic policy ...
   - id: control-224
     class_: CNSWP-v2.0
     title: Systems processing alerts are periodically tuned for false positives
@@ -443,6 +471,8 @@ controls:
         value: to avoid alert flooding, fatigue, and false negatives after security incidents that were not detected by the system
       - name: refs
         value: SI-4(13) System Monitoring | Analyze Traffic and Event Patterns
+      - name: zta-tenet
+        value: 7 - The enterprise collects as much info as possible .. to improve security posture
   - id: control-225
     class_: CNSWP-v2.0
     title: All orchestrator control plane components are configured to communicate via mutual authentication and certificate validation with a periodically rotated certificate
@@ -459,6 +489,8 @@ controls:
         value: AC-3 Access Enforcement
       - name: zta-tenet
         value: 2 - All communication is secured regardless of network location
+      - name: zta-tenet
+        value: 3 - Access to individual enterprise resources is granted on a per-session basis
   - id: control-226
     class_: CNSWP-v2.0
     title: Only sanctioned capabilities and system calls (e.g. seccomp filters), are allowed to execute or be invoked in a container by the host operating system
@@ -473,6 +505,8 @@ controls:
         value: Additional tooling should be installed that go beyond k8s capabilities to limit system calls. E.g. Falco.
       - name: refs
         value: CM-2 Baseline Configuration CM-7 Least Functionality
+      - name: x-note
+        value: resource isolation
   - id: control-227
     class_: CNSWP-v2.0
     title: Changes to critical mount points and files are prevented, monitored, and alerted
@@ -485,6 +519,8 @@ controls:
         value: N/A
       - name: refs
         value: CM-5 Access Restrictions for Change
+      - name: x-note
+        value: resource isolation
   - id: control-228
     class_: CNSWP-v2.0
     title: Runtime configuration control prevents changes to binaries, certificates, and remote access configurations
@@ -497,6 +533,8 @@ controls:
         value: N/A
       - name: refs
         value: CM-5 Access Restrictions for Change
+      - name: x-note
+        value: resource isolation
   - id: control-229
     class_: CNSWP-v2.0
     title: Runtime configuration prevents ingress and egress network access for containers to only what is required to operate
@@ -539,6 +577,8 @@ controls:
         value: N/A
       - name: refs
         value: CM-5 Access Restrictions for Change
+      - name: zta-tenet
+        value: 4 - Access to resources is determined by dynamic policy ...
   - id: control-232
     class_: CNSWP-v2.0
     title: Use a policy agent to control provenance assurance for operational workloads
@@ -639,6 +679,8 @@ controls:
         value: N/A
       - name: refs
         value: AC-6 Least Privilege
+      - name: x-note
+        value: resource isolation
   - id: control-239
     class_: CNSWP-v2.0
     title: Non-compliant violations are detected based on a pre-configured set of rules defined by the organization's policies
@@ -665,6 +707,8 @@ controls:
         value: N/A
       - name: refs
         value: SC-12(3) Systems & Communication Protection
+      - name: x-query
+        value: relationship to zero trust?
   - id: control-241
     class_: CNSWP-v2.0
     title: Native secret stores are not configured for base64 encoding or stored in clear-text in the key-value store by default
@@ -679,6 +723,8 @@ controls:
         value: Encoding is not encryption
       - name: refs
         value: SC-12(3) Systems & Communication Protection
+      - name: x-query
+        value: relationship to zero trust?
   - id: control-242
     class_: CNSWP-v2.0
     title: Network traffic to malicious domains is detected and denied
@@ -691,6 +737,8 @@ controls:
         value: N/A
       - name: refs
         value: SI-4 System Monitoring
+      - name: zta-tenet
+        value: 4 - Access to resources is determined by dynamic policy ...
   - id: control-243
     class_: CNSWP-v2.0
     title: Use encrypted containers for sensitive sources, methods, and data
@@ -703,6 +751,8 @@ controls:
         value: N/A
       - name: refs
         value: SC-28 Protection of Information at Rest
+      - name: x-note
+        value: resource isolation
   - id: control-244
     class_: CNSWP-v2.0
     title: Use SBOMs to identify current deployments of vulnerable libraries, dependencies, and packages
@@ -715,6 +765,8 @@ controls:
         value: N/A
       - name: refs
         value: CM-8 System Component Inventory
+      - name: zta-tenet
+        value: 7 - The enterprise collects as much info as possible .. to improve security posture
   - id: control-245
     class_: CNSWP-v2.0
     title: Processes must execute only functions explicitly defined in an allow list
@@ -727,6 +779,8 @@ controls:
         value: N/A
       - name: refs
         value: CM-2 Baseline Configuration CM-7 Least Functionality
+      - name: zta-tenet
+        value: 4 - Access to resources is determined by dynamic policy ...
   - id: control-246
     class_: CNSWP-v2.0
     title: Functions are not be allowed to make changes to critical file system mount points
@@ -739,6 +793,8 @@ controls:
         value: N/A
       - name: refs
         value: CM-5 Access Restrictions for Change
+      - name: x-note
+        value: resource isolation
   - id: control-247
     class_: CNSWP-v2.0
     title: Function access is only permitted to sanctioned services
@@ -753,6 +809,12 @@ controls:
         value: Either through networking restrictions or least privilege in permission models
       - name: refs
         value: CM-2 Baseline Configuration CM-7 Least Functionality
+      - name: zta-tenet
+        value: 3 - Access to individual enterprise resources is granted on a per-session basis
+      - name: zta-tenet
+        value: 4 - Access to resources is determined by dynamic policy ...
+      - name: zta-tenet
+        value: 6 - All resource auth and authz are dynamic and strictly enforced before access is allowed
   - id: control-248
     class_: CNSWP-v2.0
     title: Egress network connection is monitored to detect and prevent access to C&C (command and control) and other malicious network domains
@@ -797,6 +859,8 @@ controls:
         value: This may impact the performance due to limitations in the address space available to the isolation environment and should be considered for only the most sensitive workloads.
       - name: refs
         value: SC-7(21) Boundary Protection | Isolation of System Components
+      - name: x-note
+        value: resource isolation
   - id: control-251
     class_: CNSWP-v2.0
     title: Trust confirmation verifies the image has a valid signature from an authorized source
@@ -809,6 +873,8 @@ controls:
         value: N/A
       - name: refs
         value: SR-4 (3) PROVENANCE | VALIDATE AS GENUINE AND NOT ALTERED, SR-4 (4)  PROVENANCE | SUPPLY CHAIN INTEGRITY — PEDIGREE
+      - name: x-query
+        value: relationship to zero trust
   - id: control-252
     class_: CNSWP-v2.0
     title: Image runtime policies are enforced prior to deployment
@@ -821,6 +887,8 @@ controls:
         value: N/A
       - name: refs
         value: SI-7 (17) SOFTWARE, FIRMWARE, AND INFORMATION INTEGRITY | RUNTIME APPLICATION SELF-PROTECTION
+      - name: x-query
+        value: relationship to zero trust
   - id: control-253
     class_: CNSWP-v2.0
     title: Image integrity and signature are verified prior to deployment
@@ -833,6 +901,8 @@ controls:
         value: N/A
       - name: refs
         value: SR-4 (3) PROVENANCE | VALIDATE AS GENUINE AND NOT ALTERED, SR-4 (4)  PROVENANCE | SUPPLY CHAIN INTEGRITY — PEDIGREE
+      - name: x-query
+        value: relationship to zero trust
   - id: control-254
     class_: CNSWP-v2.0
     title: Applications provide logs regarding authentication, authorization, actions, and failures
@@ -859,6 +929,8 @@ controls:
         value: N/A
       - name: refs
         value: INCIDENT HANDLING | MALICIOUS CODE AND FORENSIC ANALYSIS
+      - name: zta-tenet
+        value: 7 - The enterprise collects as much info as possible .. to improve security posture
   - id: control-256
     class_: CNSWP-v2.0
     title: AI, ML, or statistical modeling are used for behavioural and heuristic environment analysis to detect unwanted activities
@@ -887,6 +959,8 @@ controls:
         value: Ensure that production workloads are in a separate, dedicated environment from non-production workloads. In the context of containers, this can mean separate clusters. In the case of VMs, separate networks.
       - name: refs
         value: SA-3(1) SYSTEM DEVELOPMENT LIFE CYCLE | MANAGE PREPRODUCTION ENVIRONMENT
+      - name: x-query
+        value: relationship to zero trust
   - id: control-258
     class_: CNSWP-v2.0
     title: Leverage Dynamic deployments
@@ -901,6 +975,8 @@ controls:
         value: Blue/Green, Alpha/Beta, Canary, red-black deployments
       - name: refs
         value: SA-8(31) SECURITY AND PRIVACY ENGINEERING PRINCIPLES | SECURE SYSTEM MODIFICATION
+      - name: x-query
+        value: relationship to zero trust
   - id: control-259
     class_: CNSWP-v2.0
     title: Integrate vulnerability and configuration scanning in both the IDE and at the CI system during pull request
@@ -913,6 +989,8 @@ controls:
         value: N/A
       - name: refs
         value: SA-11(1) DEVELOPER TESTING AND EVALUATION | STATIC CODE ANALYSIS
+      - name: zta-tenet
+        value: 7 - The enterprise collects as much info as possible .. to improve security posture
   - id: control-260
     class_: CNSWP-v2.0
     title: Establish dedicated development, testing, and production environment
@@ -925,6 +1003,8 @@ controls:
         value: N/A
       - name: refs
         value: SA-15 DEVELOPMENT PROCESS, STANDARDS, AND TOOLS
+      - name: x-query
+        value: relationship to zero trust
   - id: control-261
     class_: CNSWP-v2.0
     title: Build tests for business-critical code
@@ -937,6 +1017,8 @@ controls:
         value: N/A
       - name: refs
         value: SA-11 DEVELOPER TESTING AND EVALUATION
+      - name: x-query
+        value: relationship to zero trust
   - id: control-262
     class_: CNSWP-v2.0
     title: Build tests for business-critical infrastructure
@@ -949,6 +1031,8 @@ controls:
         value: N/A
       - name: refs
         value: SA-11 DEVELOPER TESTING AND EVALUATION
+      - name: x-query
+        value: relationship to zero trust
   - id: control-263
     class_: CNSWP-v2.0
     title: Test suite able to be ran locally
@@ -961,6 +1045,8 @@ controls:
         value: N/A
       - name: refs
         value: SA-11 DEVELOPER TESTING AND EVALUATION
+      - name: x-query
+        value: relationship to zero trust
   - id: control-264
     class_: CNSWP-v2.0
     title: Test suites should be available to run in a shared environment
@@ -973,6 +1059,8 @@ controls:
         value: N/A
       - name: refs
         value: SA-11 DEVELOPER TESTING AND EVALUATION
+      - name: x-query
+        value: relationship to zero trust
   - id: control-265
     class_: CNSWP-v2.0
     title: Implement at least one other non-author reviewer/approver prior to merging
