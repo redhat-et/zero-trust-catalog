@@ -147,3 +147,18 @@ done
 : Tenet 6 - 15
 : Tenet 7 - 5
 
+*** X- notes
+
+#+begin_src sh :results output :exports both
+yq '[.controls[] | .props[] | select(contains({"name":"x-"}))] | .[] | .value ' \
+   cnswp-v2-controls.yaml | sort -u
+#+end_src
+
+#+RESULTS:
+: Is there a relevant zero trust tenet to link with HSM secret storage
+: Need to consider key rotation requirements in id:control-197
+: Not directly related to tenets of zero trust
+: relationship to zero trust
+: relationship to zero trust?
+: resource isolation
+: resource isolation is not explicitly mentioned in tenets of zero trust
