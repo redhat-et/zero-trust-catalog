@@ -76,12 +76,13 @@ yq '[.controls[]
 Count the number of ~zta-tenet~ annotations.
 
 #+begin_src sh :results output :exports both
-yq '[.controls[] | select(contains({"props":[{"name":"zta-tenet"}]}))] | length' \
+yq '[.controls[] | select(contains({"props":[{"name":"zta-tenet"}]})
+   or contains({"props":[{"name":"x-"}]}))] | length' \
    cnswp-v2-controls.yaml
 #+end_src
 
 #+RESULTS:
-: 38
+: 78
 
 *** No zta-tenet annotation
 
