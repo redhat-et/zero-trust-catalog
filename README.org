@@ -73,7 +73,7 @@ yq '[.controls[]
 
 *** Count of annotated controls
 
-Count the number of ~zta-tenet~ annotations.
+Count the number of controls that have ~zta-tenet~ annotations.
 
 #+begin_src sh :results output :exports both
 yq '[.controls[]
@@ -90,18 +90,7 @@ yq '[.controls[]
 
 Find all controls that don't have a ~zta-tenet~ property annotation
 
-#+begin_src sh :results output :exports results
-yq '[.controls[]
-   | select(contains({"props":[{"name":"zta-tenet"}]}) == false
-            and contains({"props":[{"name":"x-"}]}) == false)
-   ] | length' \
-   cnswp-v2-controls.yaml
-#+end_src
-
-#+RESULTS:
-: 0
-
-#+begin_src sh :results output :exports results
+#+begin_src sh :results output :exports both
 yq '[.controls[]
    | select(contains({"props":[{"name":"zta-tenet"}]}) == false
             and contains({"props":[{"name":"x-"}]}) == false)
@@ -143,6 +132,8 @@ done
 Anything that is not mapped will have a ~x-note~ or ~x-query~ property.
 
 *** X- notes
+
+List the notes and queries that need to be reviewed.
 
 #+begin_src sh :results output :exports both
 yq '[.controls[] | .props[] | select(contains({"name":"x-"}))] | .[] | .value ' \
