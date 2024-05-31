@@ -76,13 +76,15 @@ yq '[.controls[]
 Count the number of ~zta-tenet~ annotations.
 
 #+begin_src sh :results output :exports both
-yq '[.controls[] | select(contains({"props":[{"name":"zta-tenet"}]})
-   or contains({"props":[{"name":"x-"}]}))] | length' \
+yq '[.controls[]
+   | select(contains({"props":[{"name":"zta-tenet"}]})
+            or contains({"props":[{"name":"x-"}]}))
+   ] | length' \
    cnswp-v2-controls.yaml
 #+end_src
 
 #+RESULTS:
-: 78
+: 151
 
 *** No zta-tenet annotation
 
@@ -90,17 +92,29 @@ Find all controls that don't have a ~zta-tenet~ property annotation
 
 #+begin_src sh :results output :exports results
 yq '[.controls[]
-   | select(contains({"props":[{"name":"zta-tenet"}]}) == false)
+   | select(contains({"props":[{"name":"zta-tenet"}]}) == false
+            and contains({"props":[{"name":"x-"}]}) == false)
    ] | length' \
    cnswp-v2-controls.yaml
 #+end_src
 
 #+RESULTS:
-: 113
+: 0
+
+#+begin_src sh :results output :exports results
+yq '[.controls[]
+   | select(contains({"props":[{"name":"zta-tenet"}]}) == false
+            and contains({"props":[{"name":"x-"}]}) == false)
+   ] | .[] | .id' \
+   cnswp-v2-controls.yaml
+#+end_src
+
+#+RESULTS:
+: 0
 
 *** Controls per section
 
-List the number of controls in each CNSWP section.
+List the number of mapped controls in each CNSWP section.
 
 #+begin_src sh :results output :exports both
 for s in Access Compute Deploy Develop Distribute Security\ Assurance
@@ -119,12 +133,41 @@ done
 #+end_src
 
 #+RESULTS:
-: Access:  21 of 35 are mapped
-: Compute:  14 of 35 are mapped
-: Deploy:  2 of 6 are mapped
-: Develop:  0 of 17 are mapped
-: Distribute:  2 of 36 are mapped
-: Security Assurance:  4 of 22 are mapped
+: Access:  43 of 55 are mapped
+: Compute:  23 of 35 are mapped
+: Deploy:  3 of 6 are mapped
+: Develop:  3 of 17 are mapped
+: Distribute:  27 of 36 are mapped
+: Security Assurance:  20 of 22 are mapped
+
+Anything that is not mapped will have a ~x-note~ or ~x-query~ property.
+
+*** X- notes
+
+#+begin_src sh :results output :exports both
+yq '[.controls[] | .props[] | select(contains({"name":"x-"}))] | .[] | .value ' \
+   cnswp-v2-controls.yaml | sort -u
+#+end_src
+
+#+RESULTS:
+#+begin_example
+Development infrastructure is a zero trust resource
+Is there a relevant zero trust tenet to link with HSM secret storage
+Need to consider key rotation requirements in id:control-197
+Not directly related to tenets of zero trust
+cryptographic secret storage
+data integrity
+data security
+encryption at rest
+high availability
+identity attestation
+relationship to zero trust?
+resource isolation
+resource isolation is not explicitly mentioned in tenets of zero trust
+resource lifecycle management?
+software quality
+software quality feedback loop
+#+end_example
 
 *** Tenet mappings
 
@@ -139,26 +182,23 @@ done
 #+end_src
 
 #+RESULTS:
-: Tenet 1 - 2
-: Tenet 2 - 7
-: Tenet 3 - 3
-: Tenet 4 - 12
-: Tenet 5 - 4
-: Tenet 6 - 15
-: Tenet 7 - 5
+: Tenet 1 - 13
+: Tenet 2 - 10
+: Tenet 3 - 8
+: Tenet 4 - 32
+: Tenet 5 - 13
+: Tenet 6 - 19
+: Tenet 7 - 23
 
-*** X- notes
+List all the mappings for each Tenet of Zero Trust.
 
 #+begin_src sh :results output :exports both
-yq '[.controls[] | .props[] | select(contains({"name":"x-"}))] | .[] | .value ' \
-   cnswp-v2-controls.yaml | sort -u
+for n in 1 2 3 4 5 6 7
+do
+    echo
+    echo "Tenet ${n}"
+    yq "[.controls[] | select(contains({\"props\":{\"value\": \"${n} -\"}}))]
+    | .[] | .title" cnswp-v2-controls.yaml
+done
 #+end_src
 
-#+RESULTS:
-: Is there a relevant zero trust tenet to link with HSM secret storage
-: Need to consider key rotation requirements in id:control-197
-: Not directly related to tenets of zero trust
-: relationship to zero trust
-: relationship to zero trust?
-: resource isolation
-: resource isolation is not explicitly mentioned in tenets of zero trust

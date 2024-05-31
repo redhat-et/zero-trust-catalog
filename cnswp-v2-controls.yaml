@@ -233,6 +233,8 @@ controls:
         value: AC-4(4) Information Flow Enforcement | Flow Control of Encrypted Information, SC-3(1) Security Function Isolation | Hardware Separation
       - name: x-query
         value: Is there a relevant zero trust tenet to link with HSM secret storage
+      - name: x-note
+        value: cryptographic secret storage
   - id: control-210
     class_: CNSWP-v2.0
     title: Secrets should have a short expiration period or time to live
@@ -591,6 +593,8 @@ controls:
         value: N/A
       - name: refs
         value: CM-5 Access Restrictions for Change
+      - name: x-note
+        value: identity attestation
   - id: control-233
     class_: CNSWP-v2.0
     title: Use a service mesh that eliminates implicit trust through data-in-motion protection (i.e. confidentiality, integrity, authentication, authorization)
@@ -874,7 +878,7 @@ controls:
       - name: refs
         value: SR-4 (3) PROVENANCE | VALIDATE AS GENUINE AND NOT ALTERED, SR-4 (4)  PROVENANCE | SUPPLY CHAIN INTEGRITY — PEDIGREE
       - name: x-query
-        value: relationship to zero trust
+        value: relationship to zero trust?
   - id: control-252
     class_: CNSWP-v2.0
     title: Image runtime policies are enforced prior to deployment
@@ -888,7 +892,7 @@ controls:
       - name: refs
         value: SI-7 (17) SOFTWARE, FIRMWARE, AND INFORMATION INTEGRITY | RUNTIME APPLICATION SELF-PROTECTION
       - name: x-query
-        value: relationship to zero trust
+        value: relationship to zero trust?
   - id: control-253
     class_: CNSWP-v2.0
     title: Image integrity and signature are verified prior to deployment
@@ -902,7 +906,7 @@ controls:
       - name: refs
         value: SR-4 (3) PROVENANCE | VALIDATE AS GENUINE AND NOT ALTERED, SR-4 (4)  PROVENANCE | SUPPLY CHAIN INTEGRITY — PEDIGREE
       - name: x-query
-        value: relationship to zero trust
+        value: relationship to zero trust?
   - id: control-254
     class_: CNSWP-v2.0
     title: Applications provide logs regarding authentication, authorization, actions, and failures
@@ -960,7 +964,7 @@ controls:
       - name: refs
         value: SA-3(1) SYSTEM DEVELOPMENT LIFE CYCLE | MANAGE PREPRODUCTION ENVIRONMENT
       - name: x-query
-        value: relationship to zero trust
+        value: relationship to zero trust?
   - id: control-258
     class_: CNSWP-v2.0
     title: Leverage Dynamic deployments
@@ -976,7 +980,7 @@ controls:
       - name: refs
         value: SA-8(31) SECURITY AND PRIVACY ENGINEERING PRINCIPLES | SECURE SYSTEM MODIFICATION
       - name: x-query
-        value: relationship to zero trust
+        value: relationship to zero trust?
   - id: control-259
     class_: CNSWP-v2.0
     title: Integrate vulnerability and configuration scanning in both the IDE and at the CI system during pull request
@@ -1004,7 +1008,7 @@ controls:
       - name: refs
         value: SA-15 DEVELOPMENT PROCESS, STANDARDS, AND TOOLS
       - name: x-query
-        value: relationship to zero trust
+        value: relationship to zero trust?
   - id: control-261
     class_: CNSWP-v2.0
     title: Build tests for business-critical code
@@ -1018,7 +1022,7 @@ controls:
       - name: refs
         value: SA-11 DEVELOPER TESTING AND EVALUATION
       - name: x-query
-        value: relationship to zero trust
+        value: relationship to zero trust?
   - id: control-262
     class_: CNSWP-v2.0
     title: Build tests for business-critical infrastructure
@@ -1032,7 +1036,7 @@ controls:
       - name: refs
         value: SA-11 DEVELOPER TESTING AND EVALUATION
       - name: x-query
-        value: relationship to zero trust
+        value: relationship to zero trust?
   - id: control-263
     class_: CNSWP-v2.0
     title: Test suite able to be ran locally
@@ -1046,7 +1050,7 @@ controls:
       - name: refs
         value: SA-11 DEVELOPER TESTING AND EVALUATION
       - name: x-query
-        value: relationship to zero trust
+        value: relationship to zero trust?
   - id: control-264
     class_: CNSWP-v2.0
     title: Test suites should be available to run in a shared environment
@@ -1060,7 +1064,7 @@ controls:
       - name: refs
         value: SA-11 DEVELOPER TESTING AND EVALUATION
       - name: x-query
-        value: relationship to zero trust
+        value: relationship to zero trust?
   - id: control-265
     class_: CNSWP-v2.0
     title: Implement at least one other non-author reviewer/approver prior to merging
@@ -1073,6 +1077,8 @@ controls:
         value: N/A
       - name: refs
         value: SA-11(4) DEVELOPER TESTING AND EVALUATION | MANUAL CODE REVIEWS
+      - name: x-query
+        value: relationship to zero trust?
   - id: control-266
     class_: CNSWP-v2.0
     title: Code should be clean and well commented
@@ -1083,6 +1089,10 @@ controls:
         value: N/A
       - name: risk-categories
         value: N/A
+      - name: x-note
+        value: software quality
+      - name: x-query
+        value: relationship to zero trust?
   - id: control-267
     class_: CNSWP-v2.0
     title: Full infrastructure tests are used
@@ -1095,6 +1105,8 @@ controls:
         value: N/A
       - name: refs
         value: SA-11 DEVELOPER TESTING AND EVALUATION
+      - name: x-note
+        value: software quality
   - id: control-268
     class_: CNSWP-v2.0
     title: Regression tests are used
@@ -1107,6 +1119,8 @@ controls:
         value: N/A
       - name: refs
         value: SA-11 DEVELOPER TESTING AND EVALUATION
+      - name: x-note
+        value: software quality
   - id: control-269
     class_: CNSWP-v2.0
     title: Test suites are updated against new and emerging threats and developed into security regressions tests
@@ -1119,6 +1133,8 @@ controls:
         value: N/A
       - name: refs
         value: SA-11 DEVELOPER TESTING AND EVALUATION
+      - name: x-note
+        value: software quality feedback loop
   - id: control-270
     class_: CNSWP-v2.0
     title: Establish a dedicated Testing environment
@@ -1131,6 +1147,8 @@ controls:
         value: N/A
       - name: refs
         value: SA-3(1) SYSTEM DEVELOPMENT LIFE CYCLE | MANAGE PREPRODUCTION ENVIRONMENT
+      - name: x-note
+        value: software quality
   - id: control-271
     class_: CNSWP-v2.0
     title: Continuous integration server is isolated and hardened
@@ -1143,6 +1161,10 @@ controls:
         value: N/A
       - name: refs
         value: SC-39 PROCESS ISOLATION
+      - name: zta-tenet
+        value: 1 - All data sources and computing services are considered resources
+      - name: x-note
+        value: Development infrastructure is a zero trust resource
   - id: control-272
     class_: CNSWP-v2.0
     title: Use threat model results to determine ROI for test development
@@ -1155,6 +1177,8 @@ controls:
         value: N/A
       - name: refs
         value: SA-11(2) DEVELOPER TESTING AND EVALUATION | THREAT MODELING AND VULNERABILITY ANALYSES
+      - name: x-note
+        value: software quality feedback loop
   - id: control-273
     class_: CNSWP-v2.0
     title: Implement secure configuration as the default state of the system
@@ -1169,6 +1193,8 @@ controls:
         value: Transitioning towards such a system involves making security a design requirement, inheriting default security configuration and supporting an exception process
       - name: refs
         value: SA-8(23) SECURITY AND PRIVACY ENGINEERING PRINCIPLES | SECURE DEFAULTS
+      - name: zta-tenet
+        value: 2 - All communication is secured regardless of network location
   - id: control-274
     class_: CNSWP-v2.0
     title: Should software artifacts become untrusted due to compromise or other incident, teams should revoke signing keys to ensure repudiation
@@ -1179,6 +1205,8 @@ controls:
         value: N/A
       - name: risk-categories
         value: N/A
+      - name: zta-tenet
+        value: 5 - The enterprise monitors and measures integrity / security posture ...
   - id: control-275
     class_: CNSWP-v2.0
     title: Artifacts ready for deployment are managed in a staging or pre-prod registry
@@ -1189,6 +1217,8 @@ controls:
         value: N/A
       - name: risk-categories
         value: N/A
+      - name: zta-tenet
+        value: 1 - All data sources and computing services are considered resources
   - id: control-276
     class_: CNSWP-v2.0
     title: container images are hardened following best practices
@@ -1201,6 +1231,8 @@ controls:
         value: N/A
       - name: description
         value: Images contain least permissions to remain functional, do not allow for shell, do not include unnecessary libraries and dependencies, do not bind mount files in from the host, etc.
+      - name: x-note
+        value: data security
   - id: control-277
     class_: CNSWP-v2.0
     title: Static application security testing (SAST) is performed
@@ -1213,6 +1245,8 @@ controls:
         value: N/A
       - name: description
         value: Static analysis is performed by dedicated SAST tools as well as linters
+      - name: zta-tenet
+        value: 7 - The enterprise collects as much info as possible .. to improve security posture
   - id: control-278
     class_: CNSWP-v2.0
     title: Test suites follow the test pyramid
@@ -1223,6 +1257,8 @@ controls:
         value: N/A
       - name: risk-categories
         value: N/A
+      - name: x-note
+        value: software quality
   - id: control-279
     class_: CNSWP-v2.0
     title: Artifacts undergoing active development are held in a private registery
@@ -1233,6 +1269,8 @@ controls:
         value: N/A
       - name: risk-categories
         value: N/A
+      - name: zta-tenet
+        value: 1 - All data sources and computing services are considered resources
   - id: control-280
     class_: CNSWP-v2.0
     title: Scan application manifests in CI pipeline
@@ -1245,6 +1283,8 @@ controls:
         value: N/A
       - name: refs
         value: RA-5 VULNERABILITY MONITORING AND SCANNING
+      - name: zta-tenet
+        value: 7 - The enterprise collects as much info as possible .. to improve security posture
   - id: control-281
     class_: CNSWP-v2.0
     title: CI server's for sensitive workloads are isolated from other workloads
@@ -1257,6 +1297,8 @@ controls:
         value: N/A
       - name: refs
         value: SC-39 PROCESS ISOLATION
+      - name: zta-tenet
+        value: 1 - All data sources and computing services are considered resources
   - id: control-282
     class_: CNSWP-v2.0
     title: Builds requiring elevated privileges must run on dedicated servers
@@ -1269,6 +1311,8 @@ controls:
         value: N/A
       - name: refs
         value: SC-39 PROCESS ISOLATION
+      - name: zta-tenet
+        value: 1 - All data sources and computing services are considered resources
   - id: control-283
     class_: CNSWP-v2.0
     title: Build policies are enforced on the CI pipeline
@@ -1281,6 +1325,8 @@ controls:
         value: N/A
       - name: refs
         value: SA-1 POLICY AND PROCEDURES
+      - name: x-note
+        value: software quality
   - id: control-284
     class_: CNSWP-v2.0
     title: Sign pipeline metadata
@@ -1293,6 +1339,8 @@ controls:
         value: N/A
       - name: refs
         value: SI-7 SOFTWARE, FIRMWARE, AND INFORMATION INTEGRITY
+      - name: x-note
+        value: software quality
   - id: control-285
     class_: CNSWP-v2.0
     title: Build stages are verified prior to the next stage executing
@@ -1305,6 +1353,8 @@ controls:
         value: N/A
       - name: refs
         value: SI-7 SOFTWARE, FIRMWARE, AND INFORMATION INTEGRITY
+      - name: x-note
+        value: software quality
   - id: control-286
     class_: CNSWP-v2.0
     title: Images are scanned within the CI pipeline
@@ -1317,6 +1367,8 @@ controls:
         value: N/A
       - name: refs
         value: RA-5 VULNERABILITY MONITORING AND SCANNING, SA-3 SYSTEM DEVELOPMENT LIFE CYCLE
+      - name: zta-tenet
+        value: 7 - The enterprise collects as much info as possible .. to improve security posture
   - id: control-287
     class_: CNSWP-v2.0
     title: Vulnerability scans are coupled with pipeline compliance rules
@@ -1331,6 +1383,8 @@ controls:
         value: Prevent insecure images and artifacts from being deployed
       - name: refs
         value: SA-1 POLICY AND PROCEDURES
+      - name: zta-tenet
+        value: 7 - The enterprise collects as much info as possible .. to improve security posture
   - id: control-288
     class_: CNSWP-v2.0
     title: Dynamic application security testing (DAST) is performed
@@ -1343,6 +1397,8 @@ controls:
         value: N/A
       - name: refs
         value: SA-11 (8) & (9) INTERACTIVE APPLICATION SECURITY TESTING
+      - name: zta-tenet
+        value: 5 - The enterprise monitors and measures integrity / security posture ...
   - id: control-289
     class_: CNSWP-v2.0
     title: Application instrumentation is employed
@@ -1355,6 +1411,8 @@ controls:
         value: N/A
       - name: refs
         value: SI-4 SYSTEM MONITORING
+      - name: zta-tenet
+        value: 7 - The enterprise collects as much info as possible .. to improve security posture
   - id: control-290
     class_: CNSWP-v2.0
     title: Automated test results map back to requirements
@@ -1367,6 +1425,8 @@ controls:
         value: N/A
       - name: description
         value: Requirements include feature, function, security, and complaince
+      - name: x-note
+        value: software quality feedback loop
   - id: control-291
     class_: CNSWP-v2.0
     title: Infrastructure security tests must be employed
@@ -1379,6 +1439,8 @@ controls:
         value: N/A
       - name: description
         value: firewall rules open to the world, overprivileged Identity & Access Management (IAM) policies, unauthenticated endpoints, etc
+      - name: x-note
+        value: software quality
   - id: control-292
     class_: CNSWP-v2.0
     title: Tests to verify the security health are executed at time of build and at time of deploy
@@ -1393,6 +1455,8 @@ controls:
         value: to evaluate any changes or regressions that may have occurred throughout the lifecycle.
       - name: refs
         value: SI-4 SYSTEM MONITORING
+      - name: zta-tenet
+        value: 5 - The enterprise monitors and measures integrity / security posture ...
   - id: control-293
     class_: CNSWP-v2.0
     title: IaC is subject to the same pipeline policy controls as application code
@@ -1403,6 +1467,8 @@ controls:
         value: N/A
       - name: risk-categories
         value: N/A
+      - name: zta-tenet
+        value: 1 - All data sources and computing services are considered resources
   - id: control-294
     class_: CNSWP-v2.0
     title: Security testing is automated
@@ -1415,6 +1481,8 @@ controls:
         value: N/A
       - name: refs
         value: SA-11 DEVELOPER TESTING AND EVALUATION, CA-8 PENETRATION TESTING
+      - name: zta-tenet
+        value: 5 - The enterprise monitors and measures integrity / security posture ...
   - id: control-295
     class_: CNSWP-v2.0
     title: Registries require mutually authenticated TLS for all registry connections
@@ -1441,6 +1509,8 @@ controls:
         value: N/A
       - name: refs
         value: SI-7 SOFTWARE, FIRMWARE, AND INFORMATION INTEGRITY
+      - name: zta-tenet
+        value: 4 - Access to resources is determined by dynamic policy ...
   - id: control-297
     class_: CNSWP-v2.0
     title: Workload-related configuration is signed
@@ -1453,6 +1523,8 @@ controls:
         value: N/A
       - name: refs
         value: SI-7 SOFTWARE, FIRMWARE, AND INFORMATION INTEGRITY
+      - name: zta-tenet
+        value: 4 - Access to resources is determined by dynamic policy ...
   - id: control-298
     class_: CNSWP-v2.0
     title: Workload-related package is signed
@@ -1465,6 +1537,8 @@ controls:
         value: N/A
       - name: refs
         value: SI-7 SOFTWARE, FIRMWARE, AND INFORMATION INTEGRITY
+      - name: zta-tenet
+        value: 4 - Access to resources is determined by dynamic policy ...
   - id: control-299
     class_: CNSWP-v2.0
     title: Validate integrity of images
@@ -1477,6 +1551,8 @@ controls:
         value: N/A
       - name: refs
         value: SI-7 SYSTEM & INFORMATION INTEGRITY
+      - name: zta-tenet
+        value: 5 - The enterprise monitors and measures integrity / security posture ...
   - id: control-300
     class_: CNSWP-v2.0
     title: Scan images for vulnerabilities and malware
@@ -1489,6 +1565,8 @@ controls:
         value: N/A
       - name: refs
         value: RA-5 VULNERABILITY MONITORING AND SCANNING, SA-3 SYSTEM DEVELOPMENT LIFE CYCLE
+      - name: zta-tenet
+        value: 5 - The enterprise monitors and measures integrity / security posture ...
   - id: control-301
     class_: CNSWP-v2.0
     title: Enable image signing key revokation in the event of compromise
@@ -1501,6 +1579,10 @@ controls:
         value: N/A
       - name: refs
         value: SI-7 SYSTEM & INFORMATION INTEGRITY
+      - name: zta-tenet
+        value: 4 - Access to resources is determined by dynamic policy ...
+      - name: zta-tenet
+        value: 6 - All resource auth and authz are dynamic and strictly enforced before access is allowed
   - id: control-302
     class_: CNSWP-v2.0
     title: Security updates are prioritized
@@ -1513,6 +1595,8 @@ controls:
         value: N/A
       - name: refs
         value: SI-2(3) SYSTEM & INFORMATION INTEGRITY
+      - name: zta-tenet
+        value: 7 - The enterprise collects as much info as possible .. to improve security posture
   - id: control-303
     class_: CNSWP-v2.0
     title: HSMs or credential managers should be used for protecting credentials. If this is not possible, software-based credential managers should be used.
@@ -1525,6 +1609,8 @@ controls:
         value: N/A
       - name: refs
         value: SC-12(3) SYSTEMS & COMMUNICATION PROTECTION
+      - name: x-note
+        value: cryptographic secret storage
   - id: control-304
     class_: CNSWP-v2.0
     title: Container image scanning findings are acted upon
@@ -1537,6 +1623,8 @@ controls:
         value: N/A
       - name: refs
         value: SI-2(3) SYSTEM & INFORMATION INTEGRITY
+      - name: zta-tenet
+        value: 7 - The enterprise collects as much info as possible .. to improve security posture
   - id: control-305
     class_: CNSWP-v2.0
     title: Organizational compliance rules are enforced
@@ -1549,6 +1637,8 @@ controls:
         value: N/A
       - name: refs
         value: PL-1 POLICY AND PROCEDURES
+      - name: x-query
+        value: relationship to zero trust?
   - id: control-306
     class_: CNSWP-v2.0
     title: Incremental hardening of the infrastructure is employed
@@ -1559,6 +1649,8 @@ controls:
         value: N/A
       - name: risk-categories
         value: N/A
+      - name: zta-tenet
+        value: 7 - The enterprise collects as much info as possible .. to improve security posture
   - id: control-307
     class_: CNSWP-v2.0
     title: pulls from public registries are controlled and only from authorized engineers or internal registries
@@ -1573,6 +1665,10 @@ controls:
         value: AC-6(3) LEAST PRIVILEGE | NETWORK ACCESS TO PRIVILEGED COMMANDS
       - name: zta-tenet
         value: 6 - All resource auth and authz are dynamic and strictly enforced before access is allowed
+      - name: zta-tenet
+        value: 2 - All communication is secured regardless of network location
+      - name: zta-tenet
+        value: 4 - Access to resources is determined by dynamic policy ...
   - id: control-308
     class_: CNSWP-v2.0
     title: Image encryption is coupled with key management attestation and/or authorization and credential distribution
@@ -1587,6 +1683,8 @@ controls:
         value: This restricts the image to only be deployed to authorized platforms. Container image authorization is useful for compliance use cases such as geo-fencing or export control and digital rights media management
       - name: refs
         value: SC-12(2) CRYPTOGRAPHIC KEY ESTABLISHMENT AND MANAGEMENT | SYMMETRIC & ASYMMETRIC KEYS, SC-12(3) CRYPTOGRAPHIC KEY ESTABLISHMENT AND MANAGEMENT | SYMMETRIC & ASYMMETRIC KEYS
+      - name: zta-tenet
+        value: 6 - All resource auth and authz are dynamic and strictly enforced before access is allowed
   - id: control-309
     class_: CNSWP-v2.0
     title: At-risk applications are prioritized for remediation by the exploit maturity and vulnerable path presence in addition to the CVSS score
@@ -1599,6 +1697,8 @@ controls:
         value: N/A
       - name: refs
         value: SI-2(3) SYSTEM & INFORMATION INTEGRITY
+      - name: zta-tenet
+        value: 7 - The enterprise collects as much info as possible .. to improve security posture
   - id: control-310
     class_: CNSWP-v2.0
     title: Network policies enforce east-west network communication within the container deployment is limited to only that which is authorized for access
@@ -1617,6 +1717,8 @@ controls:
         value: 4 - Access to resources is determined by dynamic policy ...
       - name: zta-tenet
         value: 6 - All resource auth and authz are dynamic and strictly enforced before access is allowed
+      - name: zta-tenet
+        value: 4 - Access to resources is determined by dynamic policy ...
   - id: control-311
     class_: CNSWP-v2.0
     title: Incident reponse considers cloud native workloads
@@ -1631,6 +1733,8 @@ controls:
         value: workloads which may not always conform with some underlying assumptions about node isolation (new pod instances could run on a different server), networking (e.g. IP addresses are assigned dynamically) and immutability (e.g. runtime changes to container are not persisted across restarts)
       - name: refs
         value: IR-4 INCIDENT HANDLING | AUTOMATED INCIDENT HANDLING PROCESSES, IR-4(5) INCIDENT HANDLING | AUTOMATIC DISABLING OF SYSTEM, CA-7 CONTINUOUS MONITORING
+      - name: zta-tenet
+        value: 1 - All data sources and computing services are considered resources
   - id: control-312
     class_: CNSWP-v2.0
     title: Incident response accounts for appropriate evidence handling and collection of coud native workloads
@@ -1643,6 +1747,8 @@ controls:
         value: N/A
       - name: refs
         value: IR-5(1) INCIDENT MONITORING | AUTOMATED TRACKING, DATA COLLECTION, AND ANALYSIS
+      - name: zta-tenet
+        value: 7 - The enterprise collects as much info as possible .. to improve security posture
   - id: control-313
     class_: CNSWP-v2.0
     title: Rootless builds are employed
@@ -1653,6 +1759,8 @@ controls:
         value: N/A
       - name: risk-categories
         value: N/A
+      - name: x-note
+        value: resource isolation
   - id: control-314
     class_: CNSWP-v2.0
     title: cgroups and system groups are used to isolate workloads and deployments
@@ -1665,6 +1773,8 @@ controls:
         value: N/A
       - name: zta-tenet
         value: 4 - Access to resources is determined by dynamic policy ...
+      - name: x-note
+        value: resource isolation
   - id: control-315
     class_: CNSWP-v2.0
     title: MAC implementations are employed
@@ -1681,6 +1791,8 @@ controls:
         value: AC-3(3) ACCESS ENFORCEMENT | MANDATORY ACCESS CONTROL
       - name: zta-tenet
         value: 6 - All resource auth and authz are dynamic and strictly enforced before access is allowed
+      - name: zta-tenet
+        value: 4 - Access to resources is determined by dynamic policy ...
   - id: control-316
     class_: CNSWP-v2.0
     title: Threat model code and infrastructure
@@ -1695,6 +1807,8 @@ controls:
         value: While various strategies are available, the MITRE ATT&CK matrix is an excellent starting point
       - name: refs
         value: SA-11(2) DEVELOPER TESTING AND EVALUATION | THREAT MODELING AND VULNERABILITY ANALYSES
+      - name: zta-tenet
+        value: 7 - The enterprise collects as much info as possible .. to improve security posture
   - id: control-317
     class_: CNSWP-v2.0
     title: Entities are able to independently authenticate other identities
@@ -1713,6 +1827,8 @@ controls:
         value: 4 - Access to resources is determined by dynamic policy ...
       - name: zta-tenet
         value: 6 - All resource auth and authz are dynamic and strictly enforced before access is allowed
+      - name: zta-tenet
+        value: 4 - Access to resources is determined by dynamic policy ...
   - id: control-318
     class_: CNSWP-v2.0
     title: Each entity can create proof of who the identity is
@@ -1725,6 +1841,10 @@ controls:
         value: N/A
       - name: refs
         value: IA-9 SERVICE IDENTIFICATION AND AUTHENTICATION
+      - name: zta-tenet
+        value: 1 - All data sources and computing services are considered resources
+      - name: x-note
+        value: identity attestation
   - id: control-319
     class_: CNSWP-v2.0
     title: Orchestrator is running on an a trusted OS, BIOS, etc
@@ -1737,6 +1857,10 @@ controls:
         value: N/A
       - name: refs
         value: CM-14 SIGNED COMPONENTS
+      - name: zta-tenet
+        value: 1 - All data sources and computing services are considered resources
+      - name: zta-tenet
+        value: 7 - The enterprise collects as much info as possible .. to improve security posture
   - id: control-320
     class_: CNSWP-v2.0
     title: Orchestrator verifies the claims of a container
@@ -1749,6 +1873,8 @@ controls:
         value: N/A
       - name: refs
         value: SI-6 SECURITY AND PRIVACY FUNCTION VERIFICATION
+      - name: zta-tenet
+        value: 4 - Access to resources is determined by dynamic policy ...
   - id: control-321
     class_: CNSWP-v2.0
     title: Orchestrator network policies are used in conjunction with a service mesh
@@ -1759,6 +1885,8 @@ controls:
         value: N/A
       - name: risk-categories
         value: N/A
+      - name: zta-tenet
+        value: 3 - Access to individual enterprise resources is granted on a per-session basis
   - id: control-322
     class_: CNSWP-v2.0
     title: Adhere to supply chain security best practices
@@ -1771,6 +1899,8 @@ controls:
         value: N/A
       - name: description
         value: The SSCP controls in this document provide the necessary controls for best practices
+      - name: zta-tenet
+        value: 1 - All data sources and computing services are considered resources
   - id: control-323
     class_: CNSWP-v2.0
     title: Restrict access to repository and branches
@@ -1783,6 +1913,8 @@ controls:
         value: N/A
       - name: description
         value: The 'Security the Source Code' SSCP controls provide the necessary GitOps best practices
+      - name: zta-tenet
+        value: 4 - Access to resources is determined by dynamic policy ...
   - id: control-324
     class_: CNSWP-v2.0
     title: Never store unencrypted credentials or secrets in the Git repository and block sensitive data being pushed to Git
@@ -1795,6 +1927,8 @@ controls:
         value: N/A
       - name: description
         value: The 'Security the Source Code' SSCP controls provide the necessary GitOps best practices
+      - name: x-note
+        value: cryptographic secret storage
   - id: control-325
     class_: CNSWP-v2.0
     title: Enforce strong identity with GPG Signed Commits, to give accountability and traceability
@@ -1807,6 +1941,8 @@ controls:
         value: N/A
       - name: description
         value: The 'Security the Source Code' SSCP controls provide the necessary GitOps best practices
+      - name: zta-tenet
+        value: 5 - The enterprise monitors and measures integrity / security posture ...
   - id: control-326
     class_: CNSWP-v2.0
     title: Require linear history and maintain a commit history by disallowing force pushes
@@ -1819,6 +1955,8 @@ controls:
         value: N/A
       - name: description
         value: The 'Security the Source Code' SSCP controls provide the necessary GitOps best practices
+      - name: zta-tenet
+        value: 5 - The enterprise monitors and measures integrity / security posture ...
   - id: control-327
     class_: CNSWP-v2.0
     title: Enforce branching policy. Especially protect the main branch and require code review before merging
@@ -1831,6 +1969,8 @@ controls:
         value: N/A
       - name: description
         value: The 'Security the Source Code' SSCP controls provide the necessary GitOps best practices
+      - name: zta-tenet
+        value: 5 - The enterprise monitors and measures integrity / security posture ...
   - id: control-328
     class_: CNSWP-v2.0
     title: Monitor for vulnerabilities, and keep Git and GitOps tools up to date
@@ -1843,6 +1983,8 @@ controls:
         value: N/A
       - name: description
         value: The 'Security the Source Code' SSCP controls provide the necessary GitOps best practices
+      - name: zta-tenet
+        value: 7 - The enterprise collects as much info as possible .. to improve security posture
   - id: control-329
     class_: CNSWP-v2.0
     title: Rotate SSH keys and Personal Access Tokens, block unauthorized access to Git repositories
@@ -1855,6 +1997,8 @@ controls:
         value: N/A
       - name: description
         value: The 'Security the Source Code' SSCP controls provide the necessary GitOps best practices
+      - name: zta-tenet
+        value: 3 - Access to individual enterprise resources is granted on a per-session basis
   - id: control-330
     class_: CNSWP-v2.0
     title: Utilize a dedicated non-user technical account for access where credentials are frequently rotated and short-lived
@@ -1867,6 +2011,8 @@ controls:
         value: N/A
       - name: description
         value: The 'Security the Source Code' SSCP controls provide the necessary GitOps best practices
+      - name: zta-tenet
+        value: 3 - Access to individual enterprise resources is granted on a per-session basis
   - id: control-331
     class_: CNSWP-v2.0
     title: Limit users who can elevate permissions to remove security features to cover their tracks via deletion of audit trails and silencing of alerts
@@ -1879,6 +2025,8 @@ controls:
         value: N/A
       - name: description
         value: The 'Security the Source Code' SSCP controls provide the necessary GitOps best practices
+      - name: zta-tenet
+        value: 4 - Access to resources is determined by dynamic policy ...
   - id: control-332
     class_: CNSWP-v2.0
     title: Storage control plane management interface requires mutual authentication and TLS for connections
@@ -1905,6 +2053,8 @@ controls:
         value: N/A
       - name: refs
         value: SI-13 PREDICTABLE FAILURE PREVENTION
+      - name: x-note
+        value: high availability
   - id: control-334
     class_: CNSWP-v2.0
     title: Hashing and checksums are added to blocks, objects or files
@@ -1919,6 +2069,10 @@ controls:
         value: primarily designed to detect and recover from corrupted data, but can also add a layer of protection against the tampering of data.
       - name: refs
         value: CM-7 LEAST FUNCTIONALITY, SI-7 SOFTWARE, FIRMWARE, AND INFORMATION INTEGRITY
+      - name: x-note
+        value: data integrity
+      - name: zta-tenet
+        value: 7 - The enterprise collects as much info as possible .. to improve security posture
   - id: control-335
     class_: CNSWP-v2.0
     title: Data backup storage and data source storage should have same security controls
@@ -1931,6 +2085,10 @@ controls:
         value: N/A
       - name: refs
         value: SA-9 EXTERNAL SYSTEM SERVICES, SC-30 CONCEALMENT AND MISDIRECTION
+      - name: x-note
+        value: data security
+      - name: zta-tenet
+        value: 4 - Access to resources is determined by dynamic policy ...
   - id: control-336
     class_: CNSWP-v2.0
     title: Secure erasure adhering to OPAL standards is employed for returned or non-functional devices
@@ -1943,6 +2101,8 @@ controls:
         value: N/A
       - name: refs
         value: CP-9 SYSTEM BACKUP, MP-6 MEDIA SANITIZATION
+      - name: x-query
+        value: resource lifecycle management?
   - id: control-337
     class_: CNSWP-v2.0
     title: Encryption at rest considers data path, size, and frequency of access when determing additional security protections and cryptographic algorithms to employ
@@ -1957,6 +2117,8 @@ controls:
         value: The encryption may be implemented in the storage client or storage server and granularity of the encryption will vary by system (e.g. per volume, per group or global keys)
       - name: refs
         value: SC-28 PROTECTION OF INFORMATION AT REST
+      - name: x-note
+        value: encryption at rest
   - id: control-338
     class_: CNSWP-v2.0
     title: Caching is considered for determining encryption requirements in archictures
@@ -1967,6 +2129,8 @@ controls:
         value: N/A
       - name: risk-categories
         value: N/A
+      - name: x-note
+        value: data security
   - id: control-339
     class_: CNSWP-v2.0
     title: Namespaces have defined trust boundaries to cordon access to volumes
@@ -1977,6 +2141,8 @@ controls:
         value: N/A
       - name: risk-categories
         value: N/A
+      - name: x-note
+        value: data security
   - id: control-340
     class_: CNSWP-v2.0
     title: Security policies are used to prevent containers from accessing volume mounts on worker nodes
@@ -1993,6 +2159,8 @@ controls:
         value: 3 - Access to individual enterprise resources is granted on a per-session basis
       - name: zta-tenet
         value: 4 - Access to resources is determined by dynamic policy ...
+      - name: x-note
+        value: data security
   - id: control-341
     class_: CNSWP-v2.0
     title: Security policies are used enforce authorized worker node access to volumes
@@ -2007,6 +2175,10 @@ controls:
         value: SC-7 BOUNDARY PROTECTION, SA-8 SECURITY AND PRIVACY ENGINEERING PRINCIPLES, CM-6 CONFIGURATION SETTINGS
       - name: zta-tenet
         value: 3 - Access to individual enterprise resources is granted on a per-session basis
+      - name: x-note
+        value: data security
+      - name: zta-tenet
+        value: 1 - All data sources and computing services are considered resources
   - id: control-342
     class_: CNSWP-v2.0
     title: Volume UID and GID are inaccessible to containers
@@ -2019,6 +2191,8 @@ controls:
         value: N/A
       - name: refs
         value: AC-4 INFORMATION FLOW ENFORCEMENT, AC-16 SECURITY AND PRIVACY ATTRIBUTES, SI-7 SOFTWARE, FIRMWARE, AND INFORMATION INTEGRITY
+      - name: x-note
+        value: data security
   - id: control-343
     class_: CNSWP-v2.0
     title: Artifact registry supports OCI artifacts
@@ -2029,6 +2203,8 @@ controls:
         value: N/A
       - name: risk-categories
         value: N/A
+      - name: x-note
+        value: identity attestation
   - id: control-344
     class_: CNSWP-v2.0
     title: Artifact registry supports signed artifacts
@@ -2041,6 +2217,8 @@ controls:
         value: N/A
       - name: refs
         value: CM-14 SIGNED COMPONENTS
+      - name: x-note
+        value: identity attestation
   - id: control-345
     class_: CNSWP-v2.0
     title: Artifact registry verifies artifacts against organizational policies
@@ -2053,3 +2231,5 @@ controls:
         value: N/A
       - name: refs
         value: AU-10 NON-REPUDIATION, CM-6 CONFIGURATION SETTINGS
+      - name: x-note
+        value: identity attestation
