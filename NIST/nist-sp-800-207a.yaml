@@ -1,0 +1,60 @@
+uuid: be6487e6-5f24-44ce-a524-3a32a992d176
+metadata:
+  title: NIST SP 800-207A Controls Catalog
+  version: 0.0.1
+  oscal_version: 1.0.4
+controls:
+  - id: id-seg-rec-1
+    title: >-
+      Encrypted connection between service endpoints
+  - id: id-seg-rec-2
+    title: >-
+      Service authentication
+  - id: id-seg-rec-3
+    title: >-
+      Service to service authorization
+  - id: id-seg-rec-4
+    title: >-
+      End user authentication
+  - id: id-seg-rec-5
+    title: >-
+      end user to resource authorization
+  - id: mon-cna-req-1
+    title: >-
+      Resource monitoring should cover all categories of resources, including
+      those that are enterprise-owned, not managed by the enterprise, and
+      personally owned.
+  - id: mon-cna-req-2
+    title: >-
+      Monitoring should cover application targets (e.g., containers),
+      application infrastructure elements (e.g., control plane elements of a
+      service mesh), and data plane elements (e.g., sidecar proxies).
+  - id: mon-cna-req-3
+    title: >-
+      Monitoring should cover every user access request and the subsequent
+      series of service calls needed to complete the user request as in
+      microservices-based applications.
+  - id: mon-cna-req-4
+    title: >-
+      Monitoring should cover changes to data in enterprise directories to
+      ensure that all changes to directory entries are associated with valid
+      requests and valid transactions for carrying out the change requests.
+  - id: mon-data-use-1
+    title: >-
+      Access enforcement in the context of identity-tier policies in ZTA should
+      be based on access decisions that rely on assigned permissions as well as
+      the contextual information about each connection or access request.
+
+  - id: mon-data-use-2
+    title: >-
+      The telemetry data generated from monitoring activity should be used in
+      the following ways:
+
+      + To fine-tune access rights data, such as granting, revoking, and
+        restricting access [6]
+
+      + To implement step-up authentication by asking for more information from
+        users or resorting to a stronger form of authentication (e.g.,
+        phishing-resistant MFA). This verification establishes trust in them and
+        grants permission to proceed with authorization after their identity is
+        verified.
