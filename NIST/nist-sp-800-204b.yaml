@@ -1,0 +1,86 @@
+uuid: a61e989f-bac8-4f2a-8875-72c3665859c8
+metadata:
+  title: >-
+    NIST SP 800-204B Attribute-based Access Control for Microservices-based Applications Using a
+    Service Mesh.
+  version: 0.0.1
+  oscal_version: 1.0.4
+controls:
+  - id: ismc-sr-1
+    title: >-
+      If certificate-based authentication is used for authenticating service calls, the signing
+      certificate used by the service mesh’s CA module should be rooted in the organization’s
+      existing Public Key Infrastructure (PKI) to allow for auditability, rotation, and
+      revocation.
+  - id: ismc-sr-2
+    title: >-
+      Communication between the service mesh control plane and the application orchestration and
+      resource management platform’s configuration server must be authenticated and authorized.
+  - id: ahlc-sr-1
+    title: >-
+      Containers and applications should not be run as root (thus becoming privileged
+      containers).
+  - id: ahlc-sr-2
+    title: >-
+      Host path volumes should not be used, because they create tight coupling between the
+      container and the node on which it is hosted, constraining the migration and flexible
+      resource scheduling process.
+  - id: ahlc-sr-3
+    title: >-
+      Configure the container file system as read-only by default for all applications,
+      overriding only when the underlying application (e.g., database) must write to disk.
+  - id: ahlc-sr-4
+    title: >-
+      Explicitly prevent privilege escalation for containers. In Kubernetes, this is achieved by
+      setting the value FALSE for the “allowPrivilegeEscalation” flag.
+  - id: saun-sr-1
+    title: >-
+      A policy object relating to service-level authentication should be defined that requires
+      mTLS be used for communication.
+  - id: saun-sr-2
+    title: >-
+      If the certificate used for mTLS carries server identity, then the service mesh should
+      provide a secure naming service that maps the server identity to the microservice name
+      that is provided by the secure discovery service or DNS.
+  - id: eaun-sr-1
+    title: >-
+      A request authentication policy must, at the minimum, provide the following information
+      and must be enforced by the sidecar proxy: 1. Instructions for extracting the credential
+      from the request; 2. Instructions for validating the credential.
+  - id: sauz-sr-1
+    title: >-
+      A policy object describing service-to-service access should be in place for all services
+      in the mesh. At a minimum, these policies should restrict access to the namespace level
+      (e.g., “services in namespace A can call services in namespace B”). Ideally, policies
+      should restrict access to individual services (e.g., “service Foo in namespace A can call
+      service Bar in namespace B”).
+  - id: euaz-sr-1
+    title: >-
+      When a sidecar communicates with an authentication or authorization system, that
+      communication must be secured with either the mesh’s built-in service-to-service
+      authentication and authorization capabilities or using an existing enterprise Identity and
+      Access Management (IAM) that is not part of the service mesh.
+  - id: euaz-sr-2
+    title: >-
+      The sidecar should generate logs for every service request to ensure that authentication
+      and authorization policies are enforced and relay telemetry data for the generation of
+      metrics to ensure no degradation of service that will impact availability.
+  - id: euaz-sr-3
+    title: >-
+      All application traffic should carry end user credentials, and there should be a policy in
+      the mesh enforcing that credentials are present.
+  - id: ape-sr-1
+    title: >-
+      The authorization policy should, at the minimum, contain the following policy elements: 1.
+      type; 2. target or scope; 3. sources; 4. operations; 5. conditions
+
+  - id: ape-sr-2
+    title: >-
+      The policy should cover all of the operations that are part of the application type.
+
+  - id: ape-sr-3
+    title: >-
+      A default policy should be authored in the system that rejects all requests that are
+      unauthenticated, mandates that service and end-user credentials be present on every
+      request, restricts all communication to services within the application’s own namespace,
+      and allows service communication across namespaces only through an explicit policy.
