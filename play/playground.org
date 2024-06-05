@@ -1,11 +1,13 @@
 * OSCAL Playground
 
+#+property: header-args :var FILE="../NIST/oscal-content/nist.gov/SP800-53/rev5/yaml/NIST_SP-800-53_rev5_catalog.yaml"
+
 ** Display control groupings
 
 #+begin_src python :results output :exports both
 import yaml
 
-with open('NIST/oscal-content/nist.gov/SP800-53/rev5/yaml/NIST_SP-800-53_rev5_catalog.yaml', 'r') as file:
+with open(FILE, 'r') as file:
     catalog = yaml.safe_load(file).get('catalog')
     groups = catalog.get('groups')
     print(f"Groups: {len(groups)}")
@@ -42,3 +44,11 @@ Groups: 20
 Total controls: 323
 #+end_example
 
+** Count of sub controls
+
+#+begin_src sh :results output
+yq '[.catalog.groups[] | .controls[] | .controls[]] | length' ${FILE}
+#+end_src
+
+#+RESULTS:
+: 870
