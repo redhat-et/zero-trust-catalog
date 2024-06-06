@@ -52,3 +52,238 @@ yq '[.catalog.groups[] | .controls[] | .controls[]] | length' ${FILE}
 
 #+RESULTS:
 : 870
+
+#+header: :var file="Downloads/ZeroTrustOverlays-2024Feb.pdf"
+#+begin_src python :results output :dir "~/"
+from pypdf import PdfReader
+import re
+
+reader = PdfReader(file)
+pattern = re.compile(r'^ ?(\w+-\d+(\(\d+\))?)')
+
+# Appendix 1 - Control Tables Allocated to Pillars
+
+# pages = range(43, 65)
+# columns=['Enabler', 'User', 'Device', 'App/Workload',
+#          'Data', 'Net/Env', 'Auto/Orch', 'Vis/Analytics']
+# mappings = {
+#     44: ([0, 6, 13, 19, 25, 31, 38, 44], {}),
+#     45: ([0, 6, 13, 19, 26, -1, 38, 45], {}),
+#     46: ([1], {}),
+#     47: ([0, 6, 13, 20, 26, -1, 39, 46], {}),
+#     48: ([1, -1, -1, 25, -1, 41, -1, -1], {}),
+#     49: ([0, -1, 12, 18, -1, 30, -1, -1], {}),
+#     50: ([0, -1, -1, -1, -1, -1, -1, 45], {}),
+#     51: ([1, 9, 18, 26, -1, -1, 51, -1], {}),
+#     52: ([-1, 9, 18, -1, -1, -1, -1, 64], {}),
+#     53: ([0, -1, -1, -1, -1, -1, 38, 44], {}),
+#     54: ([], {}),
+#     55: ([0, 7], {}),
+#     56: ([0, 6, -1, 18, -1, -1, -1, 42], {}),
+#     57: ([0, 9], {}),
+#     58: ([0, -1, -1, -1, 26, -1, 39], {}),
+#     59: ([0, 7, 13, 20, 26, -1, 40, 46], {}),
+#     60: ([1, -1, -1, 24, -1, -1, 47], {}),
+#     61: ([0, 6, 13, 19, 26, 32, -1, 45], {}),
+#     62: ([-1, 6, 13, 20, 26, 33, 40, 46], {}),
+#     63: ([0, 7, 14, 21, 28, 34, 41, 48], {}),
+#     64: ([-1, -1, 15, 22, 29, 37, 44, 51], {}),
+#     65: ([0, -1, -1, 19], {}),
+# }
+
+# Appendix C - User Pillar Overlay
+
+# pages = range(84, 90)
+# columns = ['1.1 User Inventory', '1.2 Conditional User Access', '1.3 Multi-Factor Authentication (MFA)',
+#            '1.4 Privileged Access Management (PAM)', '1.5 Identity Federation & User Credentialing',
+#            '1.6 Behavioral, Contextual ID, and Biometrics', '1.7 Least Privileged Access',
+#            '1.8 Continuous Authentication', '1.9 Integrated ICAM Platform']
+# mappings = {
+#     85: ([65, 76, 86, 98, 108, 119, 129, -1, 151], {75: 76, 97: 98, 150: 151}),
+#     86: ([65, 76, 87, 98, 109, -1, 130, -1, 152], {151: 152}),
+#     87: ([63, 74, 85, 95, 106, 116, 127, 137, 148], {}),
+#     88: ([67, 78, 89, 100, 111, 122, 133, 144, 155], {88: 89}),
+#     89: ([-1, 78, 89, 100, 111, 122, 133, 144, 155], {}),
+#     90: ([-1, -1, -1, 88, -1, 108], {}),
+# }
+
+# Appendix D - Device Pillar Overlay
+
+pages = range(153, 156)
+columns = ['2.1 Device Inventory', '2.2 Device Detection and Compliance',
+           '2.3 Device Authorization w/ Real Time Inspection',
+           '2.4 Remote Access',
+           '2.5 Partially & Fully Automated Asset, Vulnerability and Patch Mgmt',
+           '2.6 UEM & MDM', '2.7 EDR & XDR']
+mappings = {
+    153: ([72, 84, 95, 107, 119, 130, 131, 142], { }),
+    154: ([70, 82, 94, 105, 117, 128, 140], { }),
+    155: ([73, 85, 97, 109, 121, 133, 145], { }),
+    156: ([73, 84, 96, 108, 120, 132, 143], { }),
+}
+
+for p in pages:
+    page = reader.pages[p]
+    text = page.extract_text(extraction_mode="layout", layout_mode_strip_rotated=False)
+
+    (page_mappings, fixes) = mappings[p+1]
+    indices = {pos:index for index, pos in enumerate(page_mappings) if pos >= 0}
+
+    data_column = 0
+    found = set()
+    for line in text.splitlines():
+        index = line.find('  Enabler')
+        if index > 0:
+            data_column = index
+        m = pattern.match(line)
+        if m:
+            values = line[data_column:]
+            x_marks = [pos for pos, char in enumerate(values) if char == 'X']
+            x_marks = [fixes[x] if x in fixes else x for x in x_marks]
+            categories = [columns[indices[pos]] for pos in x_marks]
+            print(f'{m.group(1):>10}, {categories}')
+
+            found = found | set(x_marks)
+            # print(f'{m.group(1):>10}, {x_marks}')
+    # print(f'    {p+1}: ({sorted(found)}, {{ }}),')
+#+end_src
+
+#+RESULTS:
+#+begin_example
+   AU-6(4), ['2.7 EDR & XDR']
+   AU-6(5), ['2.7 EDR & XDR']
+      AU-7, ['2.3 Device Authorization w/ Real Time Inspection', '2.7 EDR & XDR']
+   AU-7(1), ['2.3 Device Authorization w/ Real Time Inspection', '2.7 EDR & XDR']
+      AU-8, ['2.1 Device Inventory', '2.3 Device Authorization w/ Real Time Inspection', '2.4 Remote Access', '2.5 Partially & Fully Automated Asset, Vulnerability and Patch Mgmt', '2.7 EDR & XDR']
+      AU-9, ['2.1 Device Inventory', '2.3 Device Authorization w/ Real Time Inspection', '2.4 Remote Access', '2.5 Partially & Fully Automated Asset, Vulnerability and Patch Mgmt', '2.7 EDR & XDR']
+   AU-9(4), ['2.1 Device Inventory', '2.3 Device Authorization w/ Real Time Inspection', '2.4 Remote Access', '2.5 Partially & Fully Automated Asset, Vulnerability and Patch Mgmt', '2.7 EDR & XDR']
+     AU-10, ['2.1 Device Inventory', '2.3 Device Authorization w/ Real Time Inspection', '2.4 Remote Access', '2.5 Partially & Fully Automated Asset, Vulnerability and Patch Mgmt', '2.7 EDR & XDR']
+  AU-10(1), ['2.1 Device Inventory', '2.3 Device Authorization w/ Real Time Inspection', '2.4 Remote Access', '2.5 Partially & Fully Automated Asset, Vulnerability and Patch Mgmt', '2.7 EDR & XDR']
+     AU-12, ['2.1 Device Inventory', '2.3 Device Authorization w/ Real Time Inspection', '2.4 Remote Access', '2.5 Partially & Fully Automated Asset, Vulnerability and Patch Mgmt', '2.6 UEM & MDM', '2.7 EDR & XDR']
+  AU-12(1), ['2.7 EDR & XDR']
+      CM-2, ['2.5 Partially & Fully Automated Asset, Vulnerability and Patch Mgmt']
+   CM-2(2), ['2.5 Partially & Fully Automated Asset, Vulnerability and Patch Mgmt']
+      CM-3, ['2.2 Device Detection and Compliance']
+   CM-3(5), ['2.2 Device Detection and Compliance']
+      CM-6, ['2.2 Device Detection and Compliance', '2.5 Partially & Fully Automated Asset, Vulnerability and Patch Mgmt']
+   CM-6(1), ['2.2 Device Detection and Compliance', '2.5 Partially & Fully Automated Asset, Vulnerability and Patch Mgmt']
+   CM-6(2), ['2.2 Device Detection and Compliance']
+      CM-7, []
+   CM-7(2), ['2.3 Device Authorization w/ Real Time Inspection']
+   CM-7(5), ['2.3 Device Authorization w/ Real Time Inspection']
+      CM-8, ['2.6 UEM & MDM']
+   CM-8(2), ['2.2 Device Detection and Compliance', '2.6 UEM & MDM']
+   CM-8(3), ['2.2 Device Detection and Compliance']
+   CM-8(6), ['2.6 UEM & MDM']
+   CM-8(9), ['2.6 UEM & MDM']
+      CM-9, ['2.1 Device Inventory']
+     CM-11, ['2.3 Device Authorization w/ Real Time Inspection', '2.6 UEM & MDM']
+  CM-11(3), ['2.3 Device Authorization w/ Real Time Inspection', '2.6 UEM & MDM']
+     CM-14, ['2.6 UEM & MDM']
+      IA-2, ['2.1 Device Inventory']
+      IA-3, ['2.1 Device Inventory']
+      IA-4, ['2.1 Device Inventory']
+   IA-4(6), ['2.1 Device Inventory', '2.3 Device Authorization w/ Real Time Inspection']
+   IA-4(9), ['2.1 Device Inventory']
+      IA-5, ['2.1 Device Inventory']
+   IA-5(2), ['2.1 Device Inventory']
+   IA-5(9), ['2.3 Device Authorization w/ Real Time Inspection']
+  IA-5(14), ['2.3 Device Authorization w/ Real Time Inspection']
+      IA-8, ['2.1 Device Inventory']
+      IA-9, ['2.1 Device Inventory']
+      RA-5, ['2.5 Partially & Fully Automated Asset, Vulnerability and Patch Mgmt']
+   RA-5(2), ['2.5 Partially & Fully Automated Asset, Vulnerability and Patch Mgmt']
+      RA-9, ['2.3 Device Authorization w/ Real Time Inspection', '2.6 UEM & MDM']
+      SC-7, []
+  SC-7(20), ['2.2 Device Detection and Compliance']
+     SC-12, ['2.3 Device Authorization w/ Real Time Inspection']
+  SC-12(1), ['2.3 Device Authorization w/ Real Time Inspection']
+  SC-12(3), ['2.3 Device Authorization w/ Real Time Inspection']
+     SC-13, ['2.3 Device Authorization w/ Real Time Inspection']
+     SC-16, ['2.1 Device Inventory', '2.2 Device Detection and Compliance', '2.3 Device Authorization w/ Real Time Inspection', '2.6 UEM & MDM']
+  SC-16(1), ['2.1 Device Inventory', '2.2 Device Detection and Compliance', '2.3 Device Authorization w/ Real Time Inspection', '2.6 UEM & MDM']
+  SC-16(2), ['2.1 Device Inventory', '2.2 Device Detection and Compliance', '2.3 Device Authorization w/ Real Time Inspection', '2.6 UEM & MDM']
+  SC-16(3), ['2.1 Device Inventory', '2.2 Device Detection and Compliance', '2.3 Device Authorization w/ Real Time Inspection', '2.6 UEM & MDM']
+     SC-17, ['2.3 Device Authorization w/ Real Time Inspection']
+     SC-25, ['2.6 UEM & MDM']
+     SC-45, ['2.1 Device Inventory', '2.3 Device Authorization w/ Real Time Inspection', '2.4 Remote Access', '2.6 UEM & MDM', '2.7 EDR & XDR']
+  SC-45(1), ['2.1 Device Inventory', '2.3 Device Authorization w/ Real Time Inspection', '2.4 Remote Access', '2.6 UEM & MDM', '2.7 EDR & XDR']
+      SI-2, ['2.5 Partially & Fully Automated Asset, Vulnerability and Patch Mgmt']
+   SI-2(2), ['2.2 Device Detection and Compliance', '2.5 Partially & Fully Automated Asset, Vulnerability and Patch Mgmt']
+   SI-2(4), ['2.5 Partially & Fully Automated Asset, Vulnerability and Patch Mgmt']
+   SI-2(5), ['2.5 Partially & Fully Automated Asset, Vulnerability and Patch Mgmt']
+      SI-3, ['2.3 Device Authorization w/ Real Time Inspection']
+   SI-3(8), ['2.3 Device Authorization w/ Real Time Inspection']
+      SI-4, ['2.7 EDR & XDR']
+   SI-4(1), ['2.7 EDR & XDR']
+   SI-4(2), ['2.7 EDR & XDR']
+   SI-4(3), ['2.3 Device Authorization w/ Real Time Inspection']
+   SI-4(4), ['2.7 EDR & XDR']
+  SI-4(10), ['2.7 EDR & XDR']
+  SI-4(11), ['2.7 EDR & XDR']
+  SI-4(13), ['2.7 EDR & XDR']
+  SI-4(16), ['2.7 EDR & XDR']
+  SI-4(23), ['2.6 UEM & MDM', '2.7 EDR & XDR']
+  SI-4(24), ['2.7 EDR & XDR']
+      SI-7, ['2.3 Device Authorization w/ Real Time Inspection']
+   SI-7(8), ['2.3 Device Authorization w/ Real Time Inspection']
+#+end_example
+
+** Example Page
+
+#+RESULTS:
+#+begin_example
+A.1      Allocation of Access Control Controls to Zero Trust
+         Pillars/Enabler
+       Table A-1. Access Control (AC) Family Controls Allocated to Zero Trust Pillars/Enabler
+
+                                                                                                      Pillars/Enablers
+
+
+                                                                                                              ad           ent   tration
+                               Applicable Controls                                                            rklo         nm    rches lytics
+                                                                                                                           nviro
+                                                                                                              tion & Wo    & E   tion & O & Ana
+                                                                                                        ice   ica          rk    oma   lity
+                                                                                                                    ta     wo          ibi
+                                                                                           Enabler User Dev   Appl  Da     Net   Aut   Vis
+ AC-1             Policy and Procedures                                                  X                                     X
+ AC-2             Account Management                                                           X      X     X                  X
+ AC-2(1)          Automated System Account Management                                          X
+ AC-2(2)          Automated Temporary and Emergency Account                                    X
+                  Management
+ AC-2(3)          Disable Accounts                                                             X
+ AC-2(4)          Automated Audit Actions                                                      X
+ AC-2(6)          Dynamic Privilege Management                                                 X      X                              X
+ AC-2(7)          Privileged User Accounts                                                     X
+ AC-2(8)          Dynamic Account Management                                                   X
+ AC-2(9)          Restrictions on Use of Shared and Group Accounts                             X
+ AC-2(11)         Usage Conditions                                                             X                               X     X
+ AC-2(12)         Account Monitoring for Atypical Usage                                  X     X                                     X
+ AC-2(13)         Disable Accounts for High-risk Individuals                                   X
+ AC-3             Access Enforcement                                                           X      X     X     X     X            X
+ AC-3(7)          Role-based Access Control                                                    X      X                 X
+ AC-3(8)          Revocation of Access Authorizations                                          X      X                              X
+ AC-3(10)         Audited Override of Access Control Mechanisms                                X
+ AC-3(11)         Restrict Access to Specific Information Types                                X      X           X                  X
+ AC-3(12)         Assert and Enforce Application Access                                                     X
+ AC-3(13)         Attribute-based Access Control                                               X      X     X     X     X            X
+ AC-4             Information Flow Enforcement                                                              X     X     X
+ AC-4(1)          Object Security and Privacy Attributes                                                    X     X     X
+ AC-4(2)          Processing Domains                                                                                    X
+ AC-4(3)          Dynamic Information Flow Control                                                          X     X     X      X
+ AC-4(6)          Metadata                                                                                        X     X      X
+ AC-4(8)          Security and Privacy Policy Filters                                                       X     X     X      X
+ AC-4(10)         Enable and Disable Security or Privacy Policy Filters                                     X     X            X
+ AC-4(11)         Configuration of Security or Privacy Policy Filters                                       X     X     X      X
+ AC-4(12)         Data Type Identifiers                                                                           X     X
+ AC-4(17)         Domain Authentication                                                                     X           X
+ AC-4(19)         Validation of Metadata                                                                          X     X      X
+ AC-4(21)         Physical or Logical Separation of Information Flows                                                   X
+ AC-4(23)         Modify Non-releasable Information                                                               X
+ AC-4(26)         Audit Filtering Actions                                                                         X
+ AC-4(29)         Filter Orchestration Engines                                                                                 X
+
+                                                                  A-2
+
+#+end_example
