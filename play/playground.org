@@ -1,8 +1,10 @@
 * OSCAL Playground
 
+** NIST SP 800-53 rev5
+
 #+property: header-args :var FILE="../NIST/oscal-content/nist.gov/SP800-53/rev5/yaml/NIST_SP-800-53_rev5_catalog.yaml"
 
-** Display control groupings
+*** Display control groupings
 
 #+begin_src python :results output :exports both
 import yaml
@@ -44,7 +46,7 @@ Groups: 20
 Total controls: 323
 #+end_example
 
-** Count of sub controls
+*** Count of sub controls
 
 #+begin_src sh :results output
 yq '[.catalog.groups[] | .controls[] | .controls[]] | length' ${FILE}
@@ -52,6 +54,10 @@ yq '[.catalog.groups[] | .controls[] | .controls[]] | length' ${FILE}
 
 #+RESULTS:
 : 870
+
+** DoD Zero Trust Overlays
+
+*** Scripted Extraction
 
 #+header: :var file="Downloads/ZeroTrustOverlays-2024Feb.pdf"
 #+begin_src python :results output :dir "~/"
@@ -261,9 +267,8 @@ for p in pages:
      SA-16, ['Training']
 #+end_example
 
-** Example Page
+*** Example Page
 
-#+RESULTS:
 #+begin_example
 A.1      Allocation of Access Control Controls to Zero Trust
          Pillars/Enabler
