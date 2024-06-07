@@ -60,7 +60,7 @@ yq '[.catalog.groups[] | .controls[] | .controls[]] | length' ${FILE}
 *** Scripted Extraction
 
 #+header: :var file="Downloads/ZeroTrustOverlays-2024Feb.pdf"
-#+begin_src python :results output :dir "~/"
+#+begin_src python :results output :dir "~/" :exports both
 from pypdf import PdfReader
 import re
 
