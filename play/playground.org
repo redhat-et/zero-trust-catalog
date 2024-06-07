@@ -61,35 +61,45 @@ import re
 reader = PdfReader(file)
 pattern = re.compile(r'^ ?(\w+-\d+(\(\d+\))?)')
 
-# Appendix 1 - Control Tables Allocated to Pillars
+# Appendix A - Control Tables Allocated to Pillars
 
 # pages = range(43, 65)
 # columns=['Enabler', 'User', 'Device', 'App/Workload',
 #          'Data', 'Net/Env', 'Auto/Orch', 'Vis/Analytics']
 # mappings = {
-#     44: ([0, 6, 13, 19, 25, 31, 38, 44], {}),
-#     45: ([0, 6, 13, 19, 26, -1, 38, 45], {}),
-#     46: ([1], {}),
-#     47: ([0, 6, 13, 20, 26, -1, 39, 46], {}),
-#     48: ([1, -1, -1, 25, -1, 41, -1, -1], {}),
-#     49: ([0, -1, 12, 18, -1, 30, -1, -1], {}),
-#     50: ([0, -1, -1, -1, -1, -1, -1, 45], {}),
-#     51: ([1, 9, 18, 26, -1, -1, 51, -1], {}),
-#     52: ([-1, 9, 18, -1, -1, -1, -1, 64], {}),
-#     53: ([0, -1, -1, -1, -1, -1, 38, 44], {}),
-#     54: ([], {}),
-#     55: ([0, 7], {}),
-#     56: ([0, 6, -1, 18, -1, -1, -1, 42], {}),
-#     57: ([0, 9], {}),
-#     58: ([0, -1, -1, -1, 26, -1, 39], {}),
-#     59: ([0, 7, 13, 20, 26, -1, 40, 46], {}),
-#     60: ([1, -1, -1, 24, -1, -1, 47], {}),
-#     61: ([0, 6, 13, 19, 26, 32, -1, 45], {}),
-#     62: ([-1, 6, 13, 20, 26, 33, 40, 46], {}),
-#     63: ([0, 7, 14, 21, 28, 34, 41, 48], {}),
-#     64: ([-1, -1, 15, 22, 29, 37, 44, 51], {}),
-#     65: ([0, -1, -1, 19], {}),
+#     44: [89, 95, 102, 108, 114, 120, 127, 133],
+#     45: [-1, 97, 104, 110, 117, -1, 129, 136],
+#     46: [69],
+#     47: [85, 91, 98, 105, 111, -1, 124, 131],
+#     48: [77, -1, -1, 101, -1, 117],
+#     49: [88, -1, 100, 106, -1, 118],
+#     50: [83, -1, -1, -1, -1, -1, -1, 128],
+#     51: [75, 83, 92, 100, -1, -1, 125],
+#     52: [-1, 91, 100, -1, -1, -1, -1, 146],
+#     53: [90, -1, -1, -1, -1, -1, 128, 134],
+#     54: [],
+#     55: [84, 91],
+#     56: [85, 91, -1, 103, -1, -1, -1, 127],
+#     57: [69, 78],
+#     58: [83, -1, -1, -1, 109, -1, 122],
+#     59: [84, 91, 97, 104, 110, -1, 124, 130],
+#     60: [79, -1, -1, 102, -1, -1, 125],
+#     61: [88, 94, 101, 107, 114, 120, -1, 133],
+#     62: [-1, 97, 104, 111, 117, 124, 131, 137],
+#     63: [89, 96, 103, 110, 117, 123, 130, 137],
+#     64: [-1, -1, 111, 118, 125, 133, 140, 147],
+#     65: [82, -1, -1, 101],
 # }
+
+# Appendix B - Execution Enabler Overlay
+
+pages = range(67, 69)
+columns = ['Doctrine', 'Organization', 'Training', 'Materiel', 'Leadership and education',
+           'Personnel', 'Facilities', 'Policy']
+mappings = {
+    68: [-1, 93, 100, 108, 116, 123],
+    69: [-1, 87, 94],
+}
 
 # Appendix C - User Pillar Overlay
 
@@ -99,134 +109,156 @@ pattern = re.compile(r'^ ?(\w+-\d+(\(\d+\))?)')
 #            '1.6 Behavioral, Contextual ID, and Biometrics', '1.7 Least Privileged Access',
 #            '1.8 Continuous Authentication', '1.9 Integrated ICAM Platform']
 # mappings = {
-#     85: ([65, 76, 86, 98, 108, 119, 129, -1, 151], {75: 76, 97: 98, 150: 151}),
-#     86: ([65, 76, 87, 98, 109, -1, 130, -1, 152], {151: 152}),
-#     87: ([63, 74, 85, 95, 106, 116, 127, 137, 148], {}),
-#     88: ([67, 78, 89, 100, 111, 122, 133, 144, 155], {88: 89}),
-#     89: ([-1, 78, 89, 100, 111, 122, 133, 144, 155], {}),
-#     90: ([-1, -1, -1, 88, -1, 108], {}),
+#     85: [65, 76, 86, 98, 108, 119, 129, -1, 151],
+#     86: [65, 76, 87, 98, 109, -1, 130, -1, 152],
+#     87: [63, 74, 85, 95, 106, 116, 127, 137, 148],
+#     88: [67, 78, 89, 100, 111, 122, 133, 144, 155],
+#     89: [-1, 78, 89, 100, 111, 122, 133, 144, 155],
+#     90: [-1, -1, -1, 88, -1, 108],
 # }
 
 # Appendix D - Device Pillar Overlay
 
-pages = range(153, 156)
-columns = ['2.1 Device Inventory', '2.2 Device Detection and Compliance',
-           '2.3 Device Authorization w/ Real Time Inspection',
-           '2.4 Remote Access',
-           '2.5 Partially & Fully Automated Asset, Vulnerability and Patch Mgmt',
-           '2.6 UEM & MDM', '2.7 EDR & XDR']
-mappings = {
-    153: ([72, 84, 95, 107, 119, 130, 131, 142], { }),
-    154: ([70, 82, 94, 105, 117, 128, 140], { }),
-    155: ([73, 85, 97, 109, 121, 133, 145], { }),
-    156: ([73, 84, 96, 108, 120, 132, 143], { }),
-}
+# pages = range(153, 156)
+# columns = ['2.1 Device Inventory', '2.2 Device Detection and Compliance',
+#            '2.3 Device Authorization w/ Real Time Inspection',
+#            '2.4 Remote Access',
+#            '2.5 Partially & Fully Automated Asset, Vulnerability and Patch Mgmt',
+#            '2.6 UEM & MDM', '2.7 EDR & XDR']
+# mappings = {
+#     153: [72, 84, 95, 107, 119, 130, 131, 142],
+#     154: [70, 82, 94, 105, 117, 128, 140],
+#     155: [73, 85, 97, 109, 121, 133, 145],
+#     156: [73, 84, 96, 108, 120, 132, 143],
+# }
+
+# Appendix E - Application & Workload Pillar Overlay
+
+# pages = range(208, 212)
+# columns = ['3.1 Application Inventory', '3.2 Secure Software Development & Integration',
+#            '3.3 Software Risk Management', '3.4 Resource Authorization & Integration',
+#            '3.5 Continuous Monitoring and Ongoing Authorizations']
+# mappings = {
+#     209: [-1, 105, 118, 130],
+#     210: [91, 103, 115, 128, 140],
+#     211: [-1, 105, 118, 130],
+#     212: [-1, 106, 118, 130]
+# }
+
+# Appendix F - Data Pillar Overlay
+
+# pages = range(255,258)
+# columns = ['4.1 Data Catalog Risk Alignment', '4.2 DoD Enterprise Data Governance',
+#            '4.3 Data Labeling and Tagging', '4.4 Data Monitoring and Sensing',
+#            '4.5 Data Encryption & Rights Management', '4.6 Data Loss Prevention',
+#            '4.7 Data Access Control']
+# mappings = {
+#     256: [-1, 87, 99, 111, 123, 135, 148],
+#     257: [74, 87, 99, 111, 123, 135],
+#     258: [-1, -1, 90, 101, 112, 124]
+# }
+
+# Appendix G - Network & Environment Pillar Overlay
+
+# pages = range(295, 297)
+# columns = ['5.1 Data Flow Mapping', '5.2 Software Defined Networking (SDN)',
+#            '5.3 Macro-segmentation', '5.4 Micro-segmentation']
+# mappings = {
+#     296: [102, 112, 123, 132],
+#     297: [105, 116, 126, 136],
+# }
+
+# Appendix H Automation & Orchestration Pillar Overlay
+
+# pages = range(319,322)
+# columns = ['6.1 Policy Decision Point & Policy Orchestration', '6.2 Critical Process Automation',
+#            '6.3 Machine Learning', '6.4 Artificial Intelligence',
+#            '6.5 Security Orchestration, Automation & Response', '6.6 API Standardization',
+#            '6.7 Security Operations Center & Incident Response']
+# mappings = {
+#     320: [86, -1, 106, -1, 127],
+#     321: [89, 99, 110, 120, 131, -1, 152],
+#     322: [-1, -1, -1, -1, -1, 1, 129],
+# }
+
+# Appendix I Visibility & Analytics Pillar Overlay
+
+# pages = range(351,355)
+# columns = ['7.1 Log All Traffic (Network, Data, Apps, Users)',
+#            '7.2 Security Information and Event Management (SIEM)',
+#            '7.3 Common Security and Risk Analytics',
+#            '7.4 User and Entity Behavior Analytics',
+#            '7.5 Threat Intelligence Integration',
+#            '7.6 Automated Dynamic Policies']
+# mappings = {
+#     352: [-1, 90, 101, 112, -1, 134],
+#     353: [86, 97, 109, -1, 132, 144],
+#     354: [87, 99, 111, 123, 135, 147],
+#     355: [-1, 91, -1, -1, 124, 135],
+# }
 
 for p in pages:
     page = reader.pages[p]
     text = page.extract_text(extraction_mode="layout", layout_mode_strip_rotated=False)
 
-    (page_mappings, fixes) = mappings[p+1]
-    indices = {pos:index for index, pos in enumerate(page_mappings) if pos >= 0}
+    indices = mappings[p+1]
 
     data_column = 0
     found = set()
     for line in text.splitlines():
-        index = line.find('  Enabler')
-        if index > 0:
-            data_column = index
         m = pattern.match(line)
         if m:
-            values = line[data_column:]
-            x_marks = [pos for pos, char in enumerate(values) if char == 'X']
-            x_marks = [fixes[x] if x in fixes else x for x in x_marks]
-            categories = [columns[indices[pos]] for pos in x_marks]
+            # x_marks = [pos for pos, char in enumerate(line) if char == 'X']
+            # found = found | set(x_marks)
+
+            x_marks = [index for index, pos in enumerate(indices) if 'X' in line[pos-1:pos+1]]
+            categories = [columns[index] for index in x_marks]
             print(f'{m.group(1):>10}, {categories}')
 
-            found = found | set(x_marks)
-            # print(f'{m.group(1):>10}, {x_marks}')
-    # print(f'    {p+1}: ({sorted(found)}, {{ }}),')
+    # print(f'    {p+1}: {sorted(found)},')
 #+end_src
 
 #+RESULTS:
 #+begin_example
-   AU-6(4), ['2.7 EDR & XDR']
-   AU-6(5), ['2.7 EDR & XDR']
-      AU-7, ['2.3 Device Authorization w/ Real Time Inspection', '2.7 EDR & XDR']
-   AU-7(1), ['2.3 Device Authorization w/ Real Time Inspection', '2.7 EDR & XDR']
-      AU-8, ['2.1 Device Inventory', '2.3 Device Authorization w/ Real Time Inspection', '2.4 Remote Access', '2.5 Partially & Fully Automated Asset, Vulnerability and Patch Mgmt', '2.7 EDR & XDR']
-      AU-9, ['2.1 Device Inventory', '2.3 Device Authorization w/ Real Time Inspection', '2.4 Remote Access', '2.5 Partially & Fully Automated Asset, Vulnerability and Patch Mgmt', '2.7 EDR & XDR']
-   AU-9(4), ['2.1 Device Inventory', '2.3 Device Authorization w/ Real Time Inspection', '2.4 Remote Access', '2.5 Partially & Fully Automated Asset, Vulnerability and Patch Mgmt', '2.7 EDR & XDR']
-     AU-10, ['2.1 Device Inventory', '2.3 Device Authorization w/ Real Time Inspection', '2.4 Remote Access', '2.5 Partially & Fully Automated Asset, Vulnerability and Patch Mgmt', '2.7 EDR & XDR']
-  AU-10(1), ['2.1 Device Inventory', '2.3 Device Authorization w/ Real Time Inspection', '2.4 Remote Access', '2.5 Partially & Fully Automated Asset, Vulnerability and Patch Mgmt', '2.7 EDR & XDR']
-     AU-12, ['2.1 Device Inventory', '2.3 Device Authorization w/ Real Time Inspection', '2.4 Remote Access', '2.5 Partially & Fully Automated Asset, Vulnerability and Patch Mgmt', '2.6 UEM & MDM', '2.7 EDR & XDR']
-  AU-12(1), ['2.7 EDR & XDR']
-      CM-2, ['2.5 Partially & Fully Automated Asset, Vulnerability and Patch Mgmt']
-   CM-2(2), ['2.5 Partially & Fully Automated Asset, Vulnerability and Patch Mgmt']
-      CM-3, ['2.2 Device Detection and Compliance']
-   CM-3(5), ['2.2 Device Detection and Compliance']
-      CM-6, ['2.2 Device Detection and Compliance', '2.5 Partially & Fully Automated Asset, Vulnerability and Patch Mgmt']
-   CM-6(1), ['2.2 Device Detection and Compliance', '2.5 Partially & Fully Automated Asset, Vulnerability and Patch Mgmt']
-   CM-6(2), ['2.2 Device Detection and Compliance']
-      CM-7, []
-   CM-7(2), ['2.3 Device Authorization w/ Real Time Inspection']
-   CM-7(5), ['2.3 Device Authorization w/ Real Time Inspection']
-      CM-8, ['2.6 UEM & MDM']
-   CM-8(2), ['2.2 Device Detection and Compliance', '2.6 UEM & MDM']
-   CM-8(3), ['2.2 Device Detection and Compliance']
-   CM-8(6), ['2.6 UEM & MDM']
-   CM-8(9), ['2.6 UEM & MDM']
-      CM-9, ['2.1 Device Inventory']
-     CM-11, ['2.3 Device Authorization w/ Real Time Inspection', '2.6 UEM & MDM']
-  CM-11(3), ['2.3 Device Authorization w/ Real Time Inspection', '2.6 UEM & MDM']
-     CM-14, ['2.6 UEM & MDM']
-      IA-2, ['2.1 Device Inventory']
-      IA-3, ['2.1 Device Inventory']
-      IA-4, ['2.1 Device Inventory']
-   IA-4(6), ['2.1 Device Inventory', '2.3 Device Authorization w/ Real Time Inspection']
-   IA-4(9), ['2.1 Device Inventory']
-      IA-5, ['2.1 Device Inventory']
-   IA-5(2), ['2.1 Device Inventory']
-   IA-5(9), ['2.3 Device Authorization w/ Real Time Inspection']
-  IA-5(14), ['2.3 Device Authorization w/ Real Time Inspection']
-      IA-8, ['2.1 Device Inventory']
-      IA-9, ['2.1 Device Inventory']
-      RA-5, ['2.5 Partially & Fully Automated Asset, Vulnerability and Patch Mgmt']
-   RA-5(2), ['2.5 Partially & Fully Automated Asset, Vulnerability and Patch Mgmt']
-      RA-9, ['2.3 Device Authorization w/ Real Time Inspection', '2.6 UEM & MDM']
-      SC-7, []
-  SC-7(20), ['2.2 Device Detection and Compliance']
-     SC-12, ['2.3 Device Authorization w/ Real Time Inspection']
-  SC-12(1), ['2.3 Device Authorization w/ Real Time Inspection']
-  SC-12(3), ['2.3 Device Authorization w/ Real Time Inspection']
-     SC-13, ['2.3 Device Authorization w/ Real Time Inspection']
-     SC-16, ['2.1 Device Inventory', '2.2 Device Detection and Compliance', '2.3 Device Authorization w/ Real Time Inspection', '2.6 UEM & MDM']
-  SC-16(1), ['2.1 Device Inventory', '2.2 Device Detection and Compliance', '2.3 Device Authorization w/ Real Time Inspection', '2.6 UEM & MDM']
-  SC-16(2), ['2.1 Device Inventory', '2.2 Device Detection and Compliance', '2.3 Device Authorization w/ Real Time Inspection', '2.6 UEM & MDM']
-  SC-16(3), ['2.1 Device Inventory', '2.2 Device Detection and Compliance', '2.3 Device Authorization w/ Real Time Inspection', '2.6 UEM & MDM']
-     SC-17, ['2.3 Device Authorization w/ Real Time Inspection']
-     SC-25, ['2.6 UEM & MDM']
-     SC-45, ['2.1 Device Inventory', '2.3 Device Authorization w/ Real Time Inspection', '2.4 Remote Access', '2.6 UEM & MDM', '2.7 EDR & XDR']
-  SC-45(1), ['2.1 Device Inventory', '2.3 Device Authorization w/ Real Time Inspection', '2.4 Remote Access', '2.6 UEM & MDM', '2.7 EDR & XDR']
-      SI-2, ['2.5 Partially & Fully Automated Asset, Vulnerability and Patch Mgmt']
-   SI-2(2), ['2.2 Device Detection and Compliance', '2.5 Partially & Fully Automated Asset, Vulnerability and Patch Mgmt']
-   SI-2(4), ['2.5 Partially & Fully Automated Asset, Vulnerability and Patch Mgmt']
-   SI-2(5), ['2.5 Partially & Fully Automated Asset, Vulnerability and Patch Mgmt']
-      SI-3, ['2.3 Device Authorization w/ Real Time Inspection']
-   SI-3(8), ['2.3 Device Authorization w/ Real Time Inspection']
-      SI-4, ['2.7 EDR & XDR']
-   SI-4(1), ['2.7 EDR & XDR']
-   SI-4(2), ['2.7 EDR & XDR']
-   SI-4(3), ['2.3 Device Authorization w/ Real Time Inspection']
-   SI-4(4), ['2.7 EDR & XDR']
-  SI-4(10), ['2.7 EDR & XDR']
-  SI-4(11), ['2.7 EDR & XDR']
-  SI-4(13), ['2.7 EDR & XDR']
-  SI-4(16), ['2.7 EDR & XDR']
-  SI-4(23), ['2.6 UEM & MDM', '2.7 EDR & XDR']
-  SI-4(24), ['2.7 EDR & XDR']
-      SI-7, ['2.3 Device Authorization w/ Real Time Inspection']
-   SI-7(8), ['2.3 Device Authorization w/ Real Time Inspection']
+  AC-2(12), ['Organization']
+      AT-2, ['Training']
+      AT-3, ['Training']
+      CP-2, []
+   CP-2(5), ['Organization']
+   CP-2(6), ['Organization']
+      PL-2, ['Organization']
+      PL-7, ['Organization']
+      PL-8, ['Organization']
+   PL-8(1), ['Organization']
+      PL-9, ['Organization']
+      PM-1, ['Organization']
+      PM-2, ['Leadership and education']
+      PM-3, ['Materiel']
+      PM-6, ['Leadership and education']
+      PM-7, ['Organization']
+      PM-9, ['Organization', 'Leadership and education']
+     PM-13, ['Personnel']
+     PM-14, ['Organization']
+     PM-18, ['Leadership and education']
+     PM-19, ['Leadership and education']
+     PM-28, ['Organization', 'Leadership and education']
+     PM-29, ['Leadership and education']
+     PM-30, ['Organization']
+     PM-31, ['Organization']
+     PM-32, ['Organization']
+      PS-2, ['Personnel']
+      PS-3, ['Personnel']
+      PS-4, ['Personnel']
+   PS-4(2), ['Personnel']
+      PS-5, ['Personnel']
+      RA-3, ['Organization']
+      RA-5, ['Organization']
+      RA-7, ['Organization']
+      RA-9, ['Organization']
+     RA-10, ['Organization']
+     SA-11, []
+  SA-11(2), ['Organization']
+     SA-16, ['Training']
 #+end_example
 
 ** Example Page
