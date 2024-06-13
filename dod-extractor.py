@@ -121,9 +121,9 @@ g_mappings = {
     297: [105, 116, 126, 136],
 }
 
-# Appendix H Automation & Orchestration Pillar Overlay
+# Appendix H - Automation & Orchestration Pillar Overlay
 
-h_name = 'Appendix H Automation & Orchestration Pillar Overlay'
+h_name = 'Appendix H - Automation & Orchestration Pillar Overlay'
 h_pages = range(319,322)
 h_columns = ['6.1 Policy Decision Point & Policy Orchestration', '6.2 Critical Process Automation',
            '6.3 Machine Learning', '6.4 Artificial Intelligence',
@@ -135,9 +135,9 @@ h_mappings = {
     322: [-1, -1, -1, -1, -1, 1, 129],
 }
 
-# Appendix I Visibility & Analytics Pillar Overlay
+# Appendix I - Visibility & Analytics Pillar Overlay
 
-i_name = 'Appendix I Visibility & Analytics Pillar Overlay'
+i_name = 'Appendix I - Visibility & Analytics Pillar Overlay'
 i_pages = range(351,355)
 i_columns = ['7.1 Log All Traffic (Network, Data, Apps, Users)',
            '7.2 Security Information and Event Management (SIEM)',
