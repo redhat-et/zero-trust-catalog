@@ -4,9 +4,11 @@ from argparse import ArgumentParser
 from pypdf import PdfReader
 import re
 import sys
+import yaml
 
 # Appendix A - Control Tables Allocated to Pillars
 
+a_name= 'Appendix A - Control Tables Allocated to Pillars'
 a_pages = range(43, 65)
 a_columns=['Enabler', 'User', 'Device', 'App/Workload',
          'Data', 'Net/Env', 'Auto/Orch', 'Vis/Analytics']
@@ -37,6 +39,7 @@ a_mappings = {
 
 # Appendix B - Execution Enabler Overlay
 
+b_name = 'Appendix B - Execution Enabler Overlay'
 b_pages = range(67, 69)
 b_columns = ['Doctrine', 'Organization', 'Training', 'Materiel', 'Leadership and education',
            'Personnel', 'Facilities', 'Policy']
@@ -47,6 +50,7 @@ b_mappings = {
 
 # Appendix C - User Pillar Overlay
 
+c_name = 'Appendix C - User Pillar Overlay'
 c_pages = range(84, 90)
 c_columns = ['1.1 User Inventory', '1.2 Conditional User Access', '1.3 Multi-Factor Authentication (MFA)',
            '1.4 Privileged Access Management (PAM)', '1.5 Identity Federation & User Credentialing',
@@ -63,6 +67,7 @@ c_mappings = {
 
 # Appendix D - Device Pillar Overlay
 
+d_name = 'Appendix D - Device Pillar Overlay'
 d_pages = range(153, 156)
 d_columns = ['2.1 Device Inventory', '2.2 Device Detection and Compliance',
            '2.3 Device Authorization w/ Real Time Inspection',
@@ -78,6 +83,7 @@ d_mappings = {
 
 # Appendix E - Application & Workload Pillar Overlay
 
+e_name = 'Appendix E - Application & Workload Pillar Overlay'
 e_pages = range(208, 212)
 e_columns = ['3.1 Application Inventory', '3.2 Secure Software Development & Integration',
            '3.3 Software Risk Management', '3.4 Resource Authorization & Integration',
@@ -91,6 +97,7 @@ e_mappings = {
 
 # Appendix F - Data Pillar Overlay
 
+f_name = 'Appendix F - Data Pillar Overlay'
 f_pages = range(255,258)
 f_columns = ['4.1 Data Catalog Risk Alignment', '4.2 DoD Enterprise Data Governance',
            '4.3 Data Labeling and Tagging', '4.4 Data Monitoring and Sensing',
@@ -104,6 +111,7 @@ f_mappings = {
 
 # Appendix G - Network & Environment Pillar Overlay
 
+g_name = 'Appendix G - Network & Environment Pillar Overlay'
 g_pages = range(295, 297)
 g_columns = ['5.1 Data Flow Mapping', '5.2 Software Defined Networking (SDN)',
            '5.3 Macro-segmentation', '5.4 Micro-segmentation']
@@ -114,6 +122,7 @@ g_mappings = {
 
 # Appendix H Automation & Orchestration Pillar Overlay
 
+h_name = 'Appendix H Automation & Orchestration Pillar Overlay'
 h_pages = range(319,322)
 h_columns = ['6.1 Policy Decision Point & Policy Orchestration', '6.2 Critical Process Automation',
            '6.3 Machine Learning', '6.4 Artificial Intelligence',
@@ -127,6 +136,7 @@ h_mappings = {
 
 # Appendix I Visibility & Analytics Pillar Overlay
 
+i_name = 'Appendix I Visibility & Analytics Pillar Overlay'
 i_pages = range(351,355)
 i_columns = ['7.1 Log All Traffic (Network, Data, Apps, Users)',
            '7.2 Security Information and Event Management (SIEM)',
@@ -143,7 +153,20 @@ i_mappings = {
 
 control_pattern = re.compile(r'^ ?(\w+-\d+(\(\d+\))?)')
 
+rulesets = [
+    (a_name, a_pages, a_columns, a_mappings),
+    (b_name, b_pages, b_columns, b_mappings),
+    (c_name, c_pages, c_columns, c_mappings),
+    (d_name, d_pages, d_columns, d_mappings),
+    (e_name, e_pages, e_columns, e_mappings),
+    (f_name, f_pages, f_columns, f_mappings),
+    (g_name, g_pages, g_columns, g_mappings),
+    (h_name, h_pages, h_columns, h_mappings),
+    (i_name, i_pages, i_columns, i_mappings),
+]
+
 def process_section(reader, pages, columns, mappings, find=False):
+    result = []
     for p in pages:
         page = reader.pages[p]
         text = page.extract_text(extraction_mode="layout", layout_mode_strip_rotated=False)
@@ -159,21 +182,20 @@ def process_section(reader, pages, columns, mappings, find=False):
                     indices = mappings[p+1]
                     x_marks = [index for index, pos in enumerate(indices) if 'X' in line[pos-1:pos+1]]
                     categories = [columns[index] for index in x_marks]
-                    print(f'{m.group(1):>10}, {categories}')
+                    # print(f'{m.group(1):>10}, {categories}')
+                    result.append({'key': m.group(1), 'categories': categories})
 
         if find:
             print(f'    {p+1}: {sorted(found)},')
+    return result
 
 def process_file(reader):
-    process_section(reader, a_pages, a_columns, a_mappings)
-    process_section(reader, b_pages, b_columns, b_mappings)
-    process_section(reader, c_pages, c_columns, c_mappings)
-    process_section(reader, d_pages, d_columns, d_mappings)
-    process_section(reader, e_pages, e_columns, e_mappings)
-    process_section(reader, f_pages, f_columns, f_mappings)
-    process_section(reader, g_pages, g_columns, g_mappings)
-    process_section(reader, h_pages, h_columns, h_mappings)
-    process_section(reader, i_pages, i_columns, i_mappings)
+    result = []
+
+    for (name, pages, columns, mappings) in rulesets:
+        r = process_section(reader, pages, columns, mappings)
+        result.append({'name': name, 'mappings': r})
+    return result
 
 if __name__ == '__main__':
 
@@ -189,4 +211,5 @@ if __name__ == '__main__':
     if args.page:
         process_section(reader, [args.page - 1], [], {args.page: []}, find=True)
     else:
-        process_file(reader)
+        result = process_file(reader)
+        print(yaml.dump(result))
