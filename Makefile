@@ -5,7 +5,10 @@ NIST_SRC=NIST/oscal-content/nist.gov/SP800-53/rev5/yaml/NIST_SP-800-53_rev5_cata
 NIST_DST=nist-sp-800-53-rev5-extended.yaml
 
 merge:	## Merge the DoD mappings into NIST controls
-	./merge-mappings.py -f $(NIST_SRC) -d $(DOD_MAPPINGS)
+merge:	$(NIST_DST)
+
+$(NIST_DST):	$(NIST_SRC) $(DOD_MAPPINGS)
+	./merge-mappings.py -f $(NIST_SRC) -d $(DOD_MAPPINGS) > $(NIST_DST)
 
 dod:	## Extract the DoD mappings from the PDF
 dod:	$(DOD_MAPPINGS)
@@ -15,6 +18,7 @@ $(DOD_MAPPINGS):	$(DOD_PDF)
 
 clean:	## Remove generated files
 	rm -f $(DOD_MAPPINGS)
+	rm -f $(NIST_DST)
 
 help:	## This help
 	@awk 'BEGIN {FS = ":.*?## "} /^[a-zA-Z_-]+:.*?## / {printf "\033[36m%-20s\033[0m %s\n", $$1, $$2}' \
