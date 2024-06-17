@@ -22,6 +22,47 @@ https://github.com/usnistgov/oscal-content.
 + [[file:NIST/nist-sp-800-204b.org][NIST SP 800-204B]]
 + [[file:NIST/nist-sp-800-207a.org][NIST SP 800-207A]]
 
+** DoD Zero Trust Overlays
+
+The US Department of Defense has published a document called Zero Trust Overlays which takes the
+security controls defined in NIST SP 800-53 Rev 5 and associates them with the DoD pillars of
+zero trust.
+
+*** Scripts
+
+The ~dod-extractor.py~ script extracts the mappings from the Zero Trust Overlays PDF to produce
+a YAML file containing all the mappings.
+
+The ~merge-mappings.py~ script merges DoD mappings into the NIST controls YAML file to produce a
+composite YAML file containing the NIST controls with additional properties.
+
+#+begin_example yaml
+- id: ac-2.1
+  title: Automated System Account Management
+  props:
+  - name: label
+    value: AC-2(1)
+  - name: implementation-level
+    ns: http://csrc.nist.gov/ns/rmf
+    value: organization
+  - class: dod-zero-trust-overlay
+    name: Appendix A - Control Tables Allocated to Pillars
+    value: User
+  - class: dod-zero-trust-overlay
+    name: Appendix C - User Pillar Overlay
+    value: 1.5 Identity Federation & User Credentialing
+#+end_example
+
+The scripts can be run using the provided ~Makefile~:
+
+#+begin_src sh
+% make
+merge                Merge the DoD mappings into NIST controls
+dod                  Extract the DoD mappings from the PDF
+clean                Remove generated files
+help                 This help
+#+end_src
+
 ** Sample Queries
 
 You need to install ~yq~ to make use of these queries.
