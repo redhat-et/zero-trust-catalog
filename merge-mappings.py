@@ -1,8 +1,10 @@
 #!/usr/bin/env python3
 
 from argparse import ArgumentParser
-import yaml
+import re
 import sys
+import yaml
+
 
 def read_dod_mappings(dod_file):
     with open(dod_file) as d:
@@ -29,9 +31,12 @@ def dod_props_from_mappings(mappings):
                           'class': 'dod-zero-trust-overlay'})
     return props
 
+id_pattern = re.compile(r'\.(\d+)')
 
 def merge_into_control(control, dod_mappings):
     id = control['id'].upper()
+    id = id_pattern.sub(r'(\1)', id)
+
     if id in dod_mappings:
         mappings = dod_mappings[id]
         control['props'].extend(dod_props_from_mappings(mappings))
