@@ -53,7 +53,8 @@ composite YAML file containing the NIST controls with additional properties.
     value: 1.5 Identity Federation & User Credentialing
 #+end_example
 
-The scripts can be run using the provided ~Makefile~:
+The scripts need the ~pypdf~ and ~pyyaml~ python packages to be installed. The scripts can be
+run using the provided ~Makefile~:
 
 #+begin_src sh
 % make
