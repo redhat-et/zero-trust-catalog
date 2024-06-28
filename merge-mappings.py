@@ -60,7 +60,7 @@ def merge_dod_mappings(nist_file, dod_file):
             merge_into_control(control, dod_mappings)
 
     print("Writing new YAML ...", file=sys.stderr)
-    print(yaml.dump(nist))
+    print(yaml.dump(nist, sort_keys=False))
 
 
 if __name__ == '__main__':
