@@ -3,6 +3,7 @@
 ** NIST SP 800-53 rev5
 
 #+property: header-args :var FILE="../NIST/oscal-content/nist.gov/SP800-53/rev5/yaml/NIST_SP-800-53_rev5_catalog.yaml"
+#+property: header-args :var EXT="../nist-sp-800-53-rev5-extended.yaml"
 
 *** Display control groupings
 
@@ -197,3 +198,56 @@ A.1      Allocation of Access Control Controls to Zero Trust
                                                                   A-2
 
 #+end_example
+
+** NIST controls by DoD pillar
+
+#+begin_src python :results output :exports both
+import yaml
+
+pillars = ['Enabler', 'User', 'Device', 'Application & Workload', 'Data',
+           'Network & Environment', 'Automation & Orchestration',
+           'Visibility and Analytics']
+mappings = { p: [] for p in pillars }
+
+def add_mappings(controls):
+    for c in controls:
+        for p in c['props']:
+            if p['name'].startswith('Appendix A'):
+                key = p['value']
+                mappings[key].append(c['id'])
+        if 'controls' in c:
+            add_mappings(c['controls'])
+
+with open(EXT, 'r') as file:
+    catalog = yaml.safe_load(file).get('catalog')
+    groups = catalog.get('groups')
+
+for g in groups:
+    add_mappings(g['controls'])
+
+for p in pillars:
+    controls = mappings[p]
+    print(f"{p} - {len(controls)}")
+    print(controls)
+#+end_src
+
+#+RESULTS:
+#+begin_example
+Enabler - 53
+['ac-1', 'ac-2.12', 'at-1', 'at-2', 'at-3', 'au-1', 'ca-1', 'cm-1', 'cp-1', 'cp-2.5', 'cp-2.6', 'ia-1', 'ir-1', 'pl-1', 'pl-2', 'pl-7', 'pl-8', 'pl-8.1', 'pl-9', 'pm-1', 'pm-2', 'pm-3', 'pm-6', 'pm-7', 'pm-9', 'pm-13', 'pm-14', 'pm-18', 'pm-19', 'pm-28', 'pm-29', 'pm-30', 'pm-31', 'pm-32', 'ps-1', 'ps-2', 'ps-3', 'ps-4', 'ps-4.2', 'ps-5', 'pt-1', 'ra-1', 'ra-3', 'ra-5', 'ra-7', 'ra-9', 'ra-10', 'sa-1', 'sa-11.2', 'sa-16', 'sc-1', 'si-1', 'sr-1']
+User - 108
+['ac-2', 'ac-2.1', 'ac-2.2', 'ac-2.3', 'ac-2.4', 'ac-2.6', 'ac-2.7', 'ac-2.8', 'ac-2.9', 'ac-2.11', 'ac-2.12', 'ac-2.13', 'ac-3', 'ac-3.7', 'ac-3.8', 'ac-3.10', 'ac-3.11', 'ac-3.13', 'ac-5', 'ac-6', 'ac-6.5', 'ac-6.7', 'ac-6.9', 'ac-6.10', 'ac-12', 'ac-14', 'ac-16', 'ac-16.1', 'ac-16.2', 'ac-16.3', 'ac-16.4', 'ac-16.6', 'ac-16.7', 'ac-16.8', 'ac-16.9', 'ac-16.10', 'ac-17.4', 'ac-17.9', 'ac-24', 'ac-24.1', 'au-2', 'au-3', 'au-3.3', 'au-6', 'au-6.8', 'au-7', 'au-7.1', 'au-8', 'au-9', 'au-9.4', 'au-10', 'au-10.1', 'au-12', 'au-14', 'ia-1', 'ia-2', 'ia-2.1', 'ia-2.2', 'ia-2.5', 'ia-2.6', 'ia-2.12', 'ia-4', 'ia-4.4', 'ia-4.5', 'ia-4.6', 'ia-4.9', 'ia-5', 'ia-5.1', 'ia-5.2', 'ia-5.9', 'ia-5.10', 'ia-5.12', 'ia-5.14', 'ia-5.17', 'ia-5.18', 'ia-8', 'ia-8.1', 'ia-8.2', 'ia-8.4', 'ia-8.5', 'ia-10', 'ia-11', 'ia-12', 'pl-4', 'pm-12', 'ps-4', 'ps-5', 'ra-5', 'ra-5.2', 'ra-5.5', 'ra-9', 'sc-12', 'sc-16', 'sc-16.1', 'sc-16.2', 'sc-16.3', 'sc-23', 'sc-23.5', 'sc-45', 'sc-45.1', 'si-4', 'si-4.2', 'si-4.4', 'si-4.9', 'si-4.10', 'si-4.13', 'si-4.19', 'si-4.20']
+Device - 99
+['ac-2', 'ac-2.6', 'ac-3', 'ac-3.7', 'ac-3.8', 'ac-3.11', 'ac-3.13', 'ac-6', 'ac-16', 'ac-16.1', 'ac-16.2', 'ac-16.3', 'ac-16.4', 'ac-16.6', 'ac-16.7', 'ac-16.8', 'ac-16.9', 'ac-16.10', 'ac-17', 'ac-17.1', 'ac-19', 'au-2', 'au-3', 'au-6', 'au-6.4', 'au-6.5', 'au-7', 'au-7.1', 'au-8', 'au-9', 'au-9.4', 'au-10', 'au-10.1', 'au-12', 'au-12.1', 'cm-2', 'cm-2.2', 'cm-3', 'cm-3.5', 'cm-6', 'cm-6.1', 'cm-6.2', 'cm-7.2', 'cm-7.5', 'cm-8', 'cm-8.2', 'cm-8.3', 'cm-8.6', 'cm-8.9', 'cm-9', 'cm-11', 'cm-11.3', 'cm-14', 'ia-2', 'ia-3', 'ia-4', 'ia-4.6', 'ia-4.9', 'ia-5', 'ia-5.2', 'ia-5.9', 'ia-5.14', 'ia-8', 'ia-9', 'ra-5', 'ra-5.2', 'ra-9', 'sc-7.20', 'sc-12', 'sc-12.1', 'sc-12.3', 'sc-13', 'sc-16', 'sc-16.1', 'sc-16.2', 'sc-16.3', 'sc-17', 'sc-25', 'sc-45', 'sc-45.1', 'si-2', 'si-2.2', 'si-2.4', 'si-2.5', 'si-3', 'si-3.8', 'si-4', 'si-4.1', 'si-4.2', 'si-4.3', 'si-4.4', 'si-4.10', 'si-4.11', 'si-4.13', 'si-4.16', 'si-4.23', 'si-4.24', 'si-7', 'si-7.8']
+Application & Workload - 117
+['ac-2', 'ac-3', 'ac-3.12', 'ac-3.13', 'ac-4', 'ac-4.1', 'ac-4.3', 'ac-4.8', 'ac-4.10', 'ac-4.11', 'ac-4.17', 'ac-16', 'ac-16.1', 'ac-16.2', 'ac-16.3', 'ac-16.4', 'ac-16.6', 'ac-16.7', 'ac-16.8', 'ac-16.9', 'ac-16.10', 'ac-17', 'ac-17.1', 'ac-17.2', 'au-2', 'au-3', 'au-8', 'au-9', 'au-9.4', 'au-10', 'au-10.1', 'au-12', 'ca-2', 'ca-5', 'ca-5.1', 'ca-6', 'ca-7', 'ca-7.6', 'cm-2', 'cm-2.2', 'cm-2.6', 'cm-3', 'cm-3.1', 'cm-3.2', 'cm-3.3', 'cm-4', 'cm-4.1', 'cm-4.2', 'cm-6', 'cm-6.1', 'cm-7', 'cm-7.8', 'cm-8', 'cm-8.9', 'cm-9', 'cm-10', 'cm-10.1', 'ia-3.1', 'ia-5.5', 'ia-5.7', 'ia-6', 'pm-15', 'ra-3.1', 'ra-5', 'ra-5.2', 'ra-5.5', 'ra-5.11', 'sa-8.14', 'sa-10', 'sa-10.1', 'sa-10.4', 'sa-10.6', 'sa-11', 'sa-11.1', 'sa-11.4', 'sa-11.8', 'sa-11.9', 'sa-15', 'sa-15.1', 'sa-15.2', 'sa-15.7', 'sa-17.7', 'sc-7.8', 'sc-7.11', 'sc-7.16', 'sc-7.17', 'sc-10', 'sc-16', 'sc-16.1', 'sc-16.2', 'sc-16.3', 'sc-23', 'sc-23.5', 'sc-27', 'sc-30', 'sc-45', 'sc-45.1', 'si-2', 'si-2.2', 'si-2.4', 'si-2.5', 'si-7.17', 'si-10', 'si-10.2', 'si-10.4', 'si-10.5', 'si-10.6', 'si-11', 'si-14', 'si-15', 'si-23', 'sr-3', 'sr-4.3', 'sr-4.4', 'sr-9', 'sr-10', 'sr-11']
+Data - 68
+['ac-3', 'ac-3.11', 'ac-3.13', 'ac-4', 'ac-4.1', 'ac-4.3', 'ac-4.6', 'ac-4.8', 'ac-4.10', 'ac-4.11', 'ac-4.12', 'ac-4.19', 'ac-4.23', 'ac-4.26', 'ac-16', 'ac-16.1', 'ac-16.2', 'ac-16.3', 'ac-16.4', 'ac-16.6', 'ac-16.7', 'ac-16.8', 'ac-16.9', 'ac-16.10', 'ac-21', 'ac-21.1', 'ac-23', 'ac-24', 'ac-24.1', 'au-2', 'au-3', 'au-6', 'au-6.3', 'au-6.4', 'au-8', 'au-9', 'au-9.4', 'au-10', 'au-10.1', 'au-12', 'pt-2', 'pt-2.1', 'pt-2.2', 'pt-3', 'pt-3.1', 'pt-3.2', 'ra-3', 'sc-7.10', 'sc-8', 'sc-8.1', 'sc-12', 'sc-12.1', 'sc-12.2', 'sc-12.3', 'sc-13', 'sc-16', 'sc-16.1', 'sc-16.2', 'sc-16.3', 'sc-28', 'sc-28.1', 'sc-28.3', 'sc-45', 'sc-45.1', 'si-4.10', 'si-4.18', 'si-18.2', 'si-20']
+Network & Environment - 37
+['ac-3', 'ac-3.7', 'ac-3.13', 'ac-4', 'ac-4.1', 'ac-4.2', 'ac-4.3', 'ac-4.6', 'ac-4.8', 'ac-4.11', 'ac-4.12', 'ac-4.17', 'ac-4.19', 'ac-4.21', 'ca-9', 'ca-9.1', 'cm-12', 'sc-2', 'sc-2.1', 'sc-4', 'sc-7', 'sc-7.4', 'sc-7.5', 'sc-7.12', 'sc-7.15', 'sc-7.18', 'sc-7.21', 'sc-7.22', 'sc-7.29', 'sc-8', 'sc-8.1', 'sc-13', 'sc-39', 'sc-39.2', 'si-4.3', 'si-4.10', 'si-4.25']
+Automation & Orchestration - 62
+['ac-1', 'ac-2', 'ac-2.11', 'ac-4.3', 'ac-4.6', 'ac-4.8', 'ac-4.10', 'ac-4.11', 'ac-4.19', 'ac-4.29', 'ac-6', 'ac-16', 'ac-16.1', 'ac-16.2', 'ac-16.3', 'ac-16.4', 'ac-16.6', 'ac-16.7', 'ac-16.8', 'ac-16.9', 'ac-16.10', 'ac-24', 'ac-24.1', 'au-2', 'au-3', 'au-8', 'au-9', 'au-9.4', 'au-10', 'au-10.1', 'au-12', 'ia-1', 'ir-4', 'ir-4.1', 'ir-4.2', 'ir-4.9', 'ir-4.14', 'ir-5', 'ir-5.1', 'ir-6', 'ir-6.1', 'ir-6.2', 'ir-8', 'pt-2', 'pt-2.1', 'pt-2.2', 'pt-3', 'pt-3.1', 'pt-3.2', 'ra-3', 'ra-3.4', 'ra-7', 'sa-15', 'sa-17.8', 'sc-16', 'sc-16.1', 'sc-16.2', 'sc-16.3', 'sc-45', 'sc-45.1', 'si-4.7', 'si-7.7']
+Visibility and Analytics - 84
+['ac-2.6', 'ac-2.11', 'ac-2.12', 'ac-3', 'ac-3.8', 'ac-3.11', 'ac-3.13', 'ac-6.9', 'ac-16', 'ac-16.1', 'ac-16.2', 'ac-16.3', 'ac-16.4', 'ac-16.6', 'ac-16.7', 'ac-16.8', 'ac-16.9', 'ac-16.10', 'ac-17', 'ac-17.1', 'ac-17.9', 'ac-24', 'ac-24.1', 'au-2', 'au-3', 'au-3.1', 'au-3.3', 'au-4', 'au-4.1', 'au-5', 'au-6', 'au-6.1', 'au-6.3', 'au-6.4', 'au-6.5', 'au-6.6', 'au-6.9', 'au-7', 'au-7.1', 'au-8', 'au-9', 'au-9.4', 'au-10', 'au-10.1', 'au-11', 'au-11.1', 'au-12', 'au-12.1', 'au-12.2', 'au-12.3', 'cp-2', 'cp-2.2', 'ia-10', 'ir-4', 'ir-4.1', 'ir-4.4', 'ir-4.13', 'pm-15', 'pm-16', 'pm-16.1', 'ra-3.3', 'ra-3.4', 'sc-5.3', 'sc-16', 'sc-16.1', 'sc-16.2', 'sc-16.3', 'sc-26', 'sc-44', 'sc-45', 'sc-45.1', 'sc-48', 'sc-48.1', 'si-3.10', 'si-4', 'si-4.1', 'si-4.2', 'si-4.3', 'si-4.5', 'si-4.12', 'si-4.16', 'si-4.17', 'si-4.24', 'si-5']
+#+end_example
+
