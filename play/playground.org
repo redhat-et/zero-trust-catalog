@@ -13,37 +13,44 @@ with open(FILE, 'r') as file:
     catalog = yaml.safe_load(file).get('catalog')
     groups = catalog.get('groups')
     print(f"Groups: {len(groups)}")
+    toplevel = 0
+    total = 0
     for g in groups:
-        print(f"    {g['id']}: {len(g['controls']):2} - {g['title']}")
+        mains = len(g['controls'])
+        subs = sum([len(c['controls']) if 'controls' in c else 0
+                    for c in g['controls']])
+        controls = mains + subs
+        print(f"    {g['id']}: {controls:3} ({mains:2}) - {g['title']}")
+        toplevel += mains
+        total += controls
 
-    total = sum([len(g['controls']) for g in groups])
-    print(f"Total controls: {total}")
+    print(f"Total controls: {total}, top-level: {toplevel}")
 #+end_src
 
 #+RESULTS:
 #+begin_example
 Groups: 20
-    ac: 25 - Access Control
-    at:  6 - Awareness and Training
-    au: 16 - Audit and Accountability
-    ca:  9 - Assessment, Authorization, and Monitoring
-    cm: 14 - Configuration Management
-    cp: 13 - Contingency Planning
-    ia: 13 - Identification and Authentication
-    ir: 10 - Incident Response
-    ma:  7 - Maintenance
-    mp:  8 - Media Protection
-    pe: 23 - Physical and Environmental Protection
-    pl: 11 - Planning
-    pm: 32 - Program Management
-    ps:  9 - Personnel Security
-    pt:  8 - Personally Identifiable Information Processing and Transparency
-    ra: 10 - Risk Assessment
-    sa: 23 - System and Services Acquisition
-    sc: 51 - System and Communications Protection
-    si: 23 - System and Information Integrity
-    sr: 12 - Supply Chain Risk Management
-Total controls: 323
+    ac: 147 (25) - Access Control
+    at:  17 ( 6) - Awareness and Training
+    au:  69 (16) - Audit and Accountability
+    ca:  32 ( 9) - Assessment, Authorization, and Monitoring
+    cm:  66 (14) - Configuration Management
+    cp:  56 (13) - Contingency Planning
+    ia:  74 (13) - Identification and Authentication
+    ir:  42 (10) - Incident Response
+    ma:  30 ( 7) - Maintenance
+    mp:  30 ( 8) - Media Protection
+    pe:  59 (23) - Physical and Environmental Protection
+    pl:  17 (11) - Planning
+    pm:  37 (32) - Program Management
+    ps:  18 ( 9) - Personnel Security
+    pt:  21 ( 8) - Personally Identifiable Information Processing and Transparency
+    ra:  26 (10) - Risk Assessment
+    sa: 145 (23) - System and Services Acquisition
+    sc: 162 (51) - System and Communications Protection
+    si: 118 (23) - System and Information Integrity
+    sr:  27 (12) - Supply Chain Risk Management
+Total controls: 1193, top-level: 323
 #+end_example
 
 *** Count of sub controls
