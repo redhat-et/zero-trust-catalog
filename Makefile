@@ -7,14 +7,14 @@ NIST_SRC=NIST/oscal-content/nist.gov/SP800-53/rev5/yaml/NIST_SP-800-53_rev5_cata
 NIST_DOD=nist-sp-800-53-rev5-dod.yaml
 NIST_EXT=nist-sp-800-53-rev5-extended.yaml
 
-merge:	## Merge the DoD mappings into NIST controls
+merge:	## Merge the DoD and CNSWP mappings into NIST controls
 merge:	$(NIST_EXT)
 
 $(NIST_EXT):	$(NIST_DOD) $(DOD_MAPPINGS)
 	./merge-cnswp.py -f $(NIST_DOD) -c $(CNSWP) > $@
 
 $(NIST_DOD):	$(NIST_SRC) $(DOD_MAPPINGS)
-	./merge-mappings.py -f $(NIST_SRC) -d $(DOD_MAPPINGS) > $@
+	./merge-dod.py -f $(NIST_SRC) -d $(DOD_MAPPINGS) > $@
 
 dod:	## Extract the DoD mappings from the PDF
 dod:	$(DOD_MAPPINGS)
