@@ -64,6 +64,33 @@ clean                Remove generated files
 help                 This help
 #+end_src
 
+** Summary of NIST SP 800-53 rev5
+
+#+begin_example
+Groups: 20
+    ac: 147 (25) - Access Control
+    at:  17 ( 6) - Awareness and Training
+    au:  69 (16) - Audit and Accountability
+    ca:  32 ( 9) - Assessment, Authorization, and Monitoring
+    cm:  66 (14) - Configuration Management
+    cp:  56 (13) - Contingency Planning
+    ia:  74 (13) - Identification and Authentication
+    ir:  42 (10) - Incident Response
+    ma:  30 ( 7) - Maintenance
+    mp:  30 ( 8) - Media Protection
+    pe:  59 (23) - Physical and Environmental Protection
+    pl:  17 (11) - Planning
+    pm:  37 (32) - Program Management
+    ps:  18 ( 9) - Personnel Security
+    pt:  21 ( 8) - Personally Identifiable Information Processing and Transparency
+    ra:  26 (10) - Risk Assessment
+    sa: 145 (23) - System and Services Acquisition
+    sc: 162 (51) - System and Communications Protection
+    si: 118 (23) - System and Information Integrity
+    sr:  27 (12) - Supply Chain Risk Management
+Total controls: 1193, top-level: 323
+#+end_example
+
 ** Sample Queries
 
 You need to install ~yq~ to make use of these queries.
@@ -235,3 +262,33 @@ do
 done
 #+end_src
 
+*** CNSWP controls with no NIST mappings
+
++ control-255 Forensics capabilities are integrated into an incident response plan and procedures
++ control-266 Code should be clean and well commented
++ control-274 Should software artifacts become untrusted due to compromise or other incident, teams should revoke signing keys to ensure repudiation
++ control-275 Artifacts ready for deployment are managed in a staging or pre-prod registry
++ control-276 container images are hardened following best practices
++ control-277 Static application security testing (SAST) is performed
++ control-278 Test suites follow the test pyramid
++ control-279 Artifacts undergoing active development are held in a private registery
++ control-290 Automated test results map back to requirements
++ control-291 Infrastructure security tests must be employed
++ control-293 IaC is subject to the same pipeline policy controls as application code
++ control-306 Incremental hardening of the infrastructure is employed
++ control-313 Rootless builds are employed
++ control-314 cgroups and system groups are used to isolate workloads and deployments
++ control-321 Orchestrator network policies are used in conjunction with a service mesh
++ control-322 Adhere to supply chain security best practices
++ control-323 Restrict access to repository and branches
++ control-324 Never store unencrypted credentials or secrets in the Git repository and block sensitive data being pushed to Git
++ control-325 Enforce strong identity with GPG Signed Commits, to give accountability and traceability
++ control-326 Require linear history and maintain a commit history by disallowing force pushes
++ control-327 Enforce branching policy. Especially protect the main branch and require code review before merging
++ control-328 Monitor for vulnerabilities, and keep Git and GitOps tools up to date
++ control-329 Rotate SSH keys and Personal Access Tokens, block unauthorized access to Git repositories
++ control-330 Utilize a dedicated non-user technical account for access where credentials are frequently rotated and short-lived
++ control-331 Limit users who can elevate permissions to remove security features to cover their tracks via deletion of audit trails and silencing of alerts
++ control-338 Caching is considered for determining encryption requirements in archictures
++ control-339 Namespaces have defined trust boundaries to cordon access to volumes
++ control-343 Artifact registry supports OCI artifacts
