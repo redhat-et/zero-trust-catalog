@@ -53,12 +53,16 @@ composite YAML file containing the NIST controls with additional properties.
     value: 1.5 Identity Federation & User Credentialing
 #+end_example
 
-The scripts need the ~pypdf~ and ~pyyaml~ python packages to be installed. The scripts can be
+The ~gen-dod-profiles.py~ script generates an OSCAL profile for each DoD pillar from the
+DoD-extended NIST controls.
+
+These scripts need the ~pypdf~ and ~pyyaml~ python packages to be installed. The scripts can be
 run using the provided ~Makefile~:
 
 #+begin_src sh
 % make
-merge                Merge the DoD mappings into NIST controls
+generate             Generate OSCAL profiles for each DoD pillar
+merge                Merge the DoD and CNSWP mappings into NIST controls
 dod                  Extract the DoD mappings from the PDF
 clean                Remove generated files
 help                 This help

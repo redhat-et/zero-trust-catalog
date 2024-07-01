@@ -7,6 +7,10 @@ NIST_SRC=NIST/oscal-content/nist.gov/SP800-53/rev5/yaml/NIST_SP-800-53_rev5_cata
 NIST_DOD=nist-sp-800-53-rev5-dod.yaml
 NIST_EXT=nist-sp-800-53-rev5-extended.yaml
 
+generate:	## Generate OSCAL profiles for each DoD pillar
+generate:	$(NIST_EXT)
+	./gen-dod-profiles.py -f $< -p dod-profile
+
 merge:	## Merge the DoD and CNSWP mappings into NIST controls
 merge:	$(NIST_EXT)
 
