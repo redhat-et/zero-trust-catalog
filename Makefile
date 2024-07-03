@@ -11,6 +11,10 @@ generate:	## Generate OSCAL profiles for each DoD pillar
 generate:	$(NIST_EXT)
 	./gen-dod-profiles.py -f $< -p dod-profile
 
+resolved:	## Generate resolved OSCAL catalogs for each DoD pillar
+resolved:	$(NIST_EXT)
+	./gen-dod-profiles.py -f $< -p dod-profile-resolved -r
+
 merge:	## Merge the DoD and CNSWP mappings into NIST controls
 merge:	$(NIST_EXT)
 

@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 
-from argparse import ArgumentParser
+from argparse import ArgumentParser, BooleanOptionalAction
 import sys
 import uuid
 import yaml
@@ -9,10 +9,12 @@ pillars = ['Enabler', 'User', 'Device', 'Application & Workload', 'Data',
            'Network & Environment', 'Automation & Orchestration',
            'Visibility and Analytics']
 mappings = { p: [] for p in pillars }
+controls_by_id = { }
+
+profile_uuid = str(uuid.uuid4())
+import_uuid = str(uuid.uuid4())
 
 def get_profile(name, controls):
-    profile_uuid = str(uuid.uuid4())
-    import_uuid = str(uuid.uuid4())
     profile = {
         'profile': {
             'uuid': profile_uuid,
@@ -40,8 +42,21 @@ def get_profile(name, controls):
     }
     return profile
 
+def get_catalog(name, ids):
+
+    catalog = {
+        'catalog': {
+            'uuid': profile_uuid,
+            'metadata': { 'title': f"NIST SP 800-53 rev5 - DoD pillar {name}" },
+            'controls': [controls_by_id[id] for id in ids]
+        }
+    }
+
+    return catalog
+
 def add_mappings(controls):
     for c in controls:
+        controls_by_id[c['id']] = c
         for p in c['props']:
             if p['name'].startswith('Appendix A'):
                 key = p['value']
@@ -49,7 +64,7 @@ def add_mappings(controls):
         if 'controls' in c:
             add_mappings(c['controls'])
 
-def main(filename, prefix):
+def main(filename, prefix, resolve=False):
     print(f"Reading {filename}", file=sys.stderr)
     with open(filename, 'r') as file:
         catalog = yaml.safe_load(file).get('catalog')
@@ -63,10 +78,13 @@ def main(filename, prefix):
         print(f"Writing {name}", file=sys.stderr)
 
         controls = mappings[p]
-        profile = get_profile(p, controls)
+        if resolve:
+            content = get_catalog(p, controls)
+        else:
+            content = get_profile(p, controls)
 
         with open(name, 'w') as file:
-            yaml.dump(profile, file, sort_keys=False)
+            yaml.dump(content, file, sort_keys=False)
 
 
 if __name__ == '__main__':
@@ -76,5 +94,7 @@ if __name__ == '__main__':
                         help='The DoD annotated NIST controls')
     parser.add_argument('-p', '--prefix', type=str, required=True,
                         help='Filename prefix for generated profiles')
+    parser.add_argument('-r', '--resolve', action=BooleanOptionalAction,
+                        help='Include control definitions inline, not just as imports')
     args = parser.parse_args()
-    main(args.file, args.prefix)
+    main(args.file, args.prefix, args.resolve)
