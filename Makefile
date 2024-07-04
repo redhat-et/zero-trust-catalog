@@ -3,9 +3,21 @@ DOD_MAPPINGS=dod-mappings.yaml
 
 CNSWP=cnswp-v2-controls.yaml
 
-NIST_SRC=NIST/oscal-content/nist.gov/SP800-53/rev5/yaml/NIST_SP-800-53_rev5_catalog.yaml
+NIST_PREFIX=NIST/oscal-content/nist.gov/SP800-53/rev5/yaml
+NIST_SRC=$(NIST_PREFIX)/NIST_SP-800-53_rev5_catalog.yaml
+NIST_LOW=$(NIST_PREFIX)/NIST_SP-800-53_rev5_LOW-baseline_profile.yaml
+NIST_MODERATE=$(NIST_PREFIX)/NIST_SP-800-53_rev5_MODERATE-baseline_profile.yaml
+NIST_HIGH=$(NIST_PREFIX)/NIST_SP-800-53_rev5_HIGH-baseline_profile.yaml
 NIST_DOD=nist-sp-800-53-rev5-dod.yaml
 NIST_EXT=nist-sp-800-53-rev5-extended.yaml
+
+VIS=vis.html
+
+vis:	## Generate a visualization of controls by pillar
+vis:	$(VIS)
+
+$(VIS):	$(NIST_EXT) ./gen-dod-profiles.py
+	./gen-dod-profiles.py -f $< -b $(NIST_LOW) -b $(NIST_MODERATE) -b $(NIST_HIGH) --visualize > $@
 
 generate:	## Generate OSCAL profiles for each DoD pillar
 generate:	$(NIST_EXT)

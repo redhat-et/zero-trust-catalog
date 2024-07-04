@@ -10,9 +10,28 @@ pillars = ['Enabler', 'User', 'Device', 'Application & Workload', 'Data',
            'Visibility and Analytics']
 mappings = { p: [] for p in pillars }
 controls_by_id = { }
+baselines_by_name = { }
+seen_ids = { }
 
 profile_uuid = str(uuid.uuid4())
 import_uuid = str(uuid.uuid4())
+
+html_preamble = '''<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap demo</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  </head>
+  <body>
+    <h1>NIST SP 800-53 rev5 Controls by baseline</h1>
+'''
+
+html_postamble = '''<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+  </body>
+</html>
+'''
 
 def get_profile(name, controls):
     profile = {
@@ -64,37 +83,103 @@ def add_mappings(controls):
         if 'controls' in c:
             add_mappings(c['controls'])
 
-def main(filename, prefix, resolve=False):
-    print(f"Reading {filename}", file=sys.stderr)
+def load_baseline(filename):
+    ids = []
     with open(filename, 'r') as file:
-        catalog = yaml.safe_load(file).get('catalog')
-        groups = catalog.get('groups')
+        profile = yaml.safe_load(file).get('profile')
 
-    for g in groups:
-        add_mappings(g['controls'])
+    for i in profile['imports']:
+        for inc in i['include-controls']:
+            for id in inc['with-ids']:
+                if id not in seen_ids:
+                    ids.append(id)
+                    seen_ids[id] = id
 
-    for p in pillars:
-        name = f"{prefix}-{p}.yaml"
-        print(f"Writing {name}", file=sys.stderr)
+    return ids
 
-        controls = mappings[p]
-        if resolve:
-            content = get_catalog(p, controls)
-        else:
-            content = get_profile(p, controls)
+def write_profile(name, prefix, controls, resolve=False):
+    filename = f"{prefix}-{name}.yaml"
+    print(f"Writing {filename}", file=sys.stderr)
 
-        with open(name, 'w') as file:
-            yaml.dump(content, file, sort_keys=False)
+    if resolve:
+        content = get_catalog(name, controls)
+    else:
+        content = get_profile(name, controls)
 
+    with open(filename, 'w') as file:
+        yaml.dump(content, file, sort_keys=False)
+
+styles = ['primary', 'success', 'danger']
+headings = ['Low', 'Moderate', 'High']
+
+def generate_html():
+    html = []
+
+    html.append('<div class="container">')
+    html.append('<div class="row align-items-start">')
+    html.append('  <div class="col">')
+
+    for i, k in enumerate(baselines_by_name.keys()):
+        style = styles[i]
+        head = headings[i]
+        classes = f'badge bg-{style}-subtle text-{style}'
+        html.append('  <div>')
+        html.append(f'    <h3>{head} Baseline</h3>')
+        for id in baselines_by_name[k]:
+            html.append(f'    <span class="{classes}">{id}</span>')
+        html.append('  </div>')
+
+    html.append('  </div>')
+    html.append('  <div class="col">')
+    html.append('  </div>')
+    html.append('  <div class="col">')
+    html.append('  </div>')
+    html.append('  <div class="col">')
+    html.append('  </div>')
+    html.append('  <div class="col">')
+    html.append('  </div>')
+    html.append('</div>')
+    html.append('</div>')
+    html.append('</div>')
+
+    return "\n".join(html)
+
+def main(filename, prefix, baselines, resolve=False, visualize=False):
+
+    for b in baselines:
+        ids = load_baseline(b)
+        baselines_by_name[b] = ids
+
+    # print(f"Reading {filename}", file=sys.stderr)
+    # with open(filename, 'r') as file:
+    #     catalog = yaml.safe_load(file).get('catalog')
+    #     groups = catalog.get('groups')
+
+    # for g in groups:
+    #     add_mappings(g['controls'])
+
+    if visualize:
+        print(html_preamble)
+        print(generate_html())
+        print(html_postamble)
+    else:
+        for p in pillars:
+            controls = mappings[p]
+            write_profile(p, prefix, controls, resolve)
 
 if __name__ == '__main__':
 
     parser = ArgumentParser(description='Generate OSCAL profiles for each DoD pillar')
     parser.add_argument('-f', '--file', type=str, required=True,
                         help='The DoD annotated NIST controls')
-    parser.add_argument('-p', '--prefix', type=str, required=True,
+    parser.add_argument('-p', '--prefix', type=str, default='dod-profile',
                         help='Filename prefix for generated profiles')
     parser.add_argument('-r', '--resolve', action=BooleanOptionalAction,
                         help='Include control definitions inline, not just as imports')
+    parser.add_argument('-b', '--baseline', type=str, action='append',
+                        help='Include NIST baseline information')
+    parser.add_argument('-V', '--visualize', action=BooleanOptionalAction,
+                        help='Generate a visualization of controls by pillar')
     args = parser.parse_args()
-    main(args.file, args.prefix, args.resolve)
+    main(args.file, args.prefix, args.baseline,
+         resolve=args.resolve, visualize=args.visualize)
