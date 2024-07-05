@@ -18,8 +18,8 @@ VIS=vis.html
 vis:	## Generate a visualization of controls by pillar
 vis:	$(VIS)
 
-$(VIS):	$(NIST_EXT) ./gen-dod-profiles.py
-	./gen-dod-profiles.py -f $< -b $(NIST_LOW) -b $(NIST_MODERATE) -b $(NIST_HIGH) --visualize > $@
+$(VIS):	$(NIST_EXT) ./gen-dod-profiles.py $(MAKEFILE_LIST)
+	./gen-dod-profiles.py -f $< -b $(NIST_LOW) -b $(NIST_MODERATE) -b $(NIST_HIGH) -V -g > $@
 
 $(NIST_EXT_JSON):	$(NIST_EXT)
 	yq -o json $< > $@

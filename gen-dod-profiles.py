@@ -77,6 +77,8 @@ html_postamble = '''
   <script>
 const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]')
 const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl))
+const offcanvasElementList = document.querySelectorAll('.offcanvas')
+const offcanvasList = [...offcanvasElementList].map(offcanvasEl => new bootstrap.Offcanvas(offcanvasEl))
   </script>
   </body>
 </html>
@@ -161,7 +163,7 @@ def write_profile(name, prefix, controls, resolve=False):
 styles = ['primary', 'success', 'danger']
 headings = ['Low', 'Moderate', 'High']
 
-def generate_html():
+def generate_html(guidance=False):
     html = []
 
     html.append('<div class="container-fluid">')
@@ -191,7 +193,10 @@ def generate_html():
             for id in mappings[p]:
                 if id in baseline_ids:
                     text = controls_by_id[id]['title']
-                    html.append(f'<span class="{classes}" data-bs-toggle="tooltip" data-bs-title="{text}">{id}</span>')
+                    if guidance:
+                        html.append(f'<a href="#{id}" class="{classes}" data-bs-toggle="offcanvas">{id}</a>')
+                    else:
+                        html.append(f'<span class="{classes}" data-bs-toggle="tooltip" data-bs-title="{text}">{id}</span>')
                     mapped_ids[id] = id
 
             html.append('</div>')
@@ -206,12 +211,36 @@ def generate_html():
         for id in baselines_by_name[k]:
             if id not in mapped_ids:
                 text = controls_by_id[id]['title']
-                html.append(f'<span class="{classes}" data-bs-toggle="tooltip" data-bs-title="{text}">{id}</span>')
+                if guidance:
+                    html.append(f'<a href="#{id}" class="{classes}" data-bs-toggle="offcanvas">{id}</a>')
+                else:
+                    html.append(f'<span class="{classes}" data-bs-toggle="tooltip" data-bs-title="{text}">{id}</span>')
     html.append('</div>')
+
+    if guidance:
+        html.append('<div class="container">')
+        for id in controls_by_id.keys():
+            control = controls_by_id[id]
+            props = { prop['name'] : prop for prop in control['props'] }
+            if 'status' in props and props['status']['value'] == 'withdrawn':
+                continue
+            title = control['title']
+            parts = { part['name'] : part for part in control['parts'] }
+            text = parts['guidance']['prose']
+            html.append(f'<div class="offcanvas offcanvas-bottom" id="{id}">')
+            html.append('<div class="offcanvas-header">')
+            html.append(f'<h5>{id.upper()} – {title}</h5>')
+            html.append('<button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>')
+            html.append('</div>')
+            html.append('<div class="offcanvas-body">')
+            html.append(f'<p>{text}</p>')
+            html.append('</div>')
+            html.append('</div>')
+        html.append('</div>')
 
     return "\n".join(html)
 
-def main(filename, prefix, baselines, resolve=False, visualize=False):
+def main(filename, prefix, baselines, resolve=False, visualize=False, guidance=False):
 
     for b in baselines:
         ids = load_baseline(b)
@@ -228,7 +257,7 @@ def main(filename, prefix, baselines, resolve=False, visualize=False):
     if visualize:
         print('Generating HTML', file=sys.stderr)
         print(html_preamble)
-        print(generate_html())
+        print(generate_html(guidance))
         print(html_postamble)
     else:
         for p in pillars:
@@ -248,6 +277,8 @@ if __name__ == '__main__':
                         help='Include NIST baseline information')
     parser.add_argument('-V', '--visualize', action=BooleanOptionalAction,
                         help='Generate a visualization of controls by pillar')
+    parser.add_argument('-g', '--guidance', action=BooleanOptionalAction,
+                        help='Include guidance notes from the specifcation')
     args = parser.parse_args()
     main(args.file, args.prefix, args.baseline,
-         resolve=args.resolve, visualize=args.visualize)
+         resolve=args.resolve, visualize=args.visualize, guidance=args.guidance)
