@@ -1,0 +1,45 @@
+---
+mapping-collection:
+  uuid: 01a076d7-6b63-454b-8f8d-9cba2fc95a60
+  mappings:
+    uuid: f375ef13-02a0-4920-a80b-0d31862a8335
+    source-resource:
+      type: token
+      href: uri-reference
+      props: &resource-props
+        name: token
+        uuid: 8eb8d2ca-114d-4d0e-8afa-b2a763832bde
+        ns: uri
+        value: string
+        class: token
+        group: token
+        remarks: |
+          Multiline remarks
+      links: &resource-links
+        href: uri-reference
+        rel: token
+        media-type: string
+        resource-fragment: string
+        text: markup-line
+      remarks: |
+        markup-multiline
+    target-resource:
+      type: token
+      href: uri-reference
+      props: *resource-props
+      links: *resource-links
+    maps:
+      - uuid: 68007653-7e07-4be8-94eb-b6c0793bca60
+        ns: uri
+        matching-rationale: string
+        relationship: token
+        sources:
+        targets:
+        qualifiers:
+        props:
+        links:
+        remarks: |
+          markup-multiline
+  source-gap-summary:
+  target-gap-summary:
+  back-matter:
