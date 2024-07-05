@@ -128,7 +128,7 @@ def add_mappings(controls):
 def load_baseline(filename):
     ids = []
     with open(filename, 'r') as file:
-        profile = yaml.safe_load(file).get('profile')
+        profile = json.load(file).get('profile')
 
     for i in profile['imports']:
         for inc in i['include-controls']:
@@ -157,7 +157,7 @@ headings = ['Low', 'Moderate', 'High']
 def generate_html():
     html = []
 
-    html.append('<div class="container-fluid" style="padding: 1em;">')
+    html.append('<div class="container-fluid" style="padding: 2em;">')
     html.append('<header class="border-bottom d-flex justify-content-center">')
     html.append('<h3>NIST SP 800-53 rev5 Controls by DoD pillar and NIST baseline</h3>')
     html.append('</header>')
@@ -226,7 +226,7 @@ if __name__ == '__main__':
 
     parser = ArgumentParser(description='Generate OSCAL profiles for each DoD pillar')
     parser.add_argument('-f', '--file', type=str, required=True,
-                        help='The DoD annotated NIST controls')
+                        help='The DoD annotated NIST controls in JSON')
     parser.add_argument('-p', '--prefix', type=str, default='dod-profile',
                         help='Filename prefix for generated profiles')
     parser.add_argument('-r', '--resolve', action=BooleanOptionalAction,

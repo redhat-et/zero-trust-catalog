@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 
 from argparse import ArgumentParser
+import json
 import re
 import sys
 import yaml
@@ -57,7 +58,7 @@ def merge_cnswp_mappings(nist_file, cnswp_file):
 
     print(f"Reading {nist_file} ...", file=sys.stderr)
     with open(nist_file) as f:
-        nist = yaml.safe_load(f)
+        nist = json.load(f)
 
     print(f"Merging {cnswp_file} ...", file=sys.stderr)
 
@@ -65,15 +66,15 @@ def merge_cnswp_mappings(nist_file, cnswp_file):
         for control in group['controls']:
             merge_into_control(control, cnswp_mappings)
 
-    print("Writing new YAML ...", file=sys.stderr)
-    print(yaml.dump(nist, sort_keys=False))
+    print("Writing new JSON ...", file=sys.stderr)
+    print(json.dumps(nist))
 
 
 if __name__ == '__main__':
 
     parser = ArgumentParser(description='Merge CNSWP controls into NIST controls')
     parser.add_argument('-f', '--file', type=str, required=True,
-                        help='The NIST controls')
+                        help='The NIST controls in JSON')
     parser.add_argument('-c', '--cnswp', type=str, required=True,
                         help='The CNSWP controls')
     args = parser.parse_args()

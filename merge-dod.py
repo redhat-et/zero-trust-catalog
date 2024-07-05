@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 
 from argparse import ArgumentParser
+import json
 import re
 import sys
 import yaml
@@ -51,7 +52,7 @@ def merge_dod_mappings(nist_file, dod_file):
 
     print(f"Reading {nist_file} ...", file=sys.stderr)
     with open(nist_file) as f:
-        nist = yaml.safe_load(f)
+        nist = json.load(f)
 
     print(f"Merging {dod_file} ...", file=sys.stderr)
 
@@ -59,8 +60,8 @@ def merge_dod_mappings(nist_file, dod_file):
         for control in group['controls']:
             merge_into_control(control, dod_mappings)
 
-    print("Writing new YAML ...", file=sys.stderr)
-    print(yaml.dump(nist, sort_keys=False))
+    print("Writing new JSON ...", file=sys.stderr)
+    print(json.dumps(nist))
 
 
 if __name__ == '__main__':

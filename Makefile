@@ -3,22 +3,22 @@ DOD_MAPPINGS=dod-mappings.yaml
 
 CNSWP=cnswp-v2-controls.yaml
 
-NIST_PREFIX=NIST/oscal-content/nist.gov/SP800-53/rev5/yaml
-NIST_SRC=$(NIST_PREFIX)/NIST_SP-800-53_rev5_catalog.yaml
-NIST_LOW=$(NIST_PREFIX)/NIST_SP-800-53_rev5_LOW-baseline_profile.yaml
-NIST_MODERATE=$(NIST_PREFIX)/NIST_SP-800-53_rev5_MODERATE-baseline_profile.yaml
-NIST_HIGH=$(NIST_PREFIX)/NIST_SP-800-53_rev5_HIGH-baseline_profile.yaml
+NIST_PREFIX=NIST/oscal-content/nist.gov/SP800-53/rev5/json
+NIST_SRC=$(NIST_PREFIX)/NIST_SP-800-53_rev5_catalog.json
 
-NIST_DOD=nist-sp-800-53-rev5-dod.yaml
-NIST_EXT=nist-sp-800-53-rev5-extended.yaml
-NIST_EXT_JSON=nist-sp-800-53-rev5-extended.json
+NIST_LOW=$(NIST_PREFIX)/NIST_SP-800-53_rev5_LOW-baseline_profile.json
+NIST_MODERATE=$(NIST_PREFIX)/NIST_SP-800-53_rev5_MODERATE-baseline_profile.json
+NIST_HIGH=$(NIST_PREFIX)/NIST_SP-800-53_rev5_HIGH-baseline_profile.json
+
+NIST_DOD=nist-sp-800-53-rev5-dod.json
+NIST_EXT=nist-sp-800-53-rev5-extended.json
 
 VIS=vis.html
 
 vis:	## Generate a visualization of controls by pillar
 vis:	$(VIS)
 
-$(VIS):	$(NIST_EXT_JSON) ./gen-dod-profiles.py
+$(VIS):	$(NIST_EXT) ./gen-dod-profiles.py
 	./gen-dod-profiles.py -f $< -b $(NIST_LOW) -b $(NIST_MODERATE) -b $(NIST_HIGH) --visualize > $@
 
 $(NIST_EXT_JSON):	$(NIST_EXT)
@@ -37,6 +37,8 @@ merge:	$(NIST_EXT)
 
 $(NIST_EXT):	$(NIST_DOD) $(DOD_MAPPINGS)
 	./merge-cnswp.py -f $(NIST_DOD) -c $(CNSWP) > $@
+
+nist-dod:	$(NIST_DOD)
 
 $(NIST_DOD):	$(NIST_SRC) $(DOD_MAPPINGS)
 	./merge-dod.py -f $(NIST_SRC) -d $(DOD_MAPPINGS) > $@
