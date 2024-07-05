@@ -25,7 +25,6 @@ html_preamble = '''<!doctype html>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
   </head>
   <body>
-    <h1>NIST SP 800-53 rev5 Controls by baseline</h1>
 '''
 
 html_postamble = '''<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
@@ -115,31 +114,44 @@ headings = ['Low', 'Moderate', 'High']
 def generate_html():
     html = []
 
-    html.append('<div class="container">')
-    html.append('<div class="row align-items-start">')
-    html.append('  <div class="col">')
+    html.append('<div class="container-fluid" style="padding: 1em;">')
+    html.append('<header class="border-bottom d-flex justify-content-center">')
+    html.append('<h3>NIST SP 800-53 rev5 Controls by DoD pillar and NIST baseline</h3>')
+    html.append('</header>')
+    html.append('</div>')
 
-    for i, k in enumerate(baselines_by_name.keys()):
+    html.append('<div class="container-fluid">')
+    html.append('<div class="row align-items-end">')
+    html.append('  <div class="col"></div>')
+    for p in pillars:
+        html.append('  <div class="col">')
+        html.append(f'    <h5>{p}</h5>')
+        html.append('  </div>')
+    html.append('</div>')
+
+    for i, k in reversed(list(enumerate(baselines_by_name.keys()))):
         style = styles[i]
         head = headings[i]
         classes = f'badge bg-{style}-subtle text-{style}'
-        html.append('  <div>')
-        html.append(f'    <h3>{head} Baseline</h3>')
-        for id in baselines_by_name[k]:
-            html.append(f'    <span class="{classes}">{id}</span>')
+
+        baseline_ids = { id : id for id in baselines_by_name[k] }
+
+        html.append('<div class="row align-items-start">')
+        html.append('  <div class="col">')
+        html.append(f'    <h5>{head} Baseline</h5>')
         html.append('  </div>')
 
-    html.append('  </div>')
-    html.append('  <div class="col">')
-    html.append('  </div>')
-    html.append('  <div class="col">')
-    html.append('  </div>')
-    html.append('  <div class="col">')
-    html.append('  </div>')
-    html.append('  <div class="col">')
-    html.append('  </div>')
-    html.append('</div>')
-    html.append('</div>')
+        for p in pillars:
+            html.append('  <div class="col">')
+
+            for id in mappings[p]:
+                if id in baseline_ids:
+                    html.append(f'    <span class="{classes}">{id}</span>')
+
+            html.append('  </div>')
+
+        html.append('</div>')
+
     html.append('</div>')
 
     return "\n".join(html)
@@ -150,15 +162,16 @@ def main(filename, prefix, baselines, resolve=False, visualize=False):
         ids = load_baseline(b)
         baselines_by_name[b] = ids
 
-    # print(f"Reading {filename}", file=sys.stderr)
-    # with open(filename, 'r') as file:
-    #     catalog = yaml.safe_load(file).get('catalog')
-    #     groups = catalog.get('groups')
+    print(f"Reading {filename}", file=sys.stderr)
+    with open(filename, 'r') as file:
+        catalog = yaml.safe_load(file).get('catalog')
+        groups = catalog.get('groups')
 
-    # for g in groups:
-    #     add_mappings(g['controls'])
+    for g in groups:
+        add_mappings(g['controls'])
 
     if visualize:
+        print('Generating HTML', file=sys.stderr)
         print(html_preamble)
         print(generate_html())
         print(html_postamble)
