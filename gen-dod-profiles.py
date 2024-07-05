@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 
 from argparse import ArgumentParser, BooleanOptionalAction
+import json
 import sys
 import uuid
 import yaml
@@ -164,7 +165,7 @@ def main(filename, prefix, baselines, resolve=False, visualize=False):
 
     print(f"Reading {filename}", file=sys.stderr)
     with open(filename, 'r') as file:
-        catalog = yaml.safe_load(file).get('catalog')
+        catalog = json.load(file).get('catalog')
         groups = catalog.get('groups')
 
     for g in groups:
