@@ -10,12 +10,45 @@
     <style>dt { float: left; width: 3em; } dd { margin-bottom: 0; }</style>
   </head>
   <body>
+  <div class="container-fluid" style="padding-top: 1em;">
+    <header class="d-flex justify-content-center">
+      <h3>NIST SP 800-53 rev5 Controls by DoD pillar and NIST baseline</h3>
+    </header>
+  </div>
 
-<div class="container-fluid" style="padding: 2em;">
-<header class="border-bottom d-flex justify-content-center">
-<h3>NIST SP 800-53 rev5 Controls by DoD pillar and NIST baseline</h3>
-</header>
-</div>
+  <div class="container border-top border-bottom" style="margin-top: 1em; margin-bottom: 1em;">
+    <div class="row">
+      <div class="col">
+        <dl>
+          <dt>ac</dt><dd>Access Control</dd>
+          <dt>at</dt><dd>Awareness and Training</dd>
+          <dt>au</dt><dd>Audit and Accountability</dd>
+          <dt>ca</dt><dd>Assessment, Authorization and Monitoring</dd>
+          <dt>cm</dt><dd>Configuration Management</dd>
+          <dt>cp</dt><dd>Contingency Planning</dd>
+          <dt>ia</dt><dd>Identification and Authentication</dd>
+          <dt>ir</dt><dd>Incident Response</dd>
+          <dt>ma</dt><dd>Maintenance</dd>
+          <dt>mp</dt><dd>Media Protection</dd>
+        </dl>
+      </div>
+      <div class="col">
+        <dl>
+          <dt>pe</dt><dd>Physical and Environmental Protection</dd>
+          <dt>pl</dt><dd>Planning</dd>
+          <dt>pm</dt><dd>Program Management</dd>
+          <dt>ps</dt><dd>Personnel Security</dd>
+          <dt>pt</dt><dd>Personally Identifiable Information Processing and Transparency</dd>
+          <dt>ra</dt><dd>Risk Assessment</dd>
+          <dt>sa</dt><dd>System and Services Acquisition</dd>
+          <dt>sc</dt><dd>System and Communications Protection</dd>
+          <dt>si</dt><dd>System and Information Integrity</dd>
+          <dt>sr</dt><dd>Supply Chain Risk Management</dd>
+        </dl>
+      </div>
+    </div>
+  </div>
+
 <div class="container-fluid">
 <div class="row align-items-end">
 <div class="col"></div>
@@ -397,39 +430,206 @@
 </div>
 </div>
 </div>
+<div class="container-fluid" style="padding-top: 2em; padding-bottom: 1em;">
+<h5>Controls not mapped to DoD pillars</h5>
+<span class="badge bg-danger-subtle text-danger" data-bs-toggle="tooltip" data-bs-title="Flow Control of Encrypted Information">ac-4.4</span>
+<span class="badge bg-danger-subtle text-danger" data-bs-toggle="tooltip" data-bs-title="Network Access to Privileged Commands">ac-6.3</span>
+<span class="badge bg-danger-subtle text-danger" data-bs-toggle="tooltip" data-bs-title="Concurrent Session Control">ac-10</span>
+<span class="badge bg-danger-subtle text-danger" data-bs-toggle="tooltip" data-bs-title="Restrict Configurations by Users">ac-18.4</span>
+<span class="badge bg-danger-subtle text-danger" data-bs-toggle="tooltip" data-bs-title="Antennas and Transmission Power Levels">ac-18.5</span>
+<span class="badge bg-danger-subtle text-danger" data-bs-toggle="tooltip" data-bs-title="Storage Capacity Warning">au-5.1</span>
+<span class="badge bg-danger-subtle text-danger" data-bs-toggle="tooltip" data-bs-title="Real-time Alerts">au-5.2</span>
+<span class="badge bg-danger-subtle text-danger" data-bs-toggle="tooltip" data-bs-title="Store on Separate Physical Systems or Components">au-9.2</span>
+<span class="badge bg-danger-subtle text-danger" data-bs-toggle="tooltip" data-bs-title="Cryptographic Protection">au-9.3</span>
+<span class="badge bg-danger-subtle text-danger" data-bs-toggle="tooltip" data-bs-title="Specialized Assessments">ca-2.2</span>
+<span class="badge bg-danger-subtle text-danger" data-bs-toggle="tooltip" data-bs-title="Transfer Authorizations">ca-3.6</span>
+<span class="badge bg-danger-subtle text-danger" data-bs-toggle="tooltip" data-bs-title="Penetration Testing">ca-8</span>
+<span class="badge bg-danger-subtle text-danger" data-bs-toggle="tooltip" data-bs-title="Independent Penetration Testing Agent or Team">ca-8.1</span>
+<span class="badge bg-danger-subtle text-danger" data-bs-toggle="tooltip" data-bs-title="Cryptography Management">cm-3.6</span>
+<span class="badge bg-danger-subtle text-danger" data-bs-toggle="tooltip" data-bs-title="Automated Access Enforcement and Audit Records">cm-5.1</span>
+<span class="badge bg-danger-subtle text-danger" data-bs-toggle="tooltip" data-bs-title="Accountability Information">cm-8.4</span>
+<span class="badge bg-danger-subtle text-danger" data-bs-toggle="tooltip" data-bs-title="Simulated Events">cp-3.1</span>
+<span class="badge bg-danger-subtle text-danger" data-bs-toggle="tooltip" data-bs-title="Alternate Processing Site">cp-4.2</span>
+<span class="badge bg-danger-subtle text-danger" data-bs-toggle="tooltip" data-bs-title="Recovery Time and Recovery Point Objectives">cp-6.2</span>
+<span class="badge bg-danger-subtle text-danger" data-bs-toggle="tooltip" data-bs-title="Preparation for Use">cp-7.4</span>
+<span class="badge bg-danger-subtle text-danger" data-bs-toggle="tooltip" data-bs-title="Separation of Primary and Alternate Providers">cp-8.3</span>
+<span class="badge bg-danger-subtle text-danger" data-bs-toggle="tooltip" data-bs-title="Provider Contingency Plan">cp-8.4</span>
+<span class="badge bg-danger-subtle text-danger" data-bs-toggle="tooltip" data-bs-title="Test Restoration Using Sampling">cp-9.2</span>
+<span class="badge bg-danger-subtle text-danger" data-bs-toggle="tooltip" data-bs-title="Separate Storage for Critical Information">cp-9.3</span>
+<span class="badge bg-danger-subtle text-danger" data-bs-toggle="tooltip" data-bs-title="Transfer to Alternate Storage Site">cp-9.5</span>
+<span class="badge bg-danger-subtle text-danger" data-bs-toggle="tooltip" data-bs-title="Restore Within Time Period">cp-10.4</span>
+<span class="badge bg-danger-subtle text-danger" data-bs-toggle="tooltip" data-bs-title="In-person Validation and Verification">ia-12.4</span>
+<span class="badge bg-danger-subtle text-danger" data-bs-toggle="tooltip" data-bs-title="Simulated Events">ir-2.1</span>
+<span class="badge bg-danger-subtle text-danger" data-bs-toggle="tooltip" data-bs-title="Automated Training Environments">ir-2.2</span>
+<span class="badge bg-danger-subtle text-danger" data-bs-toggle="tooltip" data-bs-title="Integrated Incident Response Team">ir-4.11</span>
+<span class="badge bg-danger-subtle text-danger" data-bs-toggle="tooltip" data-bs-title="Automated Maintenance Activities">ma-2.2</span>
+<span class="badge bg-danger-subtle text-danger" data-bs-toggle="tooltip" data-bs-title="Comparable Security and Sanitization">ma-4.3</span>
+<span class="badge bg-danger-subtle text-danger" data-bs-toggle="tooltip" data-bs-title="Individuals Without Appropriate Access">ma-5.1</span>
+<span class="badge bg-danger-subtle text-danger" data-bs-toggle="tooltip" data-bs-title="Review, Approve, Track, Document, and Verify">mp-6.1</span>
+<span class="badge bg-danger-subtle text-danger" data-bs-toggle="tooltip" data-bs-title="Equipment Testing">mp-6.2</span>
+<span class="badge bg-danger-subtle text-danger" data-bs-toggle="tooltip" data-bs-title="Nondestructive Techniques">mp-6.3</span>
+<span class="badge bg-danger-subtle text-danger" data-bs-toggle="tooltip" data-bs-title="System Access">pe-3.1</span>
+<span class="badge bg-danger-subtle text-danger" data-bs-toggle="tooltip" data-bs-title="Monitoring Physical Access to Systems">pe-6.4</span>
+<span class="badge bg-danger-subtle text-danger" data-bs-toggle="tooltip" data-bs-title="Automated Records Maintenance and Review">pe-8.1</span>
+<span class="badge bg-danger-subtle text-danger" data-bs-toggle="tooltip" data-bs-title="Alternate Power Supply — Minimal Operational Capability">pe-11.1</span>
+<span class="badge bg-danger-subtle text-danger" data-bs-toggle="tooltip" data-bs-title="Suppression Systems — Automatic Activation and Notification">pe-13.2</span>
+<span class="badge bg-danger-subtle text-danger" data-bs-toggle="tooltip" data-bs-title="Automation Support">pe-15.1</span>
+<span class="badge bg-danger-subtle text-danger" data-bs-toggle="tooltip" data-bs-title="Location of System Components">pe-18</span>
+<span class="badge bg-danger-subtle text-danger" data-bs-toggle="tooltip" data-bs-title="Discoverable Information">ra-5.4</span>
+<span class="badge bg-danger-subtle text-danger" data-bs-toggle="tooltip" data-bs-title="System, Component, and Service Configurations">sa-4.5</span>
+<span class="badge bg-danger-subtle text-danger" data-bs-toggle="tooltip" data-bs-title="Developer Security and Privacy Architecture and Design">sa-17</span>
+<span class="badge bg-danger-subtle text-danger" data-bs-toggle="tooltip" data-bs-title="Developer Screening">sa-21</span>
+<span class="badge bg-danger-subtle text-danger" data-bs-toggle="tooltip" data-bs-title="Security Function Isolation">sc-3</span>
+<span class="badge bg-danger-subtle text-danger" data-bs-toggle="tooltip" data-bs-title="Fail in Known State">sc-24</span>
+<span class="badge bg-danger-subtle text-danger" data-bs-toggle="tooltip" data-bs-title="Wireless Intrusion Detection">si-4.14</span>
+<span class="badge bg-danger-subtle text-danger" data-bs-toggle="tooltip" data-bs-title="Unauthorized Network Services">si-4.22</span>
+<span class="badge bg-danger-subtle text-danger" data-bs-toggle="tooltip" data-bs-title="Automated Alerts and Advisories">si-5.1</span>
+<span class="badge bg-danger-subtle text-danger" data-bs-toggle="tooltip" data-bs-title="Security and Privacy Function Verification">si-6</span>
+<span class="badge bg-danger-subtle text-danger" data-bs-toggle="tooltip" data-bs-title="Automated Notifications of Integrity Violations">si-7.2</span>
+<span class="badge bg-danger-subtle text-danger" data-bs-toggle="tooltip" data-bs-title="Automated Response to Integrity Violations">si-7.5</span>
+<span class="badge bg-danger-subtle text-danger" data-bs-toggle="tooltip" data-bs-title="Code Authentication">si-7.15</span>
+<span class="badge bg-danger-subtle text-danger" data-bs-toggle="tooltip" data-bs-title="Multiple Stages of System Development Life Cycle">sr-9.1</span>
+<span class="badge bg-success-subtle text-success" data-bs-toggle="tooltip" data-bs-title="Inactivity Logout">ac-2.5</span>
+<span class="badge bg-success-subtle text-success" data-bs-toggle="tooltip" data-bs-title="Authorize Access to Security Functions">ac-6.1</span>
+<span class="badge bg-success-subtle text-success" data-bs-toggle="tooltip" data-bs-title="Non-privileged Access for Nonsecurity Functions">ac-6.2</span>
+<span class="badge bg-success-subtle text-success" data-bs-toggle="tooltip" data-bs-title="Device Lock">ac-11</span>
+<span class="badge bg-success-subtle text-success" data-bs-toggle="tooltip" data-bs-title="Pattern-hiding Displays">ac-11.1</span>
+<span class="badge bg-success-subtle text-success" data-bs-toggle="tooltip" data-bs-title="Managed Access Control Points">ac-17.3</span>
+<span class="badge bg-success-subtle text-success" data-bs-toggle="tooltip" data-bs-title="Authentication and Encryption">ac-18.1</span>
+<span class="badge bg-success-subtle text-success" data-bs-toggle="tooltip" data-bs-title="Disable Wireless Networking">ac-18.3</span>
+<span class="badge bg-success-subtle text-success" data-bs-toggle="tooltip" data-bs-title="Full Device or Container-based Encryption">ac-19.5</span>
+<span class="badge bg-success-subtle text-success" data-bs-toggle="tooltip" data-bs-title="Limits on Authorized Use">ac-20.1</span>
+<span class="badge bg-success-subtle text-success" data-bs-toggle="tooltip" data-bs-title="Portable Storage Devices — Restricted Use">ac-20.2</span>
+<span class="badge bg-success-subtle text-success" data-bs-toggle="tooltip" data-bs-title="Social Engineering and Mining">at-2.3</span>
+<span class="badge bg-success-subtle text-success" data-bs-toggle="tooltip" data-bs-title="Independent Assessors">ca-2.1</span>
+<span class="badge bg-success-subtle text-success" data-bs-toggle="tooltip" data-bs-title="Independent Assessment">ca-7.1</span>
+<span class="badge bg-success-subtle text-success" data-bs-toggle="tooltip" data-bs-title="Retention of Previous Configurations">cm-2.3</span>
+<span class="badge bg-success-subtle text-success" data-bs-toggle="tooltip" data-bs-title="Configure Systems and Components for High-risk Areas">cm-2.7</span>
+<span class="badge bg-success-subtle text-success" data-bs-toggle="tooltip" data-bs-title="Security and Privacy Representatives">cm-3.4</span>
+<span class="badge bg-success-subtle text-success" data-bs-toggle="tooltip" data-bs-title="Periodic Review">cm-7.1</span>
+<span class="badge bg-success-subtle text-success" data-bs-toggle="tooltip" data-bs-title="Updates During Installation and Removal">cm-8.1</span>
+<span class="badge bg-success-subtle text-success" data-bs-toggle="tooltip" data-bs-title="Automated Tools to Support Information Location">cm-12.1</span>
+<span class="badge bg-success-subtle text-success" data-bs-toggle="tooltip" data-bs-title="Coordinate with Related Plans">cp-2.1</span>
+<span class="badge bg-success-subtle text-success" data-bs-toggle="tooltip" data-bs-title="Resume Mission and Business Functions">cp-2.3</span>
+<span class="badge bg-success-subtle text-success" data-bs-toggle="tooltip" data-bs-title="Identify Critical Assets">cp-2.8</span>
+<span class="badge bg-success-subtle text-success" data-bs-toggle="tooltip" data-bs-title="Coordinate with Related Plans">cp-4.1</span>
+<span class="badge bg-success-subtle text-success" data-bs-toggle="tooltip" data-bs-title="Alternate Storage Site">cp-6</span>
+<span class="badge bg-success-subtle text-success" data-bs-toggle="tooltip" data-bs-title="Separation from Primary Site">cp-6.1</span>
+<span class="badge bg-success-subtle text-success" data-bs-toggle="tooltip" data-bs-title="Accessibility">cp-6.3</span>
+<span class="badge bg-success-subtle text-success" data-bs-toggle="tooltip" data-bs-title="Alternate Processing Site">cp-7</span>
+<span class="badge bg-success-subtle text-success" data-bs-toggle="tooltip" data-bs-title="Separation from Primary Site">cp-7.1</span>
+<span class="badge bg-success-subtle text-success" data-bs-toggle="tooltip" data-bs-title="Accessibility">cp-7.2</span>
+<span class="badge bg-success-subtle text-success" data-bs-toggle="tooltip" data-bs-title="Priority of Service">cp-7.3</span>
+<span class="badge bg-success-subtle text-success" data-bs-toggle="tooltip" data-bs-title="Telecommunications Services">cp-8</span>
+<span class="badge bg-success-subtle text-success" data-bs-toggle="tooltip" data-bs-title="Priority of Service Provisions">cp-8.1</span>
+<span class="badge bg-success-subtle text-success" data-bs-toggle="tooltip" data-bs-title="Single Points of Failure">cp-8.2</span>
+<span class="badge bg-success-subtle text-success" data-bs-toggle="tooltip" data-bs-title="Testing for Reliability and Integrity">cp-9.1</span>
+<span class="badge bg-success-subtle text-success" data-bs-toggle="tooltip" data-bs-title="Cryptographic Protection">cp-9.8</span>
+<span class="badge bg-success-subtle text-success" data-bs-toggle="tooltip" data-bs-title="Transaction Recovery">cp-10.2</span>
+<span class="badge bg-success-subtle text-success" data-bs-toggle="tooltip" data-bs-title="Protection of Authenticators">ia-5.6</span>
+<span class="badge bg-success-subtle text-success" data-bs-toggle="tooltip" data-bs-title="Identity Evidence">ia-12.2</span>
+<span class="badge bg-success-subtle text-success" data-bs-toggle="tooltip" data-bs-title="Identity Evidence Validation and Verification">ia-12.3</span>
+<span class="badge bg-success-subtle text-success" data-bs-toggle="tooltip" data-bs-title="Address Confirmation">ia-12.5</span>
+<span class="badge bg-success-subtle text-success" data-bs-toggle="tooltip" data-bs-title="Incident Response Testing">ir-3</span>
+<span class="badge bg-success-subtle text-success" data-bs-toggle="tooltip" data-bs-title="Coordination with Related Plans">ir-3.2</span>
+<span class="badge bg-success-subtle text-success" data-bs-toggle="tooltip" data-bs-title="Supply Chain Coordination">ir-6.3</span>
+<span class="badge bg-success-subtle text-success" data-bs-toggle="tooltip" data-bs-title="Automation Support for Availability of Information and Support">ir-7.1</span>
+<span class="badge bg-success-subtle text-success" data-bs-toggle="tooltip" data-bs-title="Maintenance Tools">ma-3</span>
+<span class="badge bg-success-subtle text-success" data-bs-toggle="tooltip" data-bs-title="Inspect Tools">ma-3.1</span>
+<span class="badge bg-success-subtle text-success" data-bs-toggle="tooltip" data-bs-title="Inspect Media">ma-3.2</span>
+<span class="badge bg-success-subtle text-success" data-bs-toggle="tooltip" data-bs-title="Prevent Unauthorized Removal">ma-3.3</span>
+<span class="badge bg-success-subtle text-success" data-bs-toggle="tooltip" data-bs-title="Timely Maintenance">ma-6</span>
+<span class="badge bg-success-subtle text-success" data-bs-toggle="tooltip" data-bs-title="Media Marking">mp-3</span>
+<span class="badge bg-success-subtle text-success" data-bs-toggle="tooltip" data-bs-title="Media Storage">mp-4</span>
+<span class="badge bg-success-subtle text-success" data-bs-toggle="tooltip" data-bs-title="Media Transport">mp-5</span>
+<span class="badge bg-success-subtle text-success" data-bs-toggle="tooltip" data-bs-title="Access Control for Transmission">pe-4</span>
+<span class="badge bg-success-subtle text-success" data-bs-toggle="tooltip" data-bs-title="Access Control for Output Devices">pe-5</span>
+<span class="badge bg-success-subtle text-success" data-bs-toggle="tooltip" data-bs-title="Intrusion Alarms and Surveillance Equipment">pe-6.1</span>
+<span class="badge bg-success-subtle text-success" data-bs-toggle="tooltip" data-bs-title="Power Equipment and Cabling">pe-9</span>
+<span class="badge bg-success-subtle text-success" data-bs-toggle="tooltip" data-bs-title="Emergency Shutoff">pe-10</span>
+<span class="badge bg-success-subtle text-success" data-bs-toggle="tooltip" data-bs-title="Emergency Power">pe-11</span>
+<span class="badge bg-success-subtle text-success" data-bs-toggle="tooltip" data-bs-title="Detection Systems — Automatic Activation and Notification">pe-13.1</span>
+<span class="badge bg-success-subtle text-success" data-bs-toggle="tooltip" data-bs-title="Alternate Work Site">pe-17</span>
+<span class="badge bg-success-subtle text-success" data-bs-toggle="tooltip" data-bs-title="Functional Properties of Controls">sa-4.1</span>
+<span class="badge bg-success-subtle text-success" data-bs-toggle="tooltip" data-bs-title="Design and Implementation Information for Controls">sa-4.2</span>
+<span class="badge bg-success-subtle text-success" data-bs-toggle="tooltip" data-bs-title="Functions, Ports, Protocols, and Services in Use">sa-4.9</span>
+<span class="badge bg-success-subtle text-success" data-bs-toggle="tooltip" data-bs-title="Identification of Functions, Ports, Protocols, and Services">sa-9.2</span>
+<span class="badge bg-success-subtle text-success" data-bs-toggle="tooltip" data-bs-title="Criticality Analysis">sa-15.3</span>
+<span class="badge bg-success-subtle text-success" data-bs-toggle="tooltip" data-bs-title="Access Points">sc-7.3</span>
+<span class="badge bg-success-subtle text-success" data-bs-toggle="tooltip" data-bs-title="Split Tunneling for Remote Devices">sc-7.7</span>
+<span class="badge bg-success-subtle text-success" data-bs-toggle="tooltip" data-bs-title="Mobile Code">sc-18</span>
+<span class="badge bg-success-subtle text-success" data-bs-toggle="tooltip" data-bs-title="Integrity Checks">si-7.1</span>
+<span class="badge bg-success-subtle text-success" data-bs-toggle="tooltip" data-bs-title="Spam Protection">si-8</span>
+<span class="badge bg-success-subtle text-success" data-bs-toggle="tooltip" data-bs-title="Automatic Updates">si-8.2</span>
+<span class="badge bg-success-subtle text-success" data-bs-toggle="tooltip" data-bs-title="Memory Protection">si-16</span>
+<span class="badge bg-success-subtle text-success" data-bs-toggle="tooltip" data-bs-title="Supplier Assessments and Reviews">sr-6</span>
+<span class="badge bg-primary-subtle text-primary" data-bs-toggle="tooltip" data-bs-title="Unsuccessful Logon Attempts">ac-7</span>
+<span class="badge bg-primary-subtle text-primary" data-bs-toggle="tooltip" data-bs-title="System Use Notification">ac-8</span>
+<span class="badge bg-primary-subtle text-primary" data-bs-toggle="tooltip" data-bs-title="Wireless Access">ac-18</span>
+<span class="badge bg-primary-subtle text-primary" data-bs-toggle="tooltip" data-bs-title="Use of External Systems">ac-20</span>
+<span class="badge bg-primary-subtle text-primary" data-bs-toggle="tooltip" data-bs-title="Publicly Accessible Content">ac-22</span>
+<span class="badge bg-primary-subtle text-primary" data-bs-toggle="tooltip" data-bs-title="Insider Threat">at-2.2</span>
+<span class="badge bg-primary-subtle text-primary" data-bs-toggle="tooltip" data-bs-title="Training Records">at-4</span>
+<span class="badge bg-primary-subtle text-primary" data-bs-toggle="tooltip" data-bs-title="Information Exchange">ca-3</span>
+<span class="badge bg-primary-subtle text-primary" data-bs-toggle="tooltip" data-bs-title="Risk Monitoring">ca-7.4</span>
+<span class="badge bg-primary-subtle text-primary" data-bs-toggle="tooltip" data-bs-title="Access Restrictions for Change">cm-5</span>
+<span class="badge bg-primary-subtle text-primary" data-bs-toggle="tooltip" data-bs-title="Contingency Training">cp-3</span>
+<span class="badge bg-primary-subtle text-primary" data-bs-toggle="tooltip" data-bs-title="Contingency Plan Testing">cp-4</span>
+<span class="badge bg-primary-subtle text-primary" data-bs-toggle="tooltip" data-bs-title="System Backup">cp-9</span>
+<span class="badge bg-primary-subtle text-primary" data-bs-toggle="tooltip" data-bs-title="System Recovery and Reconstitution">cp-10</span>
+<span class="badge bg-primary-subtle text-primary" data-bs-toggle="tooltip" data-bs-title="Access to Accounts — Replay Resistant">ia-2.8</span>
+<span class="badge bg-primary-subtle text-primary" data-bs-toggle="tooltip" data-bs-title="Cryptographic Module Authentication">ia-7</span>
+<span class="badge bg-primary-subtle text-primary" data-bs-toggle="tooltip" data-bs-title="Incident Response Training">ir-2</span>
+<span class="badge bg-primary-subtle text-primary" data-bs-toggle="tooltip" data-bs-title="Incident Response Assistance">ir-7</span>
+<span class="badge bg-primary-subtle text-primary" data-bs-toggle="tooltip" data-bs-title="Policy and Procedures">ma-1</span>
+<span class="badge bg-primary-subtle text-primary" data-bs-toggle="tooltip" data-bs-title="Controlled Maintenance">ma-2</span>
+<span class="badge bg-primary-subtle text-primary" data-bs-toggle="tooltip" data-bs-title="Nonlocal Maintenance">ma-4</span>
+<span class="badge bg-primary-subtle text-primary" data-bs-toggle="tooltip" data-bs-title="Maintenance Personnel">ma-5</span>
+<span class="badge bg-primary-subtle text-primary" data-bs-toggle="tooltip" data-bs-title="Policy and Procedures">mp-1</span>
+<span class="badge bg-primary-subtle text-primary" data-bs-toggle="tooltip" data-bs-title="Media Access">mp-2</span>
+<span class="badge bg-primary-subtle text-primary" data-bs-toggle="tooltip" data-bs-title="Media Sanitization">mp-6</span>
+<span class="badge bg-primary-subtle text-primary" data-bs-toggle="tooltip" data-bs-title="Media Use">mp-7</span>
+<span class="badge bg-primary-subtle text-primary" data-bs-toggle="tooltip" data-bs-title="Policy and Procedures">pe-1</span>
+<span class="badge bg-primary-subtle text-primary" data-bs-toggle="tooltip" data-bs-title="Physical Access Authorizations">pe-2</span>
+<span class="badge bg-primary-subtle text-primary" data-bs-toggle="tooltip" data-bs-title="Physical Access Control">pe-3</span>
+<span class="badge bg-primary-subtle text-primary" data-bs-toggle="tooltip" data-bs-title="Monitoring Physical Access">pe-6</span>
+<span class="badge bg-primary-subtle text-primary" data-bs-toggle="tooltip" data-bs-title="Visitor Access Records">pe-8</span>
+<span class="badge bg-primary-subtle text-primary" data-bs-toggle="tooltip" data-bs-title="Emergency Lighting">pe-12</span>
+<span class="badge bg-primary-subtle text-primary" data-bs-toggle="tooltip" data-bs-title="Fire Protection">pe-13</span>
+<span class="badge bg-primary-subtle text-primary" data-bs-toggle="tooltip" data-bs-title="Environmental Controls">pe-14</span>
+<span class="badge bg-primary-subtle text-primary" data-bs-toggle="tooltip" data-bs-title="Water Damage Protection">pe-15</span>
+<span class="badge bg-primary-subtle text-primary" data-bs-toggle="tooltip" data-bs-title="Delivery and Removal">pe-16</span>
+<span class="badge bg-primary-subtle text-primary" data-bs-toggle="tooltip" data-bs-title="Social Media and External Site/Application Usage Restrictions">pl-4.1</span>
+<span class="badge bg-primary-subtle text-primary" data-bs-toggle="tooltip" data-bs-title="Baseline Selection">pl-10</span>
+<span class="badge bg-primary-subtle text-primary" data-bs-toggle="tooltip" data-bs-title="Baseline Tailoring">pl-11</span>
+<span class="badge bg-primary-subtle text-primary" data-bs-toggle="tooltip" data-bs-title="Access Agreements">ps-6</span>
+<span class="badge bg-primary-subtle text-primary" data-bs-toggle="tooltip" data-bs-title="External Personnel Security">ps-7</span>
+<span class="badge bg-primary-subtle text-primary" data-bs-toggle="tooltip" data-bs-title="Personnel Sanctions">ps-8</span>
+<span class="badge bg-primary-subtle text-primary" data-bs-toggle="tooltip" data-bs-title="Position Descriptions">ps-9</span>
+<span class="badge bg-primary-subtle text-primary" data-bs-toggle="tooltip" data-bs-title="Security Categorization">ra-2</span>
+<span class="badge bg-primary-subtle text-primary" data-bs-toggle="tooltip" data-bs-title="Allocation of Resources">sa-2</span>
+<span class="badge bg-primary-subtle text-primary" data-bs-toggle="tooltip" data-bs-title="System Development Life Cycle">sa-3</span>
+<span class="badge bg-primary-subtle text-primary" data-bs-toggle="tooltip" data-bs-title="Acquisition Process">sa-4</span>
+<span class="badge bg-primary-subtle text-primary" data-bs-toggle="tooltip" data-bs-title="Use of Approved PIV Products">sa-4.10</span>
+<span class="badge bg-primary-subtle text-primary" data-bs-toggle="tooltip" data-bs-title="System Documentation">sa-5</span>
+<span class="badge bg-primary-subtle text-primary" data-bs-toggle="tooltip" data-bs-title="Security and Privacy Engineering Principles">sa-8</span>
+<span class="badge bg-primary-subtle text-primary" data-bs-toggle="tooltip" data-bs-title="External System Services">sa-9</span>
+<span class="badge bg-primary-subtle text-primary" data-bs-toggle="tooltip" data-bs-title="Unsupported System Components">sa-22</span>
+<span class="badge bg-primary-subtle text-primary" data-bs-toggle="tooltip" data-bs-title="Denial-of-service Protection">sc-5</span>
+<span class="badge bg-primary-subtle text-primary" data-bs-toggle="tooltip" data-bs-title="Collaborative Computing Devices and Applications">sc-15</span>
+<span class="badge bg-primary-subtle text-primary" data-bs-toggle="tooltip" data-bs-title="Secure Name/Address Resolution Service (Authoritative Source)">sc-20</span>
+<span class="badge bg-primary-subtle text-primary" data-bs-toggle="tooltip" data-bs-title="Secure Name/Address Resolution Service (Recursive or Caching Resolver)">sc-21</span>
+<span class="badge bg-primary-subtle text-primary" data-bs-toggle="tooltip" data-bs-title="Architecture and Provisioning for Name/Address Resolution Service">sc-22</span>
+<span class="badge bg-primary-subtle text-primary" data-bs-toggle="tooltip" data-bs-title="Information Management and Retention">si-12</span>
+<span class="badge bg-primary-subtle text-primary" data-bs-toggle="tooltip" data-bs-title="Supply Chain Risk Management Plan">sr-2</span>
+<span class="badge bg-primary-subtle text-primary" data-bs-toggle="tooltip" data-bs-title="Establish SCRM Team">sr-2.1</span>
+<span class="badge bg-primary-subtle text-primary" data-bs-toggle="tooltip" data-bs-title="Acquisition Strategies, Tools, and Methods">sr-5</span>
+<span class="badge bg-primary-subtle text-primary" data-bs-toggle="tooltip" data-bs-title="Notification Agreements">sr-8</span>
+<span class="badge bg-primary-subtle text-primary" data-bs-toggle="tooltip" data-bs-title="Anti-counterfeit Training">sr-11.1</span>
+<span class="badge bg-primary-subtle text-primary" data-bs-toggle="tooltip" data-bs-title="Configuration Control for Component Service and Repair">sr-11.2</span>
+<span class="badge bg-primary-subtle text-primary" data-bs-toggle="tooltip" data-bs-title="Component Disposal">sr-12</span>
+</div>
 
-  <div class="container" style="padding-top: 2em;">
-    <div class="row">
-      <div class="col">
-        <dl>
-          <dt>ac</dt><dd>Access Control</dd>
-          <dt>at</dt><dd>Awareness and Training</dd>
-          <dt>au</dt><dd>Audit and Accountability</dd>
-          <dt>ca</dt><dd>Assessment, Authorization and Monitoring</dd>
-          <dt>cm</dt><dd>Configuration Management</dd>
-          <dt>cp</dt><dd>Contingency Planning</dd>
-          <dt>ia</dt><dd>Identification and Authentication</dd>
-          <dt>ir</dt><dd>Incident Response</dd>
-          <dt>ma</dt><dd>Maintenance</dd>
-          <dt>mp</dt><dd>Media Protection</dd>
-        </dl>
-      </div>
-      <div class="col">
-        <dl>
-          <dt>pe</dt><dd>Physical and Environmental Protection</dd>
-          <dt>pl</dt><dd>Planning</dd>
-          <dt>pm</dt><dd>Program Management</dd>
-          <dt>ps</dt><dd>Personnel Security</dd>
-          <dt>pt</dt><dd>Personally Identifiable Information Processing and Transparency</dd>
-          <dt>ra</dt><dd>Risk Assessment</dd>
-          <dt>sa</dt><dd>System and Services Acquisition</dd>
-          <dt>sc</dt><dd>System and Communications Protection</dd>
-          <dt>si</dt><dd>System and Information Integrity</dd>
-          <dt>sr</dt><dd>Supply Chain Risk Management</dd>
-        </dl>
-      </div>
-    </div>
-  </div>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
           integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
           crossorigin="anonymous"></script>

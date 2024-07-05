@@ -13,6 +13,7 @@ mappings = { p: [] for p in pillars }
 controls_by_id = { }
 baselines_by_name = { }
 seen_ids = { }
+mapped_ids = { }
 
 profile_uuid = str(uuid.uuid4())
 import_uuid = str(uuid.uuid4())
@@ -29,10 +30,13 @@ html_preamble = '''<!doctype html>
     <style>dt { float: left; width: 3em; } dd { margin-bottom: 0; }</style>
   </head>
   <body>
-'''
+  <div class="container-fluid" style="padding-top: 1em;">
+    <header class="d-flex justify-content-center">
+      <h3>NIST SP 800-53 rev5 Controls by DoD pillar and NIST baseline</h3>
+    </header>
+  </div>
 
-html_postamble = '''
-  <div class="container" style="padding-top: 2em;">
+  <div class="container border-top border-bottom" style="margin-top: 1em; margin-bottom: 1em;">
     <div class="row">
       <div class="col">
         <dl>
@@ -64,6 +68,9 @@ html_postamble = '''
       </div>
     </div>
   </div>
+'''
+
+html_postamble = '''
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
           integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
           crossorigin="anonymous"></script>
@@ -157,12 +164,6 @@ headings = ['Low', 'Moderate', 'High']
 def generate_html():
     html = []
 
-    html.append('<div class="container-fluid" style="padding: 2em;">')
-    html.append('<header class="border-bottom d-flex justify-content-center">')
-    html.append('<h3>NIST SP 800-53 rev5 Controls by DoD pillar and NIST baseline</h3>')
-    html.append('</header>')
-    html.append('</div>')
-
     html.append('<div class="container-fluid">')
     html.append('<div class="row align-items-end">')
     html.append('<div class="col"></div>')
@@ -191,9 +192,21 @@ def generate_html():
                 if id in baseline_ids:
                     text = controls_by_id[id]['title']
                     html.append(f'<span class="{classes}" data-bs-toggle="tooltip" data-bs-title="{text}">{id}</span>')
+                    mapped_ids[id] = id
 
             html.append('</div>')
         html.append('</div>')
+    html.append('</div>')
+
+    html.append('<div class="container-fluid" style="padding-top: 2em; padding-bottom: 1em;">')
+    html.append('<h5>Controls not mapped to DoD pillars</h5>')
+    for i, k in reversed(list(enumerate(baselines_by_name.keys()))):
+        style = styles[i]
+        classes = f'badge bg-{style}-subtle text-{style}'
+        for id in baselines_by_name[k]:
+            if id not in mapped_ids:
+                text = controls_by_id[id]['title']
+                html.append(f'<span class="{classes}" data-bs-toggle="tooltip" data-bs-title="{text}">{id}</span>')
     html.append('</div>')
 
     return "\n".join(html)
