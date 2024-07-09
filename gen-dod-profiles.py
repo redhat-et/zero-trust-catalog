@@ -163,6 +163,19 @@ def write_profile(name, prefix, controls, resolve=False):
 styles = ['primary', 'success', 'danger']
 headings = ['Low', 'Moderate', 'High']
 
+def is_withdrawn(id):
+    control = controls_by_id[id]
+    props = { prop['name'] : prop for prop in control['props'] }
+    return 'status' in props and props['status']['value'] == 'withdrawn'
+
+def generate_control(id, classes, guidance=False):
+    mapped_ids[id] = id
+    text = controls_by_id[id]['title']
+    if guidance:
+        return f'<a href="#{id}" class="{classes}" data-bs-toggle="offcanvas">{id}</a>'
+    else:
+        return f'<span class="{classes}" data-bs-toggle="tooltip" data-bs-title="{text}">{id}</span>'
+
 def generate_html(guidance=False):
     html = []
 
@@ -174,6 +187,8 @@ def generate_html(guidance=False):
         html.append(f'<h5>{p}</h5>')
         html.append('</div>')
     html.append('</div>')
+
+    # controls in NIST baselines AND DoD pillars
 
     for i, k in reversed(list(enumerate(baselines_by_name.keys()))):
         style = styles[i]
@@ -192,38 +207,61 @@ def generate_html(guidance=False):
 
             for id in mappings[p]:
                 if id in baseline_ids:
-                    text = controls_by_id[id]['title']
-                    if guidance:
-                        html.append(f'<a href="#{id}" class="{classes}" data-bs-toggle="offcanvas">{id}</a>')
-                    else:
-                        html.append(f'<span class="{classes}" data-bs-toggle="tooltip" data-bs-title="{text}">{id}</span>')
-                    mapped_ids[id] = id
+                    html.append(generate_control(id, classes, guidance))
 
             html.append('</div>')
         html.append('</div>')
+
+    # controls only in DoD pillars
+
+    html.append('<div class="row align-items-end">')
+    html.append('<div class="col">')
+    html.append(f'<h5>No baseline</h5>')
+    html.append('</div>')
+    style = 'secondary'
+    classes = f'badge bg-{style}-subtle text-{style}'
+    for p in pillars:
+        html.append('<div class="col">')
+        for id in mappings[p]:
+            if id not in mapped_ids:
+                html.append(generate_control(id, classes, guidance))
+        html.append('</div>')
     html.append('</div>')
 
+    html.append('</div>') # container-fluid
+
+    # controls only in NIST baselines
+
     html.append('<div class="container-fluid" style="padding-top: 2em; padding-bottom: 1em;">')
-    html.append('<h5>Controls not mapped to DoD pillars</h5>')
+    html.append('<h5>Controls in NIST baselines that are not mapped to DoD pillars</h5>')
     for i, k in reversed(list(enumerate(baselines_by_name.keys()))):
         style = styles[i]
         classes = f'badge bg-{style}-subtle text-{style}'
         for id in baselines_by_name[k]:
             if id not in mapped_ids:
-                text = controls_by_id[id]['title']
-                if guidance:
-                    html.append(f'<a href="#{id}" class="{classes}" data-bs-toggle="offcanvas">{id}</a>')
-                else:
-                    html.append(f'<span class="{classes}" data-bs-toggle="tooltip" data-bs-title="{text}">{id}</span>')
+                html.append(generate_control(id, classes, guidance))
     html.append('</div>')
+
+    # NIST controls not referenced by DoD or by NIST baselines
+
+    html.append('<h5>Controls not in any NIST baselines</h5>')
+    style = 'secondary'
+    classes = f'badge bg-{style}-subtle text-{style}'
+    for id in controls_by_id.keys():
+        if id not in mapped_ids:
+            if is_withdrawn(id):
+                continue
+            html.append(generate_control(id, classes, guidance))
+    html.append('</div>')
+
+    # Guidance text popup div blocks
 
     if guidance:
         html.append('<div class="container">')
         for id in controls_by_id.keys():
-            control = controls_by_id[id]
-            props = { prop['name'] : prop for prop in control['props'] }
-            if 'status' in props and props['status']['value'] == 'withdrawn':
+            if is_withdrawn(id):
                 continue
+            control = controls_by_id[id]
             title = control['title']
             parts = { part['name'] : part for part in control['parts'] }
             text = parts['guidance']['prose']
