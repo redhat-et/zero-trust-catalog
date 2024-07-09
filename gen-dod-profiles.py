@@ -30,13 +30,23 @@ html_preamble = '''<!doctype html>
     <style>dt { float: left; width: 3em; } dd { margin-bottom: 0; }</style>
   </head>
   <body>
-  <div class="container-fluid" style="padding-top: 1em;">
+  <div class="container-fluid border-bottom" style="padding-top: 1em; padding-bottom: 1em; margin-bottom: 1em;">
+  <button style="float: right;" type="button" class="btn btn-info" data-bs-toggle="modal" data-bs-target="#legend">
+    Legend
+  </button>
     <header class="d-flex justify-content-center">
       <h3>NIST SP 800-53 rev5 Controls by DoD pillar and NIST baseline</h3>
     </header>
   </div>
 
-  <div class="container border-top border-bottom" style="margin-top: 1em; margin-bottom: 1em;">
+  <div class="modal" id="legend" aria-hidden="true">
+  <div class="modal-dialog modal-xl">
+  <div class="modal-content">
+    <div class="modal-header">
+      <h1 class="modal-title fs-5" id="exampleModalLabel">NIST Control Families</h1>
+      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+    </div>
+    <div class="modal-body">
     <div class="row">
       <div class="col">
         <dl>
@@ -67,6 +77,9 @@ html_preamble = '''<!doctype html>
         </dl>
       </div>
     </div>
+    </div>
+  </div>
+  </div>
   </div>
 '''
 
