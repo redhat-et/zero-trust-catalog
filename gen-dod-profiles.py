@@ -209,19 +209,39 @@ def resolve_text(text, params):
             repl = " | ".join(param['select']['choice'])
         else:
             repl = id
-        return f"< {repl} >"
+
+        return f'<span style="background-color: yellow;">< {repl} ></span>'
 
     return param_pattern.sub(replace, text)
 
-def resolve_parts(parts, params):
+part_names = {
+    'statement' : 'Statement',
+    'guidance' : 'Guidance',
+    'assessment-objective': 'Assessment Objective',
+    'assessment-method' : 'Assessment Method',
+}
+
+def resolve_parts(parts, params, top=False):
     html = []
 
     for part in parts:
+        if top and part['name'] in part_names:
+            title = part_names[part['name']]
+            html.append(f'<h5 style="padding-top: 0.5em;">{title}</h5>')
+        if 'props' in part:
+            props = { p['name'] : p['value'] for p in part['props'] }
+            if 'label' in props:
+                label = props['label']
+                html.append(f'<b class="label">{label}</b>')
         if 'prose' in part:
             text = resolve_text(part['prose'], params)
-            html.append(f'<p>{text}</p>')
+            text = re.sub('\n\n', '<br/>', text, re.M)
+
+            html.append(f'<span class="text">{text}</span><br/>')
         if 'parts' in part:
+            html.append('<div class="container-fluid">')
             html.extend(resolve_parts(part['parts'], params))
+            html.append('</div>')
 
     return html
 
@@ -232,7 +252,7 @@ def resolve_control(id):
 
     params = { param['id'] : param for param in control['params'] }
 
-    html = resolve_parts(control['parts'], params)
+    html = resolve_parts(control['parts'], params, top=True)
     return html
 
 def generate_html(guidance=False):
@@ -338,16 +358,13 @@ def generate_html(guidance=False):
                 continue
             control = controls_by_id[id]
             title = control['title']
-            # parts = { part['name'] : part for part in control['parts'] }
-            # text = parts['guidance']['prose']
-            text = "\n".join(resolve_control(id))
             html.append(f'<div class="offcanvas offcanvas-bottom" id="{id}">')
             html.append('<div class="offcanvas-header">')
-            html.append(f'<h5>{id.upper()} – {title}</h5>')
+            html.append(f'<h4>{id.upper()} – {title}</h4>')
             html.append('<button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>')
             html.append('</div>')
             html.append('<div class="offcanvas-body">')
-            html.append(f'<p>{text}</p>')
+            html.extend(resolve_control(id))
             html.append('</div>')
             html.append('</div>')
         html.append('</div>')
