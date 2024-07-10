@@ -2,6 +2,7 @@
 
 from argparse import ArgumentParser, BooleanOptionalAction
 import json
+import re
 import sys
 import uuid
 import yaml
@@ -191,6 +192,49 @@ def generate_control(id, classes, guidance=False):
     else:
         return f'<span class="{classes}" data-bs-toggle="tooltip" data-bs-title="{text}">{id}</span>'
 
+
+param_pattern = re.compile(r'{{ insert: param, (\S+) }}')
+
+def resolve_text(text, params):
+
+    def replace(m):
+        id = m.group(1)
+        if id not in params:
+            print(f"Warning: {id} not in this control", file=sys.stderr)
+            return id
+        param = params[id]
+        if 'label' in param:
+            repl =  param['label']
+        elif 'select' in param:
+            repl = " | ".join(param['select']['choice'])
+        else:
+            repl = id
+        return f"< {repl} >"
+
+    return param_pattern.sub(replace, text)
+
+def resolve_parts(parts, params):
+    html = []
+
+    for part in parts:
+        if 'prose' in part:
+            text = resolve_text(part['prose'], params)
+            html.append(f'<p>{text}</p>')
+        if 'parts' in part:
+            html.extend(resolve_parts(part['parts'], params))
+
+    return html
+
+def resolve_control(id):
+    control = controls_by_id[id]
+    if 'params' not in control:
+        return []
+
+    params = { param['id'] : param for param in control['params'] }
+
+    html = resolve_parts(control['parts'], params)
+    return html
+
 def generate_html(guidance=False):
     html = []
 
@@ -294,8 +338,9 @@ def generate_html(guidance=False):
                 continue
             control = controls_by_id[id]
             title = control['title']
-            parts = { part['name'] : part for part in control['parts'] }
-            text = parts['guidance']['prose']
+            # parts = { part['name'] : part for part in control['parts'] }
+            # text = parts['guidance']['prose']
+            text = "\n".join(resolve_control(id))
             html.append(f'<div class="offcanvas offcanvas-bottom" id="{id}">')
             html.append('<div class="offcanvas-header">')
             html.append(f'<h5>{id.upper()} – {title}</h5>')
