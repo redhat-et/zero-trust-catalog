@@ -6,6 +6,8 @@ import sys
 import uuid
 import yaml
 
+can_ignore = ['at', 'ca', 'cp', 'ir', 'ma', 'mp', 'pe', 'pl', 'pm', 'ps', 'pt', 'ra']
+
 pillars = ['Enabler', 'User', 'Device', 'Application & Workload', 'Data',
            'Network & Environment', 'Automation & Orchestration',
            'Visibility and Analytics']
@@ -257,7 +259,23 @@ def generate_html(guidance=False):
 
     # NIST controls not referenced by DoD or by NIST baselines
 
-    html.append('<h5>Controls not in any NIST baselines</h5>')
+    html.append('<div class="container-fluid" style="padding-bottom: 1em;">')
+    html.append('<h5>Controls not in any DoD pillars or NIST baselines</h5>')
+    style = 'secondary'
+    classes = f'badge bg-{style}-subtle text-{style}'
+    for id in controls_by_id.keys():
+        if id not in mapped_ids:
+            if id[:2] in can_ignore:
+                continue
+            if is_withdrawn(id):
+                continue
+            html.append(generate_control(id, classes, guidance))
+    html.append('</div>')
+
+    # Ignored NIST controls not referenced elsewhere
+
+    html.append('<div class="container-fluid" style="padding-bottom: 1em;">')
+    html.append('<h5>Ignored controls not referenced elsewhere</h5>')
     style = 'secondary'
     classes = f'badge bg-{style}-subtle text-{style}'
     for id in controls_by_id.keys():
