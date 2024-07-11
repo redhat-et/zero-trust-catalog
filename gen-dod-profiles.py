@@ -221,6 +221,14 @@ part_names = {
     'assessment-method' : 'Assessment Method',
 }
 
+linebreak_pattern = re.compile(r'\n\n', flags=re.M)
+href_pattern = re.compile(r'\[([^\]]+)\]\(([^\)]+)\)')
+
+def md_to_link(m):
+    label = m.group(1)
+    href = m.group(2)
+    return f'<a href="{href}" data-bs-toggle="offcanvas">{label}</a>'
+
 def resolve_parts(parts, params, top=False):
     html = []
 
@@ -235,7 +243,8 @@ def resolve_parts(parts, params, top=False):
                 html.append(f'<b class="label">{label}</b>')
         if 'prose' in part:
             text = resolve_text(part['prose'], params)
-            text = re.sub('\n\n', '<br/>', text, re.M)
+            text = linebreak_pattern.sub('<br/>', text)
+            text = href_pattern.sub(md_to_link, text)
 
             html.append(f'<span class="text">{text}</span><br/>')
         if 'parts' in part:
