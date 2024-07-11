@@ -248,9 +248,9 @@ def resolve_parts(parts, params, top=False):
 def resolve_control(id):
     control = controls_by_id[id]
     if 'params' not in control:
-        return []
-
-    params = { param['id'] : param for param in control['params'] }
+        params = []
+    else:
+        params = { param['id'] : param for param in control['params'] }
 
     html = resolve_parts(control['parts'], params, top=True)
     return html
