@@ -14,6 +14,7 @@ pillars = ['Enabler', 'User', 'Device', 'Application & Workload', 'Data',
            'Visibility and Analytics']
 mappings = { p: [] for p in pillars }
 controls_by_id = { }
+params_by_id = { }
 baselines_by_name = { }
 seen_ids = { }
 mapped_ids = { }
@@ -147,6 +148,12 @@ def add_mappings(controls):
             if p['name'].startswith('Appendix A'):
                 key = p['value']
                 mappings[key].append(c['id'])
+        if 'params' in c:
+            for param in c['params']:
+                id = param['id']
+                if id in params_by_id:
+                    print(f"Warning: duplicate parameter id {id}", file.sys.stderr)
+                params_by_id[id] = param
         if 'controls' in c:
             add_mappings(c['controls'])
 
@@ -195,14 +202,14 @@ def generate_control(id, classes, guidance=False):
 
 param_pattern = re.compile(r'{{ insert: param, (\S+) }}')
 
-def resolve_text(text, params):
+def resolve_text(text):
 
     def replace(m):
         id = m.group(1)
-        if id not in params:
+        if id not in params_by_id:
             print(f"Warning: {id} not in this control", file=sys.stderr)
             return id
-        param = params[id]
+        param = params_by_id[id]
         if 'label' in param:
             repl =  param['label']
         elif 'select' in param:
@@ -210,6 +217,7 @@ def resolve_text(text, params):
         else:
             repl = id
 
+        repl = resolve_text(repl)
         return f'<span style="background-color: yellow;">< {repl} ></span>'
 
     return param_pattern.sub(replace, text)
@@ -242,7 +250,7 @@ def resolve_parts(parts, params, top=False):
                 label = props['label']
                 html.append(f'<b class="label">{label}</b>')
         if 'prose' in part:
-            text = resolve_text(part['prose'], params)
+            text = resolve_text(part['prose'])
             text = linebreak_pattern.sub('<br/>', text)
             text = href_pattern.sub(md_to_link, text)
 
