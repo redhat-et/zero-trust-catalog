@@ -2,6 +2,7 @@
 
 from argparse import ArgumentParser, BooleanOptionalAction
 import json
+import re
 import sys
 import uuid
 import yaml
@@ -13,6 +14,7 @@ pillars = ['Enabler', 'User', 'Device', 'Application & Workload', 'Data',
            'Visibility and Analytics']
 mappings = { p: [] for p in pillars }
 controls_by_id = { }
+params_by_id = { }
 baselines_by_name = { }
 seen_ids = { }
 mapped_ids = { }
@@ -146,6 +148,12 @@ def add_mappings(controls):
             if p['name'].startswith('Appendix A'):
                 key = p['value']
                 mappings[key].append(c['id'])
+        if 'params' in c:
+            for param in c['params']:
+                id = param['id']
+                if id in params_by_id:
+                    print(f"Warning: duplicate parameter id {id}", file.sys.stderr)
+                params_by_id[id] = param
         if 'controls' in c:
             add_mappings(c['controls'])
 
@@ -190,6 +198,79 @@ def generate_control(id, classes, guidance=False):
         return f'<a href="#{id}" class="{classes}" data-bs-toggle="offcanvas">{id}</a>'
     else:
         return f'<span class="{classes}" data-bs-toggle="tooltip" data-bs-title="{text}">{id}</span>'
+
+
+param_pattern = re.compile(r'{{ insert: param, (\S+) }}')
+
+def resolve_text(text):
+
+    def replace(m):
+        id = m.group(1)
+        if id not in params_by_id:
+            print(f"Warning: {id} not in this control", file=sys.stderr)
+            return id
+        param = params_by_id[id]
+        if 'label' in param:
+            repl =  param['label']
+        elif 'select' in param:
+            repl = " | ".join(param['select']['choice'])
+        else:
+            repl = id
+
+        repl = resolve_text(repl)
+        return f'<span style="background-color: yellow;">< {repl} ></span>'
+
+    return param_pattern.sub(replace, text)
+
+part_names = {
+    'statement' : 'Statement',
+    'guidance' : 'Guidance',
+    'assessment-objective': 'Assessment Objective',
+    'assessment-method' : 'Assessment Method',
+}
+
+linebreak_pattern = re.compile(r'\n\n', flags=re.M)
+href_pattern = re.compile(r'\[([^\]]+)\]\(([^\)]+)\)')
+
+def md_to_link(m):
+    label = m.group(1)
+    href = m.group(2)
+    return f'<a href="{href}" data-bs-toggle="offcanvas">{label}</a>'
+
+def resolve_parts(parts, params, top=False):
+    html = []
+
+    for part in parts:
+        if top and part['name'] in part_names:
+            title = part_names[part['name']]
+            html.append(f'<h5 style="padding-top: 0.5em;">{title}</h5>')
+        if 'props' in part:
+            props = { p['name'] : p['value'] for p in part['props'] }
+            if 'label' in props:
+                label = props['label']
+                html.append(f'<b class="label">{label}</b>')
+        if 'prose' in part:
+            text = resolve_text(part['prose'])
+            text = linebreak_pattern.sub('<br/>', text)
+            text = href_pattern.sub(md_to_link, text)
+
+            html.append(f'<span class="text">{text}</span><br/>')
+        if 'parts' in part:
+            html.append('<div class="container-fluid">')
+            html.extend(resolve_parts(part['parts'], params))
+            html.append('</div>')
+
+    return html
+
+def resolve_control(id):
+    control = controls_by_id[id]
+    if 'params' not in control:
+        params = []
+    else:
+        params = { param['id'] : param for param in control['params'] }
+
+    html = resolve_parts(control['parts'], params, top=True)
+    return html
 
 def generate_html(guidance=False):
     html = []
@@ -294,15 +375,13 @@ def generate_html(guidance=False):
                 continue
             control = controls_by_id[id]
             title = control['title']
-            parts = { part['name'] : part for part in control['parts'] }
-            text = parts['guidance']['prose']
             html.append(f'<div class="offcanvas offcanvas-bottom" id="{id}">')
             html.append('<div class="offcanvas-header">')
-            html.append(f'<h5>{id.upper()} – {title}</h5>')
+            html.append(f'<h4>{id.upper()} – {title}</h4>')
             html.append('<button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>')
             html.append('</div>')
             html.append('<div class="offcanvas-body">')
-            html.append(f'<p>{text}</p>')
+            html.extend(resolve_control(id))
             html.append('</div>')
             html.append('</div>')
         html.append('</div>')
