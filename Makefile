@@ -49,6 +49,9 @@ dod:	$(DOD_MAPPINGS)
 $(DOD_MAPPINGS):	$(DOD_PDF)
 	./dod-extractor.py -f $< > $@
 
+sub-sections:	$(DOD_PDF)
+	./dod-extractor.py -f $< -s
+
 clean:	## Remove generated files
 	rm -f $(DOD_MAPPINGS)
 	rm -f $(NIST_DOD)

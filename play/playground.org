@@ -264,3 +264,133 @@ for p in pillars:
     controls = mappings[p]
     print(yaml.dump(profile(p, controls), sort_keys=False))
 #+end_src
+
+
+** Zero Trust Overlays redux
+
+#+header: :var file="Downloads/ZeroTrustOverlays-2024Feb.pdf"
+#+begin_src python :results output :dir "~/" :exports both
+from pypdf import PdfReader
+import re
+
+reader = PdfReader(file)
+
+page = reader.pages[90]
+text = page.extract_text(extraction_mode="layout", layout_mode_strip_rotated=False)
+print(text)
+#+end_src
+
+#+RESULTS:
+#+begin_example
+Controls
+The following controls are associated with the User Inventory Capability as described in the discussion
+section below. It includes the phased activities, the planned implementation phase, and any zero trust-
+specific parameter values. See the section, User Pillar Control Selection, for a full description of the table
+contents.
+                                    Table C-2. User Inventory Applicable Controls
+
+   [Implementation Level: Enterprise = ET, Component = C,  Enclave = EN, Syst em = SYS; Tech/Non  -Tech: System = S, Organization = O,
+         Combination = O/S; Activity Type: Target = T, Advanced = A; Phase: Discovery = D, Phases = 1 -4; Parameter Values = PV]
+                                                                        Phased
+                                                                       Activities
+                     User Pillar Controls                                                 Overlay-specific Parameter Values
+              Capability 1.1: User Inventory                                  ory
+                                                                          1.1.1 InventUser
+ Implementation Level (Enterprise, Component,                              ET
+ Enclave, System)
+ Tech/Non-Tech (System, Organization, Combination)                        O/S
+ Activity Type (Target, Advanced)                                           T
+ Phase (Discovery, Phases 1-4)                                              D
+
+ AC-2               Account Management                                      X          h. 1, 2, and 3. Immediately or the
+                                                                                       minimum time practicable, not to exceed
+                                                                                       4 hours
+ AC-2(7)            Privileged User Accounts                                X          a. an attribute-based access scheme
+ AC-14              Permitted Actions Without                               X          a. no permitted user actions
+                    Identification or Authentication
+
+ IA-2               Identification and Authentication                       X
+                    (organizational user)
+ IA-8               Identification and Authentication                       X
+                    (non-organizational user)
+Discussion
+The User Inventory Capability identifies regular and privileged users. This capability is required by DoD
+organizations to ensure and enforce user access to only those resources needed per defined role, job
+functions, and assigned authorizations.
+Inventory User. DoD will establish a user inventory. The user inventory may initially be the
+responsibility of the system owner, but the inventory is intended to be organization wide. As the user
+inventory becomes more centralized, responsibility will shift and be managed at an enclave or enterprise
+level. This will enable visibility and management of users across all environments to reduce risk of
+untrusted users with access to resources and removal of users who no longer require access to resources.
+     •    The user inventory may begin as a manual process, with an automated approach planned at a later
+          phase. The objective for the later phase is enhanced automation and integration of disparate user
+          inventory processes and repositories to support management of regular and privileged users
+          across all enterprise systems.
+Predecessor(s): None
+
+
+                                                                  C-11
+
+#+end_example
+
+*** Page 324
+
+#+begin_example
+      Table H-2. Policy Decision Point & Policy Orchestration Capability Applicable Controls
+
+  [Implementation Level: Enterprise = ET, Component = C, Enclave = EN, System = SYS; Tech/Non-Tech: System = S, Organization = O,
+        Combination = O/S; Activity Type: Target = T, Advanced = A; Phase: Discovery = D, Phases = 1-4; Parameter Values = PV]
+                                                                             Phased Activities
+
+
+
+  Automation & Orchestration Pillar Overlay                                        cess       y          y
+                          Controls                                      ory &                            urit         Overlay-specific
+                                                                                              Securit                Parameter Values
+ Capability 6.1: Policy Decision Point & Policy                                    tion Ac
+                       Orchestration                                     Inventent            rprise     rprise Sec
+                                                                            elopm                 Part 1     Part 2
+
+                                                                        6.1.1 PolicyDev6.1.2 OrganizaProfile6.1.3 EnteProfile 6.1.4 EnteProfile
+Implementation Level (Enterprise, Component,                         ET/C          C       ET/C       ET/C
+Enclave, System)
+Tech/Non-Tech (System, Organization,                                  O/S        O/S        O/S        O/S
+Combination)
+Activity Type (Target, Advanced)                                        T          T          T         A
+Phase (Discovery, Phases 1-4)                                          D           1          2          3
+
+AC-1              Policy and Procedures                                X
+AC-2              Account Management                                              X                              h. 1, 2, and 3.
+                                                                                                                 Immediately or the
+                                                                                                                 minimum time
+                                                                                                                 practicable, not to exceed
+                                                                                                                 4 hours
+AC-2(11)          Usage Conditions                                                X                              2nd PV: all accounts
+AC-4              Information Flow Enforcement
+AC-4(3)           Dynamic Information Flow Control                                X                              All information flow
+                                                                                                                  control policies
+AC-4(6)           Metadata                                                        X
+AC-4(8)           Security and Privacy Policy Filters                             X                              a. 2nd PV: all information
+                                                                                                                 flows
+AC-4(10)          Enable and Disable Security or                                  X
+                  Privacy Policy Filters
+AC-4(11)          Configuration of Security or Privacy                            X
+                  Policy Filters
+AC-4(19)          Validation of Metadata                                          X
+AC-4(29)          Filter Orchestration Engines                                    X
+AC-6              Least Privilege                                                 X
+AC-16             Security and Privacy Attributes                                 X                              c. 1st PV: all systems
+                                                                                                                 c. 2nd PV: DoD
+                                                                                                                 Enterprise Attribute
+                                                                                                                 Baseline, at a minimum
+                                                                                                                 f. 1st PV: DoD Enterprise
+                                                                                                                 Attribute Baseline, at a
+                                                                                                                 minimum
+                                                                                                                 f. 2nd PV: at least
+                                                                                                                 annually
+AC-16(1)          Dynamic Attribute Association                                   X                              1st PV: all subjects and
+                                                                                                                 objects
+
+
+                                                                      H-9
+#+end_example

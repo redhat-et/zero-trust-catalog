@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 
-from argparse import ArgumentParser
+from argparse import ArgumentParser, BooleanOptionalAction
 from pypdf import PdfReader
 import re
 import sys
@@ -190,6 +190,26 @@ def process_section(reader, pages, columns, mappings, find=False):
             print(f'    {p+1}: {sorted(found)},')
     return result
 
+cap_pattern = re.compile(r'^\s*Capability\s+(\d\.\d)')
+type_pattern = re.compile(r'^\s*Activity Type \(Target, Advanced\)\s+(.*)$')
+phase_pattern = re.compile(r'^\s*Phase[^)]+\)\s+(.*)$')
+
+def process_subsection(reader, page_num):
+    result = []
+    page = reader.pages[page_num]
+    text = page.extract_text(extraction_mode="layout", layout_mode_strip_rotated=False)
+
+    for line in text.splitlines():
+        m = cap_pattern.match(line)
+        if m:
+            print(m.group(1))
+        m = type_pattern.match(line)
+        if m:
+            print(m.group(1).split())
+        m = phase_pattern.match(line)
+        if m:
+            print(m.group(1).split())
+
 def process_file(reader):
     result = []
 
@@ -205,11 +225,17 @@ if __name__ == '__main__':
                         help='The PDF file')
     parser.add_argument('-c', '--find-columns', dest='page', type=int,
                         help='Find table "X" columns on a page')
+    parser.add_argument('-s', '--sub-sections', action=BooleanOptionalAction,
+                        help='Extract sub-section pages')
     args = parser.parse_args()
 
     reader = PdfReader(args.file)
 
-    if args.page:
+    if args.sub_sections:
+        for p in [90, 323]:
+            print(f"Page {p}")
+            process_subsection(reader, p)
+    elif args.page:
         process_section(reader, [args.page - 1], [], {args.page: []}, find=True)
     else:
         result = process_file(reader)
