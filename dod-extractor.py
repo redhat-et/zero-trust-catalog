@@ -190,25 +190,63 @@ def process_section(reader, pages, columns, mappings, find=False):
             print(f'    {p+1}: {sorted(found)},')
     return result
 
-cap_pattern = re.compile(r'^\s*Capability\s+(\d\.\d)')
-type_pattern = re.compile(r'^\s*Activity Type \(Target, Advanced\)\s+(.*)$')
+cap_pattern = re.compile(r'^\s*Capability:?\s+(\d\.\d)')
+tech_pattern = re.compile(r'^\s*Tech.*[,)]\s+(.*)$')
+type_pattern = re.compile(r'^\s*Activity \w+ \(Target,(?: Advanced\))?\s+(.*)$')
 phase_pattern = re.compile(r'^\s*Phase[^)]+\)\s+(.*)$')
 
-def process_subsection(reader, page_num):
+sub_pages = [(90, 1), (93, 3), (102, 3), (110, 2), (117, 3), (125, 2), (131, 1), (134, 1), (140, 3),
+             (157, 3), (165, 2), (171, 5), (185, 2), (189, 2), (192, 3), (199, 2),
+             (213, 1), (215, 4), (226, 5), (236, 4), (248, 1),
+             (260, 2), (265, 2), (271, 2), (276, 3), (283, 3), (289, 1),
+             (298, 1), (301, 2), (306, 1), (311, 2),
+             (323, 2), (329, 1), (331, 2), (335, 1), (337, 2), (341, 1), (343, 2),
+             (355, 2), (360, 3), (368, 1), (370, 1), (373, 2), (376, 3)
+             ]
+
+def process_sub(reader, page_num, count):
     result = []
     page = reader.pages[page_num]
     text = page.extract_text(extraction_mode="layout", layout_mode_strip_rotated=False)
 
+    cap = None
+    techs = None
+    types = None
+    phases = None
+
     for line in text.splitlines():
         m = cap_pattern.match(line)
         if m:
-            print(m.group(1))
+            cap = m.group(1)
+        m = tech_pattern.match(line)
+        if m:
+            techs = m.group(1).split()
         m = type_pattern.match(line)
         if m:
-            print(m.group(1).split())
+            types = m.group(1).split()
         m = phase_pattern.match(line)
         if m:
-            print(m.group(1).split())
+            phases = m.group(1).split()
+
+    if cap is None:
+        print(f"Warning: failed to match 'Capability' on page {page_num}", file=sys.stderr)
+    if techs is None:
+        print(f"Warning: failed to match 'Tech/Non-Tech' on page {page_num}", file=sys.stderr)
+    if types is None:
+        print(f"Warning: failed to match 'Activity Type' on page {page_num}", file=sys.stderr)
+    if phases is None:
+        print(f"Warning: failed to match 'Phase' on page {page_num}", file=sys.stderr)
+
+    if cap is None or techs is None or types is None or phases is None:
+        print(text, file=sys.stderr)
+    elif len(techs) != len(types) or len(types) != len(phases):
+        print(f"Warning: captured lists with differing lengths", file=sys.stderr)
+
+    print(f"Cap {cap}, tech {techs}, types {types}, phases {phases}")
+
+def process_file_subs(reader):
+    for (page, count) in sub_pages:
+        process_sub(reader, page, count)
 
 def process_file(reader):
     result = []
@@ -232,9 +270,7 @@ if __name__ == '__main__':
     reader = PdfReader(args.file)
 
     if args.sub_sections:
-        for p in [90, 323]:
-            print(f"Page {p}")
-            process_subsection(reader, p)
+        process_file_subs(reader)
     elif args.page:
         process_section(reader, [args.page - 1], [], {args.page: []}, find=True)
     else:
