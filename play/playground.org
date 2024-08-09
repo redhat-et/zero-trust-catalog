@@ -394,3 +394,192 @@ AC-16(1)          Dynamic Attribute Association                                 
 
                                                                       H-9
 #+end_example
+
+** Extract all subheadings
+
+#+header: :var file="Downloads/ZeroTrustOverlays-2024Feb.pdf"
+#+begin_src python :results output :dir "~/" :exports both
+from pypdf import PdfReader
+import re
+
+reader = PdfReader(file)
+
+title_pattern = re.compile(r'.*(\d\.\d\.\d)\s(\w[\s\w\-/(\)]+\w)')
+extra_ws = re.compile(r'\s\s+')
+
+headings = {}
+
+for page in reader.pages:
+    text = page.extract_text(extraction_mode="layout")
+    for line in text.splitlines():
+        m = title_pattern.match(line)
+        if m:
+            id = m.group(1)
+            text = m.group(2)
+            text = extra_ws.sub('', text)
+            if id not in headings:
+                headings[id] = text
+print("headings = {")
+for k, v in headings.items():
+    print(f"    '{k}': '{v}',")
+print("}")
+#+end_src
+
+#+RESULTS:
+#+begin_example
+headings = {
+    '1.1.1': 'Inventory User',
+    '1.2.1': 'Implement Application Based Permissions per Enterprise',
+    '1.2.2': 'Rule Based Dynamic Access Part 1',
+    '1.2.3': 'Rule Based Dynamic Access Part 2',
+    '1.2.4': 'Enterprise Government Roles and Permissions Part 1',
+    '1.2.5': 'Enterprise Government Roles and Permissions Part 2',
+    '1.8.1': 'Single Authentication',
+    '4.4.3': 'File Activity Monitoring Part 2',
+    '1.3.1': 'Organizational MFA/IdP',
+    '1.3.2': 'Alternative Flexible MFA Part 1',
+    '1.3.3': 'Alternative Flexible MFA Part 2',
+    '1.4.1': 'Implement System and Migrate Privileged Users Part 1',
+    '1.4.2': 'Implement System and Migrate Privileged Users Part 2',
+    '1.4.3': 'Real Time Approvals and Just-in-Time (JIT)/Just-Enough-Administration (JEA',
+    '1.4.4': 'Real Time Approvals and JIT/JEA Analytics Part 2',
+    '1.5.1': 'Organizational ILM',
+    '1.5.2': 'Enterprise ILM Part 1',
+    '1.5.3': 'Enterprise ILM Part 2',
+    '1.5.4': 'Enterprise ILM Part 3',
+    '1.6.1': 'Implement User',
+    '1.6.2': 'User Activity Monitoring Part 1',
+    '1.6.3': 'User Activity Monitoring Part 2',
+    '7.3.2': 'Establish User Baseline Behavior',
+    '7.2.5': 'User/Device Baselines',
+    '7.4.1': 'Baseline',
+    '5.2.5': 'Real-Time Access Decisions',
+    '3.4.3': 'Enrich Attributes for Resource Authorization Part 1',
+    '1.7.1': 'Deny User by Default Policy',
+    '1.8.2': 'Periodic Authentication',
+    '1.8.3': 'Continuous Authentication Part 1',
+    '1.8.4': 'Continuous Authentication Part 2',
+    '3.4.1': 'Resource Authorization Part 1',
+    '3.4.6': 'SDC Resource Authorization Part 1',
+    '7.6.1': 'AI-enabled Network Access',
+    '7.6.2': 'AI-enabled Dynamic Access Control',
+    '1.9.1': 'Enterprise PKI/IdP Part 1',
+    '1.9.2': 'Enterprise PKI/IdP Part 2',
+    '1.9.3': 'Enterprise PKI/IdP Part 3',
+    '2.1.1': 'Device Health Tool Gap Analysis',
+    '2.1.2': 'NPE/PKI',
+    '2.1.3': 'Enterprise IdP Part 1',
+    '2.1.4': 'Enterprise IdP Part 2',
+    '2.6.2': 'Enterprise Device Management Part 1',
+    '2.4.1': 'Deny Device by Default Policy',
+    '2.3.6': 'Enterprise PKI Part 1',
+    '2.2.1': 'Implement C2C/Compliance Based Network Authorization Part 1',
+    '4.7.4': 'Integrate Solution(s) and Policy with Enterprise IDP Part 1',
+    '2.2.2': 'Implement C2C/Compliance Based Network Authorization Part 2',
+    '2.4.2': 'Managed and Limited Bring Your Own Device (BYOD',
+    '2.5.1': 'Implement Asset',
+    '2.3.5': 'Fully Integrate Device Security stack with C2Cas Appropriate',
+    '2.3.1': 'Entity Activity Monitoring Part 1',
+    '2.3.2': 'Entity Activity Monitoring Part 2',
+    '2.3.3': 'Implement Application Control and FIM Tools',
+    '2.3.4': 'Integrate NextGen AV Tools with C2C',
+    '2.3.7': 'Enterprise PKI Part 2',
+    '2.7.1': 'Implement Endpoint Detection',
+    '2.4.4': 'Managed and Full BYOD',
+    '2.6.1': 'Implement UEDM or equivalent Tools',
+    '2.4.3': 'Managed and Full BYOD and IoT Support Part 1',
+    '3.2.3': 'Automate Application Security',
+    '2.6.3': 'Enterprise Device Part 2',
+    '2.7.2': 'Implement XDR Tools and Integrate with C2C Part 1',
+    '2.7.3': 'Implement XDR Tools and Integrate with C2C Part 2',
+    '7.2.1': 'Threat Alerting Part 1',
+    '7.2.3': 'Threat Alerting Part 3',
+    '3.1.1': 'Application/Code Identification',
+    '3.2.1': 'Build DevSecOps Software Factory Part 1',
+    '3.2.2': 'Build DevSecOps Software Factory Part 2',
+    '3.2.4': 'Automate Application Security',
+    '3.5.1': 'cATO Part 1',
+    '3.3.3': 'Vulnerability Management Program Part 2',
+    '3.4.5': 'REST API Micro-Segments',
+    '3.3.1': 'Approved Binaries/Code',
+    '3.3.2': 'Vulnerability Management Program Part 1',
+    '3.3.4': 'Continual Validation',
+    '3.4.2': 'Resource Authorization Part 2',
+    '3.4.4': 'Enrich Attributes for Resource Authorization Part 2',
+    '3.4.7': 'SDC Resource Authorization Part 2',
+    '5.3.1': 'Datacenter Macro-segmentation',
+    '5.4.2': 'Application',
+    '4.3.3': 'Manual Data Tagging Part 2',
+    '4.6.3': 'DLP Enforcement via Data Tags and Analytics Part 2',
+    '4.5.4': 'DRM Enforcement via Data Tags and Analytics Part 2',
+    '3.5.2': 'cATO Part 2',
+    '6.1.1': 'Policy Inventory',
+    '6.7.4': 'Automated Workflow',
+    '4.1.1': 'Data Analysis',
+    '4.2.1': 'Define Data Tagging Standards',
+    '4.2.2': 'Interoperability Standards',
+    '4.2.3': 'Develop SDS Policy',
+    '4.3.1': 'Implement Data Tagging',
+    '4.3.2': 'Manual Data Tagging Part 1',
+    '6.3.1': 'Implement Data Tagging',
+    '4.5.1': 'Implement DRM and Protection Tools Part 1',
+    '4.7.1': 'Integrate DAAS Access with SDS Policy Part 1',
+    '4.7.6': 'Implement SDS Tool and/or integrate with DRM Tool Part 1',
+    '4.3.4': 'Automated Data Tagging',
+    '4.3.5': 'Automated Data Tagging',
+    '4.6.1': 'Implement DLP Enforcement Points',
+    '4.5.3': 'DRM Enforcement via Data Tags and Analytics Part 1',
+    '4.6.2': 'DLP Enforcement via Data Tags and Analytics Part 1',
+    '4.4.1': 'DLP Enforcement Point Logging and Analysis',
+    '4.4.2': 'DRM Enforcement Point Logging and Analysis',
+    '4.4.4': 'File Activity Monitoring Part 2',
+    '4.4.5': 'Database Activity Monitoring',
+    '4.4.6': 'Comprehensive Data Activity Monitoring',
+    '4.5.2': 'Implement DRM and Protection Tools Part 2',
+    '4.5.5': 'DRM Enforcement via Data Tags and Analytics Part 3',
+    '4.6.4': 'DLP Enforcement via Data Tags and Analytics Part 3',
+    '5.4.3': 'Process Micro-segmentation',
+    '4.7.2': 'Integrate DAAS Access with SDS Policy Part 2',
+    '4.7.3': 'Integrate DAAS Access with SDS Policy Part 3',
+    '4.7.5': 'Integrate Solution(s) and Policy with Enterprise IdP Part 2',
+    '4.7.7': 'Implement SDS Tool and/or Integrate with DRM Tool Part 2',
+    '5.1.1': 'Define Granular Control Access Rules',
+    '5.1.2': 'Define Granular Control Access Rules',
+    '5.2.1': 'Define SDN APIs',
+    '5.2.2': 'Implement SDN Programable Infrastructure',
+    '5.2.3': 'Segment Flows into Control',
+    '5.2.4': 'Network Asset Discovery',
+    '6.6.2': 'Standardized API Calls',
+    '5.3.2': 'Base/Camp/Post/Station (B/C/P/S) Macro-segmentation',
+    '6.1.4': 'Enterprise Security Profile Part 2',
+    '5.4.1': 'Implement Micro-segmentation',
+    '5.4.4': 'Protect Data in Transit',
+    '6.1.2': 'Organization Access Profile',
+    '6.1.3': 'Enterprise Security Profile Part 1',
+    '6.2.1': 'Task Automation Analysis',
+    '6.2.2': 'Enterprise Integration',
+    '6.2.3': 'Enterprise Integration',
+    '6.4.1': 'Implement AI Automation Tools',
+    '6.4.2': 'AI Driven by Analytics Decides Automation and Orchestration Modifications',
+    '6.5.1': 'Response Automation Analysis',
+    '6.5.2': 'Implement SOAR Tools',
+    '6.5.3': 'Implement Playbooks',
+    '6.7.1': 'Workflow Enrichment Part 1',
+    '6.6.1': 'Tool Compliance Analysis',
+    '6.6.3': 'Standardized API Calls',
+    '6.7.2': 'Workflow Enrichment Part 2',
+    '6.7.3': 'Workflow Enrichment Part 3',
+    '7.1.1': 'Scale Considerations',
+    '7.1.2': 'Log Parsing Name',
+    '7.1.3': 'Log Analysis',
+    '7.2.4': 'Asset Identification (ID',
+    '7.3.1': 'Implement Analytics Tools',
+    '7.2.2': 'Threat Alerting Part 2',
+    '7.5.1': 'Cyber Threat Intelligence Program Part 1',
+    '7.4.2': 'Baseline',
+    '7.4.3': 'UEBA Baseline Support Part 1',
+    '7.4.4': 'UEBA Baseline Support Part 2',
+    '7.5.2': 'Cyber Threat Intelligence Program Part 2',
+}
+#+end_example
+
