@@ -495,7 +495,7 @@ def process_sub(reader, page_num, count):
     elif len(techs) != len(types) or len(types) != len(phases):
         print(f"Warning: captured lists with differing lengths", file=sys.stderr)
 
-    print(f"Cap {cap}, tech {techs}, types {types}, phases {phases}")
+    # print(f"Cap {cap}, tech {techs}, types {types}, phases {phases}")
 
     for num in range(page_num, page_num + count):
         indices = mapping_cols[num + 1]
