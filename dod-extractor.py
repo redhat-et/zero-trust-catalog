@@ -180,7 +180,7 @@ def process_section(reader, pages, columns, mappings, find=False):
                     x_marks = [pos for pos, char in enumerate(line) if char == 'X']
                     found = found | set(x_marks)
                 else:
-                    indices = mappings #[p+1]
+                    indices = mappings[p+1]
                     x_marks = [index for index, pos in enumerate(indices) if 'X' in line[pos-1:pos+1]]
                     categories = [columns[index] for index in x_marks]
                     # print(f'{m.group(1):>10}, {categories}')
@@ -344,8 +344,7 @@ def process_sub(reader, page_num, count):
 
     for num in range(page_num, page_num + count):
         columns = [f"{cap}.{n}" for n in range(1, 20)]
-        mappings = mapping_cols[num + 1]
-        r = process_section(reader, [num], columns, mappings)
+        r = process_section(reader, [num], columns, mapping_cols)
         result.append({'name': cap,
                        'tech': techs, 'type': types, 'phases': phases,
                        'mappings': r})
