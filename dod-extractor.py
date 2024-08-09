@@ -180,7 +180,7 @@ def process_section(reader, pages, columns, mappings, find=False):
                     x_marks = [pos for pos, char in enumerate(line) if char == 'X']
                     found = found | set(x_marks)
                 else:
-                    indices = mappings[p+1]
+                    indices = mappings #[p+1]
                     x_marks = [index for index, pos in enumerate(indices) if 'X' in line[pos-1:pos+1]]
                     categories = [columns[index] for index in x_marks]
                     # print(f'{m.group(1):>10}, {categories}')
@@ -203,6 +203,104 @@ sub_pages = [(90, 1), (93, 3), (102, 3), (110, 2), (117, 3), (125, 2), (131, 1),
              (323, 2), (329, 1), (331, 2), (335, 1), (337, 2), (341, 1), (343, 2),
              (355, 2), (360, 3), (368, 1), (370, 1), (373, 2), (376, 3)
              ]
+
+mapping_cols = {
+    91: [76],
+    94: [62, 74, 94, 104],
+    95: [61, 74, 83, 93],
+    96: [62, 74, 83, 92],
+    103: [59],
+    104: [60, 70],
+    105: [60, 70, 80],
+    111: [69, 80, 90, 101],
+    112: [73, 95],
+    118: [62, 72],
+    119: [62, 72, 82],
+    120: [59, 69],
+    126: [65, 76],
+    127: [64, 75],
+    132: [78],
+    135: [62, 73, 85],
+    141: [68, 78],
+    142: [66, 76],
+    143: [64],
+    158: [78, 87, 97],
+    159: [71, 79, 88, 98],
+    160: [81],
+    166: [80, 91],
+    167: [77],
+    172: [52, 72, 82, 92, 102],
+    173: [52, 72, 82, 92, 102],
+    174: [55, 76, 86, 97, 107],
+    175: [52, 72, 82, 92, 102],
+    176: [59, 68],
+    186: [64, 74],
+    187: [69],
+    190: [81],
+    191: [73],
+    193: [67, 77],
+    194: [68, 78],
+    195: [66, 76],
+    200: [66, 89],
+    201: [65, 76, 87],
+    214: [69],
+    216: [62, 85],
+    217: [65, 76, 87, 99],
+    218: [63, 85, 97],
+    219: [63, 74, 85, 96],
+    227: [],
+    228: [78, 99],
+    229: [70, 81, 92],
+    230: [68, 78, 100],
+    231: [63],
+    237: [58, 103],
+    238: [59, 77, 105],
+    239: [58, 77, 86, 104],
+    240: [55, 98],
+    249: [68, 80],
+    261: [76],
+    262: [71],
+    266: [74, 97],
+    267: [76, 99],
+    272: [57, 68, 78, 99, 110],
+    273: [54, 63, 73, 93],
+    277: [62, 84, 105],
+    278: [64, 86],
+    279: [60, 81],
+    284: [66, 79],
+    285: [69, 82],
+    286: [76],
+    290: [48],
+    299: [75, 90],
+    302: [73, 84, 105],
+    303: [84, 95, 106],
+    307: [78, 90],
+    312: [69, 80, 90, 101],
+    313: [65, 85],
+    324: [71, 82],
+    325: [72, 82, 93],
+    330: [71],
+    332: [74],
+    333: [71],
+    336: [87],
+    338: [74, 84, 95],
+    339: [74, 85, 95],
+    342: [81],
+    344: [61],
+    345: [61, 90],
+    356: [85],
+    357: [76, 85, 95],
+    361: [67, 85, 103],
+    362: [67, 77, 95, 105],
+    363: [71, 81, 90, 100],
+    369: [75, 88],
+    371: [69, 90],
+    374: [88],
+    375: [75, 89],
+    377: [81, 92],
+    378: [83, 84, 94],
+    379: [81, 93],
+}
 
 def process_sub(reader, page_num, count):
     result = []
@@ -244,9 +342,21 @@ def process_sub(reader, page_num, count):
 
     print(f"Cap {cap}, tech {techs}, types {types}, phases {phases}")
 
+    for num in range(page_num, page_num + count):
+        columns = [f"{cap}.{n}" for n in range(1, 20)]
+        mappings = mapping_cols[num + 1]
+        r = process_section(reader, [num], columns, mappings)
+        result.append({'name': cap,
+                       'tech': techs, 'type': types, 'phases': phases,
+                       'mappings': r})
+    return result
+
 def process_file_subs(reader):
+    result = []
     for (page, count) in sub_pages:
-        process_sub(reader, page, count)
+        r = process_sub(reader, page, count)
+        result.append(r)
+    return result
 
 def process_file(reader):
     result = []
@@ -270,7 +380,8 @@ if __name__ == '__main__':
     reader = PdfReader(args.file)
 
     if args.sub_sections:
-        process_file_subs(reader)
+        result = process_file_subs(reader)
+        print(yaml.dump(result))
     elif args.page:
         process_section(reader, [args.page - 1], [], {args.page: []}, find=True)
     else:
