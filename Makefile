@@ -1,5 +1,6 @@
 DOD_PDF=doc/ZeroTrustOverlays-2024Feb.pdf
 DOD_MAPPINGS=dod-mappings.yaml
+DOD_SUB_MAPPINGS=dod-sub-mappings.yaml
 
 CNSWP=cnswp-v2-controls.yaml
 
@@ -35,22 +36,22 @@ resolved:	$(NIST_EXT)
 merge:	## Merge the DoD and CNSWP mappings into NIST controls
 merge:	$(NIST_EXT)
 
-$(NIST_EXT):	$(NIST_DOD) $(DOD_MAPPINGS)
+$(NIST_EXT):	$(NIST_DOD) $(CNSWP)
 	./merge-cnswp.py -f $(NIST_DOD) -c $(CNSWP) > $@
 
 nist-dod:	$(NIST_DOD)
 
-$(NIST_DOD):	$(NIST_SRC) $(DOD_MAPPINGS)
-	./merge-dod.py -f $(NIST_SRC) -d $(DOD_MAPPINGS) > $@
+$(NIST_DOD):	$(NIST_SRC) $(DOD_MAPPINGS) $(DOD_SUB_MAPPINGS)
+	./merge-dod.py -f $(NIST_SRC) -d $(DOD_MAPPINGS) -s $(DOD_SUB_MAPPINGS) > $@
 
 dod:	## Extract the DoD mappings from the PDF
-dod:	$(DOD_MAPPINGS)
+dod:	$(DOD_MAPPINGS) $(DOD_SUB_MAPPINGS)
 
-$(DOD_MAPPINGS):	$(DOD_PDF)
+$(DOD_MAPPINGS):	$(DOD_PDF) dod-extractor.py
 	./dod-extractor.py -f $< > $@
 
-sub-sections:	$(DOD_PDF)
-	./dod-extractor.py -f $< -s
+$(DOD_SUB_MAPPINGS):	$(DOD_PDF) dod-extractor.py
+	./dod-extractor.py -f $< -s > $@
 
 clean:	## Remove generated files
 	rm -f $(DOD_MAPPINGS)

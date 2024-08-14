@@ -156,39 +156,15 @@ control_pattern = re.compile(r'^ ?(\w+-\d+(\(\d+\))?)')
 
 rulesets = [
     (a_name, a_pages, a_columns, a_mappings),
-    (b_name, b_pages, b_columns, b_mappings),
-    (c_name, c_pages, c_columns, c_mappings),
-    (d_name, d_pages, d_columns, d_mappings),
-    (e_name, e_pages, e_columns, e_mappings),
-    (f_name, f_pages, f_columns, f_mappings),
-    (g_name, g_pages, g_columns, g_mappings),
-    (h_name, h_pages, h_columns, h_mappings),
-    (i_name, i_pages, i_columns, i_mappings),
+    # (b_name, b_pages, b_columns, b_mappings),
+    # (c_name, c_pages, c_columns, c_mappings),
+    # (d_name, d_pages, d_columns, d_mappings),
+    # (e_name, e_pages, e_columns, e_mappings),
+    # (f_name, f_pages, f_columns, f_mappings),
+    # (g_name, g_pages, g_columns, g_mappings),
+    # (h_name, h_pages, h_columns, h_mappings),
+    # (i_name, i_pages, i_columns, i_mappings),
 ]
-
-def process_section(reader, pages, columns, mappings, find=False):
-    result = []
-    for p in pages:
-        page = reader.pages[p]
-        text = page.extract_text(extraction_mode="layout", layout_mode_strip_rotated=False)
-
-        found = set()
-        for line in text.splitlines():
-            m = control_pattern.match(line)
-            if m:
-                if find:
-                    x_marks = [pos for pos, char in enumerate(line) if char == 'X']
-                    found = found | set(x_marks)
-                else:
-                    indices = mappings[p+1]
-                    x_marks = [index for index, pos in enumerate(indices) if 'X' in line[pos-1:pos+1]]
-                    categories = [columns[index] for index in x_marks]
-                    # print(f'{m.group(1):>10}, {categories}')
-                    result.append({'key': m.group(1), 'categories': categories})
-
-        if find:
-            print(f'    {p+1}: {sorted(found)},')
-    return result
 
 cap_pattern = re.compile(r'^\s*Capability:?\s+(\d\.\d)')
 tech_pattern = re.compile(r'^\s*Tech.*[,)]\s+(.*)$')
@@ -457,6 +433,51 @@ headings = {
     '7.5.2': 'Cyber Threat Intelligence Program Part 2',
 }
 
+dod_types = { 'T': 'Target',
+              'A': 'Advanced' }
+
+dod_techs = { 'S': 'System',
+              'O': 'Organization',
+              'O/S': 'System/Organization' }
+
+def process_section(reader, pages, columns, mappings, find=False, types=None, techs=None, phases=None):
+    result = []
+    for p in pages:
+        page = reader.pages[p]
+        text = page.extract_text(extraction_mode="layout", layout_mode_strip_rotated=False)
+
+        found = set()
+        for line in text.splitlines():
+            m = control_pattern.match(line)
+            if m:
+                if find:
+                    x_marks = [pos for pos, char in enumerate(line) if char == 'X']
+                    found = found | set(x_marks)
+                else:
+                    indices = mappings[p+1]
+                    x_marks = [index for index, pos in enumerate(indices) if 'X' in line[pos-1:pos+1]]
+                    categories = []
+                    for index in x_marks:
+                        col = columns[index]
+                        if col in headings:
+                            heading = headings[col]
+                            entry = { 'activity': f"{col} {heading}" }
+                        else:
+                            entry = { 'pillar': col }
+                        if types is not None:
+                            entry['type'] = dod_types[types[index]]
+                        if techs is not None:
+                            entry['tech'] = dod_techs[techs[index]]
+                        if phases is not None:
+                            entry['phase'] = phases[index]
+                        categories.append(entry)
+
+                    entry = {'key': m.group(1), 'categories': categories}
+                    result.append(entry)
+        if find:
+            print(f'    {p+1}: {sorted(found)},')
+    return result
+
 def process_sub(reader, page_num, count):
     result = []
     page = reader.pages[page_num]
@@ -503,9 +524,8 @@ def process_sub(reader, page_num, count):
             print(f"Warning: column count mismatch on page {num + 1}, {indices}, {types}", file=sys.stderr)
 
         columns = [f"{cap}.{n}" for n in range(1, 20)]
-        r = process_section(reader, [num], columns, mapping_cols)
+        r = process_section(reader, [num], columns, mapping_cols, types=types, techs=techs, phases=phases)
         result.append({'name': cap,
-                       'tech': techs, 'type': types, 'phases': phases,
                        'mappings': r})
     return result
 
@@ -513,7 +533,7 @@ def process_file_subs(reader):
     result = []
     for (page, count) in sub_pages:
         r = process_sub(reader, page, count)
-        result.append(r)
+        result.extend(r)
     return result
 
 def process_file(reader):
