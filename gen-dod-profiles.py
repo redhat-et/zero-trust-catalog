@@ -145,7 +145,7 @@ def add_mappings(controls):
     for c in controls:
         controls_by_id[c['id']] = c
         for p in c['props']:
-            if p['name'].startswith('Appendix A'):
+            if p['name'].startswith('pillar'):
                 key = p['value']
                 mappings[key].append(c['id'])
         if 'params' in c:
