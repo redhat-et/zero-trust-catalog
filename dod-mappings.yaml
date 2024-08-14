@@ -1,3540 +1,1361 @@
 - mappings:
   - categories:
-    - Enabler
-    - Automation & Orchestration
+    - pillar: Enabler
+    - pillar: Automation & Orchestration
     key: AC-1
   - categories:
-    - User
-    - Device
-    - Application & Workload
-    - Automation & Orchestration
+    - pillar: User
+    - pillar: Device
+    - pillar: Application & Workload
+    - pillar: Automation & Orchestration
     key: AC-2
   - categories:
-    - User
+    - pillar: User
     key: AC-2(1)
   - categories:
-    - User
+    - pillar: User
     key: AC-2(2)
   - categories:
-    - User
+    - pillar: User
     key: AC-2(3)
   - categories:
-    - User
+    - pillar: User
     key: AC-2(4)
   - categories:
-    - User
-    - Device
-    - Visibility and Analytics
+    - pillar: User
+    - pillar: Device
+    - pillar: Visibility and Analytics
     key: AC-2(6)
   - categories:
-    - User
+    - pillar: User
     key: AC-2(7)
   - categories:
-    - User
+    - pillar: User
     key: AC-2(8)
   - categories:
-    - User
+    - pillar: User
     key: AC-2(9)
   - categories:
-    - User
-    - Automation & Orchestration
-    - Visibility and Analytics
+    - pillar: User
+    - pillar: Automation & Orchestration
+    - pillar: Visibility and Analytics
     key: AC-2(11)
   - categories:
-    - Enabler
-    - User
-    - Visibility and Analytics
+    - pillar: Enabler
+    - pillar: User
+    - pillar: Visibility and Analytics
     key: AC-2(12)
   - categories:
-    - User
+    - pillar: User
     key: AC-2(13)
   - categories:
-    - User
-    - Device
-    - Application & Workload
-    - Data
-    - Network & Environment
-    - Visibility and Analytics
+    - pillar: User
+    - pillar: Device
+    - pillar: Application & Workload
+    - pillar: Data
+    - pillar: Network & Environment
+    - pillar: Visibility and Analytics
     key: AC-3
   - categories:
-    - User
-    - Device
-    - Network & Environment
+    - pillar: User
+    - pillar: Device
+    - pillar: Network & Environment
     key: AC-3(7)
   - categories:
-    - User
-    - Device
-    - Visibility and Analytics
+    - pillar: User
+    - pillar: Device
+    - pillar: Visibility and Analytics
     key: AC-3(8)
   - categories:
-    - User
+    - pillar: User
     key: AC-3(10)
   - categories:
-    - User
-    - Device
-    - Data
-    - Visibility and Analytics
+    - pillar: User
+    - pillar: Device
+    - pillar: Data
+    - pillar: Visibility and Analytics
     key: AC-3(11)
   - categories:
-    - Application & Workload
+    - pillar: Application & Workload
     key: AC-3(12)
   - categories:
-    - User
-    - Device
-    - Application & Workload
-    - Data
-    - Network & Environment
-    - Visibility and Analytics
+    - pillar: User
+    - pillar: Device
+    - pillar: Application & Workload
+    - pillar: Data
+    - pillar: Network & Environment
+    - pillar: Visibility and Analytics
     key: AC-3(13)
   - categories:
-    - Application & Workload
-    - Data
-    - Network & Environment
+    - pillar: Application & Workload
+    - pillar: Data
+    - pillar: Network & Environment
     key: AC-4
   - categories:
-    - Application & Workload
-    - Data
-    - Network & Environment
+    - pillar: Application & Workload
+    - pillar: Data
+    - pillar: Network & Environment
     key: AC-4(1)
   - categories:
-    - Network & Environment
+    - pillar: Network & Environment
     key: AC-4(2)
   - categories:
-    - Application & Workload
-    - Data
-    - Network & Environment
-    - Automation & Orchestration
+    - pillar: Application & Workload
+    - pillar: Data
+    - pillar: Network & Environment
+    - pillar: Automation & Orchestration
     key: AC-4(3)
   - categories:
-    - Data
-    - Network & Environment
-    - Automation & Orchestration
+    - pillar: Data
+    - pillar: Network & Environment
+    - pillar: Automation & Orchestration
     key: AC-4(6)
   - categories:
-    - Application & Workload
-    - Data
-    - Network & Environment
-    - Automation & Orchestration
+    - pillar: Application & Workload
+    - pillar: Data
+    - pillar: Network & Environment
+    - pillar: Automation & Orchestration
     key: AC-4(8)
   - categories:
-    - Application & Workload
-    - Data
-    - Automation & Orchestration
+    - pillar: Application & Workload
+    - pillar: Data
+    - pillar: Automation & Orchestration
     key: AC-4(10)
   - categories:
-    - Application & Workload
-    - Data
-    - Network & Environment
-    - Automation & Orchestration
+    - pillar: Application & Workload
+    - pillar: Data
+    - pillar: Network & Environment
+    - pillar: Automation & Orchestration
     key: AC-4(11)
   - categories:
-    - Data
-    - Network & Environment
+    - pillar: Data
+    - pillar: Network & Environment
     key: AC-4(12)
   - categories:
-    - Application & Workload
-    - Network & Environment
+    - pillar: Application & Workload
+    - pillar: Network & Environment
     key: AC-4(17)
   - categories:
-    - Data
-    - Network & Environment
-    - Automation & Orchestration
+    - pillar: Data
+    - pillar: Network & Environment
+    - pillar: Automation & Orchestration
     key: AC-4(19)
   - categories:
-    - Network & Environment
+    - pillar: Network & Environment
     key: AC-4(21)
   - categories:
-    - Data
+    - pillar: Data
     key: AC-4(23)
   - categories:
-    - Data
+    - pillar: Data
     key: AC-4(26)
   - categories:
-    - Automation & Orchestration
+    - pillar: Automation & Orchestration
     key: AC-4(29)
   - categories:
-    - User
+    - pillar: User
     key: AC-5
   - categories:
-    - User
-    - Device
-    - Automation & Orchestration
+    - pillar: User
+    - pillar: Device
+    - pillar: Automation & Orchestration
     key: AC-6
   - categories:
-    - User
+    - pillar: User
     key: AC-6(5)
   - categories:
-    - User
+    - pillar: User
     key: AC-6(7)
   - categories:
-    - User
-    - Visibility and Analytics
+    - pillar: User
+    - pillar: Visibility and Analytics
     key: AC-6(9)
   - categories:
-    - User
+    - pillar: User
     key: AC-6(10)
   - categories:
-    - User
+    - pillar: User
     key: AC-12
   - categories:
-    - User
+    - pillar: User
     key: AC-14
   - categories:
-    - User
-    - Device
-    - Application & Workload
-    - Data
-    - Automation & Orchestration
-    - Visibility and Analytics
+    - pillar: User
+    - pillar: Device
+    - pillar: Application & Workload
+    - pillar: Data
+    - pillar: Automation & Orchestration
+    - pillar: Visibility and Analytics
     key: AC-16
   - categories:
-    - User
-    - Device
-    - Application & Workload
-    - Data
-    - Automation & Orchestration
-    - Visibility and Analytics
+    - pillar: User
+    - pillar: Device
+    - pillar: Application & Workload
+    - pillar: Data
+    - pillar: Automation & Orchestration
+    - pillar: Visibility and Analytics
     key: AC-16(1)
   - categories:
-    - User
-    - Device
-    - Application & Workload
-    - Data
-    - Automation & Orchestration
-    - Visibility and Analytics
+    - pillar: User
+    - pillar: Device
+    - pillar: Application & Workload
+    - pillar: Data
+    - pillar: Automation & Orchestration
+    - pillar: Visibility and Analytics
     key: AC-16(2)
   - categories:
-    - User
-    - Device
-    - Application & Workload
-    - Data
-    - Automation & Orchestration
-    - Visibility and Analytics
+    - pillar: User
+    - pillar: Device
+    - pillar: Application & Workload
+    - pillar: Data
+    - pillar: Automation & Orchestration
+    - pillar: Visibility and Analytics
     key: AC-16(3)
   - categories:
-    - User
-    - Device
-    - Application & Workload
-    - Data
-    - Automation & Orchestration
-    - Visibility and Analytics
+    - pillar: User
+    - pillar: Device
+    - pillar: Application & Workload
+    - pillar: Data
+    - pillar: Automation & Orchestration
+    - pillar: Visibility and Analytics
     key: AC-16(4)
   - categories:
-    - User
-    - Device
-    - Application & Workload
-    - Data
-    - Automation & Orchestration
-    - Visibility and Analytics
+    - pillar: User
+    - pillar: Device
+    - pillar: Application & Workload
+    - pillar: Data
+    - pillar: Automation & Orchestration
+    - pillar: Visibility and Analytics
     key: AC-16(6)
   - categories:
-    - User
-    - Device
-    - Application & Workload
-    - Data
-    - Automation & Orchestration
-    - Visibility and Analytics
+    - pillar: User
+    - pillar: Device
+    - pillar: Application & Workload
+    - pillar: Data
+    - pillar: Automation & Orchestration
+    - pillar: Visibility and Analytics
     key: AC-16(7)
   - categories:
-    - User
-    - Device
-    - Application & Workload
-    - Data
-    - Automation & Orchestration
-    - Visibility and Analytics
+    - pillar: User
+    - pillar: Device
+    - pillar: Application & Workload
+    - pillar: Data
+    - pillar: Automation & Orchestration
+    - pillar: Visibility and Analytics
     key: AC-16(8)
   - categories:
-    - User
-    - Device
-    - Application & Workload
-    - Data
-    - Automation & Orchestration
-    - Visibility and Analytics
+    - pillar: User
+    - pillar: Device
+    - pillar: Application & Workload
+    - pillar: Data
+    - pillar: Automation & Orchestration
+    - pillar: Visibility and Analytics
     key: AC-16(9)
   - categories:
-    - User
-    - Device
-    - Application & Workload
-    - Data
-    - Automation & Orchestration
-    - Visibility and Analytics
+    - pillar: User
+    - pillar: Device
+    - pillar: Application & Workload
+    - pillar: Data
+    - pillar: Automation & Orchestration
+    - pillar: Visibility and Analytics
     key: AC-16(10)
   - categories:
-    - Device
-    - Application & Workload
-    - Visibility and Analytics
+    - pillar: Device
+    - pillar: Application & Workload
+    - pillar: Visibility and Analytics
     key: AC-17
   - categories:
-    - Device
-    - Application & Workload
-    - Visibility and Analytics
+    - pillar: Device
+    - pillar: Application & Workload
+    - pillar: Visibility and Analytics
     key: AC-17(1)
   - categories:
-    - Application & Workload
+    - pillar: Application & Workload
     key: AC-17(2)
   - categories:
-    - User
+    - pillar: User
     key: AC-17(4)
   - categories:
-    - User
-    - Visibility and Analytics
+    - pillar: User
+    - pillar: Visibility and Analytics
     key: AC-17(9)
   - categories:
-    - Device
+    - pillar: Device
     key: AC-19
   - categories:
-    - Data
+    - pillar: Data
     key: AC-21
   - categories:
-    - Data
+    - pillar: Data
     key: AC-21(1)
   - categories:
-    - Data
+    - pillar: Data
     key: AC-23
   - categories:
-    - User
-    - Data
-    - Automation & Orchestration
-    - Visibility and Analytics
+    - pillar: User
+    - pillar: Data
+    - pillar: Automation & Orchestration
+    - pillar: Visibility and Analytics
     key: AC-24
   - categories:
-    - User
-    - Data
-    - Automation & Orchestration
-    - Visibility and Analytics
+    - pillar: User
+    - pillar: Data
+    - pillar: Automation & Orchestration
+    - pillar: Visibility and Analytics
     key: AC-24(1)
   - categories:
-    - Enabler
+    - pillar: Enabler
     key: AT-1
   - categories:
-    - Enabler
+    - pillar: Enabler
     key: AT-2
   - categories:
-    - Enabler
+    - pillar: Enabler
     key: AT-3
   - categories:
-    - Enabler
+    - pillar: Enabler
     key: AU-1
   - categories:
-    - User
-    - Device
-    - Application & Workload
-    - Data
-    - Automation & Orchestration
-    - Visibility and Analytics
+    - pillar: User
+    - pillar: Device
+    - pillar: Application & Workload
+    - pillar: Data
+    - pillar: Automation & Orchestration
+    - pillar: Visibility and Analytics
     key: AU-2
   - categories:
-    - User
-    - Device
-    - Application & Workload
-    - Data
-    - Automation & Orchestration
-    - Visibility and Analytics
+    - pillar: User
+    - pillar: Device
+    - pillar: Application & Workload
+    - pillar: Data
+    - pillar: Automation & Orchestration
+    - pillar: Visibility and Analytics
     key: AU-3
   - categories:
-    - Visibility and Analytics
+    - pillar: Visibility and Analytics
     key: AU-3(1)
   - categories:
-    - User
-    - Visibility and Analytics
+    - pillar: User
+    - pillar: Visibility and Analytics
     key: AU-3(3)
   - categories:
-    - Visibility and Analytics
+    - pillar: Visibility and Analytics
     key: AU-4
   - categories:
-    - Visibility and Analytics
+    - pillar: Visibility and Analytics
     key: AU-4(1)
   - categories:
-    - Visibility and Analytics
+    - pillar: Visibility and Analytics
     key: AU-5
   - categories:
-    - User
-    - Device
-    - Data
-    - Visibility and Analytics
+    - pillar: User
+    - pillar: Device
+    - pillar: Data
+    - pillar: Visibility and Analytics
     key: AU-6
   - categories:
-    - Visibility and Analytics
+    - pillar: Visibility and Analytics
     key: AU-6(1)
   - categories:
-    - Data
-    - Visibility and Analytics
+    - pillar: Data
+    - pillar: Visibility and Analytics
     key: AU-6(3)
   - categories:
-    - Device
-    - Data
-    - Visibility and Analytics
+    - pillar: Device
+    - pillar: Data
+    - pillar: Visibility and Analytics
     key: AU-6(4)
   - categories:
-    - Device
-    - Visibility and Analytics
+    - pillar: Device
+    - pillar: Visibility and Analytics
     key: AU-6(5)
   - categories:
-    - Visibility and Analytics
+    - pillar: Visibility and Analytics
     key: AU-6(6)
   - categories:
-    - User
+    - pillar: User
     key: AU-6(8)
   - categories:
-    - Visibility and Analytics
+    - pillar: Visibility and Analytics
     key: AU-6(9)
   - categories:
-    - User
-    - Device
-    - Visibility and Analytics
+    - pillar: User
+    - pillar: Device
+    - pillar: Visibility and Analytics
     key: AU-7
   - categories:
-    - User
-    - Device
-    - Visibility and Analytics
+    - pillar: User
+    - pillar: Device
+    - pillar: Visibility and Analytics
     key: AU-7(1)
   - categories:
-    - User
-    - Device
-    - Application & Workload
-    - Data
-    - Automation & Orchestration
-    - Visibility and Analytics
+    - pillar: User
+    - pillar: Device
+    - pillar: Application & Workload
+    - pillar: Data
+    - pillar: Automation & Orchestration
+    - pillar: Visibility and Analytics
     key: AU-8
   - categories:
-    - User
-    - Device
-    - Application & Workload
-    - Data
-    - Automation & Orchestration
-    - Visibility and Analytics
+    - pillar: User
+    - pillar: Device
+    - pillar: Application & Workload
+    - pillar: Data
+    - pillar: Automation & Orchestration
+    - pillar: Visibility and Analytics
     key: AU-9
   - categories:
-    - User
-    - Device
-    - Application & Workload
-    - Data
-    - Automation & Orchestration
-    - Visibility and Analytics
+    - pillar: User
+    - pillar: Device
+    - pillar: Application & Workload
+    - pillar: Data
+    - pillar: Automation & Orchestration
+    - pillar: Visibility and Analytics
     key: AU-9(4)
   - categories:
-    - User
-    - Device
-    - Application & Workload
-    - Data
-    - Automation & Orchestration
-    - Visibility and Analytics
+    - pillar: User
+    - pillar: Device
+    - pillar: Application & Workload
+    - pillar: Data
+    - pillar: Automation & Orchestration
+    - pillar: Visibility and Analytics
     key: AU-10
   - categories:
-    - User
-    - Device
-    - Application & Workload
-    - Data
-    - Automation & Orchestration
-    - Visibility and Analytics
+    - pillar: User
+    - pillar: Device
+    - pillar: Application & Workload
+    - pillar: Data
+    - pillar: Automation & Orchestration
+    - pillar: Visibility and Analytics
     key: AU-10(1)
   - categories:
-    - Visibility and Analytics
+    - pillar: Visibility and Analytics
     key: AU-11
   - categories:
-    - Visibility and Analytics
+    - pillar: Visibility and Analytics
     key: AU-11(1)
   - categories:
-    - User
-    - Device
-    - Application & Workload
-    - Data
-    - Automation & Orchestration
-    - Visibility and Analytics
+    - pillar: User
+    - pillar: Device
+    - pillar: Application & Workload
+    - pillar: Data
+    - pillar: Automation & Orchestration
+    - pillar: Visibility and Analytics
     key: AU-12
   - categories:
-    - Device
-    - Visibility and Analytics
+    - pillar: Device
+    - pillar: Visibility and Analytics
     key: AU-12(1)
   - categories:
-    - Visibility and Analytics
+    - pillar: Visibility and Analytics
     key: AU-12(2)
   - categories:
-    - Visibility and Analytics
+    - pillar: Visibility and Analytics
     key: AU-12(3)
   - categories:
-    - User
+    - pillar: User
     key: AU-14
   - categories:
-    - Enabler
+    - pillar: Enabler
     key: CA-1
   - categories:
-    - Application & Workload
+    - pillar: Application & Workload
     key: CA-2
   - categories:
-    - Application & Workload
+    - pillar: Application & Workload
     key: CA-5
   - categories:
-    - Application & Workload
+    - pillar: Application & Workload
     key: CA-5(1)
   - categories:
-    - Application & Workload
+    - pillar: Application & Workload
     key: CA-6
   - categories:
-    - Application & Workload
+    - pillar: Application & Workload
     key: CA-7
   - categories:
-    - Application & Workload
+    - pillar: Application & Workload
     key: CA-7(6)
   - categories:
-    - Network & Environment
+    - pillar: Network & Environment
     key: CA-9
   - categories:
-    - Network & Environment
+    - pillar: Network & Environment
     key: CA-9(1)
   - categories:
-    - Enabler
+    - pillar: Enabler
     key: CM-1
   - categories:
-    - Device
-    - Application & Workload
+    - pillar: Device
+    - pillar: Application & Workload
     key: CM-2
   - categories:
-    - Device
-    - Application & Workload
+    - pillar: Device
+    - pillar: Application & Workload
     key: CM-2(2)
   - categories:
-    - Application & Workload
+    - pillar: Application & Workload
     key: CM-2(6)
   - categories:
-    - Device
-    - Application & Workload
+    - pillar: Device
+    - pillar: Application & Workload
     key: CM-3
   - categories:
-    - Application & Workload
+    - pillar: Application & Workload
     key: CM-3(1)
   - categories:
-    - Application & Workload
+    - pillar: Application & Workload
     key: CM-3(2)
   - categories:
-    - Application & Workload
+    - pillar: Application & Workload
     key: CM-3(3)
   - categories:
-    - Device
+    - pillar: Device
     key: CM-3(5)
   - categories:
-    - Application & Workload
+    - pillar: Application & Workload
     key: CM-4
   - categories:
-    - Application & Workload
+    - pillar: Application & Workload
     key: CM-4(1)
   - categories:
-    - Application & Workload
+    - pillar: Application & Workload
     key: CM-4(2)
   - categories:
-    - Device
-    - Application & Workload
+    - pillar: Device
+    - pillar: Application & Workload
     key: CM-6
   - categories:
-    - Device
-    - Application & Workload
+    - pillar: Device
+    - pillar: Application & Workload
     key: CM-6(1)
   - categories:
-    - Device
+    - pillar: Device
     key: CM-6(2)
   - categories:
-    - Application & Workload
+    - pillar: Application & Workload
     key: CM-7
   - categories:
-    - Device
+    - pillar: Device
     key: CM-7(2)
   - categories:
-    - Device
+    - pillar: Device
     key: CM-7(5)
   - categories:
-    - Application & Workload
+    - pillar: Application & Workload
     key: CM-7(8)
   - categories:
-    - Device
-    - Application & Workload
+    - pillar: Device
+    - pillar: Application & Workload
     key: CM-8
   - categories:
-    - Device
+    - pillar: Device
     key: CM-8(2)
   - categories:
-    - Device
+    - pillar: Device
     key: CM-8(3)
   - categories:
-    - Device
+    - pillar: Device
     key: CM-8(6)
   - categories:
-    - Device
-    - Application & Workload
+    - pillar: Device
+    - pillar: Application & Workload
     key: CM-8(9)
   - categories:
-    - Device
-    - Application & Workload
+    - pillar: Device
+    - pillar: Application & Workload
     key: CM-9
   - categories:
-    - Application & Workload
+    - pillar: Application & Workload
     key: CM-10
   - categories:
-    - Application & Workload
+    - pillar: Application & Workload
     key: CM-10(1)
   - categories:
-    - Device
+    - pillar: Device
     key: CM-11
   - categories:
-    - Device
+    - pillar: Device
     key: CM-11(3)
   - categories:
-    - Network & Environment
+    - pillar: Network & Environment
     key: CM-12
   - categories:
-    - Device
+    - pillar: Device
     key: CM-14
   - categories:
-    - Enabler
+    - pillar: Enabler
     key: CP-1
   - categories:
-    - Visibility and Analytics
+    - pillar: Visibility and Analytics
     key: CP-2
   - categories:
-    - Visibility and Analytics
+    - pillar: Visibility and Analytics
     key: CP-2(2)
   - categories:
-    - Enabler
+    - pillar: Enabler
     key: CP-2(5)
   - categories:
-    - Enabler
+    - pillar: Enabler
     key: CP-2(6)
   - categories:
-    - Enabler
-    - User
-    - Automation & Orchestration
+    - pillar: Enabler
+    - pillar: User
+    - pillar: Automation & Orchestration
     key: IA-1
   - categories:
-    - User
-    - Device
+    - pillar: User
+    - pillar: Device
     key: IA-2
   - categories:
-    - User
+    - pillar: User
     key: IA-2(1)
   - categories:
-    - User
+    - pillar: User
     key: IA-2(2)
   - categories:
-    - User
+    - pillar: User
     key: IA-2(5)
   - categories:
-    - User
+    - pillar: User
     key: IA-2(6)
   - categories:
-    - User
+    - pillar: User
     key: IA-2(12)
   - categories:
-    - Device
+    - pillar: Device
     key: IA-3
   - categories:
-    - Application & Workload
+    - pillar: Application & Workload
     key: IA-3(1)
   - categories:
-    - User
-    - Device
+    - pillar: User
+    - pillar: Device
     key: IA-4
   - categories:
-    - User
+    - pillar: User
     key: IA-4(4)
   - categories:
-    - User
+    - pillar: User
     key: IA-4(5)
   - categories:
-    - User
-    - Device
+    - pillar: User
+    - pillar: Device
     key: IA-4(6)
   - categories:
-    - User
-    - Device
+    - pillar: User
+    - pillar: Device
     key: IA-4(9)
   - categories:
-    - User
-    - Device
+    - pillar: User
+    - pillar: Device
     key: IA-5
   - categories:
-    - User
+    - pillar: User
     key: IA-5(1)
   - categories:
-    - User
-    - Device
+    - pillar: User
+    - pillar: Device
     key: IA-5(2)
   - categories:
-    - Application & Workload
+    - pillar: Application & Workload
     key: IA-5(5)
   - categories:
-    - Application & Workload
+    - pillar: Application & Workload
     key: IA-5(7)
   - categories:
-    - User
-    - Device
+    - pillar: User
+    - pillar: Device
     key: IA-5(9)
   - categories:
-    - User
+    - pillar: User
     key: IA-5(10)
   - categories:
-    - User
+    - pillar: User
     key: IA-5(12)
   - categories:
-    - User
-    - Device
+    - pillar: User
+    - pillar: Device
     key: IA-5(14)
   - categories:
-    - User
+    - pillar: User
     key: IA-5(17)
   - categories:
-    - User
+    - pillar: User
     key: IA-5(18)
   - categories:
-    - Application & Workload
+    - pillar: Application & Workload
     key: IA-6
   - categories:
-    - User
-    - Device
+    - pillar: User
+    - pillar: Device
     key: IA-8
   - categories:
-    - User
+    - pillar: User
     key: IA-8(1)
   - categories:
-    - User
+    - pillar: User
     key: IA-8(2)
   - categories:
-    - User
+    - pillar: User
     key: IA-8(4)
   - categories:
-    - User
+    - pillar: User
     key: IA-8(5)
   - categories:
-    - Device
+    - pillar: Device
     key: IA-9
   - categories:
-    - User
-    - Visibility and Analytics
+    - pillar: User
+    - pillar: Visibility and Analytics
     key: IA-10
   - categories:
-    - User
+    - pillar: User
     key: IA-11
   - categories:
-    - User
+    - pillar: User
     key: IA-12
   - categories:
-    - Enabler
+    - pillar: Enabler
     key: IR-1
   - categories:
-    - Automation & Orchestration
-    - Visibility and Analytics
+    - pillar: Automation & Orchestration
+    - pillar: Visibility and Analytics
     key: IR-4
   - categories:
-    - Automation & Orchestration
-    - Visibility and Analytics
+    - pillar: Automation & Orchestration
+    - pillar: Visibility and Analytics
     key: IR-4(1)
   - categories:
-    - Automation & Orchestration
+    - pillar: Automation & Orchestration
     key: IR-4(2)
   - categories:
-    - Visibility and Analytics
+    - pillar: Visibility and Analytics
     key: IR-4(4)
   - categories:
-    - Automation & Orchestration
+    - pillar: Automation & Orchestration
     key: IR-4(9)
   - categories:
-    - Visibility and Analytics
+    - pillar: Visibility and Analytics
     key: IR-4(13)
   - categories:
-    - Automation & Orchestration
+    - pillar: Automation & Orchestration
     key: IR-4(14)
   - categories:
-    - Automation & Orchestration
+    - pillar: Automation & Orchestration
     key: IR-5
   - categories:
-    - Automation & Orchestration
+    - pillar: Automation & Orchestration
     key: IR-5(1)
   - categories:
-    - Automation & Orchestration
+    - pillar: Automation & Orchestration
     key: IR-6
   - categories:
-    - Automation & Orchestration
+    - pillar: Automation & Orchestration
     key: IR-6(1)
   - categories:
-    - Automation & Orchestration
+    - pillar: Automation & Orchestration
     key: IR-6(2)
   - categories:
-    - Automation & Orchestration
+    - pillar: Automation & Orchestration
     key: IR-8
   - categories:
-    - Enabler
+    - pillar: Enabler
     key: PL-1
   - categories:
-    - Enabler
+    - pillar: Enabler
     key: PL-2
   - categories:
-    - User
+    - pillar: User
     key: PL-4
   - categories:
-    - Enabler
+    - pillar: Enabler
     key: PL-7
   - categories:
-    - Enabler
+    - pillar: Enabler
     key: PL-8
   - categories:
-    - Enabler
+    - pillar: Enabler
     key: PL-8(1)
   - categories:
-    - Enabler
+    - pillar: Enabler
     key: PL-9
   - categories:
-    - Enabler
+    - pillar: Enabler
     key: PM-1
   - categories:
-    - Enabler
+    - pillar: Enabler
     key: PM-2
   - categories:
-    - Enabler
+    - pillar: Enabler
     key: PM-3
   - categories:
-    - Enabler
+    - pillar: Enabler
     key: PM-6
   - categories:
-    - Enabler
+    - pillar: Enabler
     key: PM-7
   - categories:
-    - Enabler
+    - pillar: Enabler
     key: PM-9
   - categories:
-    - User
+    - pillar: User
     key: PM-12
   - categories:
-    - Enabler
+    - pillar: Enabler
     key: PM-13
   - categories:
-    - Enabler
+    - pillar: Enabler
     key: PM-14
   - categories:
-    - Application & Workload
-    - Visibility and Analytics
+    - pillar: Application & Workload
+    - pillar: Visibility and Analytics
     key: PM-15
   - categories:
-    - Visibility and Analytics
+    - pillar: Visibility and Analytics
     key: PM-16
   - categories:
-    - Visibility and Analytics
+    - pillar: Visibility and Analytics
     key: PM-16(1)
   - categories:
-    - Enabler
+    - pillar: Enabler
     key: PM-18
   - categories:
-    - Enabler
+    - pillar: Enabler
     key: PM-19
   - categories:
-    - Enabler
+    - pillar: Enabler
     key: PM-28
   - categories:
-    - Enabler
+    - pillar: Enabler
     key: PM-29
   - categories:
-    - Enabler
+    - pillar: Enabler
     key: PM-30
   - categories:
-    - Enabler
+    - pillar: Enabler
     key: PM-31
   - categories:
-    - Enabler
+    - pillar: Enabler
     key: PM-32
   - categories:
-    - Enabler
+    - pillar: Enabler
     key: PS-1
   - categories:
-    - Enabler
+    - pillar: Enabler
     key: PS-2
   - categories:
-    - Enabler
+    - pillar: Enabler
     key: PS-3
   - categories:
-    - Enabler
-    - User
+    - pillar: Enabler
+    - pillar: User
     key: PS-4
   - categories:
-    - Enabler
+    - pillar: Enabler
     key: PS-4(2)
   - categories:
-    - Enabler
-    - User
+    - pillar: Enabler
+    - pillar: User
     key: PS-5
   - categories:
-    - Enabler
+    - pillar: Enabler
     key: PT-1
   - categories:
-    - Data
-    - Automation & Orchestration
+    - pillar: Data
+    - pillar: Automation & Orchestration
     key: PT-2
   - categories:
-    - Data
-    - Automation & Orchestration
+    - pillar: Data
+    - pillar: Automation & Orchestration
     key: PT-2(1)
   - categories:
-    - Data
-    - Automation & Orchestration
+    - pillar: Data
+    - pillar: Automation & Orchestration
     key: PT-2(2)
   - categories:
-    - Data
-    - Automation & Orchestration
+    - pillar: Data
+    - pillar: Automation & Orchestration
     key: PT-3
   - categories:
-    - Data
-    - Automation & Orchestration
+    - pillar: Data
+    - pillar: Automation & Orchestration
     key: PT-3(1)
   - categories:
-    - Data
-    - Automation & Orchestration
+    - pillar: Data
+    - pillar: Automation & Orchestration
     key: PT-3(2)
   - categories:
-    - Enabler
+    - pillar: Enabler
     key: RA-1
   - categories:
-    - Enabler
-    - Data
-    - Automation & Orchestration
+    - pillar: Enabler
+    - pillar: Data
+    - pillar: Automation & Orchestration
     key: RA-3
   - categories:
-    - Application & Workload
+    - pillar: Application & Workload
     key: RA-3(1)
   - categories:
-    - Visibility and Analytics
+    - pillar: Visibility and Analytics
     key: RA-3(3)
   - categories:
-    - Automation & Orchestration
-    - Visibility and Analytics
+    - pillar: Automation & Orchestration
+    - pillar: Visibility and Analytics
     key: RA-3(4)
   - categories:
-    - Enabler
-    - User
-    - Device
-    - Application & Workload
+    - pillar: Enabler
+    - pillar: User
+    - pillar: Device
+    - pillar: Application & Workload
     key: RA-5
   - categories:
-    - User
-    - Device
-    - Application & Workload
+    - pillar: User
+    - pillar: Device
+    - pillar: Application & Workload
     key: RA-5(2)
   - categories:
-    - User
-    - Application & Workload
+    - pillar: User
+    - pillar: Application & Workload
     key: RA-5(5)
   - categories:
-    - Application & Workload
+    - pillar: Application & Workload
     key: RA-5(11)
   - categories:
-    - Enabler
-    - Automation & Orchestration
+    - pillar: Enabler
+    - pillar: Automation & Orchestration
     key: RA-7
   - categories:
-    - Enabler
-    - User
-    - Device
+    - pillar: Enabler
+    - pillar: User
+    - pillar: Device
     key: RA-9
   - categories:
-    - Enabler
+    - pillar: Enabler
     key: RA-10
   - categories:
-    - Enabler
+    - pillar: Enabler
     key: SA-1
   - categories: []
     key: SA-8
   - categories:
-    - Application & Workload
+    - pillar: Application & Workload
     key: SA-8(14)
   - categories:
-    - Application & Workload
+    - pillar: Application & Workload
     key: SA-10
   - categories:
-    - Application & Workload
+    - pillar: Application & Workload
     key: SA-10(1)
   - categories:
-    - Application & Workload
+    - pillar: Application & Workload
     key: SA-10(4)
   - categories:
-    - Application & Workload
+    - pillar: Application & Workload
     key: SA-10(6)
   - categories:
-    - Application & Workload
+    - pillar: Application & Workload
     key: SA-11
   - categories:
-    - Application & Workload
+    - pillar: Application & Workload
     key: SA-11(1)
   - categories:
-    - Enabler
+    - pillar: Enabler
     key: SA-11(2)
   - categories:
-    - Application & Workload
+    - pillar: Application & Workload
     key: SA-11(4)
   - categories:
-    - Application & Workload
+    - pillar: Application & Workload
     key: SA-11(8)
   - categories:
-    - Application & Workload
+    - pillar: Application & Workload
     key: SA-11(9)
   - categories:
-    - Application & Workload
-    - Automation & Orchestration
+    - pillar: Application & Workload
+    - pillar: Automation & Orchestration
     key: SA-15
   - categories:
-    - Application & Workload
+    - pillar: Application & Workload
     key: SA-15(1)
   - categories:
-    - Application & Workload
+    - pillar: Application & Workload
     key: SA-15(2)
   - categories:
-    - Application & Workload
+    - pillar: Application & Workload
     key: SA-15(7)
   - categories:
-    - Enabler
+    - pillar: Enabler
     key: SA-16
   - categories: []
     key: SA-17
   - categories:
-    - Application & Workload
+    - pillar: Application & Workload
     key: SA-17(7)
   - categories:
-    - Automation & Orchestration
+    - pillar: Automation & Orchestration
     key: SA-17(8)
   - categories:
-    - Enabler
+    - pillar: Enabler
     key: SC-1
   - categories:
-    - Network & Environment
+    - pillar: Network & Environment
     key: SC-2
   - categories:
-    - Network & Environment
+    - pillar: Network & Environment
     key: SC-2(1)
   - categories:
-    - Network & Environment
+    - pillar: Network & Environment
     key: SC-4
   - categories:
-    - Visibility and Analytics
+    - pillar: Visibility and Analytics
     key: SC-5(3)
   - categories:
-    - Network & Environment
+    - pillar: Network & Environment
     key: SC-7
   - categories:
-    - Network & Environment
+    - pillar: Network & Environment
     key: SC-7(4)
   - categories:
-    - Network & Environment
+    - pillar: Network & Environment
     key: SC-7(5)
   - categories:
-    - Application & Workload
+    - pillar: Application & Workload
     key: SC-7(8)
   - categories:
-    - Data
+    - pillar: Data
     key: SC-7(10)
   - categories:
-    - Application & Workload
+    - pillar: Application & Workload
     key: SC-7(11)
   - categories:
-    - Network & Environment
+    - pillar: Network & Environment
     key: SC-7(12)
   - categories:
-    - Network & Environment
+    - pillar: Network & Environment
     key: SC-7(15)
   - categories:
-    - Application & Workload
+    - pillar: Application & Workload
     key: SC-7(16)
   - categories:
-    - Application & Workload
+    - pillar: Application & Workload
     key: SC-7(17)
   - categories:
-    - Network & Environment
+    - pillar: Network & Environment
     key: SC-7(18)
   - categories:
-    - Device
+    - pillar: Device
     key: SC-7(20)
   - categories:
-    - Network & Environment
+    - pillar: Network & Environment
     key: SC-7(21)
   - categories:
-    - Network & Environment
+    - pillar: Network & Environment
     key: SC-7(22)
   - categories:
-    - Network & Environment
+    - pillar: Network & Environment
     key: SC-7(29)
   - categories:
-    - Data
-    - Network & Environment
+    - pillar: Data
+    - pillar: Network & Environment
     key: SC-8
   - categories:
-    - Data
-    - Network & Environment
+    - pillar: Data
+    - pillar: Network & Environment
     key: SC-8(1)
   - categories:
-    - Application & Workload
+    - pillar: Application & Workload
     key: SC-10
   - categories:
-    - User
-    - Device
-    - Data
+    - pillar: User
+    - pillar: Device
+    - pillar: Data
     key: SC-12
   - categories:
-    - Device
-    - Data
+    - pillar: Device
+    - pillar: Data
     key: SC-12(1)
   - categories:
-    - Data
+    - pillar: Data
     key: SC-12(2)
   - categories:
-    - Device
-    - Data
+    - pillar: Device
+    - pillar: Data
     key: SC-12(3)
   - categories:
-    - Device
-    - Data
-    - Network & Environment
+    - pillar: Device
+    - pillar: Data
+    - pillar: Network & Environment
     key: SC-13
   - categories:
-    - User
-    - Device
-    - Application & Workload
-    - Data
-    - Automation & Orchestration
-    - Visibility and Analytics
+    - pillar: User
+    - pillar: Device
+    - pillar: Application & Workload
+    - pillar: Data
+    - pillar: Automation & Orchestration
+    - pillar: Visibility and Analytics
     key: SC-16
   - categories:
-    - User
-    - Device
-    - Application & Workload
-    - Data
-    - Automation & Orchestration
-    - Visibility and Analytics
+    - pillar: User
+    - pillar: Device
+    - pillar: Application & Workload
+    - pillar: Data
+    - pillar: Automation & Orchestration
+    - pillar: Visibility and Analytics
     key: SC-16(1)
   - categories:
-    - User
-    - Device
-    - Application & Workload
-    - Data
-    - Automation & Orchestration
-    - Visibility and Analytics
+    - pillar: User
+    - pillar: Device
+    - pillar: Application & Workload
+    - pillar: Data
+    - pillar: Automation & Orchestration
+    - pillar: Visibility and Analytics
     key: SC-16(2)
   - categories:
-    - User
-    - Device
-    - Application & Workload
-    - Data
-    - Automation & Orchestration
-    - Visibility and Analytics
+    - pillar: User
+    - pillar: Device
+    - pillar: Application & Workload
+    - pillar: Data
+    - pillar: Automation & Orchestration
+    - pillar: Visibility and Analytics
     key: SC-16(3)
   - categories:
-    - Device
+    - pillar: Device
     key: SC-17
   - categories:
-    - User
-    - Application & Workload
+    - pillar: User
+    - pillar: Application & Workload
     key: SC-23
   - categories:
-    - User
-    - Application & Workload
+    - pillar: User
+    - pillar: Application & Workload
     key: SC-23(5)
   - categories:
-    - Device
+    - pillar: Device
     key: SC-25
   - categories:
-    - Visibility and Analytics
+    - pillar: Visibility and Analytics
     key: SC-26
   - categories:
-    - Application & Workload
+    - pillar: Application & Workload
     key: SC-27
   - categories:
-    - Data
+    - pillar: Data
     key: SC-28
   - categories:
-    - Data
+    - pillar: Data
     key: SC-28(1)
   - categories:
-    - Data
+    - pillar: Data
     key: SC-28(3)
   - categories:
-    - Application & Workload
+    - pillar: Application & Workload
     key: SC-30
   - categories:
-    - Network & Environment
+    - pillar: Network & Environment
     key: SC-39
   - categories:
-    - Network & Environment
+    - pillar: Network & Environment
     key: SC-39(2)
   - categories:
-    - Visibility and Analytics
+    - pillar: Visibility and Analytics
     key: SC-44
   - categories:
-    - User
-    - Device
-    - Application & Workload
-    - Data
-    - Automation & Orchestration
-    - Visibility and Analytics
+    - pillar: User
+    - pillar: Device
+    - pillar: Application & Workload
+    - pillar: Data
+    - pillar: Automation & Orchestration
+    - pillar: Visibility and Analytics
     key: SC-45
   - categories:
-    - User
-    - Device
-    - Application & Workload
-    - Data
-    - Automation & Orchestration
-    - Visibility and Analytics
+    - pillar: User
+    - pillar: Device
+    - pillar: Application & Workload
+    - pillar: Data
+    - pillar: Automation & Orchestration
+    - pillar: Visibility and Analytics
     key: SC-45(1)
   - categories:
-    - Visibility and Analytics
+    - pillar: Visibility and Analytics
     key: SC-48
   - categories:
-    - Visibility and Analytics
+    - pillar: Visibility and Analytics
     key: SC-48(1)
   - categories:
-    - Enabler
+    - pillar: Enabler
     key: SI-1
   - categories:
-    - Device
-    - Application & Workload
+    - pillar: Device
+    - pillar: Application & Workload
     key: SI-2
   - categories:
-    - Device
-    - Application & Workload
+    - pillar: Device
+    - pillar: Application & Workload
     key: SI-2(2)
   - categories:
-    - Device
-    - Application & Workload
+    - pillar: Device
+    - pillar: Application & Workload
     key: SI-2(4)
   - categories:
-    - Device
-    - Application & Workload
+    - pillar: Device
+    - pillar: Application & Workload
     key: SI-2(5)
   - categories:
-    - Device
+    - pillar: Device
     key: SI-3
   - categories:
-    - Device
+    - pillar: Device
     key: SI-3(8)
   - categories:
-    - Visibility and Analytics
+    - pillar: Visibility and Analytics
     key: SI-3(10)
   - categories:
-    - User
-    - Device
-    - Visibility and Analytics
+    - pillar: User
+    - pillar: Device
+    - pillar: Visibility and Analytics
     key: SI-4
   - categories:
-    - Device
-    - Visibility and Analytics
+    - pillar: Device
+    - pillar: Visibility and Analytics
     key: SI-4(1)
   - categories:
-    - User
-    - Device
-    - Visibility and Analytics
+    - pillar: User
+    - pillar: Device
+    - pillar: Visibility and Analytics
     key: SI-4(2)
   - categories:
-    - Device
-    - Network & Environment
-    - Visibility and Analytics
+    - pillar: Device
+    - pillar: Network & Environment
+    - pillar: Visibility and Analytics
     key: SI-4(3)
   - categories:
-    - User
-    - Device
+    - pillar: User
+    - pillar: Device
     key: SI-4(4)
   - categories:
-    - Visibility and Analytics
+    - pillar: Visibility and Analytics
     key: SI-4(5)
   - categories:
-    - Automation & Orchestration
+    - pillar: Automation & Orchestration
     key: SI-4(7)
   - categories:
-    - User
+    - pillar: User
     key: SI-4(9)
   - categories:
-    - User
-    - Device
-    - Data
-    - Network & Environment
+    - pillar: User
+    - pillar: Device
+    - pillar: Data
+    - pillar: Network & Environment
     key: SI-4(10)
   - categories:
-    - Device
+    - pillar: Device
     key: SI-4(11)
   - categories:
-    - Visibility and Analytics
+    - pillar: Visibility and Analytics
     key: SI-4(12)
   - categories:
-    - User
-    - Device
+    - pillar: User
+    - pillar: Device
     key: SI-4(13)
   - categories:
-    - Device
-    - Visibility and Analytics
+    - pillar: Device
+    - pillar: Visibility and Analytics
     key: SI-4(16)
   - categories:
-    - Visibility and Analytics
+    - pillar: Visibility and Analytics
     key: SI-4(17)
   - categories:
-    - Data
+    - pillar: Data
     key: SI-4(18)
   - categories:
-    - User
+    - pillar: User
     key: SI-4(19)
   - categories:
-    - User
+    - pillar: User
     key: SI-4(20)
   - categories:
-    - Device
+    - pillar: Device
     key: SI-4(23)
   - categories:
-    - Device
-    - Visibility and Analytics
+    - pillar: Device
+    - pillar: Visibility and Analytics
     key: SI-4(24)
   - categories:
-    - Network & Environment
+    - pillar: Network & Environment
     key: SI-4(25)
   - categories:
-    - Visibility and Analytics
+    - pillar: Visibility and Analytics
     key: SI-5
   - categories:
-    - Device
+    - pillar: Device
     key: SI-7
   - categories:
-    - Automation & Orchestration
+    - pillar: Automation & Orchestration
     key: SI-7(7)
   - categories:
-    - Device
+    - pillar: Device
     key: SI-7(8)
   - categories:
-    - Application & Workload
+    - pillar: Application & Workload
     key: SI-7(17)
   - categories:
-    - Application & Workload
+    - pillar: Application & Workload
     key: SI-10
   - categories:
-    - Application & Workload
+    - pillar: Application & Workload
     key: SI-10(2)
   - categories:
-    - Application & Workload
+    - pillar: Application & Workload
     key: SI-10(4)
   - categories:
-    - Application & Workload
+    - pillar: Application & Workload
     key: SI-10(5)
   - categories:
-    - Application & Workload
+    - pillar: Application & Workload
     key: SI-10(6)
   - categories:
-    - Application & Workload
+    - pillar: Application & Workload
     key: SI-11
   - categories:
-    - Application & Workload
+    - pillar: Application & Workload
     key: SI-14
   - categories:
-    - Application & Workload
+    - pillar: Application & Workload
     key: SI-15
   - categories: []
     key: SI-18
   - categories:
-    - Data
+    - pillar: Data
     key: SI-18(2)
   - categories:
-    - Data
+    - pillar: Data
     key: SI-20
   - categories:
-    - Application & Workload
+    - pillar: Application & Workload
     key: SI-23
   - categories:
-    - Enabler
+    - pillar: Enabler
     key: SR-1
   - categories:
-    - Application & Workload
+    - pillar: Application & Workload
     key: SR-3
   - categories: []
     key: SR-4
   - categories:
-    - Application & Workload
+    - pillar: Application & Workload
     key: SR-4(3)
   - categories:
-    - Application & Workload
+    - pillar: Application & Workload
     key: SR-4(4)
   - categories:
-    - Application & Workload
+    - pillar: Application & Workload
     key: SR-9
   - categories:
-    - Application & Workload
+    - pillar: Application & Workload
     key: SR-10
   - categories:
-    - Application & Workload
+    - pillar: Application & Workload
     key: SR-11
   name: Appendix A - Control Tables Allocated to Pillars
-- mappings:
-  - categories:
-    - Organization
-    key: AC-2(12)
-  - categories:
-    - Training
-    key: AT-2
-  - categories:
-    - Training
-    key: AT-3
-  - categories: []
-    key: CP-2
-  - categories:
-    - Organization
-    key: CP-2(5)
-  - categories:
-    - Organization
-    key: CP-2(6)
-  - categories:
-    - Organization
-    key: PL-2
-  - categories:
-    - Organization
-    key: PL-7
-  - categories:
-    - Organization
-    key: PL-8
-  - categories:
-    - Organization
-    key: PL-8(1)
-  - categories:
-    - Organization
-    key: PL-9
-  - categories:
-    - Organization
-    key: PM-1
-  - categories:
-    - Leadership and education
-    key: PM-2
-  - categories:
-    - Materiel
-    key: PM-3
-  - categories:
-    - Leadership and education
-    key: PM-6
-  - categories:
-    - Organization
-    key: PM-7
-  - categories:
-    - Organization
-    - Leadership and education
-    key: PM-9
-  - categories:
-    - Personnel
-    key: PM-13
-  - categories:
-    - Organization
-    key: PM-14
-  - categories:
-    - Leadership and education
-    key: PM-18
-  - categories:
-    - Leadership and education
-    key: PM-19
-  - categories:
-    - Organization
-    - Leadership and education
-    key: PM-28
-  - categories:
-    - Leadership and education
-    key: PM-29
-  - categories:
-    - Organization
-    key: PM-30
-  - categories:
-    - Organization
-    key: PM-31
-  - categories:
-    - Organization
-    key: PM-32
-  - categories:
-    - Personnel
-    key: PS-2
-  - categories:
-    - Personnel
-    key: PS-3
-  - categories:
-    - Personnel
-    key: PS-4
-  - categories:
-    - Personnel
-    key: PS-4(2)
-  - categories:
-    - Personnel
-    key: PS-5
-  - categories:
-    - Organization
-    key: RA-3
-  - categories:
-    - Organization
-    key: RA-5
-  - categories:
-    - Organization
-    key: RA-7
-  - categories:
-    - Organization
-    key: RA-9
-  - categories:
-    - Organization
-    key: RA-10
-  - categories: []
-    key: SA-11
-  - categories:
-    - Organization
-    key: SA-11(2)
-  - categories:
-    - Training
-    key: SA-16
-  name: Appendix B - Execution Enabler Overlay
-- mappings:
-  - categories:
-    - 1.1 User Inventory
-    - 1.3 Multi-Factor Authentication (MFA)
-    - 1.4 Privileged Access Management (PAM)
-    - 1.9 Integrated ICAM Platform
-    key: AC-2
-  - categories:
-    - 1.5 Identity Federation & User Credentialing
-    key: AC-2(1)
-  - categories:
-    - 1.3 Multi-Factor Authentication (MFA)
-    - 1.4 Privileged Access Management (PAM)
-    - 1.5 Identity Federation & User Credentialing
-    - 1.9 Integrated ICAM Platform
-    key: AC-2(2)
-  - categories:
-    - 1.5 Identity Federation & User Credentialing
-    key: AC-2(3)
-  - categories:
-    - 1.5 Identity Federation & User Credentialing
-    key: AC-2(4)
-  - categories:
-    - 1.2 Conditional User Access
-    key: AC-2(6)
-  - categories:
-    - 1.1 User Inventory
-    - 1.2 Conditional User Access
-    - 1.4 Privileged Access Management (PAM)
-    - 1.5 Identity Federation & User Credentialing
-    key: AC-2(7)
-  - categories:
-    - 1.5 Identity Federation & User Credentialing
-    key: AC-2(8)
-  - categories:
-    - 1.3 Multi-Factor Authentication (MFA)
-    - 1.9 Integrated ICAM Platform
-    key: AC-2(9)
-  - categories:
-    - 1.2 Conditional User Access
-    - 1.5 Identity Federation & User Credentialing
-    - 1.7 Least Privileged Access
-    key: AC-2(11)
-  - categories:
-    - 1.4 Privileged Access Management (PAM)
-    - 1.6 Behavioral, Contextual ID, and Biometrics
-    key: AC-2(12)
-  - categories:
-    - 1.5 Identity Federation & User Credentialing
-    key: AC-2(13)
-  - categories:
-    - 1.2 Conditional User Access
-    - 1.7 Least Privileged Access
-    key: AC-3
-  - categories:
-    - 1.7 Least Privileged Access
-    key: AC-3(7)
-  - categories:
-    - 1.2 Conditional User Access
-    - 1.7 Least Privileged Access
-    key: AC-3(8)
-  - categories:
-    - 1.2 Conditional User Access
-    key: AC-3(10)
-  - categories:
-    - 1.2 Conditional User Access
-    key: AC-3(11)
-  - categories:
-    - 1.2 Conditional User Access
-    - 1.7 Least Privileged Access
-    key: AC-3(13)
-  - categories:
-    - 1.2 Conditional User Access
-    key: AC-5
-  - categories:
-    - 1.2 Conditional User Access
-    - 1.4 Privileged Access Management (PAM)
-    - 1.7 Least Privileged Access
-    key: AC-6
-  - categories:
-    - 1.2 Conditional User Access
-    - 1.4 Privileged Access Management (PAM)
-    - 1.5 Identity Federation & User Credentialing
-    - 1.7 Least Privileged Access
-    key: AC-6(5)
-  - categories:
-    - 1.5 Identity Federation & User Credentialing
-    key: AC-6(7)
-  - categories:
-    - 1.4 Privileged Access Management (PAM)
-    key: AC-6(9)
-  - categories:
-    - 1.2 Conditional User Access
-    - 1.7 Least Privileged Access
-    key: AC-6(10)
-  - categories:
-    - 1.2 Conditional User Access
-    key: AC-12
-  - categories:
-    - 1.1 User Inventory
-    - 1.3 Multi-Factor Authentication (MFA)
-    - 1.9 Integrated ICAM Platform
-    key: AC-14
-  - categories:
-    - 1.2 Conditional User Access
-    - 1.3 Multi-Factor Authentication (MFA)
-    - 1.9 Integrated ICAM Platform
-    key: AC-16
-  - categories:
-    - 1.3 Multi-Factor Authentication (MFA)
-    - 1.9 Integrated ICAM Platform
-    key: AC-16(1)
-  - categories:
-    - 1.2 Conditional User Access
-    - 1.3 Multi-Factor Authentication (MFA)
-    - 1.9 Integrated ICAM Platform
-    key: AC-16(2)
-  - categories:
-    - 1.3 Multi-Factor Authentication (MFA)
-    - 1.9 Integrated ICAM Platform
-    key: AC-16(3)
-  - categories:
-    - 1.2 Conditional User Access
-    - 1.3 Multi-Factor Authentication (MFA)
-    - 1.9 Integrated ICAM Platform
-    key: AC-16(4)
-  - categories:
-    - 1.2 Conditional User Access
-    - 1.3 Multi-Factor Authentication (MFA)
-    - 1.9 Integrated ICAM Platform
-    key: AC-16(6)
-  - categories:
-    - 1.2 Conditional User Access
-    - 1.3 Multi-Factor Authentication (MFA)
-    - 1.9 Integrated ICAM Platform
-    key: AC-16(7)
-  - categories:
-    - 1.2 Conditional User Access
-    - 1.3 Multi-Factor Authentication (MFA)
-    - 1.9 Integrated ICAM Platform
-    key: AC-16(8)
-  - categories:
-    - 1.9 Integrated ICAM Platform
-    key: AC-16(9)
-  - categories:
-    - 1.2 Conditional User Access
-    - 1.3 Multi-Factor Authentication (MFA)
-    - 1.9 Integrated ICAM Platform
-    key: AC-16(10)
-  - categories: []
-    key: AC-17
-  - categories:
-    - 1.4 Privileged Access Management (PAM)
-    key: AC-17(4)
-  - categories:
-    - 1.2 Conditional User Access
-    key: AC-17(9)
-  - categories:
-    - 1.2 Conditional User Access
-    key: AC-24
-  - categories:
-    - 1.2 Conditional User Access
-    key: AC-24(1)
-  - categories:
-    - 1.2 Conditional User Access
-    - 1.3 Multi-Factor Authentication (MFA)
-    - 1.4 Privileged Access Management (PAM)
-    - 1.5 Identity Federation & User Credentialing
-    - 1.6 Behavioral, Contextual ID, and Biometrics
-    - 1.7 Least Privileged Access
-    - 1.8 Continuous Authentication
-    - 1.9 Integrated ICAM Platform
-    key: AU-2
-  - categories:
-    - 1.2 Conditional User Access
-    - 1.3 Multi-Factor Authentication (MFA)
-    - 1.4 Privileged Access Management (PAM)
-    - 1.5 Identity Federation & User Credentialing
-    - 1.6 Behavioral, Contextual ID, and Biometrics
-    - 1.7 Least Privileged Access
-    - 1.8 Continuous Authentication
-    - 1.9 Integrated ICAM Platform
-    key: AU-3
-  - categories:
-    - 1.6 Behavioral, Contextual ID, and Biometrics
-    key: AU-3(3)
-  - categories:
-    - 1.6 Behavioral, Contextual ID, and Biometrics
-    key: AU-6
-  - categories:
-    - 1.6 Behavioral, Contextual ID, and Biometrics
-    key: AU-6(8)
-  - categories:
-    - 1.6 Behavioral, Contextual ID, and Biometrics
-    key: AU-7
-  - categories:
-    - 1.6 Behavioral, Contextual ID, and Biometrics
-    key: AU-7(1)
-  - categories:
-    - 1.2 Conditional User Access
-    - 1.3 Multi-Factor Authentication (MFA)
-    - 1.4 Privileged Access Management (PAM)
-    - 1.5 Identity Federation & User Credentialing
-    - 1.6 Behavioral, Contextual ID, and Biometrics
-    - 1.7 Least Privileged Access
-    - 1.8 Continuous Authentication
-    - 1.9 Integrated ICAM Platform
-    key: AU-8
-  - categories:
-    - 1.2 Conditional User Access
-    - 1.3 Multi-Factor Authentication (MFA)
-    - 1.4 Privileged Access Management (PAM)
-    - 1.5 Identity Federation & User Credentialing
-    - 1.6 Behavioral, Contextual ID, and Biometrics
-    - 1.7 Least Privileged Access
-    - 1.8 Continuous Authentication
-    - 1.9 Integrated ICAM Platform
-    key: AU-9
-  - categories:
-    - 1.2 Conditional User Access
-    - 1.3 Multi-Factor Authentication (MFA)
-    - 1.4 Privileged Access Management (PAM)
-    - 1.5 Identity Federation & User Credentialing
-    - 1.6 Behavioral, Contextual ID, and Biometrics
-    - 1.7 Least Privileged Access
-    - 1.8 Continuous Authentication
-    - 1.9 Integrated ICAM Platform
-    key: AU-9(4)
-  - categories:
-    - 1.2 Conditional User Access
-    - 1.3 Multi-Factor Authentication (MFA)
-    - 1.4 Privileged Access Management (PAM)
-    - 1.5 Identity Federation & User Credentialing
-    - 1.6 Behavioral, Contextual ID, and Biometrics
-    - 1.7 Least Privileged Access
-    - 1.8 Continuous Authentication
-    - 1.9 Integrated ICAM Platform
-    key: AU-10
-  - categories:
-    - 1.2 Conditional User Access
-    - 1.3 Multi-Factor Authentication (MFA)
-    - 1.4 Privileged Access Management (PAM)
-    - 1.5 Identity Federation & User Credentialing
-    - 1.6 Behavioral, Contextual ID, and Biometrics
-    - 1.7 Least Privileged Access
-    - 1.8 Continuous Authentication
-    - 1.9 Integrated ICAM Platform
-    key: AU-10(1)
-  - categories:
-    - 1.2 Conditional User Access
-    - 1.3 Multi-Factor Authentication (MFA)
-    - 1.4 Privileged Access Management (PAM)
-    - 1.5 Identity Federation & User Credentialing
-    - 1.6 Behavioral, Contextual ID, and Biometrics
-    - 1.7 Least Privileged Access
-    - 1.8 Continuous Authentication
-    - 1.9 Integrated ICAM Platform
-    key: AU-12
-  - categories:
-    - 1.6 Behavioral, Contextual ID, and Biometrics
-    key: AU-14
-  - categories:
-    - 1.5 Identity Federation & User Credentialing
-    key: IA-1
-  - categories:
-    - 1.1 User Inventory
-    - 1.2 Conditional User Access
-    - 1.3 Multi-Factor Authentication (MFA)
-    - 1.4 Privileged Access Management (PAM)
-    - 1.5 Identity Federation & User Credentialing
-    - 1.9 Integrated ICAM Platform
-    key: IA-2
-  - categories:
-    - 1.3 Multi-Factor Authentication (MFA)
-    - 1.9 Integrated ICAM Platform
-    key: IA-2(1)
-  - categories:
-    - 1.3 Multi-Factor Authentication (MFA)
-    - 1.9 Integrated ICAM Platform
-    key: IA-2(2)
-  - categories:
-    - 1.4 Privileged Access Management (PAM)
-    key: IA-2(5)
-  - categories:
-    - 1.3 Multi-Factor Authentication (MFA)
-    key: IA-2(6)
-  - categories:
-    - 1.3 Multi-Factor Authentication (MFA)
-    - 1.9 Integrated ICAM Platform
-    key: IA-2(12)
-  - categories:
-    - 1.2 Conditional User Access
-    - 1.5 Identity Federation & User Credentialing
-    key: IA-4
-  - categories:
-    - 1.5 Identity Federation & User Credentialing
-    key: IA-4(4)
-  - categories:
-    - 1.5 Identity Federation & User Credentialing
-    key: IA-4(5)
-  - categories:
-    - 1.5 Identity Federation & User Credentialing
-    key: IA-4(6)
-  - categories:
-    - 1.2 Conditional User Access
-    - 1.3 Multi-Factor Authentication (MFA)
-    - 1.4 Privileged Access Management (PAM)
-    - 1.5 Identity Federation & User Credentialing
-    - 1.9 Integrated ICAM Platform
-    key: IA-4(9)
-  - categories:
-    - 1.3 Multi-Factor Authentication (MFA)
-    - 1.4 Privileged Access Management (PAM)
-    - 1.5 Identity Federation & User Credentialing
-    - 1.8 Continuous Authentication
-    key: IA-5
-  - categories:
-    - 1.4 Privileged Access Management (PAM)
-    - 1.8 Continuous Authentication
-    key: IA-5(1)
-  - categories:
-    - 1.4 Privileged Access Management (PAM)
-    - 1.8 Continuous Authentication
-    - 1.9 Integrated ICAM Platform
-    key: IA-5(2)
-  - categories:
-    - 1.5 Identity Federation & User Credentialing
-    - 1.9 Integrated ICAM Platform
-    key: IA-5(9)
-  - categories:
-    - 1.5 Identity Federation & User Credentialing
-    key: IA-5(10)
-  - categories:
-    - 1.9 Integrated ICAM Platform
-    key: IA-5(12)
-  - categories:
-    - 1.9 Integrated ICAM Platform
-    key: IA-5(14)
-  - categories:
-    - 1.9 Integrated ICAM Platform
-    key: IA-5(17)
-  - categories:
-    - 1.4 Privileged Access Management (PAM)
-    - 1.8 Continuous Authentication
-    key: IA-5(18)
-  - categories:
-    - 1.1 User Inventory
-    - 1.2 Conditional User Access
-    - 1.5 Identity Federation & User Credentialing
-    - 1.9 Integrated ICAM Platform
-    key: IA-8
-  - categories:
-    - 1.5 Identity Federation & User Credentialing
-    - 1.9 Integrated ICAM Platform
-    key: IA-8(1)
-  - categories:
-    - 1.3 Multi-Factor Authentication (MFA)
-    key: IA-8(2)
-  - categories:
-    - 1.2 Conditional User Access
-    - 1.3 Multi-Factor Authentication (MFA)
-    key: IA-8(4)
-  - categories:
-    - 1.5 Identity Federation & User Credentialing
-    - 1.9 Integrated ICAM Platform
-    key: IA-8(5)
-  - categories:
-    - 1.2 Conditional User Access
-    - 1.3 Multi-Factor Authentication (MFA)
-    key: IA-10
-  - categories:
-    - 1.7 Least Privileged Access
-    - 1.8 Continuous Authentication
-    key: IA-11
-  - categories:
-    - 1.5 Identity Federation & User Credentialing
-    key: IA-12
-  - categories:
-    - 1.5 Identity Federation & User Credentialing
-    key: PL-4
-  - categories:
-    - 1.6 Behavioral, Contextual ID, and Biometrics
-    key: PM-12
-  - categories:
-    - 1.5 Identity Federation & User Credentialing
-    key: PS-4
-  - categories:
-    - 1.5 Identity Federation & User Credentialing
-    key: PS-5
-  - categories:
-    - 1.4 Privileged Access Management (PAM)
-    key: RA-5
-  - categories:
-    - 1.4 Privileged Access Management (PAM)
-    key: RA-5(2)
-  - categories:
-    - 1.4 Privileged Access Management (PAM)
-    key: RA-5(5)
-  - categories:
-    - 1.3 Multi-Factor Authentication (MFA)
-    key: RA-9
-  - categories:
-    - 1.9 Integrated ICAM Platform
-    key: SC-12
-  - categories:
-    - 1.2 Conditional User Access
-    - 1.3 Multi-Factor Authentication (MFA)
-    - 1.9 Integrated ICAM Platform
-    key: SC-16
-  - categories:
-    - 1.2 Conditional User Access
-    - 1.3 Multi-Factor Authentication (MFA)
-    - 1.9 Integrated ICAM Platform
-    key: SC-16(1)
-  - categories:
-    - 1.2 Conditional User Access
-    - 1.3 Multi-Factor Authentication (MFA)
-    - 1.9 Integrated ICAM Platform
-    key: SC-16(2)
-  - categories:
-    - 1.2 Conditional User Access
-    - 1.3 Multi-Factor Authentication (MFA)
-    - 1.9 Integrated ICAM Platform
-    key: SC-16(3)
-  - categories:
-    - 1.7 Least Privileged Access
-    - 1.8 Continuous Authentication
-    key: SC-23
-  - categories:
-    - 1.7 Least Privileged Access
-    - 1.8 Continuous Authentication
-    key: SC-23(5)
-  - categories:
-    - 1.2 Conditional User Access
-    - 1.3 Multi-Factor Authentication (MFA)
-    - 1.4 Privileged Access Management (PAM)
-    - 1.5 Identity Federation & User Credentialing
-    - 1.6 Behavioral, Contextual ID, and Biometrics
-    - 1.7 Least Privileged Access
-    - 1.8 Continuous Authentication
-    - 1.9 Integrated ICAM Platform
-    key: SC-45
-  - categories:
-    - 1.2 Conditional User Access
-    - 1.3 Multi-Factor Authentication (MFA)
-    - 1.4 Privileged Access Management (PAM)
-    - 1.5 Identity Federation & User Credentialing
-    - 1.6 Behavioral, Contextual ID, and Biometrics
-    - 1.7 Least Privileged Access
-    - 1.8 Continuous Authentication
-    - 1.9 Integrated ICAM Platform
-    key: SC-45(1)
-  - categories:
-    - 1.6 Behavioral, Contextual ID, and Biometrics
-    key: SI-4
-  - categories:
-    - 1.6 Behavioral, Contextual ID, and Biometrics
-    key: SI-4(2)
-  - categories:
-    - 1.6 Behavioral, Contextual ID, and Biometrics
-    key: SI-4(4)
-  - categories:
-    - 1.6 Behavioral, Contextual ID, and Biometrics
-    key: SI-4(9)
-  - categories:
-    - 1.6 Behavioral, Contextual ID, and Biometrics
-    key: SI-4(10)
-  - categories:
-    - 1.6 Behavioral, Contextual ID, and Biometrics
-    key: SI-4(13)
-  - categories:
-    - 1.6 Behavioral, Contextual ID, and Biometrics
-    key: SI-4(19)
-  - categories:
-    - 1.4 Privileged Access Management (PAM)
-    - 1.6 Behavioral, Contextual ID, and Biometrics
-    key: SI-4(20)
-  name: Appendix C - User Pillar Overlay
-- mappings:
-  - categories:
-    - 2.7 EDR & XDR
-    key: AU-6(4)
-  - categories:
-    - 2.7 EDR & XDR
-    key: AU-6(5)
-  - categories:
-    - 2.3 Device Authorization w/ Real Time Inspection
-    - 2.7 EDR & XDR
-    key: AU-7
-  - categories:
-    - 2.3 Device Authorization w/ Real Time Inspection
-    - 2.7 EDR & XDR
-    key: AU-7(1)
-  - categories:
-    - 2.1 Device Inventory
-    - 2.3 Device Authorization w/ Real Time Inspection
-    - 2.4 Remote Access
-    - 2.5 Partially & Fully Automated Asset, Vulnerability and Patch Mgmt
-    - 2.7 EDR & XDR
-    key: AU-8
-  - categories:
-    - 2.1 Device Inventory
-    - 2.3 Device Authorization w/ Real Time Inspection
-    - 2.4 Remote Access
-    - 2.5 Partially & Fully Automated Asset, Vulnerability and Patch Mgmt
-    - 2.7 EDR & XDR
-    key: AU-9
-  - categories:
-    - 2.1 Device Inventory
-    - 2.3 Device Authorization w/ Real Time Inspection
-    - 2.4 Remote Access
-    - 2.5 Partially & Fully Automated Asset, Vulnerability and Patch Mgmt
-    - 2.7 EDR & XDR
-    key: AU-9(4)
-  - categories:
-    - 2.1 Device Inventory
-    - 2.3 Device Authorization w/ Real Time Inspection
-    - 2.4 Remote Access
-    - 2.5 Partially & Fully Automated Asset, Vulnerability and Patch Mgmt
-    - 2.7 EDR & XDR
-    key: AU-10
-  - categories:
-    - 2.1 Device Inventory
-    - 2.3 Device Authorization w/ Real Time Inspection
-    - 2.4 Remote Access
-    - 2.5 Partially & Fully Automated Asset, Vulnerability and Patch Mgmt
-    - 2.7 EDR & XDR
-    key: AU-10(1)
-  - categories:
-    - 2.1 Device Inventory
-    - 2.3 Device Authorization w/ Real Time Inspection
-    - 2.4 Remote Access
-    - 2.5 Partially & Fully Automated Asset, Vulnerability and Patch Mgmt
-    - 2.6 UEM & MDM
-    - 2.7 EDR & XDR
-    key: AU-12
-  - categories:
-    - 2.7 EDR & XDR
-    key: AU-12(1)
-  - categories:
-    - 2.5 Partially & Fully Automated Asset, Vulnerability and Patch Mgmt
-    key: CM-2
-  - categories:
-    - 2.5 Partially & Fully Automated Asset, Vulnerability and Patch Mgmt
-    key: CM-2(2)
-  - categories:
-    - 2.2 Device Detection and Compliance
-    key: CM-3
-  - categories:
-    - 2.2 Device Detection and Compliance
-    key: CM-3(5)
-  - categories:
-    - 2.2 Device Detection and Compliance
-    - 2.5 Partially & Fully Automated Asset, Vulnerability and Patch Mgmt
-    key: CM-6
-  - categories:
-    - 2.2 Device Detection and Compliance
-    - 2.5 Partially & Fully Automated Asset, Vulnerability and Patch Mgmt
-    key: CM-6(1)
-  - categories:
-    - 2.2 Device Detection and Compliance
-    key: CM-6(2)
-  - categories: []
-    key: CM-7
-  - categories:
-    - 2.3 Device Authorization w/ Real Time Inspection
-    key: CM-7(2)
-  - categories:
-    - 2.3 Device Authorization w/ Real Time Inspection
-    key: CM-7(5)
-  - categories:
-    - 2.6 UEM & MDM
-    key: CM-8
-  - categories:
-    - 2.2 Device Detection and Compliance
-    - 2.6 UEM & MDM
-    key: CM-8(2)
-  - categories:
-    - 2.2 Device Detection and Compliance
-    key: CM-8(3)
-  - categories:
-    - 2.6 UEM & MDM
-    key: CM-8(6)
-  - categories:
-    - 2.6 UEM & MDM
-    key: CM-8(9)
-  - categories:
-    - 2.1 Device Inventory
-    key: CM-9
-  - categories:
-    - 2.3 Device Authorization w/ Real Time Inspection
-    - 2.6 UEM & MDM
-    key: CM-11
-  - categories:
-    - 2.3 Device Authorization w/ Real Time Inspection
-    - 2.6 UEM & MDM
-    key: CM-11(3)
-  - categories:
-    - 2.6 UEM & MDM
-    key: CM-14
-  - categories:
-    - 2.1 Device Inventory
-    key: IA-2
-  - categories:
-    - 2.1 Device Inventory
-    key: IA-3
-  - categories:
-    - 2.1 Device Inventory
-    key: IA-4
-  - categories:
-    - 2.1 Device Inventory
-    - 2.3 Device Authorization w/ Real Time Inspection
-    key: IA-4(6)
-  - categories:
-    - 2.1 Device Inventory
-    key: IA-4(9)
-  - categories:
-    - 2.1 Device Inventory
-    key: IA-5
-  - categories:
-    - 2.1 Device Inventory
-    key: IA-5(2)
-  - categories:
-    - 2.3 Device Authorization w/ Real Time Inspection
-    key: IA-5(9)
-  - categories:
-    - 2.3 Device Authorization w/ Real Time Inspection
-    key: IA-5(14)
-  - categories:
-    - 2.1 Device Inventory
-    key: IA-8
-  - categories:
-    - 2.1 Device Inventory
-    key: IA-9
-  - categories:
-    - 2.5 Partially & Fully Automated Asset, Vulnerability and Patch Mgmt
-    key: RA-5
-  - categories:
-    - 2.5 Partially & Fully Automated Asset, Vulnerability and Patch Mgmt
-    key: RA-5(2)
-  - categories:
-    - 2.3 Device Authorization w/ Real Time Inspection
-    - 2.6 UEM & MDM
-    key: RA-9
-  - categories: []
-    key: SC-7
-  - categories:
-    - 2.2 Device Detection and Compliance
-    key: SC-7(20)
-  - categories:
-    - 2.3 Device Authorization w/ Real Time Inspection
-    key: SC-12
-  - categories:
-    - 2.3 Device Authorization w/ Real Time Inspection
-    key: SC-12(1)
-  - categories:
-    - 2.3 Device Authorization w/ Real Time Inspection
-    key: SC-12(3)
-  - categories:
-    - 2.3 Device Authorization w/ Real Time Inspection
-    key: SC-13
-  - categories:
-    - 2.1 Device Inventory
-    - 2.2 Device Detection and Compliance
-    - 2.3 Device Authorization w/ Real Time Inspection
-    - 2.6 UEM & MDM
-    key: SC-16
-  - categories:
-    - 2.1 Device Inventory
-    - 2.2 Device Detection and Compliance
-    - 2.3 Device Authorization w/ Real Time Inspection
-    - 2.6 UEM & MDM
-    key: SC-16(1)
-  - categories:
-    - 2.1 Device Inventory
-    - 2.2 Device Detection and Compliance
-    - 2.3 Device Authorization w/ Real Time Inspection
-    - 2.6 UEM & MDM
-    key: SC-16(2)
-  - categories:
-    - 2.1 Device Inventory
-    - 2.2 Device Detection and Compliance
-    - 2.3 Device Authorization w/ Real Time Inspection
-    - 2.6 UEM & MDM
-    key: SC-16(3)
-  - categories:
-    - 2.3 Device Authorization w/ Real Time Inspection
-    key: SC-17
-  - categories:
-    - 2.6 UEM & MDM
-    key: SC-25
-  - categories:
-    - 2.1 Device Inventory
-    - 2.3 Device Authorization w/ Real Time Inspection
-    - 2.4 Remote Access
-    - 2.6 UEM & MDM
-    - 2.7 EDR & XDR
-    key: SC-45
-  - categories:
-    - 2.1 Device Inventory
-    - 2.3 Device Authorization w/ Real Time Inspection
-    - 2.4 Remote Access
-    - 2.6 UEM & MDM
-    - 2.7 EDR & XDR
-    key: SC-45(1)
-  - categories:
-    - 2.5 Partially & Fully Automated Asset, Vulnerability and Patch Mgmt
-    key: SI-2
-  - categories:
-    - 2.2 Device Detection and Compliance
-    - 2.5 Partially & Fully Automated Asset, Vulnerability and Patch Mgmt
-    key: SI-2(2)
-  - categories:
-    - 2.5 Partially & Fully Automated Asset, Vulnerability and Patch Mgmt
-    key: SI-2(4)
-  - categories:
-    - 2.5 Partially & Fully Automated Asset, Vulnerability and Patch Mgmt
-    key: SI-2(5)
-  - categories:
-    - 2.3 Device Authorization w/ Real Time Inspection
-    key: SI-3
-  - categories:
-    - 2.3 Device Authorization w/ Real Time Inspection
-    key: SI-3(8)
-  - categories:
-    - 2.7 EDR & XDR
-    key: SI-4
-  - categories:
-    - 2.7 EDR & XDR
-    key: SI-4(1)
-  - categories:
-    - 2.7 EDR & XDR
-    key: SI-4(2)
-  - categories:
-    - 2.3 Device Authorization w/ Real Time Inspection
-    key: SI-4(3)
-  - categories:
-    - 2.7 EDR & XDR
-    key: SI-4(4)
-  - categories:
-    - 2.7 EDR & XDR
-    key: SI-4(10)
-  - categories:
-    - 2.7 EDR & XDR
-    key: SI-4(11)
-  - categories:
-    - 2.7 EDR & XDR
-    key: SI-4(13)
-  - categories:
-    - 2.7 EDR & XDR
-    key: SI-4(16)
-  - categories:
-    - 2.6 UEM & MDM
-    - 2.7 EDR & XDR
-    key: SI-4(23)
-  - categories:
-    - 2.7 EDR & XDR
-    key: SI-4(24)
-  - categories:
-    - 2.3 Device Authorization w/ Real Time Inspection
-    key: SI-7
-  - categories:
-    - 2.3 Device Authorization w/ Real Time Inspection
-    key: SI-7(8)
-  name: Appendix D - Device Pillar Overlay
-- mappings:
-  - categories:
-    - 3.4 Resource Authorization & Integration
-    key: AC-2
-  - categories:
-    - 3.4 Resource Authorization & Integration
-    key: AC-3
-  - categories:
-    - 3.2 Secure Software Development & Integration
-    - 3.4 Resource Authorization & Integration
-    key: AC-3(12)
-  - categories:
-    - 3.4 Resource Authorization & Integration
-    key: AC-3(13)
-  - categories:
-    - 3.2 Secure Software Development & Integration
-    - 3.4 Resource Authorization & Integration
-    key: AC-4
-  - categories:
-    - 3.2 Secure Software Development & Integration
-    key: AC-4(1)
-  - categories:
-    - 3.4 Resource Authorization & Integration
-    key: AC-4(3)
-  - categories:
-    - 3.4 Resource Authorization & Integration
-    key: AC-4(8)
-  - categories:
-    - 3.4 Resource Authorization & Integration
-    key: AC-4(10)
-  - categories:
-    - 3.4 Resource Authorization & Integration
-    key: AC-4(11)
-  - categories:
-    - 3.2 Secure Software Development & Integration
-    - 3.4 Resource Authorization & Integration
-    key: AC-4(17)
-  - categories:
-    - 3.4 Resource Authorization & Integration
-    key: AC-16
-  - categories:
-    - 3.4 Resource Authorization & Integration
-    key: AC-16(1)
-  - categories:
-    - 3.4 Resource Authorization & Integration
-    key: AC-16(2)
-  - categories:
-    - 3.4 Resource Authorization & Integration
-    key: AC-16(3)
-  - categories:
-    - 3.4 Resource Authorization & Integration
-    key: AC-16(4)
-  - categories:
-    - 3.4 Resource Authorization & Integration
-    key: AC-16(6)
-  - categories:
-    - 3.4 Resource Authorization & Integration
-    key: AC-16(7)
-  - categories:
-    - 3.4 Resource Authorization & Integration
-    key: AC-16(8)
-  - categories:
-    - 3.4 Resource Authorization & Integration
-    key: AC-16(9)
-  - categories:
-    - 3.4 Resource Authorization & Integration
-    key: AC-16(10)
-  - categories:
-    - 3.4 Resource Authorization & Integration
-    key: AC-17
-  - categories:
-    - 3.4 Resource Authorization & Integration
-    key: AC-17(1)
-  - categories:
-    - 3.4 Resource Authorization & Integration
-    key: AC-17(2)
-  - categories:
-    - 3.2 Secure Software Development & Integration
-    - 3.3 Software Risk Management
-    key: AU-2
-  - categories:
-    - 3.2 Secure Software Development & Integration
-    - 3.3 Software Risk Management
-    key: AU-3
-  - categories:
-    - 3.2 Secure Software Development & Integration
-    - 3.3 Software Risk Management
-    key: AU-8
-  - categories:
-    - 3.2 Secure Software Development & Integration
-    - 3.3 Software Risk Management
-    key: AU-9
-  - categories:
-    - 3.2 Secure Software Development & Integration
-    - 3.3 Software Risk Management
-    key: AU-9(4)
-  - categories:
-    - 3.2 Secure Software Development & Integration
-    - 3.3 Software Risk Management
-    key: AU-10
-  - categories:
-    - 3.2 Secure Software Development & Integration
-    - 3.3 Software Risk Management
-    key: AU-10(1)
-  - categories:
-    - 3.2 Secure Software Development & Integration
-    - 3.3 Software Risk Management
-    key: AU-12
-  - categories:
-    - 3.2 Secure Software Development & Integration
-    - 3.3 Software Risk Management
-    - 3.5 Continuous Monitoring and Ongoing Authorizations
-    key: CA-2
-  - categories:
-    - 3.2 Secure Software Development & Integration
-    - 3.3 Software Risk Management
-    - 3.5 Continuous Monitoring and Ongoing Authorizations
-    key: CA-5
-  - categories:
-    - 3.2 Secure Software Development & Integration
-    - 3.3 Software Risk Management
-    - 3.5 Continuous Monitoring and Ongoing Authorizations
-    key: CA-5(1)
-  - categories:
-    - 3.5 Continuous Monitoring and Ongoing Authorizations
-    key: CA-6
-  - categories:
-    - 3.3 Software Risk Management
-    - 3.5 Continuous Monitoring and Ongoing Authorizations
-    key: CA-7
-  - categories:
-    - 3.3 Software Risk Management
-    - 3.5 Continuous Monitoring and Ongoing Authorizations
-    key: CA-7(6)
-  - categories:
-    - 3.2 Secure Software Development & Integration
-    - 3.3 Software Risk Management
-    key: CM-2
-  - categories:
-    - 3.2 Secure Software Development & Integration
-    - 3.3 Software Risk Management
-    key: CM-2(2)
-  - categories:
-    - 3.3 Software Risk Management
-    key: CM-2(6)
-  - categories:
-    - 3.2 Secure Software Development & Integration
-    - 3.3 Software Risk Management
-    key: CM-3
-  - categories:
-    - 3.2 Secure Software Development & Integration
-    key: CM-3(1)
-  - categories:
-    - 3.3 Software Risk Management
-    key: CM-3(2)
-  - categories:
-    - 3.2 Secure Software Development & Integration
-    key: CM-3(3)
-  - categories:
-    - 3.2 Secure Software Development & Integration
-    key: CM-4
-  - categories:
-    - 3.3 Software Risk Management
-    key: CM-4(1)
-  - categories:
-    - 3.3 Software Risk Management
-    key: CM-4(2)
-  - categories:
-    - 3.2 Secure Software Development & Integration
-    - 3.3 Software Risk Management
-    key: CM-6
-  - categories:
-    - 3.2 Secure Software Development & Integration
-    - 3.3 Software Risk Management
-    key: CM-6(1)
-  - categories:
-    - 3.2 Secure Software Development & Integration
-    key: CM-7
-  - categories:
-    - 3.3 Software Risk Management
-    key: CM-7(8)
-  - categories:
-    - 3.1 Application Inventory
-    key: CM-8
-  - categories:
-    - 3.1 Application Inventory
-    key: CM-8(9)
-  - categories:
-    - 3.2 Secure Software Development & Integration
-    key: CM-9
-  - categories:
-    - 3.3 Software Risk Management
-    key: CM-10
-  - categories:
-    - 3.3 Software Risk Management
-    key: CM-10(1)
-  - categories: []
-    key: IA-3
-  - categories:
-    - 3.4 Resource Authorization & Integration
-    key: IA-3(1)
-  - categories: []
-    key: IA-5
-  - categories:
-    - 3.2 Secure Software Development & Integration
-    key: IA-5(5)
-  - categories:
-    - 3.2 Secure Software Development & Integration
-    key: IA-5(7)
-  - categories:
-    - 3.2 Secure Software Development & Integration
-    key: IA-6
-  - categories:
-    - 3.3 Software Risk Management
-    key: PM-15
-  - categories: []
-    key: RA-3
-  - categories:
-    - 3.3 Software Risk Management
-    key: RA-3(1)
-  - categories:
-    - 3.2 Secure Software Development & Integration
-    - 3.3 Software Risk Management
-    key: RA-5
-  - categories:
-    - 3.2 Secure Software Development & Integration
-    - 3.3 Software Risk Management
-    key: RA-5(2)
-  - categories:
-    - 3.2 Secure Software Development & Integration
-    - 3.3 Software Risk Management
-    key: RA-5(5)
-  - categories:
-    - 3.3 Software Risk Management
-    key: RA-5(11)
-  - categories: []
-    key: SA-8
-  - categories:
-    - 3.2 Secure Software Development & Integration
-    key: SA-8(14)
-  - categories:
-    - 3.3 Software Risk Management
-    key: SA-10
-  - categories:
-    - 3.3 Software Risk Management
-    key: SA-10(1)
-  - categories:
-    - 3.3 Software Risk Management
-    key: SA-10(4)
-  - categories:
-    - 3.3 Software Risk Management
-    key: SA-10(6)
-  - categories:
-    - 3.2 Secure Software Development & Integration
-    - 3.3 Software Risk Management
-    key: SA-11
-  - categories:
-    - 3.2 Secure Software Development & Integration
-    - 3.3 Software Risk Management
-    key: SA-11(1)
-  - categories:
-    - 3.2 Secure Software Development & Integration
-    - 3.3 Software Risk Management
-    key: SA-11(4)
-  - categories:
-    - 3.2 Secure Software Development & Integration
-    - 3.3 Software Risk Management
-    key: SA-11(8)
-  - categories:
-    - 3.2 Secure Software Development & Integration
-    - 3.3 Software Risk Management
-    key: SA-11(9)
-  - categories:
-    - 3.2 Secure Software Development & Integration
-    - 3.3 Software Risk Management
-    key: SA-15
-  - categories:
-    - 3.3 Software Risk Management
-    key: SA-15(1)
-  - categories:
-    - 3.2 Secure Software Development & Integration
-    key: SA-15(2)
-  - categories:
-    - 3.2 Secure Software Development & Integration
-    - 3.3 Software Risk Management
-    key: SA-15(7)
-  - categories: []
-    key: SA-17
-  - categories:
-    - 3.2 Secure Software Development & Integration
-    key: SA-17(7)
-  - categories: []
-    key: SC-7
-  - categories:
-    - 3.4 Resource Authorization & Integration
-    key: SC-7(8)
-  - categories:
-    - 3.4 Resource Authorization & Integration
-    key: SC-7(11)
-  - categories:
-    - 3.4 Resource Authorization & Integration
-    key: SC-7(16)
-  - categories:
-    - 3.2 Secure Software Development & Integration
-    key: SC-7(17)
-  - categories:
-    - 3.4 Resource Authorization & Integration
-    key: SC-10
-  - categories:
-    - 3.4 Resource Authorization & Integration
-    key: SC-16
-  - categories:
-    - 3.4 Resource Authorization & Integration
-    key: SC-16(1)
-  - categories:
-    - 3.4 Resource Authorization & Integration
-    key: SC-16(2)
-  - categories:
-    - 3.4 Resource Authorization & Integration
-    key: SC-16(3)
-  - categories:
-    - 3.4 Resource Authorization & Integration
-    key: SC-23
-  - categories:
-    - 3.4 Resource Authorization & Integration
-    key: SC-23(5)
-  - categories:
-    - 3.2 Secure Software Development & Integration
-    key: SC-27
-  - categories:
-    - 3.4 Resource Authorization & Integration
-    key: SC-30
-  - categories:
-    - 3.2 Secure Software Development & Integration
-    - 3.3 Software Risk Management
-    key: SC-45
-  - categories:
-    - 3.2 Secure Software Development & Integration
-    - 3.3 Software Risk Management
-    key: SC-45(1)
-  - categories:
-    - 3.2 Secure Software Development & Integration
-    - 3.3 Software Risk Management
-    key: SI-2
-  - categories:
-    - 3.2 Secure Software Development & Integration
-    key: SI-2(2)
-  - categories:
-    - 3.2 Secure Software Development & Integration
-    key: SI-2(4)
-  - categories:
-    - 3.2 Secure Software Development & Integration
-    key: SI-2(5)
-  - categories: []
-    key: SI-7
-  - categories:
-    - 3.2 Secure Software Development & Integration
-    key: SI-7(17)
-  - categories:
-    - 3.2 Secure Software Development & Integration
-    key: SI-10
-  - categories:
-    - 3.2 Secure Software Development & Integration
-    key: SI-10(2)
-  - categories:
-    - 3.2 Secure Software Development & Integration
-    key: SI-10(4)
-  - categories:
-    - 3.2 Secure Software Development & Integration
-    - 3.4 Resource Authorization & Integration
-    key: SI-10(5)
-  - categories:
-    - 3.2 Secure Software Development & Integration
-    key: SI-10(6)
-  - categories:
-    - 3.2 Secure Software Development & Integration
-    key: SI-11
-  - categories:
-    - 3.2 Secure Software Development & Integration
-    key: SI-14
-  - categories:
-    - 3.2 Secure Software Development & Integration
-    key: SI-15
-  - categories:
-    - 3.2 Secure Software Development & Integration
-    key: SI-23
-  - categories:
-    - 3.3 Software Risk Management
-    key: SR-3
-  - categories: []
-    key: SR-4
-  - categories:
-    - 3.3 Software Risk Management
-    key: SR-4(3)
-  - categories:
-    - 3.3 Software Risk Management
-    key: SR-4(4)
-  - categories:
-    - 3.3 Software Risk Management
-    key: SR-9
-  - categories:
-    - 3.3 Software Risk Management
-    key: SR-10
-  - categories:
-    - 3.3 Software Risk Management
-    key: SR-11
-  name: Appendix E - Application & Workload Pillar Overlay
-- mappings:
-  - categories:
-    - 4.5 Data Encryption & Rights Management
-    key: AC-3
-  - categories:
-    - 4.5 Data Encryption & Rights Management
-    key: AC-3(11)
-  - categories:
-    - 4.5 Data Encryption & Rights Management
-    key: AC-3(13)
-  - categories:
-    - 4.6 Data Loss Prevention
-    key: AC-4
-  - categories:
-    - 4.6 Data Loss Prevention
-    - 4.7 Data Access Control
-    key: AC-4(1)
-  - categories:
-    - 4.6 Data Loss Prevention
-    key: AC-4(3)
-  - categories:
-    - 4.6 Data Loss Prevention
-    key: AC-4(6)
-  - categories:
-    - 4.6 Data Loss Prevention
-    key: AC-4(8)
-  - categories:
-    - 4.6 Data Loss Prevention
-    key: AC-4(10)
-  - categories:
-    - 4.6 Data Loss Prevention
-    key: AC-4(11)
-  - categories:
-    - 4.6 Data Loss Prevention
-    key: AC-4(12)
-  - categories:
-    - 4.6 Data Loss Prevention
-    key: AC-4(19)
-  - categories:
-    - 4.6 Data Loss Prevention
-    key: AC-4(23)
-  - categories:
-    - 4.4 Data Monitoring and Sensing
-    - 4.6 Data Loss Prevention
-    key: AC-4(26)
-  - categories:
-    - 4.2 DoD Enterprise Data Governance
-    - 4.3 Data Labeling and Tagging
-    key: AC-16
-  - categories:
-    - 4.2 DoD Enterprise Data Governance
-    - 4.3 Data Labeling and Tagging
-    key: AC-16(1)
-  - categories:
-    - 4.2 DoD Enterprise Data Governance
-    - 4.3 Data Labeling and Tagging
-    key: AC-16(2)
-  - categories:
-    - 4.2 DoD Enterprise Data Governance
-    - 4.3 Data Labeling and Tagging
-    key: AC-16(3)
-  - categories:
-    - 4.2 DoD Enterprise Data Governance
-    - 4.3 Data Labeling and Tagging
-    key: AC-16(4)
-  - categories:
-    - 4.2 DoD Enterprise Data Governance
-    - 4.3 Data Labeling and Tagging
-    key: AC-16(6)
-  - categories:
-    - 4.2 DoD Enterprise Data Governance
-    - 4.3 Data Labeling and Tagging
-    key: AC-16(7)
-  - categories:
-    - 4.2 DoD Enterprise Data Governance
-    - 4.3 Data Labeling and Tagging
-    key: AC-16(8)
-  - categories:
-    - 4.2 DoD Enterprise Data Governance
-    - 4.3 Data Labeling and Tagging
-    key: AC-16(9)
-  - categories:
-    - 4.2 DoD Enterprise Data Governance
-    - 4.3 Data Labeling and Tagging
-    key: AC-16(10)
-  - categories:
-    - 4.5 Data Encryption & Rights Management
-    key: AC-21
-  - categories:
-    - 4.5 Data Encryption & Rights Management
-    key: AC-21(1)
-  - categories:
-    - 4.4 Data Monitoring and Sensing
-    - 4.5 Data Encryption & Rights Management
-    key: AC-23
-  - categories:
-    - 4.5 Data Encryption & Rights Management
-    key: AC-24
-  - categories:
-    - 4.5 Data Encryption & Rights Management
-    key: AC-24(1)
-  - categories:
-    - 4.3 Data Labeling and Tagging
-    - 4.4 Data Monitoring and Sensing
-    - 4.5 Data Encryption & Rights Management
-    - 4.6 Data Loss Prevention
-    key: AU-2
-  - categories:
-    - 4.3 Data Labeling and Tagging
-    - 4.4 Data Monitoring and Sensing
-    - 4.5 Data Encryption & Rights Management
-    - 4.6 Data Loss Prevention
-    key: AU-3
-  - categories:
-    - 4.4 Data Monitoring and Sensing
-    key: AU-6
-  - categories:
-    - 4.4 Data Monitoring and Sensing
-    key: AU-6(3)
-  - categories:
-    - 4.4 Data Monitoring and Sensing
-    key: AU-6(4)
-  - categories:
-    - 4.3 Data Labeling and Tagging
-    - 4.4 Data Monitoring and Sensing
-    - 4.5 Data Encryption & Rights Management
-    - 4.6 Data Loss Prevention
-    key: AU-8
-  - categories:
-    - 4.3 Data Labeling and Tagging
-    - 4.4 Data Monitoring and Sensing
-    - 4.5 Data Encryption & Rights Management
-    - 4.6 Data Loss Prevention
-    key: AU-9
-  - categories:
-    - 4.3 Data Labeling and Tagging
-    - 4.4 Data Monitoring and Sensing
-    - 4.5 Data Encryption & Rights Management
-    - 4.6 Data Loss Prevention
-    key: AU-9(4)
-  - categories:
-    - 4.3 Data Labeling and Tagging
-    - 4.4 Data Monitoring and Sensing
-    - 4.5 Data Encryption & Rights Management
-    - 4.6 Data Loss Prevention
-    key: AU-10
-  - categories:
-    - 4.3 Data Labeling and Tagging
-    - 4.4 Data Monitoring and Sensing
-    - 4.5 Data Encryption & Rights Management
-    - 4.6 Data Loss Prevention
-    key: AU-10(1)
-  - categories:
-    - 4.3 Data Labeling and Tagging
-    - 4.4 Data Monitoring and Sensing
-    - 4.5 Data Encryption & Rights Management
-    - 4.6 Data Loss Prevention
-    key: AU-12
-  - categories:
-    - 4.2 DoD Enterprise Data Governance
-    - 4.5 Data Encryption & Rights Management
-    key: PT-2
-  - categories:
-    - 4.2 DoD Enterprise Data Governance
-    key: PT-2(1)
-  - categories:
-    - 4.2 DoD Enterprise Data Governance
-    - 4.5 Data Encryption & Rights Management
-    - 4.6 Data Loss Prevention
-    key: PT-2(2)
-  - categories:
-    - 4.2 DoD Enterprise Data Governance
-    key: PT-3
-  - categories:
-    - 4.2 DoD Enterprise Data Governance
-    key: PT-3(1)
-  - categories:
-    - 4.2 DoD Enterprise Data Governance
-    key: PT-3(2)
-  - categories:
-    - 4.1 Data Catalog Risk Alignment
-    key: RA-3
-  - categories: []
-    key: SC-7
-  - categories:
-    - 4.6 Data Loss Prevention
-    key: SC-7(10)
-  - categories:
-    - 4.5 Data Encryption & Rights Management
-    key: SC-8
-  - categories:
-    - 4.5 Data Encryption & Rights Management
-    key: SC-8(1)
-  - categories:
-    - 4.5 Data Encryption & Rights Management
-    key: SC-12
-  - categories:
-    - 4.5 Data Encryption & Rights Management
-    key: SC-12(1)
-  - categories:
-    - 4.5 Data Encryption & Rights Management
-    key: SC-12(2)
-  - categories:
-    - 4.5 Data Encryption & Rights Management
-    key: SC-12(3)
-  - categories:
-    - 4.5 Data Encryption & Rights Management
-    key: SC-13
-  - categories:
-    - 4.2 DoD Enterprise Data Governance
-    - 4.3 Data Labeling and Tagging
-    key: SC-16
-  - categories:
-    - 4.2 DoD Enterprise Data Governance
-    - 4.3 Data Labeling and Tagging
-    key: SC-16(1)
-  - categories:
-    - 4.2 DoD Enterprise Data Governance
-    - 4.3 Data Labeling and Tagging
-    key: SC-16(2)
-  - categories:
-    - 4.2 DoD Enterprise Data Governance
-    - 4.3 Data Labeling and Tagging
-    key: SC-16(3)
-  - categories:
-    - 4.5 Data Encryption & Rights Management
-    key: SC-28
-  - categories:
-    - 4.5 Data Encryption & Rights Management
-    key: SC-28(1)
-  - categories:
-    - 4.5 Data Encryption & Rights Management
-    key: SC-28(3)
-  - categories:
-    - 4.3 Data Labeling and Tagging
-    - 4.4 Data Monitoring and Sensing
-    - 4.5 Data Encryption & Rights Management
-    - 4.6 Data Loss Prevention
-    key: SC-45
-  - categories:
-    - 4.3 Data Labeling and Tagging
-    - 4.4 Data Monitoring and Sensing
-    - 4.5 Data Encryption & Rights Management
-    - 4.6 Data Loss Prevention
-    key: SC-45(1)
-  - categories: []
-    key: SI-4
-  - categories:
-    - 4.6 Data Loss Prevention
-    key: SI-4(10)
-  - categories:
-    - 4.6 Data Loss Prevention
-    key: SI-4(18)
-  - categories: []
-    key: SI-18
-  - categories:
-    - 4.3 Data Labeling and Tagging
-    key: SI-18(2)
-  - categories:
-    - 4.5 Data Encryption & Rights Management
-    - 4.6 Data Loss Prevention
-    key: SI-20
-  name: Appendix F - Data Pillar Overlay
-- mappings:
-  - categories:
-    - 5.2 Software Defined Networking (SDN)
-    key: AC-3
-  - categories:
-    - 5.2 Software Defined Networking (SDN)
-    key: AC-3(7)
-  - categories:
-    - 5.2 Software Defined Networking (SDN)
-    key: AC-3(13)
-  - categories:
-    - 5.1 Data Flow Mapping
-    - 5.2 Software Defined Networking (SDN)
-    - 5.3 Macro-segmentation
-    - 5.4 Micro-segmentation
-    key: AC-4
-  - categories:
-    - 5.1 Data Flow Mapping
-    - 5.4 Micro-segmentation
-    key: AC-4(1)
-  - categories:
-    - 5.4 Micro-segmentation
-    key: AC-4(2)
-  - categories:
-    - 5.1 Data Flow Mapping
-    - 5.4 Micro-segmentation
-    key: AC-4(3)
-  - categories:
-    - 5.1 Data Flow Mapping
-    key: AC-4(6)
-  - categories:
-    - 5.1 Data Flow Mapping
-    key: AC-4(8)
-  - categories:
-    - 5.1 Data Flow Mapping
-    key: AC-4(11)
-  - categories:
-    - 5.1 Data Flow Mapping
-    key: AC-4(12)
-  - categories:
-    - 5.4 Micro-segmentation
-    key: AC-4(17)
-  - categories:
-    - 5.1 Data Flow Mapping
-    key: AC-4(19)
-  - categories:
-    - 5.2 Software Defined Networking (SDN)
-    - 5.3 Macro-segmentation
-    key: AC-4(21)
-  - categories:
-    - 5.2 Software Defined Networking (SDN)
-    - 5.3 Macro-segmentation
-    key: CA-9
-  - categories:
-    - 5.3 Macro-segmentation
-    key: CA-9(1)
-  - categories:
-    - 5.1 Data Flow Mapping
-    key: CM-12
-  - categories:
-    - 5.2 Software Defined Networking (SDN)
-    - 5.3 Macro-segmentation
-    key: SC-2
-  - categories:
-    - 5.2 Software Defined Networking (SDN)
-    - 5.3 Macro-segmentation
-    key: SC-2(1)
-  - categories:
-    - 5.4 Micro-segmentation
-    key: SC-4
-  - categories:
-    - 5.3 Macro-segmentation
-    key: SC-7
-  - categories:
-    - 5.3 Macro-segmentation
-    key: SC-7(4)
-  - categories:
-    - 5.3 Macro-segmentation
-    key: SC-7(5)
-  - categories:
-    - 5.4 Micro-segmentation
-    key: SC-7(12)
-  - categories:
-    - 5.2 Software Defined Networking (SDN)
-    key: SC-7(15)
-  - categories:
-    - 5.3 Macro-segmentation
-    key: SC-7(18)
-  - categories:
-    - 5.3 Macro-segmentation
-    key: SC-7(21)
-  - categories:
-    - 5.3 Macro-segmentation
-    key: SC-7(22)
-  - categories:
-    - 5.3 Macro-segmentation
-    key: SC-7(29)
-  - categories:
-    - 5.4 Micro-segmentation
-    key: SC-8
-  - categories:
-    - 5.4 Micro-segmentation
-    key: SC-8(1)
-  - categories:
-    - 5.4 Micro-segmentation
-    key: SC-13
-  - categories:
-    - 5.4 Micro-segmentation
-    key: SC-39
-  - categories:
-    - 5.4 Micro-segmentation
-    key: SC-39(2)
-  - categories: []
-    key: SI-4
-  - categories:
-    - 5.2 Software Defined Networking (SDN)
-    key: SI-4(3)
-  - categories:
-    - 5.4 Micro-segmentation
-    key: SI-4(10)
-  - categories:
-    - 5.2 Software Defined Networking (SDN)
-    key: SI-4(25)
-  name: Appendix G - Network & Environment Pillar Overlay
-- mappings:
-  - categories:
-    - 6.1 Policy Decision Point & Policy Orchestration
-    key: AC-1
-  - categories:
-    - 6.1 Policy Decision Point & Policy Orchestration
-    key: AC-2
-  - categories:
-    - 6.1 Policy Decision Point & Policy Orchestration
-    key: AC-2(11)
-  - categories: []
-    key: AC-4
-  - categories:
-    - 6.1 Policy Decision Point & Policy Orchestration
-    key: AC-4(3)
-  - categories:
-    - 6.1 Policy Decision Point & Policy Orchestration
-    key: AC-4(6)
-  - categories:
-    - 6.1 Policy Decision Point & Policy Orchestration
-    key: AC-4(8)
-  - categories:
-    - 6.1 Policy Decision Point & Policy Orchestration
-    key: AC-4(10)
-  - categories:
-    - 6.1 Policy Decision Point & Policy Orchestration
-    key: AC-4(11)
-  - categories:
-    - 6.1 Policy Decision Point & Policy Orchestration
-    key: AC-4(19)
-  - categories:
-    - 6.1 Policy Decision Point & Policy Orchestration
-    key: AC-4(29)
-  - categories:
-    - 6.1 Policy Decision Point & Policy Orchestration
-    key: AC-6
-  - categories:
-    - 6.1 Policy Decision Point & Policy Orchestration
-    - 6.3 Machine Learning
-    key: AC-16
-  - categories:
-    - 6.1 Policy Decision Point & Policy Orchestration
-    - 6.3 Machine Learning
-    key: AC-16(1)
-  - categories:
-    - 6.1 Policy Decision Point & Policy Orchestration
-    - 6.3 Machine Learning
-    key: AC-16(2)
-  - categories:
-    - 6.1 Policy Decision Point & Policy Orchestration
-    - 6.3 Machine Learning
-    key: AC-16(3)
-  - categories:
-    - 6.1 Policy Decision Point & Policy Orchestration
-    - 6.3 Machine Learning
-    key: AC-16(4)
-  - categories:
-    - 6.1 Policy Decision Point & Policy Orchestration
-    - 6.3 Machine Learning
-    key: AC-16(6)
-  - categories:
-    - 6.1 Policy Decision Point & Policy Orchestration
-    - 6.3 Machine Learning
-    key: AC-16(7)
-  - categories:
-    - 6.3 Machine Learning
-    key: AC-16(8)
-  - categories:
-    - 6.1 Policy Decision Point & Policy Orchestration
-    - 6.3 Machine Learning
-    key: AC-16(9)
-  - categories:
-    - 6.1 Policy Decision Point & Policy Orchestration
-    - 6.3 Machine Learning
-    key: AC-16(10)
-  - categories:
-    - 6.1 Policy Decision Point & Policy Orchestration
-    key: AC-24
-  - categories:
-    - 6.1 Policy Decision Point & Policy Orchestration
-    key: AC-24(1)
-  - categories:
-    - 6.3 Machine Learning
-    - 6.5 Security Orchestration, Automation & Response
-    key: AU-2
-  - categories:
-    - 6.3 Machine Learning
-    - 6.5 Security Orchestration, Automation & Response
-    key: AU-3
-  - categories:
-    - 6.3 Machine Learning
-    key: AU-8
-  - categories:
-    - 6.3 Machine Learning
-    key: AU-9
-  - categories:
-    - 6.3 Machine Learning
-    key: AU-9(4)
-  - categories:
-    - 6.3 Machine Learning
-    key: AU-10
-  - categories:
-    - 6.3 Machine Learning
-    key: AU-10(1)
-  - categories:
-    - 6.3 Machine Learning
-    - 6.5 Security Orchestration, Automation & Response
-    key: AU-12
-  - categories:
-    - 6.1 Policy Decision Point & Policy Orchestration
-    key: IA-1
-  - categories:
-    - 6.2 Critical Process Automation
-    - 6.5 Security Orchestration, Automation & Response
-    - 6.7 Security Operations Center & Incident Response
-    key: IR-4
-  - categories:
-    - 6.2 Critical Process Automation
-    - 6.4 Artificial Intelligence
-    - 6.5 Security Orchestration, Automation & Response
-    - 6.7 Security Operations Center & Incident Response
-    key: IR-4(1)
-  - categories:
-    - 6.5 Security Orchestration, Automation & Response
-    - 6.7 Security Operations Center & Incident Response
-    key: IR-4(2)
-  - categories:
-    - 6.5 Security Orchestration, Automation & Response
-    - 6.7 Security Operations Center & Incident Response
-    key: IR-4(9)
-  - categories:
-    - 6.7 Security Operations Center & Incident Response
-    key: IR-4(14)
-  - categories:
-    - 6.7 Security Operations Center & Incident Response
-    key: IR-5
-  - categories:
-    - 6.7 Security Operations Center & Incident Response
-    key: IR-5(1)
-  - categories:
-    - 6.7 Security Operations Center & Incident Response
-    key: IR-6
-  - categories:
-    - 6.7 Security Operations Center & Incident Response
-    key: IR-6(1)
-  - categories:
-    - 6.7 Security Operations Center & Incident Response
-    key: IR-6(2)
-  - categories:
-    - 6.7 Security Operations Center & Incident Response
-    key: IR-8
-  - categories:
-    - 6.3 Machine Learning
-    key: PT-2
-  - categories:
-    - 6.3 Machine Learning
-    key: PT-2(1)
-  - categories:
-    - 6.3 Machine Learning
-    key: PT-2(2)
-  - categories: []
-    key: PT-3
-  - categories:
-    - 6.3 Machine Learning
-    key: PT-3(1)
-  - categories:
-    - 6.3 Machine Learning
-    key: PT-3(2)
-  - categories: []
-    key: RA-3
-  - categories:
-    - 6.4 Artificial Intelligence
-    key: RA-3(4)
-  - categories:
-    - 6.5 Security Orchestration, Automation & Response
-    key: RA-7
-  - categories: []
-    key: SA-17
-  - categories:
-    - 6.5 Security Orchestration, Automation & Response
-    key: SA-17(8)
-  - categories:
-    - 6.1 Policy Decision Point & Policy Orchestration
-    - 6.3 Machine Learning
-    key: SC-16
-  - categories:
-    - 6.1 Policy Decision Point & Policy Orchestration
-    - 6.3 Machine Learning
-    key: SC-16(1)
-  - categories:
-    - 6.1 Policy Decision Point & Policy Orchestration
-    - 6.3 Machine Learning
-    key: SC-16(2)
-  - categories:
-    - 6.1 Policy Decision Point & Policy Orchestration
-    - 6.3 Machine Learning
-    key: SC-16(3)
-  - categories:
-    - 6.3 Machine Learning
-    - 6.5 Security Orchestration, Automation & Response
-    key: SC-45
-  - categories:
-    - 6.3 Machine Learning
-    - 6.5 Security Orchestration, Automation & Response
-    key: SC-45(1)
-  - categories: []
-    key: SI-4
-  - categories:
-    - 6.7 Security Operations Center & Incident Response
-    key: SI-4(7)
-  - categories: []
-    key: SI-7
-  - categories:
-    - 6.7 Security Operations Center & Incident Response
-    key: SI-7(7)
-  name: Appendix H - Automation & Orchestration Pillar Overlay
-- mappings:
-  - categories: []
-    key: AC-2
-  - categories:
-    - 7.6 Automated Dynamic Policies
-    key: AC-2(6)
-  - categories:
-    - 7.6 Automated Dynamic Policies
-    key: AC-2(11)
-  - categories:
-    - 7.2 Security Information and Event Management (SIEM)
-    - 7.3 Common Security and Risk Analytics
-    - 7.4 User and Entity Behavior Analytics
-    key: AC-2(12)
-  - categories:
-    - 7.6 Automated Dynamic Policies
-    key: AC-3
-  - categories:
-    - 7.6 Automated Dynamic Policies
-    key: AC-3(8)
-  - categories:
-    - 7.6 Automated Dynamic Policies
-    key: AC-3(11)
-  - categories:
-    - 7.6 Automated Dynamic Policies
-    key: AC-3(13)
-  - categories: []
-    key: AC-6
-  - categories:
-    - 7.1 Log All Traffic (Network, Data, Apps, Users)
-    key: AC-6(9)
-  - categories:
-    - 7.6 Automated Dynamic Policies
-    key: AC-16
-  - categories:
-    - 7.6 Automated Dynamic Policies
-    key: AC-16(1)
-  - categories:
-    - 7.6 Automated Dynamic Policies
-    key: AC-16(2)
-  - categories:
-    - 7.6 Automated Dynamic Policies
-    key: AC-16(3)
-  - categories:
-    - 7.6 Automated Dynamic Policies
-    key: AC-16(4)
-  - categories:
-    - 7.6 Automated Dynamic Policies
-    key: AC-16(6)
-  - categories:
-    - 7.6 Automated Dynamic Policies
-    key: AC-16(7)
-  - categories:
-    - 7.6 Automated Dynamic Policies
-    key: AC-16(8)
-  - categories:
-    - 7.6 Automated Dynamic Policies
-    key: AC-16(9)
-  - categories:
-    - 7.6 Automated Dynamic Policies
-    key: AC-16(10)
-  - categories:
-    - 7.6 Automated Dynamic Policies
-    key: AC-17
-  - categories:
-    - 7.6 Automated Dynamic Policies
-    key: AC-17(1)
-  - categories:
-    - 7.6 Automated Dynamic Policies
-    key: AC-17(9)
-  - categories:
-    - 7.6 Automated Dynamic Policies
-    key: AC-24
-  - categories:
-    - 7.6 Automated Dynamic Policies
-    key: AC-24(1)
-  - categories:
-    - 7.1 Log All Traffic (Network, Data, Apps, Users)
-    - 7.2 Security Information and Event Management (SIEM)
-    key: AU-2
-  - categories:
-    - 7.1 Log All Traffic (Network, Data, Apps, Users)
-    - 7.2 Security Information and Event Management (SIEM)
-    key: AU-3
-  - categories:
-    - 7.1 Log All Traffic (Network, Data, Apps, Users)
-    key: AU-3(1)
-  - categories:
-    - 7.1 Log All Traffic (Network, Data, Apps, Users)
-    key: AU-3(3)
-  - categories:
-    - 7.1 Log All Traffic (Network, Data, Apps, Users)
-    key: AU-4
-  - categories:
-    - 7.1 Log All Traffic (Network, Data, Apps, Users)
-    key: AU-4(1)
-  - categories:
-    - 7.1 Log All Traffic (Network, Data, Apps, Users)
-    key: AU-5
-  - categories:
-    - 7.1 Log All Traffic (Network, Data, Apps, Users)
-    - 7.2 Security Information and Event Management (SIEM)
-    - 7.3 Common Security and Risk Analytics
-    key: AU-6
-  - categories:
-    - 7.2 Security Information and Event Management (SIEM)
-    - 7.3 Common Security and Risk Analytics
-    key: AU-6(1)
-  - categories:
-    - 7.2 Security Information and Event Management (SIEM)
-    key: AU-6(3)
-  - categories:
-    - 7.2 Security Information and Event Management (SIEM)
-    key: AU-6(4)
-  - categories:
-    - 7.2 Security Information and Event Management (SIEM)
-    - 7.5 Threat Intelligence Integration
-    key: AU-6(5)
-  - categories:
-    - 7.2 Security Information and Event Management (SIEM)
-    key: AU-6(6)
-  - categories:
-    - 7.5 Threat Intelligence Integration
-    key: AU-6(9)
-  - categories:
-    - 7.1 Log All Traffic (Network, Data, Apps, Users)
-    key: AU-7
-  - categories:
-    - 7.1 Log All Traffic (Network, Data, Apps, Users)
-    key: AU-7(1)
-  - categories:
-    - 7.1 Log All Traffic (Network, Data, Apps, Users)
-    - 7.2 Security Information and Event Management (SIEM)
-    key: AU-8
-  - categories:
-    - 7.1 Log All Traffic (Network, Data, Apps, Users)
-    - 7.2 Security Information and Event Management (SIEM)
-    key: AU-9
-  - categories:
-    - 7.1 Log All Traffic (Network, Data, Apps, Users)
-    - 7.2 Security Information and Event Management (SIEM)
-    key: AU-9(4)
-  - categories:
-    - 7.1 Log All Traffic (Network, Data, Apps, Users)
-    - 7.2 Security Information and Event Management (SIEM)
-    key: AU-10
-  - categories:
-    - 7.1 Log All Traffic (Network, Data, Apps, Users)
-    - 7.2 Security Information and Event Management (SIEM)
-    key: AU-10(1)
-  - categories:
-    - 7.1 Log All Traffic (Network, Data, Apps, Users)
-    - 7.2 Security Information and Event Management (SIEM)
-    key: AU-11
-  - categories:
-    - 7.2 Security Information and Event Management (SIEM)
-    - 7.3 Common Security and Risk Analytics
-    key: AU-11(1)
-  - categories:
-    - 7.1 Log All Traffic (Network, Data, Apps, Users)
-    - 7.2 Security Information and Event Management (SIEM)
-    key: AU-12
-  - categories:
-    - 7.2 Security Information and Event Management (SIEM)
-    key: AU-12(1)
-  - categories:
-    - 7.1 Log All Traffic (Network, Data, Apps, Users)
-    - 7.2 Security Information and Event Management (SIEM)
-    key: AU-12(2)
-  - categories:
-    - 7.1 Log All Traffic (Network, Data, Apps, Users)
-    - 7.2 Security Information and Event Management (SIEM)
-    key: AU-12(3)
-  - categories:
-    - 7.1 Log All Traffic (Network, Data, Apps, Users)
-    key: CP-2
-  - categories:
-    - 7.1 Log All Traffic (Network, Data, Apps, Users)
-    key: CP-2(2)
-  - categories:
-    - 7.6 Automated Dynamic Policies
-    key: IA-10
-  - categories:
-    - 7.2 Security Information and Event Management (SIEM)
-    key: IR-4
-  - categories:
-    - 7.2 Security Information and Event Management (SIEM)
-    key: IR-4(1)
-  - categories:
-    - 7.2 Security Information and Event Management (SIEM)
-    key: IR-4(4)
-  - categories:
-    - 7.2 Security Information and Event Management (SIEM)
-    - 7.4 User and Entity Behavior Analytics
-    key: IR-4(13)
-  - categories:
-    - 7.5 Threat Intelligence Integration
-    key: PM-15
-  - categories:
-    - 7.5 Threat Intelligence Integration
-    key: PM-16
-  - categories:
-    - 7.5 Threat Intelligence Integration
-    key: PM-16(1)
-  - categories: []
-    key: RA-3
-  - categories:
-    - 7.5 Threat Intelligence Integration
-    key: RA-3(3)
-  - categories:
-    - 7.6 Automated Dynamic Policies
-    key: RA-3(4)
-  - categories: []
-    key: SC-5
-  - categories:
-    - 7.2 Security Information and Event Management (SIEM)
-    key: SC-5(3)
-  - categories:
-    - 7.6 Automated Dynamic Policies
-    key: SC-16
-  - categories:
-    - 7.6 Automated Dynamic Policies
-    key: SC-16(1)
-  - categories:
-    - 7.6 Automated Dynamic Policies
-    key: SC-16(2)
-  - categories:
-    - 7.6 Automated Dynamic Policies
-    key: SC-16(3)
-  - categories:
-    - 7.2 Security Information and Event Management (SIEM)
-    key: SC-26
-  - categories:
-    - 7.2 Security Information and Event Management (SIEM)
-    key: SC-44
-  - categories:
-    - 7.2 Security Information and Event Management (SIEM)
-    - 7.6 Automated Dynamic Policies
-    key: SC-45
-  - categories:
-    - 7.2 Security Information and Event Management (SIEM)
-    - 7.6 Automated Dynamic Policies
-    key: SC-45(1)
-  - categories:
-    - 7.2 Security Information and Event Management (SIEM)
-    key: SC-48
-  - categories:
-    - 7.2 Security Information and Event Management (SIEM)
-    key: SC-48(1)
-  - categories: []
-    key: SI-3
-  - categories:
-    - 7.2 Security Information and Event Management (SIEM)
-    key: SI-3(10)
-  - categories:
-    - 7.2 Security Information and Event Management (SIEM)
-    key: SI-4
-  - categories:
-    - 7.2 Security Information and Event Management (SIEM)
-    key: SI-4(1)
-  - categories:
-    - 7.2 Security Information and Event Management (SIEM)
-    key: SI-4(2)
-  - categories:
-    - 7.6 Automated Dynamic Policies
-    key: SI-4(3)
-  - categories:
-    - 7.2 Security Information and Event Management (SIEM)
-    key: SI-4(5)
-  - categories:
-    - 7.2 Security Information and Event Management (SIEM)
-    key: SI-4(12)
-  - categories:
-    - 7.2 Security Information and Event Management (SIEM)
-    key: SI-4(16)
-  - categories:
-    - 7.2 Security Information and Event Management (SIEM)
-    key: SI-4(17)
-  - categories:
-    - 7.5 Threat Intelligence Integration
-    key: SI-4(24)
-  - categories:
-    - 7.5 Threat Intelligence Integration
-    key: SI-5
-  name: Appendix I - Visibility & Analytics Pillar Overlay
 
