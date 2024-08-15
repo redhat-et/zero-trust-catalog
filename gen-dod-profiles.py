@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 
 from argparse import ArgumentParser, BooleanOptionalAction
+from itertools import islice
 import json
 import re
 import sys
@@ -13,6 +14,8 @@ pillars = ['Enabler', 'User', 'Device', 'Application & Workload', 'Data',
            'Network & Environment', 'Automation & Orchestration',
            'Visibility and Analytics']
 mappings = { p: [] for p in pillars }
+levels_by_id = { }
+levels_by_name = { 'Target': [], 'Advanced': [] }
 controls_by_id = { }
 params_by_id = { }
 baselines_by_name = { }
@@ -31,7 +34,11 @@ html_preamble = '''<!doctype html>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
           integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
           crossorigin="anonymous">
-    <style>dt { float: left; width: 3em; } dd { margin-bottom: 0; }</style>
+    <style>
+      dt { float: left; width: 3em; }
+      dd { margin-bottom: 0; }
+      .offcanvas { --bs-offcanvas-height: 60vh; }
+    </style>
   </head>
   <body>
   <div class="container-fluid border-bottom" style="padding-top: 1em; padding-bottom: 1em; margin-bottom: 1em;">
@@ -143,11 +150,17 @@ def get_catalog(name, ids):
 
 def add_mappings(controls):
     for c in controls:
-        controls_by_id[c['id']] = c
+        id = c['id']
+        controls_by_id[id] = c
         for p in c['props']:
-            if p['name'].startswith('pillar'):
-                key = p['value']
-                mappings[key].append(c['id'])
+            name = p['name']
+            value = p['value']
+            if name == 'pillar':
+                key = value
+                mappings[key].append(id)
+            elif name == 'type':
+                levels_by_id[id] = value
+                levels_by_name[value].append(id)
         if 'params' in c:
             for param in c['params']:
                 id = param['id']
@@ -183,8 +196,9 @@ def write_profile(name, prefix, controls, resolve=False):
     with open(filename, 'w') as file:
         yaml.dump(content, file, sort_keys=False)
 
-styles = ['primary', 'success', 'danger']
-headings = ['Low', 'Moderate', 'High']
+baseline_styles = ['primary', 'success', 'danger']
+baseline_headings = ['Low', 'Moderate', 'High']
+level_styles = { 'Target': 'primary', 'Advanced': 'success' }
 
 def is_withdrawn(id):
     control = controls_by_id[id]
@@ -194,10 +208,12 @@ def is_withdrawn(id):
 def generate_control(id, classes, guidance=False):
     mapped_ids[id] = id
     text = controls_by_id[id]['title']
+    label = id #f"{id} {levels_by_id[id]}" if id in levels_by_id else id
+
     if guidance:
-        return f'<a href="#{id}" class="{classes}" data-bs-toggle="offcanvas">{id}</a>'
+        return f'<a href="#{id}" class="{classes}" data-bs-toggle="offcanvas">{label}</a>'
     else:
-        return f'<span class="{classes}" data-bs-toggle="tooltip" data-bs-title="{text}">{id}</span>'
+        return f'<span class="{classes}" data-bs-toggle="tooltip" data-bs-title="{text}">{label}</span>'
 
 
 param_pattern = re.compile(r'{{ insert: param, (\S+) }}')
@@ -262,6 +278,28 @@ def resolve_parts(parts, params, top=False):
 
     return html
 
+def resolve_props(control):
+    items = []
+    nist_items = []
+    dod_items = []
+    for prop in control['props']:
+        if prop['name'] in ['implementation-level', 'pillar']:
+            nist_items.append(prop['value'])
+        elif prop['name'] in ['activity', 'phase', 'tech', 'type']:
+            dod_items.append(prop['value'])
+    items.append('<p>')
+    items.append(', '.join(nist_items))
+    items.append('</p>')
+    items.append('<table>')
+    items.append('<tr><th>Activity</th><th>Phase</th><th>Implementation</th><th>Maturity Level</th></tr>')
+    i = iter(dod_items)
+    while chunk := list(islice(i, 4)):
+        activity, phase, tech, type = chunk
+        items.append(f"<tr><td>{activity}</td><td>{phase}</td><td>{tech}</td><td>{type}</td></tr>")
+    items.append('</table>')
+
+    return "\n".join(items)
+
 def resolve_control(id):
     control = controls_by_id[id]
     if 'params' not in control:
@@ -284,11 +322,33 @@ def generate_html(guidance=False):
         html.append('</div>')
     html.append('</div>')
 
+    # controls in DoD maturity levels
+
+    for name in ['Advanced', 'Target']:
+        style = level_styles[name]
+        classes = f'badge bg-{style}-subtle text-{style}'
+
+        ids = { id : id for id in levels_by_name[name] }
+        html.append('<div class="row align-items-end">')
+        html.append('<div class="col">')
+        html.append(f'<h5>DoD {name}</h5>')
+        html.append('</div>')
+
+        for p in pillars:
+            html.append('<div class="col">')
+
+            for id in mappings[p]:
+                if id in ids:
+                    html.append(generate_control(id, classes, guidance))
+
+            html.append('</div>')
+        html.append('</div>')
+
     # controls in NIST baselines AND DoD pillars
 
     for i, k in reversed(list(enumerate(baselines_by_name.keys()))):
-        style = styles[i]
-        head = headings[i]
+        style = baseline_styles[i]
+        head = baseline_headings[i]
         classes = f'badge bg-{style}-subtle text-{style}'
 
         baseline_ids = { id : id for id in baselines_by_name[k] }
@@ -331,7 +391,7 @@ def generate_html(guidance=False):
     html.append('<div class="container-fluid" style="padding-top: 2em; padding-bottom: 1em;">')
     html.append('<h5>Controls in NIST baselines that are not mapped to DoD pillars</h5>')
     for i, k in reversed(list(enumerate(baselines_by_name.keys()))):
-        style = styles[i]
+        style = baseline_styles[i]
         classes = f'badge bg-{style}-subtle text-{style}'
         for id in baselines_by_name[k]:
             if id not in mapped_ids:
@@ -375,12 +435,14 @@ def generate_html(guidance=False):
                 continue
             control = controls_by_id[id]
             title = control['title']
+            props = resolve_props(control)
             html.append(f'<div class="offcanvas offcanvas-bottom" id="{id}">')
             html.append('<div class="offcanvas-header">')
             html.append(f'<h4>{id.upper()} – {title}</h4>')
             html.append('<button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>')
             html.append('</div>')
             html.append('<div class="offcanvas-body">')
+            html.append(props)
             html.extend(resolve_control(id))
             html.append('</div>')
             html.append('</div>')
@@ -389,6 +451,8 @@ def generate_html(guidance=False):
     return "\n".join(html)
 
 def main(filename, prefix, baselines, resolve=False, visualize=False, guidance=False):
+
+    baselines = baselines or []
 
     for b in baselines:
         ids = load_baseline(b)

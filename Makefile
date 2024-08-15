@@ -13,14 +13,18 @@ NIST_HIGH=$(NIST_PREFIX)/NIST_SP-800-53_rev5_HIGH-baseline_profile.json
 
 NIST_DOD=nist-sp-800-53-rev5-dod.json
 NIST_EXT=nist-sp-800-53-rev5-extended.json
-
-VIS=vis.html
+NIST_EXT_YAML=$(patsubst %.json, %.yaml, $(NIST_EXT))
+DOD_VIS=dod-vis.html
+NIST_VIS=nist-vis.html
 
 vis:	## Generate a visualization of controls by pillar
-vis:	$(VIS)
+vis:	$(NIST_VIS) $(DOD_VIS)
 
-$(VIS):	$(NIST_EXT) ./gen-dod-profiles.py $(MAKEFILE_LIST)
+$(NIST_VIS):	$(NIST_EXT) ./gen-dod-profiles.py $(MAKEFILE_LIST)
 	./gen-dod-profiles.py -f $< -b $(NIST_LOW) -b $(NIST_MODERATE) -b $(NIST_HIGH) -V -g > $@
+
+$(DOD_VIS):	$(NIST_EXT) ./gen-dod-profiles.py $(MAKEFILE_LIST)
+	./gen-dod-profiles.py -f $< -V -g > $@
 
 $(NIST_EXT_JSON):	$(NIST_EXT)
 	yq -o json $< > $@
@@ -35,6 +39,12 @@ resolved:	$(NIST_EXT)
 
 merge:	## Merge the DoD and CNSWP mappings into NIST controls
 merge:	$(NIST_EXT)
+
+yaml:	## Generate a YAML version of the NIST extended controls
+yaml:	$(NIST_EXT_YAML)
+
+$(NIST_EXT_YAML):	$(NIST_EXT)
+	yq -p json $< -o yaml > $@
 
 $(NIST_EXT):	$(NIST_DOD) $(CNSWP)
 	./merge-cnswp.py -f $(NIST_DOD) -c $(CNSWP) > $@
