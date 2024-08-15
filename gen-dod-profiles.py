@@ -38,6 +38,7 @@ html_preamble = '''<!doctype html>
       dt { float: left; width: 3em; }
       dd { margin-bottom: 0; }
       .offcanvas { --bs-offcanvas-height: 60vh; }
+      th, td { padding-left: 1em; }
     </style>
   </head>
   <body>
@@ -283,20 +284,29 @@ def resolve_props(control):
     nist_items = []
     dod_items = []
     for prop in control['props']:
-        if prop['name'] in ['implementation-level', 'pillar']:
+        if prop['name'] == 'pillar':
             nist_items.append(prop['value'])
         elif prop['name'] in ['activity', 'phase', 'tech', 'type']:
             dod_items.append(prop['value'])
-    items.append('<p>')
-    items.append(', '.join(nist_items))
-    items.append('</p>')
+
+    # DoD Activities
+
+    items.append('<div style="float: right;">')
     items.append('<table>')
-    items.append('<tr><th>Activity</th><th>Phase</th><th>Implementation</th><th>Maturity Level</th></tr>')
+    items.append('<tr><th>Activity</th><th>Phase</th><th>Scope</th><th>Maturity Level</th></tr>')
     i = iter(dod_items)
     while chunk := list(islice(i, 4)):
         activity, phase, tech, type = chunk
         items.append(f"<tr><td>{activity}</td><td>{phase}</td><td>{tech}</td><td>{type}</td></tr>")
     items.append('</table>')
+    items.append('</div>')
+
+    # DoD Pillars
+
+    items.append(f'<h5 style="padding-top: 0.5em;">Pillars</h5>')
+    items.append('<p>')
+    items.append(', '.join(nist_items))
+    items.append('</p>')
 
     return "\n".join(items)
 
