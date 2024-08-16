@@ -185,8 +185,8 @@ def load_baseline(filename):
 
     return ids
 
-def write_profile(name, level, prefix, controls, resolve=False):
-    filename = f"{prefix}-{name}-{level}.yaml"
+def write_profile(dest, name, level, prefix, controls, resolve=False):
+    filename = f"{dest}/{prefix}-{name}-{level}.yaml"
     filename = filename.replace(' & ', '-and-')
     print(f"Writing {filename}", file=sys.stderr)
 
@@ -464,7 +464,7 @@ def generate_html(guidance=False):
 def is_level(c, l):
     return c in levels_by_id and levels_by_id[c] == l
 
-def main(filename, prefix, baselines, resolve=False, visualize=False, guidance=False):
+def main(filename, dest, prefix, baselines, resolve=False, visualize=False, guidance=False):
 
     baselines = baselines or []
 
@@ -490,11 +490,13 @@ def main(filename, prefix, baselines, resolve=False, visualize=False, guidance=F
             controls = mappings[p]
             for l in ['Target', 'Advanced']:
                 subset = list(filter(lambda c: is_level(c, l), controls))
-                write_profile(p, l, prefix, subset, resolve)
+                write_profile(dest, p, l, prefix, subset, resolve)
 
 if __name__ == '__main__':
 
     parser = ArgumentParser(description='Generate OSCAL profiles for each DoD pillar')
+    parser.add_argument('-d', '--dir', type=str, default='.',
+                        help='Target directory for generated profiles')
     parser.add_argument('-f', '--file', type=str, required=True,
                         help='The DoD annotated NIST controls in JSON')
     parser.add_argument('-p', '--prefix', type=str, default='dod-profile',
@@ -508,5 +510,5 @@ if __name__ == '__main__':
     parser.add_argument('-g', '--guidance', action=BooleanOptionalAction,
                         help='Include guidance notes from the specifcation')
     args = parser.parse_args()
-    main(args.file, args.prefix, args.baseline,
+    main(args.file, args.dir, args.prefix, args.baseline,
          resolve=args.resolve, visualize=args.visualize, guidance=args.guidance)

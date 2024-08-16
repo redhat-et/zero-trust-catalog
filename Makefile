@@ -17,6 +17,8 @@ NIST_EXT_YAML=$(patsubst %.json, %.yaml, $(NIST_EXT))
 DOD_VIS=dod-vis.html
 NIST_VIS=nist-vis.html
 
+TARGET=dod-profiles
+
 vis:	## Generate a visualization of controls by pillar
 vis:	$(NIST_VIS) $(DOD_VIS)
 
@@ -29,13 +31,16 @@ $(DOD_VIS):	$(NIST_EXT) ./gen-dod-profiles.py $(MAKEFILE_LIST)
 $(NIST_EXT_JSON):	$(NIST_EXT)
 	yq -o json $< > $@
 
+$(TARGET):
+	mkdir -p $@
+
 generate:	## Generate OSCAL profiles for each DoD pillar
-generate:	$(NIST_EXT)
-	./gen-dod-profiles.py -f $< -p dod-profile
+generate:	$(NIST_EXT) $(TARGET)
+	./gen-dod-profiles.py -d $(TARGET) -f $< -p dod-profile
 
 resolved:	## Generate resolved OSCAL catalogs for each DoD pillar
-resolved:	$(NIST_EXT)
-	./gen-dod-profiles.py -f $< -p dod-profile-resolved -r
+resolved:	$(NIST_EXT) $(TARGET)
+	./gen-dod-profiles.py -d $(TARGET) -f $< -p dod-profile-resolved -r
 
 merge:	## Merge the DoD and CNSWP mappings into NIST controls
 merge:	$(NIST_EXT)
@@ -71,7 +76,7 @@ clean:	## Remove generated files
 	rm -f $(NIST_EXT_YAML)
 	rm -f $(DOD_VIS)
 	rm -f $(NIST_VIS)
-	rm -f dod-profile-*.yaml
+	rm -rf $(TARGET)
 
 help:	## This help
 	@awk 'BEGIN {FS = ":.*?## "} /^[a-zA-Z_-]+:.*?## / {printf "\033[36m%-20s\033[0m %s\n", $$1, $$2}' \
