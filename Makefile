@@ -65,8 +65,13 @@ $(DOD_SUB_MAPPINGS):	$(DOD_PDF) dod-extractor.py
 
 clean:	## Remove generated files
 	rm -f $(DOD_MAPPINGS)
+	rm -f $(DOD_SUB_MAPPINGS)
 	rm -f $(NIST_DOD)
-	rm -f $(NIST_DST)
+	rm -f $(NIST_EXT)
+	rm -f $(NIST_EXT_YAML)
+	rm -f $(DOD_VIS)
+	rm -f $(NIST_VIS)
+	rm -f dod-profile-*.yaml
 
 help:	## This help
 	@awk 'BEGIN {FS = ":.*?## "} /^[a-zA-Z_-]+:.*?## / {printf "\033[36m%-20s\033[0m %s\n", $$1, $$2}' \
