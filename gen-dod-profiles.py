@@ -12,7 +12,7 @@ can_ignore = ['at', 'ca', 'cp', 'ir', 'ma', 'mp', 'pe', 'pl', 'pm', 'ps', 'pt', 
 
 pillars = ['Enabler', 'User', 'Device', 'Application & Workload', 'Data',
            'Network & Environment', 'Automation & Orchestration',
-           'Visibility and Analytics']
+           'Visibility & Analytics']
 mappings = { p: [] for p in pillars }
 levels_by_id = { }
 levels_by_name = { 'Target': [], 'Advanced': [] }
@@ -187,6 +187,7 @@ def load_baseline(filename):
 
 def write_profile(name, level, prefix, controls, resolve=False):
     filename = f"{prefix}-{name}-{level}.yaml"
+    filename = filename.replace(' & ', '-and-')
     print(f"Writing {filename}", file=sys.stderr)
 
     if resolve:

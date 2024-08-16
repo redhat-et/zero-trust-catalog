@@ -12,7 +12,7 @@ a_name= 'Appendix A - Control Tables Allocated to Pillars'
 a_pages = range(43, 65)
 a_columns=['Enabler', 'User', 'Device', 'Application & Workload', 'Data',
            'Network & Environment', 'Automation & Orchestration',
-           'Visibility and Analytics']
+           'Visibility & Analytics']
 a_mappings = {
     44: [89, 95, 102, 108, 114, 120, 127, 133],
     45: [-1, 97, 104, 110, 117, -1, 129, 136],
