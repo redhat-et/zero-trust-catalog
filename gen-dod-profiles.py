@@ -109,11 +109,11 @@ const offcanvasList = [...offcanvasElementList].map(offcanvasEl => new bootstrap
 </html>
 '''
 
-def get_profile(name, controls):
+def get_profile(name, level, controls):
     profile = {
         'profile': {
             'uuid': profile_uuid,
-            'metadata': { 'title': f"NIST SP 800-53 rev5 - DoD pillar {name}" },
+            'metadata': { 'title': f"NIST SP 800-53 rev5 - DoD pillar {name}, {level}" },
             'imports' : [
                 {
                     'href': f"#{import_uuid}",
@@ -137,12 +137,12 @@ def get_profile(name, controls):
     }
     return profile
 
-def get_catalog(name, ids):
+def get_catalog(name, level, ids):
 
     catalog = {
         'catalog': {
             'uuid': profile_uuid,
-            'metadata': { 'title': f"NIST SP 800-53 rev5 - DoD pillar {name}" },
+            'metadata': { 'title': f"NIST SP 800-53 rev5 - DoD pillar {name}, {level}" },
             'controls': [controls_by_id[id] for id in ids]
         }
     }
@@ -185,14 +185,14 @@ def load_baseline(filename):
 
     return ids
 
-def write_profile(name, prefix, controls, resolve=False):
-    filename = f"{prefix}-{name}.yaml"
+def write_profile(name, level, prefix, controls, resolve=False):
+    filename = f"{prefix}-{name}-{level}.yaml"
     print(f"Writing {filename}", file=sys.stderr)
 
     if resolve:
-        content = get_catalog(name, controls)
+        content = get_catalog(name, level, controls)
     else:
-        content = get_profile(name, controls)
+        content = get_profile(name, level, controls)
 
     with open(filename, 'w') as file:
         yaml.dump(content, file, sort_keys=False)
@@ -460,6 +460,9 @@ def generate_html(guidance=False):
 
     return "\n".join(html)
 
+def is_level(c, l):
+    return c in levels_by_id and levels_by_id[c] == l
+
 def main(filename, prefix, baselines, resolve=False, visualize=False, guidance=False):
 
     baselines = baselines or []
@@ -484,7 +487,9 @@ def main(filename, prefix, baselines, resolve=False, visualize=False, guidance=F
     else:
         for p in pillars:
             controls = mappings[p]
-            write_profile(p, prefix, controls, resolve)
+            for l in ['Target', 'Advanced']:
+                subset = list(filter(lambda c: is_level(c, l), controls))
+                write_profile(p, l, prefix, subset, resolve)
 
 if __name__ == '__main__':
 
