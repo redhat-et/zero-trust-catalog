@@ -61,8 +61,11 @@ run using the provided ~Makefile~:
 
 #+begin_src sh
 % make
+vis                  Generate a visualization of controls by pillar
 generate             Generate OSCAL profiles for each DoD pillar
+resolved             Generate resolved OSCAL catalogs for each DoD pillar
 merge                Merge the DoD and CNSWP mappings into NIST controls
+yaml                 Generate a YAML version of the NIST extended controls
 dod                  Extract the DoD mappings from the PDF
 clean                Remove generated files
 help                 This help
