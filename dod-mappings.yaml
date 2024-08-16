@@ -24,7 +24,7 @@
   - categories:
     - pillar: User
     - pillar: Device
-    - pillar: Visibility and Analytics
+    - pillar: Visibility & Analytics
     key: AC-2(6)
   - categories:
     - pillar: User
@@ -38,12 +38,12 @@
   - categories:
     - pillar: User
     - pillar: Automation & Orchestration
-    - pillar: Visibility and Analytics
+    - pillar: Visibility & Analytics
     key: AC-2(11)
   - categories:
     - pillar: Enabler
     - pillar: User
-    - pillar: Visibility and Analytics
+    - pillar: Visibility & Analytics
     key: AC-2(12)
   - categories:
     - pillar: User
@@ -54,7 +54,7 @@
     - pillar: Application & Workload
     - pillar: Data
     - pillar: Network & Environment
-    - pillar: Visibility and Analytics
+    - pillar: Visibility & Analytics
     key: AC-3
   - categories:
     - pillar: User
@@ -64,7 +64,7 @@
   - categories:
     - pillar: User
     - pillar: Device
-    - pillar: Visibility and Analytics
+    - pillar: Visibility & Analytics
     key: AC-3(8)
   - categories:
     - pillar: User
@@ -73,7 +73,7 @@
     - pillar: User
     - pillar: Device
     - pillar: Data
-    - pillar: Visibility and Analytics
+    - pillar: Visibility & Analytics
     key: AC-3(11)
   - categories:
     - pillar: Application & Workload
@@ -84,7 +84,7 @@
     - pillar: Application & Workload
     - pillar: Data
     - pillar: Network & Environment
-    - pillar: Visibility and Analytics
+    - pillar: Visibility & Analytics
     key: AC-3(13)
   - categories:
     - pillar: Application & Workload
@@ -168,7 +168,7 @@
     key: AC-6(7)
   - categories:
     - pillar: User
-    - pillar: Visibility and Analytics
+    - pillar: Visibility & Analytics
     key: AC-6(9)
   - categories:
     - pillar: User
@@ -185,7 +185,7 @@
     - pillar: Application & Workload
     - pillar: Data
     - pillar: Automation & Orchestration
-    - pillar: Visibility and Analytics
+    - pillar: Visibility & Analytics
     key: AC-16
   - categories:
     - pillar: User
@@ -193,7 +193,7 @@
     - pillar: Application & Workload
     - pillar: Data
     - pillar: Automation & Orchestration
-    - pillar: Visibility and Analytics
+    - pillar: Visibility & Analytics
     key: AC-16(1)
   - categories:
     - pillar: User
@@ -201,7 +201,7 @@
     - pillar: Application & Workload
     - pillar: Data
     - pillar: Automation & Orchestration
-    - pillar: Visibility and Analytics
+    - pillar: Visibility & Analytics
     key: AC-16(2)
   - categories:
     - pillar: User
@@ -209,7 +209,7 @@
     - pillar: Application & Workload
     - pillar: Data
     - pillar: Automation & Orchestration
-    - pillar: Visibility and Analytics
+    - pillar: Visibility & Analytics
     key: AC-16(3)
   - categories:
     - pillar: User
@@ -217,7 +217,7 @@
     - pillar: Application & Workload
     - pillar: Data
     - pillar: Automation & Orchestration
-    - pillar: Visibility and Analytics
+    - pillar: Visibility & Analytics
     key: AC-16(4)
   - categories:
     - pillar: User
@@ -225,7 +225,7 @@
     - pillar: Application & Workload
     - pillar: Data
     - pillar: Automation & Orchestration
-    - pillar: Visibility and Analytics
+    - pillar: Visibility & Analytics
     key: AC-16(6)
   - categories:
     - pillar: User
@@ -233,7 +233,7 @@
     - pillar: Application & Workload
     - pillar: Data
     - pillar: Automation & Orchestration
-    - pillar: Visibility and Analytics
+    - pillar: Visibility & Analytics
     key: AC-16(7)
   - categories:
     - pillar: User
@@ -241,7 +241,7 @@
     - pillar: Application & Workload
     - pillar: Data
     - pillar: Automation & Orchestration
-    - pillar: Visibility and Analytics
+    - pillar: Visibility & Analytics
     key: AC-16(8)
   - categories:
     - pillar: User
@@ -249,7 +249,7 @@
     - pillar: Application & Workload
     - pillar: Data
     - pillar: Automation & Orchestration
-    - pillar: Visibility and Analytics
+    - pillar: Visibility & Analytics
     key: AC-16(9)
   - categories:
     - pillar: User
@@ -257,17 +257,17 @@
     - pillar: Application & Workload
     - pillar: Data
     - pillar: Automation & Orchestration
-    - pillar: Visibility and Analytics
+    - pillar: Visibility & Analytics
     key: AC-16(10)
   - categories:
     - pillar: Device
     - pillar: Application & Workload
-    - pillar: Visibility and Analytics
+    - pillar: Visibility & Analytics
     key: AC-17
   - categories:
     - pillar: Device
     - pillar: Application & Workload
-    - pillar: Visibility and Analytics
+    - pillar: Visibility & Analytics
     key: AC-17(1)
   - categories:
     - pillar: Application & Workload
@@ -277,7 +277,7 @@
     key: AC-17(4)
   - categories:
     - pillar: User
-    - pillar: Visibility and Analytics
+    - pillar: Visibility & Analytics
     key: AC-17(9)
   - categories:
     - pillar: Device
@@ -295,13 +295,13 @@
     - pillar: User
     - pillar: Data
     - pillar: Automation & Orchestration
-    - pillar: Visibility and Analytics
+    - pillar: Visibility & Analytics
     key: AC-24
   - categories:
     - pillar: User
     - pillar: Data
     - pillar: Automation & Orchestration
-    - pillar: Visibility and Analytics
+    - pillar: Visibility & Analytics
     key: AC-24(1)
   - categories:
     - pillar: Enabler
@@ -321,7 +321,7 @@
     - pillar: Application & Workload
     - pillar: Data
     - pillar: Automation & Orchestration
-    - pillar: Visibility and Analytics
+    - pillar: Visibility & Analytics
     key: AU-2
   - categories:
     - pillar: User
@@ -329,64 +329,64 @@
     - pillar: Application & Workload
     - pillar: Data
     - pillar: Automation & Orchestration
-    - pillar: Visibility and Analytics
+    - pillar: Visibility & Analytics
     key: AU-3
   - categories:
-    - pillar: Visibility and Analytics
+    - pillar: Visibility & Analytics
     key: AU-3(1)
   - categories:
     - pillar: User
-    - pillar: Visibility and Analytics
+    - pillar: Visibility & Analytics
     key: AU-3(3)
   - categories:
-    - pillar: Visibility and Analytics
+    - pillar: Visibility & Analytics
     key: AU-4
   - categories:
-    - pillar: Visibility and Analytics
+    - pillar: Visibility & Analytics
     key: AU-4(1)
   - categories:
-    - pillar: Visibility and Analytics
+    - pillar: Visibility & Analytics
     key: AU-5
   - categories:
     - pillar: User
     - pillar: Device
     - pillar: Data
-    - pillar: Visibility and Analytics
+    - pillar: Visibility & Analytics
     key: AU-6
   - categories:
-    - pillar: Visibility and Analytics
+    - pillar: Visibility & Analytics
     key: AU-6(1)
   - categories:
     - pillar: Data
-    - pillar: Visibility and Analytics
+    - pillar: Visibility & Analytics
     key: AU-6(3)
   - categories:
     - pillar: Device
     - pillar: Data
-    - pillar: Visibility and Analytics
+    - pillar: Visibility & Analytics
     key: AU-6(4)
   - categories:
     - pillar: Device
-    - pillar: Visibility and Analytics
+    - pillar: Visibility & Analytics
     key: AU-6(5)
   - categories:
-    - pillar: Visibility and Analytics
+    - pillar: Visibility & Analytics
     key: AU-6(6)
   - categories:
     - pillar: User
     key: AU-6(8)
   - categories:
-    - pillar: Visibility and Analytics
+    - pillar: Visibility & Analytics
     key: AU-6(9)
   - categories:
     - pillar: User
     - pillar: Device
-    - pillar: Visibility and Analytics
+    - pillar: Visibility & Analytics
     key: AU-7
   - categories:
     - pillar: User
     - pillar: Device
-    - pillar: Visibility and Analytics
+    - pillar: Visibility & Analytics
     key: AU-7(1)
   - categories:
     - pillar: User
@@ -394,7 +394,7 @@
     - pillar: Application & Workload
     - pillar: Data
     - pillar: Automation & Orchestration
-    - pillar: Visibility and Analytics
+    - pillar: Visibility & Analytics
     key: AU-8
   - categories:
     - pillar: User
@@ -402,7 +402,7 @@
     - pillar: Application & Workload
     - pillar: Data
     - pillar: Automation & Orchestration
-    - pillar: Visibility and Analytics
+    - pillar: Visibility & Analytics
     key: AU-9
   - categories:
     - pillar: User
@@ -410,7 +410,7 @@
     - pillar: Application & Workload
     - pillar: Data
     - pillar: Automation & Orchestration
-    - pillar: Visibility and Analytics
+    - pillar: Visibility & Analytics
     key: AU-9(4)
   - categories:
     - pillar: User
@@ -418,7 +418,7 @@
     - pillar: Application & Workload
     - pillar: Data
     - pillar: Automation & Orchestration
-    - pillar: Visibility and Analytics
+    - pillar: Visibility & Analytics
     key: AU-10
   - categories:
     - pillar: User
@@ -426,13 +426,13 @@
     - pillar: Application & Workload
     - pillar: Data
     - pillar: Automation & Orchestration
-    - pillar: Visibility and Analytics
+    - pillar: Visibility & Analytics
     key: AU-10(1)
   - categories:
-    - pillar: Visibility and Analytics
+    - pillar: Visibility & Analytics
     key: AU-11
   - categories:
-    - pillar: Visibility and Analytics
+    - pillar: Visibility & Analytics
     key: AU-11(1)
   - categories:
     - pillar: User
@@ -440,17 +440,17 @@
     - pillar: Application & Workload
     - pillar: Data
     - pillar: Automation & Orchestration
-    - pillar: Visibility and Analytics
+    - pillar: Visibility & Analytics
     key: AU-12
   - categories:
     - pillar: Device
-    - pillar: Visibility and Analytics
+    - pillar: Visibility & Analytics
     key: AU-12(1)
   - categories:
-    - pillar: Visibility and Analytics
+    - pillar: Visibility & Analytics
     key: AU-12(2)
   - categories:
-    - pillar: Visibility and Analytics
+    - pillar: Visibility & Analytics
     key: AU-12(3)
   - categories:
     - pillar: User
@@ -587,10 +587,10 @@
     - pillar: Enabler
     key: CP-1
   - categories:
-    - pillar: Visibility and Analytics
+    - pillar: Visibility & Analytics
     key: CP-2
   - categories:
-    - pillar: Visibility and Analytics
+    - pillar: Visibility & Analytics
     key: CP-2(2)
   - categories:
     - pillar: Enabler
@@ -707,7 +707,7 @@
     key: IA-9
   - categories:
     - pillar: User
-    - pillar: Visibility and Analytics
+    - pillar: Visibility & Analytics
     key: IA-10
   - categories:
     - pillar: User
@@ -720,23 +720,23 @@
     key: IR-1
   - categories:
     - pillar: Automation & Orchestration
-    - pillar: Visibility and Analytics
+    - pillar: Visibility & Analytics
     key: IR-4
   - categories:
     - pillar: Automation & Orchestration
-    - pillar: Visibility and Analytics
+    - pillar: Visibility & Analytics
     key: IR-4(1)
   - categories:
     - pillar: Automation & Orchestration
     key: IR-4(2)
   - categories:
-    - pillar: Visibility and Analytics
+    - pillar: Visibility & Analytics
     key: IR-4(4)
   - categories:
     - pillar: Automation & Orchestration
     key: IR-4(9)
   - categories:
-    - pillar: Visibility and Analytics
+    - pillar: Visibility & Analytics
     key: IR-4(13)
   - categories:
     - pillar: Automation & Orchestration
@@ -809,13 +809,13 @@
     key: PM-14
   - categories:
     - pillar: Application & Workload
-    - pillar: Visibility and Analytics
+    - pillar: Visibility & Analytics
     key: PM-15
   - categories:
-    - pillar: Visibility and Analytics
+    - pillar: Visibility & Analytics
     key: PM-16
   - categories:
-    - pillar: Visibility and Analytics
+    - pillar: Visibility & Analytics
     key: PM-16(1)
   - categories:
     - pillar: Enabler
@@ -897,11 +897,11 @@
     - pillar: Application & Workload
     key: RA-3(1)
   - categories:
-    - pillar: Visibility and Analytics
+    - pillar: Visibility & Analytics
     key: RA-3(3)
   - categories:
     - pillar: Automation & Orchestration
-    - pillar: Visibility and Analytics
+    - pillar: Visibility & Analytics
     key: RA-3(4)
   - categories:
     - pillar: Enabler
@@ -1008,7 +1008,7 @@
     - pillar: Network & Environment
     key: SC-4
   - categories:
-    - pillar: Visibility and Analytics
+    - pillar: Visibility & Analytics
     key: SC-5(3)
   - categories:
     - pillar: Network & Environment
@@ -1093,7 +1093,7 @@
     - pillar: Application & Workload
     - pillar: Data
     - pillar: Automation & Orchestration
-    - pillar: Visibility and Analytics
+    - pillar: Visibility & Analytics
     key: SC-16
   - categories:
     - pillar: User
@@ -1101,7 +1101,7 @@
     - pillar: Application & Workload
     - pillar: Data
     - pillar: Automation & Orchestration
-    - pillar: Visibility and Analytics
+    - pillar: Visibility & Analytics
     key: SC-16(1)
   - categories:
     - pillar: User
@@ -1109,7 +1109,7 @@
     - pillar: Application & Workload
     - pillar: Data
     - pillar: Automation & Orchestration
-    - pillar: Visibility and Analytics
+    - pillar: Visibility & Analytics
     key: SC-16(2)
   - categories:
     - pillar: User
@@ -1117,7 +1117,7 @@
     - pillar: Application & Workload
     - pillar: Data
     - pillar: Automation & Orchestration
-    - pillar: Visibility and Analytics
+    - pillar: Visibility & Analytics
     key: SC-16(3)
   - categories:
     - pillar: Device
@@ -1134,7 +1134,7 @@
     - pillar: Device
     key: SC-25
   - categories:
-    - pillar: Visibility and Analytics
+    - pillar: Visibility & Analytics
     key: SC-26
   - categories:
     - pillar: Application & Workload
@@ -1158,7 +1158,7 @@
     - pillar: Network & Environment
     key: SC-39(2)
   - categories:
-    - pillar: Visibility and Analytics
+    - pillar: Visibility & Analytics
     key: SC-44
   - categories:
     - pillar: User
@@ -1166,7 +1166,7 @@
     - pillar: Application & Workload
     - pillar: Data
     - pillar: Automation & Orchestration
-    - pillar: Visibility and Analytics
+    - pillar: Visibility & Analytics
     key: SC-45
   - categories:
     - pillar: User
@@ -1174,13 +1174,13 @@
     - pillar: Application & Workload
     - pillar: Data
     - pillar: Automation & Orchestration
-    - pillar: Visibility and Analytics
+    - pillar: Visibility & Analytics
     key: SC-45(1)
   - categories:
-    - pillar: Visibility and Analytics
+    - pillar: Visibility & Analytics
     key: SC-48
   - categories:
-    - pillar: Visibility and Analytics
+    - pillar: Visibility & Analytics
     key: SC-48(1)
   - categories:
     - pillar: Enabler
@@ -1208,33 +1208,33 @@
     - pillar: Device
     key: SI-3(8)
   - categories:
-    - pillar: Visibility and Analytics
+    - pillar: Visibility & Analytics
     key: SI-3(10)
   - categories:
     - pillar: User
     - pillar: Device
-    - pillar: Visibility and Analytics
+    - pillar: Visibility & Analytics
     key: SI-4
   - categories:
     - pillar: Device
-    - pillar: Visibility and Analytics
+    - pillar: Visibility & Analytics
     key: SI-4(1)
   - categories:
     - pillar: User
     - pillar: Device
-    - pillar: Visibility and Analytics
+    - pillar: Visibility & Analytics
     key: SI-4(2)
   - categories:
     - pillar: Device
     - pillar: Network & Environment
-    - pillar: Visibility and Analytics
+    - pillar: Visibility & Analytics
     key: SI-4(3)
   - categories:
     - pillar: User
     - pillar: Device
     key: SI-4(4)
   - categories:
-    - pillar: Visibility and Analytics
+    - pillar: Visibility & Analytics
     key: SI-4(5)
   - categories:
     - pillar: Automation & Orchestration
@@ -1252,7 +1252,7 @@
     - pillar: Device
     key: SI-4(11)
   - categories:
-    - pillar: Visibility and Analytics
+    - pillar: Visibility & Analytics
     key: SI-4(12)
   - categories:
     - pillar: User
@@ -1260,10 +1260,10 @@
     key: SI-4(13)
   - categories:
     - pillar: Device
-    - pillar: Visibility and Analytics
+    - pillar: Visibility & Analytics
     key: SI-4(16)
   - categories:
-    - pillar: Visibility and Analytics
+    - pillar: Visibility & Analytics
     key: SI-4(17)
   - categories:
     - pillar: Data
@@ -1279,13 +1279,13 @@
     key: SI-4(23)
   - categories:
     - pillar: Device
-    - pillar: Visibility and Analytics
+    - pillar: Visibility & Analytics
     key: SI-4(24)
   - categories:
     - pillar: Network & Environment
     key: SI-4(25)
   - categories:
-    - pillar: Visibility and Analytics
+    - pillar: Visibility & Analytics
     key: SI-5
   - categories:
     - pillar: Device
