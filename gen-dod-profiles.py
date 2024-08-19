@@ -321,7 +321,7 @@ def resolve_control(id):
     html = resolve_parts(control['parts'], params, top=True)
     return html
 
-def generate_html(guidance=False):
+def generate_html(type, guidance=False):
     html = []
 
     html.append('<div class="container-fluid">')
@@ -335,25 +335,26 @@ def generate_html(guidance=False):
 
     # controls in DoD maturity levels
 
-    for name in ['Advanced', 'Target']:
-        style = level_styles[name]
-        classes = f'badge bg-{style}-subtle text-{style}'
+    if type == 'dod':
+        for name in ['Advanced', 'Target']:
+            style = level_styles[name]
+            classes = f'badge bg-{style}-subtle text-{style}'
 
-        ids = { id : id for id in levels_by_name[name] }
-        html.append('<div class="row align-items-end">')
-        html.append('<div class="col">')
-        html.append(f'<h5>DoD {name}</h5>')
-        html.append('</div>')
-
-        for p in pillars:
+            ids = { id : id for id in levels_by_name[name] }
+            html.append('<div class="row align-items-end">')
             html.append('<div class="col">')
-
-            for id in mappings[p]:
-                if id in ids:
-                    html.append(generate_control(id, classes, guidance))
-
+            html.append(f'<h5>DoD {name}</h5>')
             html.append('</div>')
-        html.append('</div>')
+
+            for p in pillars:
+                html.append('<div class="col">')
+
+                for id in mappings[p]:
+                    if id in ids:
+                        html.append(generate_control(id, classes, guidance))
+
+                html.append('</div>')
+            html.append('</div>')
 
     # controls in NIST baselines AND DoD pillars
 
@@ -373,7 +374,7 @@ def generate_html(guidance=False):
             html.append('<div class="col">')
 
             for id in mappings[p]:
-                if id in baseline_ids:
+                if id in baseline_ids and id not in mapped_ids:
                     html.append(generate_control(id, classes, guidance))
 
             html.append('</div>')
@@ -464,7 +465,7 @@ def generate_html(guidance=False):
 def is_level(c, l):
     return c in levels_by_id and levels_by_id[c] == l
 
-def main(filename, dest, prefix, baselines, resolve=False, visualize=False, guidance=False):
+def main(filename, dest, prefix, baselines, vis_type, resolve=False, visualize=False, guidance=False):
 
     baselines = baselines or []
 
@@ -483,7 +484,7 @@ def main(filename, dest, prefix, baselines, resolve=False, visualize=False, guid
     if visualize:
         print('Generating HTML', file=sys.stderr)
         print(html_preamble)
-        print(generate_html(guidance))
+        print(generate_html(vis_type, guidance))
         print(html_postamble)
     else:
         for p in pillars:
@@ -509,6 +510,8 @@ if __name__ == '__main__':
                         help='Generate a visualization of controls by pillar')
     parser.add_argument('-g', '--guidance', action=BooleanOptionalAction,
                         help='Include guidance notes from the specifcation')
+    parser.add_argument('-t', '--vis-type', type=str, default='nist',
+                        help='Type of report [ nist | dod ]')
     args = parser.parse_args()
-    main(args.file, args.dir, args.prefix, args.baseline,
+    main(args.file, args.dir, args.prefix, args.baseline, args.vis_type,
          resolve=args.resolve, visualize=args.visualize, guidance=args.guidance)
