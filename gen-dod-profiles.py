@@ -153,6 +153,7 @@ def add_mappings(controls):
     for c in controls:
         id = c['id']
         controls_by_id[id] = c
+        c['props_by_name'] = { prop['name'] : prop['value'] for prop in c['props'] }
         for p in c['props']:
             name = p['name']
             value = p['value']
@@ -204,13 +205,18 @@ level_styles = { 'Target': 'primary', 'Advanced': 'success' }
 
 def is_withdrawn(id):
     control = controls_by_id[id]
-    props = { prop['name'] : prop for prop in control['props'] }
-    return 'status' in props and props['status']['value'] == 'withdrawn'
+    props = control['props_by_name']
+    return 'status' in props and props['status'] == 'withdrawn'
+
+def is_org(id):
+    control = controls_by_id[id]
+    props = control['props_by_name']
+    return 'implementation-level' in props and props['implementation-level'] == 'organization'
 
 def generate_control(id, classes, guidance=False):
     mapped_ids[id] = id
     text = controls_by_id[id]['title']
-    label = id #f"{id} {levels_by_id[id]}" if id in levels_by_id else id
+    label = id
 
     if guidance:
         return f'<a href="#{id}" class="{classes}" data-bs-toggle="offcanvas">{label}</a>'
@@ -350,7 +356,7 @@ def generate_html(type, guidance=False):
                 html.append('<div class="col">')
 
                 for id in mappings[p]:
-                    if id in ids:
+                    if id in ids and not is_org(id):
                         html.append(generate_control(id, classes, guidance))
 
                 html.append('</div>')
@@ -374,7 +380,7 @@ def generate_html(type, guidance=False):
             html.append('<div class="col">')
 
             for id in mappings[p]:
-                if id in baseline_ids and id not in mapped_ids:
+                if id in baseline_ids:
                     html.append(generate_control(id, classes, guidance))
 
             html.append('</div>')
