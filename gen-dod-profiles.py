@@ -380,7 +380,7 @@ def generate_html(type, guidance=False):
             html.append('<div class="col">')
 
             for id in mappings[p]:
-                if id in baseline_ids:
+                if id in baseline_ids and not is_org(id) and id not in mapped_ids:
                     html.append(generate_control(id, classes, guidance))
 
             html.append('</div>')
