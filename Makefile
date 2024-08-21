@@ -51,12 +51,12 @@ yaml:	$(NIST_EXT_YAML)
 $(NIST_EXT_YAML):	$(NIST_EXT)
 	yq -p json $< -o yaml > $@
 
-$(NIST_EXT):	$(NIST_DOD) $(CNSWP)
+$(NIST_EXT):	$(NIST_DOD) $(CNSWP) merge-cnswp.py $(MAKEFILE_LIST)
 	./merge-cnswp.py -f $(NIST_DOD) -c $(CNSWP) > $@
 
 nist-dod:	$(NIST_DOD)
 
-$(NIST_DOD):	$(NIST_SRC) $(DOD_MAPPINGS) $(DOD_SUB_MAPPINGS)
+$(NIST_DOD):	$(NIST_SRC) $(DOD_MAPPINGS) $(DOD_SUB_MAPPINGS) merge-dod.py $(MAKEFILE_LIST)
 	./merge-dod.py -f $(NIST_SRC) -d $(DOD_MAPPINGS) -s $(DOD_SUB_MAPPINGS) > $@
 
 dod:	## Extract the DoD mappings from the PDF
