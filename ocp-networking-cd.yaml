@@ -1,0 +1,128 @@
+# yaml-language-server: $schema=file:/Volumes/opt/zero-trust/zero-trust-catalog/oscal_component_schema-fixed.json
+
+component-definition:
+  uuid: fa503e86-5cbb-4e8a-a064-3fe7ded7738b
+  metadata:
+    title: OCP 4.16 Networking Component Definition
+    last-modified: 2024-08-30T16:30:00Z
+    version: draft
+    oscal-version: 1.1.2
+    roles:
+      - id: provider
+        title: Provider
+    parties:
+      - uuid: eaf941d9-30ad-41ce-b1c9-a75eff031f94
+        name: Red Hat
+        type: organization
+        links:
+          - href: https://www.redhat.com/
+            rel: website
+  components:
+    - uuid: 1472a52b-c75f-4bf9-b2b7-0567f7db0c07
+      type: software
+      title: OpenShift Networking
+      description: The networking provider and CNI in OpenShift 4.16
+      responsible-roles:
+        - role-id: provider
+          party-uuids:
+            - eaf941d9-30ad-41ce-b1c9-a75eff031f94
+      protocols:
+        - name: coredns
+          title: Cluster-local DNS provider
+          port-ranges:
+            - start: 53
+              end: 53
+              transport: TCP
+            - start: 9153
+              end: 9153
+              transport: TCP
+        - name: etcd
+          title: Distributed key-value store
+          port-ranges:
+            - start: 2379
+              end: 2380
+              transport: TCP
+        - name: ovnkube-control-plane
+          title: OpenShift Networking control plane
+          port-ranges:
+            - start: 9411
+              end: 9411
+              transport: TCP
+        - name: ovnkube-identity
+          title: OpenShift Networking identity manager
+          port-ranges:
+            - start: 9443
+              end: 9443
+              transport: TCP
+        - name: ovs-exporter
+          title: OpenShift Networking metrics service
+          port-ranges:
+            - start: 9310
+              end: 9310
+              transport: TCP
+        - name: ovnkube
+          title: OpenShift Networking node agent
+          port-ranges:
+            - start: 9410
+              end: 9410
+              transport: TCP
+            - start: 9476
+              end: 9476
+              transport: TCP
+      control-implementations:
+        - uuid: b9021cc5-3b5d-4bcb-880e-99bffc4b5bb0
+          source: "#9b0c9c43-2722-4bbb-b132-13d34fb94d45"
+          description: NIST SP 800-53 controls implemented by OpenShift Networking
+          implemented-requirements:
+            - uuid: 34379876-b6c3-47ec-a957-1a0f8f31bbff
+              control-id: ac-3
+              description: Access Enforcement
+            - uuid: 64184c4b-6140-4769-b812-8ddc47fdd55e
+              control-id: au-8
+              description: Time Stamps
+            - uuid: bd46e4af-89b3-4ecf-8423-5eeaa2be53ee
+              control-id: au-9
+              description: Protection of Audit Information
+            - uuid: 2bcad892-3805-41e6-9e2d-ecaa33032e50
+              control-id: au-12
+              description: Audit Record Generation
+
+            - uuid: d52cfbd7-7ba0-401f-9aa6-c4287d250a6b
+              control-id: ia-2.1
+              description: Multi-factor Authentication to Privileged Accounts
+            - uuid: ebd31ede-3172-4114-83f2-7b637465f10b
+              control-id: ia-2.2
+              description: Multi-factor Authentication to Non-privileged Accounts
+
+            - uuid: e2bb225b-41d7-4287-b854-69adeb19bab8
+              control-id: sc-7
+              description: Boundary Protection
+            - uuid: fea55502-935e-498f-a6b8-e43ee5e3fac7
+              control-id: sc-13
+              description: Cryptographic Protection
+            - uuid: 760316a6-fa4a-4edc-8422-d920580a5e07
+              control-id: sc-5
+              description: Denial-of-service Protection
+
+            # TODO
+            # - uuid: cbb8f6fd-e6fe-44b1-969b-9558fffc4bc8
+            #   control-id: sc-20
+            #   description: Secure Name/Address Resolution Service (Authoritative Source)
+            # - uuid: 4bba4255-2e0a-4974-875f-afcae6fc9638
+            #   control-id: sc-21
+            #   description: Secure Name/Address Resolution Service (Recursive or Caching Resolver)
+            # - uuid: 630ba1a3-bb92-4dac-a904-e92f3c6673a2
+            #   control-id: sc-22
+            #   description: Architecture and Provisioning for Name/Address Resolution Service
+
+            - uuid: e7cfcd5f-fb68-4d88-84b9-a393bb617541
+              control-id: sc-39
+              description: Process Isolation
+
+
+  back-matter:
+    resources:
+      - uuid: 9b0c9c43-2722-4bbb-b132-13d34fb94d45
+        title: NIST SP 800-53 Rev 5.1.1 Controls and SP 800-53A Rev 5.1.1 Assessment Procedures
+        rlinks:
+          - href: file://nist-sp-800-53-rev5-extended.json
