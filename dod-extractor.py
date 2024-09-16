@@ -156,14 +156,14 @@ control_pattern = re.compile(r'^ ?(\w+-\d+(\(\d+\))?)')
 
 rulesets = [
     (a_name, a_pages, a_columns, a_mappings),
-    # (b_name, b_pages, b_columns, b_mappings),
-    # (c_name, c_pages, c_columns, c_mappings),
-    # (d_name, d_pages, d_columns, d_mappings),
-    # (e_name, e_pages, e_columns, e_mappings),
-    # (f_name, f_pages, f_columns, f_mappings),
-    # (g_name, g_pages, g_columns, g_mappings),
-    # (h_name, h_pages, h_columns, h_mappings),
-    # (i_name, i_pages, i_columns, i_mappings),
+    (b_name, b_pages, b_columns, b_mappings),
+    (c_name, c_pages, c_columns, c_mappings),
+    (d_name, d_pages, d_columns, d_mappings),
+    (e_name, e_pages, e_columns, e_mappings),
+    (f_name, f_pages, f_columns, f_mappings),
+    (g_name, g_pages, g_columns, g_mappings),
+    (h_name, h_pages, h_columns, h_mappings),
+    (i_name, i_pages, i_columns, i_mappings),
 ]
 
 cap_pattern = re.compile(r'^\s*Capability:?\s+(\d\.\d)')

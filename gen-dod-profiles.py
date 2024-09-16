@@ -19,6 +19,7 @@ levels_by_name = { 'Target': [], 'Advanced': [] }
 controls_by_id = { }
 params_by_id = { }
 baselines_by_name = { }
+baselines_by_id = { }
 seen_ids = { }
 mapped_ids = { }
 
@@ -201,17 +202,21 @@ def write_profile(dest, name, level, prefix, controls, resolve=False):
 
 baseline_styles = ['primary', 'success', 'danger']
 baseline_headings = ['Low', 'Moderate', 'High']
-level_styles = { 'Target': 'primary', 'Advanced': 'success' }
+level_styles = { 'Target': 'primary', 'Advanced': 'success',
+                 'Low': 'primary', 'Moderate': 'success', 'High': 'danger' }
+
+def get_prop(id, name, default='unset'):
+    control = controls_by_id[id]
+    props = control['props_by_name']
+    return props[name] if name in props else default
 
 def is_withdrawn(id):
-    control = controls_by_id[id]
-    props = control['props_by_name']
-    return 'status' in props and props['status'] == 'withdrawn'
+    status = get_prop(id, 'status')
+    return status == 'withdrawn'
 
 def is_org(id):
-    control = controls_by_id[id]
-    props = control['props_by_name']
-    return 'implementation-level' in props and props['implementation-level'] == 'organization'
+    scope = get_prop(id, 'implementation-level')
+    return scope == 'organization'
 
 def generate_control(id, classes, guidance=False):
     mapped_ids[id] = id
@@ -327,6 +332,13 @@ def resolve_control(id):
     html = resolve_parts(control['parts'], params, top=True)
     return html
 
+def get_style(id):
+    if id in baselines_by_id:
+        baseline = baselines_by_id[id]
+        return level_styles[baseline]
+    else:
+        return 'secondary'
+
 def generate_html(type, guidance=False):
     html = []
 
@@ -343,9 +355,6 @@ def generate_html(type, guidance=False):
 
     if type == 'dod':
         for name in ['Advanced', 'Target']:
-            style = level_styles[name]
-            classes = f'badge bg-{style}-subtle text-{style}'
-
             ids = { id : id for id in levels_by_name[name] }
             html.append('<div class="row align-items-end">')
             html.append('<div class="col">')
@@ -357,34 +366,37 @@ def generate_html(type, guidance=False):
 
                 for id in mappings[p]:
                     if id in ids and not is_org(id):
+                        style = get_style(id)
+                        classes = f'badge bg-{style}-subtle text-{style}'
                         html.append(generate_control(id, classes, guidance))
 
                 html.append('</div>')
             html.append('</div>')
 
-    # controls in NIST baselines AND DoD pillars
+    else:
+        # controls in NIST baselines AND DoD pillars
 
-    for i, k in reversed(list(enumerate(baselines_by_name.keys()))):
-        style = baseline_styles[i]
-        head = baseline_headings[i]
-        classes = f'badge bg-{style}-subtle text-{style}'
+        for i, k in reversed(list(enumerate(baselines_by_name.keys()))):
+            style = baseline_styles[i]
+            head = baseline_headings[i]
+            classes = f'badge bg-{style}-subtle text-{style}'
 
-        baseline_ids = { id : id for id in baselines_by_name[k] }
+            baseline_ids = { id : id for id in baselines_by_name[k] }
 
-        html.append('<div class="row align-items-end">')
-        html.append('<div class="col">')
-        html.append(f'<h5>{head} Baseline</h5>')
-        html.append('</div>')
-
-        for p in pillars:
+            html.append('<div class="row align-items-end">')
             html.append('<div class="col">')
-
-            for id in mappings[p]:
-                if id in baseline_ids and not is_org(id) and id not in mapped_ids:
-                    html.append(generate_control(id, classes, guidance))
-
+            html.append(f'<h5>{head} Baseline</h5>')
             html.append('</div>')
-        html.append('</div>')
+
+            for p in pillars:
+                html.append('<div class="col">')
+
+                for id in mappings[p]:
+                    if id in baseline_ids and not is_org(id):
+                        html.append(generate_control(id, classes, guidance))
+
+                html.append('</div>')
+            html.append('</div>')
 
     # controls only in DoD pillars
 
@@ -453,14 +465,16 @@ def generate_html(type, guidance=False):
                 continue
             control = controls_by_id[id]
             title = control['title']
-            props = resolve_props(control)
+            scope = get_prop(id, 'implementation-level')
+            prop_html = resolve_props(control)
+            baseline = f", {baselines_by_id[id]}" if id in baselines_by_id else ''
             html.append(f'<div class="offcanvas offcanvas-bottom" id="{id}">')
             html.append('<div class="offcanvas-header">')
-            html.append(f'<h4>{id.upper()} – {title}</h4>')
+            html.append(f'<h4>{id.upper()} – {title} ({scope}{baseline})</h4>')
             html.append('<button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>')
             html.append('</div>')
             html.append('<div class="offcanvas-body">')
-            html.append(props)
+            html.append(prop_html)
             html.extend(resolve_control(id))
             html.append('</div>')
             html.append('</div>')
@@ -475,9 +489,12 @@ def main(filename, dest, prefix, baselines, vis_type, resolve=False, visualize=F
 
     baselines = baselines or []
 
-    for b in baselines:
+    for i, b in enumerate(baselines):
         ids = load_baseline(b)
-        baselines_by_name[b] = ids
+        head = baseline_headings[i]
+        baselines_by_name[head] = ids
+        for id in ids:
+            baselines_by_id[id] = head
 
     print(f"Reading {filename}", file=sys.stderr)
     with open(filename, 'r') as file:
@@ -488,6 +505,7 @@ def main(filename, dest, prefix, baselines, vis_type, resolve=False, visualize=F
         add_mappings(g['controls'])
 
     if visualize:
+        pillars.pop(0) # skip the enablers column
         print('Generating HTML', file=sys.stderr)
         print(html_preamble)
         print(generate_html(vis_type, guidance))

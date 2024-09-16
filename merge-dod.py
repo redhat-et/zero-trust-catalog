@@ -62,8 +62,10 @@ def main(nist_file, dod_file, sub_file):
     with open(nist_file) as f:
         nist = json.load(f)
 
-    merge_dod_mappings(nist, dod_file)
-    merge_dod_mappings(nist, sub_file)
+    if dod_file:
+        merge_dod_mappings(nist, dod_file)
+    if sub_file:
+        merge_dod_mappings(nist, sub_file)
 
     print("Writing new JSON ...", file=sys.stderr)
     print(json.dumps(nist))
@@ -74,7 +76,7 @@ if __name__ == '__main__':
     parser = ArgumentParser(description='Merge DoD zero trust mappings into NIST controls')
     parser.add_argument('-f', '--file', type=str, required=True,
                         help='The NIST controls')
-    parser.add_argument('-d', '--dod', type=str, required=True,
+    parser.add_argument('-d', '--dod', type=str, default=None,
                         help='The DoD mappings')
     parser.add_argument('-s', '--sub', type=str, required=True,
                         help='The DoD sub mappings')
