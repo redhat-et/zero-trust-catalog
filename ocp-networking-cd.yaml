@@ -76,13 +76,150 @@ component-definition:
           implemented-requirements:
             - uuid: 34379876-b6c3-47ec-a957-1a0f8f31bbff
               control-id: ac-3
-              description: Access Enforcement
+              description: |
+                TODO
+              props:
+                - name: title
+                  value: Access Enforcement
+                - name: dod-mapping
+                  value: 1.2 Conditional User access
+                  remarks: |
+                    Primary Capability: federated identity access management systems may
+                    integrate with RH Single Sign-On or RHEL IDM via programmatic APIs or LDAP
+                    to retrieve user attributes for policy and access rule adjustments.Note: Red
+                    Hat OCP includes RH SSO which is required to provide indicated primary
+                    capability.
+                - name: dod-mapping
+                  value: 1.7 Least Privileged Access
+                  remarks: |
+                    Primary Capability: Red Hat Openshift can enforce least privilege access for
+                    hosted workloads, as determined by its own RBAC polciies or external
+                    policies defined and determined by RH SSO or RH SSO, via mutliple
+                    techniques. Use of SDN ingress and egress points allows enforcement of
+                    general policies such as a deny-by-default for unauthorized users by
+                    blocking all access to tenant workloads. RH Appliation Foundations 3Scale
+                    API management can block acess for specific workloads by policy. RH OSSM can
+                    automate the enplacement and configuration of access enforcement proxies
+                    that can block access to fine grained microservices. Each of these
+                    techniques are implemented via custom configuration or tailoring ot these
+                    components, which may be automated via RH OCP or RH AAP to maintain
+                    consistent least privilege access for all workloads.Secondary Capability:
+                    Red Hat Openshift provides standard default workload roles and attributes
+                    including rroles standard and privileged actions. Granted default roles may
+                    be customized and unprivileged changes to these roles locked out.Primary
+                    Capability: all Red Hat products deny access by default and require
+                    authentication and authorization based on user/role attributes. Workloads
+                    hosted on Red Hat OpenShift can readily be connected to inherent SAML/OIDC
+                    SSO services for access control.
+                - name: dod-mapping
+                  value: 2.4 Remote Access
+                  remarks: |
+                    Primary Capability: Red Hat Openshift allows configuration of networks to a
+                    least privilege baseline via mulitple techniques. RH OCP SDN network ingress
+                    and egress may be individually configured to allow inbound and outbound
+                    access from specifc users, networks, or other factors. Network Policies may
+                    be configured to provide firewall-like allow and deny rules to specific
+                    addresses, ports, and services on the SDN.Primary Capability: Red Hat
+                    Ansible provides enterprise automation to support Configuration as Code,
+                    monitor configuration drift and set/maintain access baselines across a wide
+                    variety of enforcement points and products, both within and outside the Red
+                    Hat portfolio.Partial / Integration Capability: Red Hat ACS may be used to
+                    automate the asssessment of network policies against actual measured usage
+                    to determine the applicable least privilege baseline and automate the
+                    application of the baseline.
+
+            - uuid: e57f0d71-533c-4e9a-8572-6a17aef8fdd8
+              control-id: ac-4
+              description: |
+                TODO
+              props:
+                - name: title
+                  value: Information Flow Enforcement
+                - name: dod-mapping
+                  value: 5.2 Software Defined Networking (SDN)
+                  remarks: |
+                    Primary Capability: A Red Hat OpenShift environment defines and uttilizes a
+                    software defined network to route traffic between hosted workloads. This SDN
+                    is managed by OpenShift that acts as the control plane, and instruments
+                    changes against the component nodes and network configuration objects within
+                    the cluster. OpenShift offers a programmatic interface and REST APIs for
+                    instrumentation of the SDN and other OpenShift functions.Primary Capability:
+                    Within the context of Red Hat OpenShift, as described above, OpenShift acts
+                    as the centralized manager for the SDN data plane.Primary Capability: Within
+                    a Red Hat OpenShift environment, Red Hat Advanced Cluster Security
+                    continously monitors ingress, egress, and internal network traffic patterns
+                    and containerized workload compliance/risk and enforces network policies for
+                    positive control over application traffic.
+                - name: dod-mapping
+                  value: 5.3 Macro Segmentation
+                  remarks: |
+                    Primary Capability
+                - name: dod-mapping
+                  value: 5.4 Micro Segmentation
+                  remarks: |
+                    Primary Capability: Red Hat OpenShift defines very specific network access
+                    controls between the workloads it hosts. Applications are contstrained to
+                    their namespaces/projects, OpenShift Service Mesh enforces mTLS and other
+                    controls between workloads, and Red Hat Advanced Cluster Security enforces
+                    network poliicies between workloads. All together, these capabiilites
+                    provide very fine-grained network microsegmentation within an OpenShift
+                    application environment.Primary Capability: Red Hat OpenShift inherently
+                    automates the configuration and dynamism of network policies within itself,
+                    and exposes these functions via API. Red Hat Ansible Automation Platform
+                    supports automated configuration and policy deployment for a wide variety of
+                    platforms across the enterprise as well.Primary Capability: Red Hat
+                    OpenShift and Red Hat Enterprise Linux support SELinux for host-based
+                    process segmentation at the kernel level based on user/group atrributes.
+
+
+
+            - uuid: bc45a2f3-6066-477d-b3ec-1e2cac08670c
+              control-id: ac-17.1
+              description: |
+                TODO
+              props:
+                - name: title
+                  value: Remote Access - Monitoring and Control
+                - name: dod-mapping
+                  value: 2.4 Remote Access
+                  remarks: |
+                    Primary Capability: Red Hat Openshift allows configuration of networks to a
+                    least privilege baseline via mulitple techniques. RH OCP SDN network ingress
+                    and egress may be individually configured to allow inbound and outbound
+                    access from specifc users, networks, or other factors. Network Policies may
+                    be configured to provide firewall-like allow and deny rules to specific
+                    addresses, ports, and services on the SDN.Primary Capability: Red Hat
+                    Ansible provides enterprise automation to support Configuration as Code,
+                    monitor configuration drift and set/maintain access baselines across a wide
+                    variety of enforcement points and products, both within and outside the Red
+                    Hat portfolio.Partial / Integration Capability: Red Hat ACS may be used to
+                    automate the asssessment of network policies against actual measured usage
+                    to determine the applicable least privilege baseline and automate the
+                    application of the baseline.
+
+
+            - uuid: a6015026-7997-429a-a264-6ed28ce299cc
+              control-id: ac-17.2
+              description: Protection of Confidentiality and Integrity Using Encryption
+
             - uuid: 64184c4b-6140-4769-b812-8ddc47fdd55e
               control-id: au-8
-              description: Time Stamps
+              description: |
+                TODO
+              props:
+                - name: title
+                  value: Time Stamps
+                - name: dod-mapping
+                  value: 7.1 Log All Traffic (Network, Data, Apps, Users)
+                  remarks: |
+                    Primary Capability: Logging and observability capabilities througout the Red
+                    Hat portfolio (syslog, Jaeger, ACS, ACM, OSSM) export logs to arbitarry log
+                    collectors in standard formats for collection and availability.
+
             - uuid: bd46e4af-89b3-4ecf-8423-5eeaa2be53ee
               control-id: au-9
               description: Protection of Audit Information
+
             - uuid: 2bcad892-3805-41e6-9e2d-ecaa33032e50
               control-id: au-12
               description: Audit Record Generation
@@ -90,16 +227,80 @@ component-definition:
             - uuid: d52cfbd7-7ba0-401f-9aa6-c4287d250a6b
               control-id: ia-2.1
               description: Multi-factor Authentication to Privileged Accounts
+
             - uuid: ebd31ede-3172-4114-83f2-7b637465f10b
               control-id: ia-2.2
               description: Multi-factor Authentication to Non-privileged Accounts
 
+            - uuid: caad2fcd-37bb-4f8c-a29c-0c527b628909
+              control-id: ia-8
+              description: Identification and Authentication
+
+            - uuid: 48651320-e217-4d9f-9d44-66ce00b0e3fe
+              control-id: ia-8.1
+              description: |
+                PIV credentials from other agencies can be handled by making use of RH Single
+                Sign-On.
+              props:
+                - name: title
+                  value: Acceptance of PIV Credentials from Other Agencies
+                - name: dod-mapping
+                  value: 1.2 Conditional User access
+                  remarks: |
+                    Primary Capability: federated identity access management systems may
+                    integrate with RH Single Sign-On or RHEL IDM via programmatic APIs or LDAP
+                    to retrieve user attributes for policy and access rule adjustments.Note: Red
+                    Hat OCP includes RH SSO which is required to provide indicated primary
+                    capability.
+
+            - uuid: 951b451c-7c12-4212-8228-33e73b2d5c15
+              control-id: ia-8.2
+              description: Acceptance of External Authenticators
+
+            - uuid: 775d34d7-0651-4f28-8072-2cd0308e4ce5
+              control-id: ia-8.4
+              description: Use of Defined Protocols
+
+            - uuid: 30b941e9-9bbd-49c7-ab7c-ff640fb665de
+              control-id: ia-11
+              description: Re-authentication
+
             - uuid: e2bb225b-41d7-4287-b854-69adeb19bab8
               control-id: sc-7
               description: Boundary Protection
+
+            - uuid: 64ba79d3-c3ad-4c5d-85fe-88f1ba9945b8
+              control-id: sc-7.8
+              description: Route Traffic to Authenticated Proxy Servers
+
+            - uuid: 54cc20c6-b6de-4095-9f22-69a2244f5d24
+              control-id: sc-7.18
+              description: Fail Secure
+
+            - uuid: a4b23866-5340-4e3d-a1c8-2e76f2661ed0
+              control-id: sc-7.21
+              description: Isolation of System Components
+
+            - uuid: 2339ae91-fb69-453e-8955-030e953442b5
+              control-id: sc-8
+              description: Transmission Confidentiality and Integrity
+
+            - uuid: c4193dd6-5553-4c41-8e49-7cee388bb9d0
+              control-id: sc-8.1
+              description: Cryptographic Protection
+
+            - uuid: 423e58dd-0ee3-48cb-80e8-3b87414ba2e6
+              control-id: sc-10
+              description: Network Disconnect
+
+            - uuid: b1252262-6627-4a1d-b991-2aef25e09db9
+              control-id: sc-12
+              description: Cryptographic Key Establishment and Management
+
             - uuid: fea55502-935e-498f-a6b8-e43ee5e3fac7
               control-id: sc-13
               description: Cryptographic Protection
+
             - uuid: 760316a6-fa4a-4edc-8422-d920580a5e07
               control-id: sc-5
               description: Denial-of-service Protection
@@ -115,10 +316,33 @@ component-definition:
             #   control-id: sc-22
             #   description: Architecture and Provisioning for Name/Address Resolution Service
 
+            - uuid: 3e3d8e28-45ae-4d3d-85cf-39212c919009
+              control-id: sc-23
+              description: Session Authenticity
+
             - uuid: e7cfcd5f-fb68-4d88-84b9-a393bb617541
               control-id: sc-39
               description: Process Isolation
 
+            - uuid: 3e35ac73-f9f0-4c00-81be-aa02656182b7
+              control-id: cm-6
+              description: Configuration Settings
+
+            - uuid: 079371b3-3fb3-4016-a333-ad0936d74db5
+              control-id: cm-7
+              description: Least Functionality
+
+            - uuid: 8064fcfe-3260-4d93-afdd-991e1a087bc1
+              control-id: si-4
+              description: System Monitoring
+
+            - uuid: b3229439-fdbd-4e85-af73-94a3568490ac
+              control-id: si-10
+              description: Information Input Validation
+
+            - uuid: 3a16b25e-700e-4e89-8097-ed4594617c05
+              control-id: si-11
+              description: Error Handling
 
   back-matter:
     resources:
