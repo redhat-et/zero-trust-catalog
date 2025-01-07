@@ -1,0 +1,72 @@
+# yaml-language-server: $schema=file:/Volumes/opt/zero-trust/zero-trust-catalog/oscal_ssp_schema-fixed.json
+
+system-security-plan:
+  uuid: 8fc76e46-fd56-44a6-8644-0f23d8dab5f0
+  metadata:
+    title: System security plan for OpenShift Networking
+    last-modified: 2024-10-08T10:00:00Z
+    version: draft
+    oscal-version: 1.1.2
+  import-profile:
+    href: file://dod-profiles/dod-profile-Network-and-Environment-Target.yaml
+  system-characteristics:
+    system-ids:
+      - id: 0080b223-5a96-449a-a8fb-7f3087fa8a49
+    system-name: OpenShift Networking
+    description: Networking capabilities in an OpenShift cluster
+    system-information:
+      information-types:
+        - title: User and Application Data
+          description: All data between applications and users
+    status:
+      state: operational
+    authorization-boundary:
+      description: Kubernetes API server authorization
+    network-architecture:
+      description: |
+        OpenShift Networking implements the overlay network architecture that provides L3
+        connectivity between pods in an OpenShift cluster. The features of this overlay network
+        include service proxying, name resolution, externel traffic ingress and egress, with
+        cluster-level and pod-level network policy.
+  system-implementation:
+    users:
+      - uuid: 59186545-a6c2-4539-9885-c90a64903cff
+        title: System Administrator
+        role-ids:
+          - asset-administrator
+          - security-operations
+          - network-operations
+    components:
+      - uuid: 6c83a5a5-e5eb-4f03-9165-2159e019b7cd
+        type: service
+        title: Pod Networking
+        description: Pod to pod networking within the cluster
+        status:
+          state: operational
+      - uuid: fc118268-9f9b-4efe-90c3-31d849764271
+        type: service
+        title: External Ingress Networking
+        description: Network traffic entering the cluster
+        status:
+          state: operational
+  control-implementation:
+    description: Implementation for Network and Environment target controls
+    implemented-requirements:
+      - uuid: d2251e2e-05d7-4644-82db-49f123edd4db
+        control-id: sc-8.1
+        by-components:
+          - component-uuid: 2f677ba7-ff1a-434a-94ec-65a6c1d9b1f6
+            uuid: fb80e92a-6847-4938-bf1f-2dd60b0385a7
+            description: |
+              TLS must be used to protect communications from outside the cluster with services
+              running in the cluster.
+            implementation-status:
+              state: implemented
+              remarks: |
+                Implemented when 'routes_protected_by_tls' is in compliance.
+
+      - uuid: ad7088d9-c4b4-43ff-8fe3-8f32db930945
+        control-id: ac-17.1
+
+      - uuid: 9cd8d24e-a396-4271-bfe6-d303215e44c4
+        control-id: au-8

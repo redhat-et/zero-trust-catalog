@@ -171,8 +171,6 @@ component-definition:
                     OpenShift and Red Hat Enterprise Linux support SELinux for host-based
                     process segmentation at the kernel level based on user/group atrributes.
 
-
-
             - uuid: bc45a2f3-6066-477d-b3ec-1e2cac08670c
               control-id: ac-17.1
               description: |
@@ -196,7 +194,6 @@ component-definition:
                     automate the asssessment of network policies against actual measured usage
                     to determine the applicable least privilege baseline and automate the
                     application of the baseline.
-
 
             - uuid: a6015026-7997-429a-a264-6ed28ce299cc
               control-id: ac-17.2
