@@ -462,8 +462,10 @@ def process_section(reader, pages, columns, mappings, find=False, types=None, te
                         if col in headings:
                             heading = headings[col]
                             entry = { 'activity': f"{col} {heading}" }
-                        else:
+                        elif col in a_columns:
                             entry = { 'pillar': col }
+                        else:
+                            entry = { 'capability': col }
                         if types is not None:
                             entry['type'] = dod_types[types[index]]
                         if techs is not None:

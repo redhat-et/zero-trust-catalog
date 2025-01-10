@@ -1360,2181 +1360,2181 @@
   name: Appendix A - Control Tables Allocated to Pillars
 - mappings:
   - categories:
-    - pillar: Organization
+    - capability: Organization
     key: AC-2(12)
   - categories:
-    - pillar: Training
+    - capability: Training
     key: AT-2
   - categories:
-    - pillar: Training
+    - capability: Training
     key: AT-3
   - categories: []
     key: CP-2
   - categories:
-    - pillar: Organization
+    - capability: Organization
     key: CP-2(5)
   - categories:
-    - pillar: Organization
+    - capability: Organization
     key: CP-2(6)
   - categories:
-    - pillar: Organization
+    - capability: Organization
     key: PL-2
   - categories:
-    - pillar: Organization
+    - capability: Organization
     key: PL-7
   - categories:
-    - pillar: Organization
+    - capability: Organization
     key: PL-8
   - categories:
-    - pillar: Organization
+    - capability: Organization
     key: PL-8(1)
   - categories:
-    - pillar: Organization
+    - capability: Organization
     key: PL-9
   - categories:
-    - pillar: Organization
+    - capability: Organization
     key: PM-1
   - categories:
-    - pillar: Leadership and education
+    - capability: Leadership and education
     key: PM-2
   - categories:
-    - pillar: Materiel
+    - capability: Materiel
     key: PM-3
   - categories:
-    - pillar: Leadership and education
+    - capability: Leadership and education
     key: PM-6
   - categories:
-    - pillar: Organization
+    - capability: Organization
     key: PM-7
   - categories:
-    - pillar: Organization
-    - pillar: Leadership and education
+    - capability: Organization
+    - capability: Leadership and education
     key: PM-9
   - categories:
-    - pillar: Personnel
+    - capability: Personnel
     key: PM-13
   - categories:
-    - pillar: Organization
+    - capability: Organization
     key: PM-14
   - categories:
-    - pillar: Leadership and education
+    - capability: Leadership and education
     key: PM-18
   - categories:
-    - pillar: Leadership and education
+    - capability: Leadership and education
     key: PM-19
   - categories:
-    - pillar: Organization
-    - pillar: Leadership and education
+    - capability: Organization
+    - capability: Leadership and education
     key: PM-28
   - categories:
-    - pillar: Leadership and education
+    - capability: Leadership and education
     key: PM-29
   - categories:
-    - pillar: Organization
+    - capability: Organization
     key: PM-30
   - categories:
-    - pillar: Organization
+    - capability: Organization
     key: PM-31
   - categories:
-    - pillar: Organization
+    - capability: Organization
     key: PM-32
   - categories:
-    - pillar: Personnel
+    - capability: Personnel
     key: PS-2
   - categories:
-    - pillar: Personnel
+    - capability: Personnel
     key: PS-3
   - categories:
-    - pillar: Personnel
+    - capability: Personnel
     key: PS-4
   - categories:
-    - pillar: Personnel
+    - capability: Personnel
     key: PS-4(2)
   - categories:
-    - pillar: Personnel
+    - capability: Personnel
     key: PS-5
   - categories:
-    - pillar: Organization
+    - capability: Organization
     key: RA-3
   - categories:
-    - pillar: Organization
+    - capability: Organization
     key: RA-5
   - categories:
-    - pillar: Organization
+    - capability: Organization
     key: RA-7
   - categories:
-    - pillar: Organization
+    - capability: Organization
     key: RA-9
   - categories:
-    - pillar: Organization
+    - capability: Organization
     key: RA-10
   - categories: []
     key: SA-11
   - categories:
-    - pillar: Organization
+    - capability: Organization
     key: SA-11(2)
   - categories:
-    - pillar: Training
+    - capability: Training
     key: SA-16
   name: Appendix B - Execution Enabler Overlay
 - mappings:
   - categories:
-    - pillar: 1.1 User Inventory
-    - pillar: 1.3 Multi-Factor Authentication (MFA)
-    - pillar: 1.4 Privileged Access Management (PAM)
-    - pillar: 1.9 Integrated ICAM Platform
+    - capability: 1.1 User Inventory
+    - capability: 1.3 Multi-Factor Authentication (MFA)
+    - capability: 1.4 Privileged Access Management (PAM)
+    - capability: 1.9 Integrated ICAM Platform
     key: AC-2
   - categories:
-    - pillar: 1.5 Identity Federation & User Credentialing
+    - capability: 1.5 Identity Federation & User Credentialing
     key: AC-2(1)
   - categories:
-    - pillar: 1.3 Multi-Factor Authentication (MFA)
-    - pillar: 1.4 Privileged Access Management (PAM)
-    - pillar: 1.5 Identity Federation & User Credentialing
-    - pillar: 1.9 Integrated ICAM Platform
+    - capability: 1.3 Multi-Factor Authentication (MFA)
+    - capability: 1.4 Privileged Access Management (PAM)
+    - capability: 1.5 Identity Federation & User Credentialing
+    - capability: 1.9 Integrated ICAM Platform
     key: AC-2(2)
   - categories:
-    - pillar: 1.5 Identity Federation & User Credentialing
+    - capability: 1.5 Identity Federation & User Credentialing
     key: AC-2(3)
   - categories:
-    - pillar: 1.5 Identity Federation & User Credentialing
+    - capability: 1.5 Identity Federation & User Credentialing
     key: AC-2(4)
   - categories:
-    - pillar: 1.2 Conditional User Access
+    - capability: 1.2 Conditional User Access
     key: AC-2(6)
   - categories:
-    - pillar: 1.1 User Inventory
-    - pillar: 1.2 Conditional User Access
-    - pillar: 1.4 Privileged Access Management (PAM)
-    - pillar: 1.5 Identity Federation & User Credentialing
+    - capability: 1.1 User Inventory
+    - capability: 1.2 Conditional User Access
+    - capability: 1.4 Privileged Access Management (PAM)
+    - capability: 1.5 Identity Federation & User Credentialing
     key: AC-2(7)
   - categories:
-    - pillar: 1.5 Identity Federation & User Credentialing
+    - capability: 1.5 Identity Federation & User Credentialing
     key: AC-2(8)
   - categories:
-    - pillar: 1.3 Multi-Factor Authentication (MFA)
-    - pillar: 1.9 Integrated ICAM Platform
+    - capability: 1.3 Multi-Factor Authentication (MFA)
+    - capability: 1.9 Integrated ICAM Platform
     key: AC-2(9)
   - categories:
-    - pillar: 1.2 Conditional User Access
-    - pillar: 1.5 Identity Federation & User Credentialing
-    - pillar: 1.7 Least Privileged Access
+    - capability: 1.2 Conditional User Access
+    - capability: 1.5 Identity Federation & User Credentialing
+    - capability: 1.7 Least Privileged Access
     key: AC-2(11)
   - categories:
-    - pillar: 1.4 Privileged Access Management (PAM)
-    - pillar: 1.6 Behavioral, Contextual ID, and Biometrics
+    - capability: 1.4 Privileged Access Management (PAM)
+    - capability: 1.6 Behavioral, Contextual ID, and Biometrics
     key: AC-2(12)
   - categories:
-    - pillar: 1.5 Identity Federation & User Credentialing
+    - capability: 1.5 Identity Federation & User Credentialing
     key: AC-2(13)
   - categories:
-    - pillar: 1.2 Conditional User Access
-    - pillar: 1.7 Least Privileged Access
+    - capability: 1.2 Conditional User Access
+    - capability: 1.7 Least Privileged Access
     key: AC-3
   - categories:
-    - pillar: 1.7 Least Privileged Access
+    - capability: 1.7 Least Privileged Access
     key: AC-3(7)
   - categories:
-    - pillar: 1.2 Conditional User Access
-    - pillar: 1.7 Least Privileged Access
+    - capability: 1.2 Conditional User Access
+    - capability: 1.7 Least Privileged Access
     key: AC-3(8)
   - categories:
-    - pillar: 1.2 Conditional User Access
+    - capability: 1.2 Conditional User Access
     key: AC-3(10)
   - categories:
-    - pillar: 1.2 Conditional User Access
+    - capability: 1.2 Conditional User Access
     key: AC-3(11)
   - categories:
-    - pillar: 1.2 Conditional User Access
-    - pillar: 1.7 Least Privileged Access
+    - capability: 1.2 Conditional User Access
+    - capability: 1.7 Least Privileged Access
     key: AC-3(13)
   - categories:
-    - pillar: 1.2 Conditional User Access
+    - capability: 1.2 Conditional User Access
     key: AC-5
   - categories:
-    - pillar: 1.2 Conditional User Access
-    - pillar: 1.4 Privileged Access Management (PAM)
-    - pillar: 1.7 Least Privileged Access
+    - capability: 1.2 Conditional User Access
+    - capability: 1.4 Privileged Access Management (PAM)
+    - capability: 1.7 Least Privileged Access
     key: AC-6
   - categories:
-    - pillar: 1.2 Conditional User Access
-    - pillar: 1.4 Privileged Access Management (PAM)
-    - pillar: 1.5 Identity Federation & User Credentialing
-    - pillar: 1.7 Least Privileged Access
+    - capability: 1.2 Conditional User Access
+    - capability: 1.4 Privileged Access Management (PAM)
+    - capability: 1.5 Identity Federation & User Credentialing
+    - capability: 1.7 Least Privileged Access
     key: AC-6(5)
   - categories:
-    - pillar: 1.5 Identity Federation & User Credentialing
+    - capability: 1.5 Identity Federation & User Credentialing
     key: AC-6(7)
   - categories:
-    - pillar: 1.4 Privileged Access Management (PAM)
+    - capability: 1.4 Privileged Access Management (PAM)
     key: AC-6(9)
   - categories:
-    - pillar: 1.2 Conditional User Access
-    - pillar: 1.7 Least Privileged Access
+    - capability: 1.2 Conditional User Access
+    - capability: 1.7 Least Privileged Access
     key: AC-6(10)
   - categories:
-    - pillar: 1.2 Conditional User Access
+    - capability: 1.2 Conditional User Access
     key: AC-12
   - categories:
-    - pillar: 1.1 User Inventory
-    - pillar: 1.3 Multi-Factor Authentication (MFA)
-    - pillar: 1.9 Integrated ICAM Platform
+    - capability: 1.1 User Inventory
+    - capability: 1.3 Multi-Factor Authentication (MFA)
+    - capability: 1.9 Integrated ICAM Platform
     key: AC-14
   - categories:
-    - pillar: 1.2 Conditional User Access
-    - pillar: 1.3 Multi-Factor Authentication (MFA)
-    - pillar: 1.9 Integrated ICAM Platform
+    - capability: 1.2 Conditional User Access
+    - capability: 1.3 Multi-Factor Authentication (MFA)
+    - capability: 1.9 Integrated ICAM Platform
     key: AC-16
   - categories:
-    - pillar: 1.3 Multi-Factor Authentication (MFA)
-    - pillar: 1.9 Integrated ICAM Platform
+    - capability: 1.3 Multi-Factor Authentication (MFA)
+    - capability: 1.9 Integrated ICAM Platform
     key: AC-16(1)
   - categories:
-    - pillar: 1.2 Conditional User Access
-    - pillar: 1.3 Multi-Factor Authentication (MFA)
-    - pillar: 1.9 Integrated ICAM Platform
+    - capability: 1.2 Conditional User Access
+    - capability: 1.3 Multi-Factor Authentication (MFA)
+    - capability: 1.9 Integrated ICAM Platform
     key: AC-16(2)
   - categories:
-    - pillar: 1.3 Multi-Factor Authentication (MFA)
-    - pillar: 1.9 Integrated ICAM Platform
+    - capability: 1.3 Multi-Factor Authentication (MFA)
+    - capability: 1.9 Integrated ICAM Platform
     key: AC-16(3)
   - categories:
-    - pillar: 1.2 Conditional User Access
-    - pillar: 1.3 Multi-Factor Authentication (MFA)
-    - pillar: 1.9 Integrated ICAM Platform
+    - capability: 1.2 Conditional User Access
+    - capability: 1.3 Multi-Factor Authentication (MFA)
+    - capability: 1.9 Integrated ICAM Platform
     key: AC-16(4)
   - categories:
-    - pillar: 1.2 Conditional User Access
-    - pillar: 1.3 Multi-Factor Authentication (MFA)
-    - pillar: 1.9 Integrated ICAM Platform
+    - capability: 1.2 Conditional User Access
+    - capability: 1.3 Multi-Factor Authentication (MFA)
+    - capability: 1.9 Integrated ICAM Platform
     key: AC-16(6)
   - categories:
-    - pillar: 1.2 Conditional User Access
-    - pillar: 1.3 Multi-Factor Authentication (MFA)
-    - pillar: 1.9 Integrated ICAM Platform
+    - capability: 1.2 Conditional User Access
+    - capability: 1.3 Multi-Factor Authentication (MFA)
+    - capability: 1.9 Integrated ICAM Platform
     key: AC-16(7)
   - categories:
-    - pillar: 1.2 Conditional User Access
-    - pillar: 1.3 Multi-Factor Authentication (MFA)
-    - pillar: 1.9 Integrated ICAM Platform
+    - capability: 1.2 Conditional User Access
+    - capability: 1.3 Multi-Factor Authentication (MFA)
+    - capability: 1.9 Integrated ICAM Platform
     key: AC-16(8)
   - categories:
-    - pillar: 1.9 Integrated ICAM Platform
+    - capability: 1.9 Integrated ICAM Platform
     key: AC-16(9)
   - categories:
-    - pillar: 1.2 Conditional User Access
-    - pillar: 1.3 Multi-Factor Authentication (MFA)
-    - pillar: 1.9 Integrated ICAM Platform
+    - capability: 1.2 Conditional User Access
+    - capability: 1.3 Multi-Factor Authentication (MFA)
+    - capability: 1.9 Integrated ICAM Platform
     key: AC-16(10)
   - categories: []
     key: AC-17
   - categories:
-    - pillar: 1.4 Privileged Access Management (PAM)
+    - capability: 1.4 Privileged Access Management (PAM)
     key: AC-17(4)
   - categories:
-    - pillar: 1.2 Conditional User Access
+    - capability: 1.2 Conditional User Access
     key: AC-17(9)
   - categories:
-    - pillar: 1.2 Conditional User Access
+    - capability: 1.2 Conditional User Access
     key: AC-24
   - categories:
-    - pillar: 1.2 Conditional User Access
+    - capability: 1.2 Conditional User Access
     key: AC-24(1)
   - categories:
-    - pillar: 1.2 Conditional User Access
-    - pillar: 1.3 Multi-Factor Authentication (MFA)
-    - pillar: 1.4 Privileged Access Management (PAM)
-    - pillar: 1.5 Identity Federation & User Credentialing
-    - pillar: 1.6 Behavioral, Contextual ID, and Biometrics
-    - pillar: 1.7 Least Privileged Access
-    - pillar: 1.8 Continuous Authentication
-    - pillar: 1.9 Integrated ICAM Platform
+    - capability: 1.2 Conditional User Access
+    - capability: 1.3 Multi-Factor Authentication (MFA)
+    - capability: 1.4 Privileged Access Management (PAM)
+    - capability: 1.5 Identity Federation & User Credentialing
+    - capability: 1.6 Behavioral, Contextual ID, and Biometrics
+    - capability: 1.7 Least Privileged Access
+    - capability: 1.8 Continuous Authentication
+    - capability: 1.9 Integrated ICAM Platform
     key: AU-2
   - categories:
-    - pillar: 1.2 Conditional User Access
-    - pillar: 1.3 Multi-Factor Authentication (MFA)
-    - pillar: 1.4 Privileged Access Management (PAM)
-    - pillar: 1.5 Identity Federation & User Credentialing
-    - pillar: 1.6 Behavioral, Contextual ID, and Biometrics
-    - pillar: 1.7 Least Privileged Access
-    - pillar: 1.8 Continuous Authentication
-    - pillar: 1.9 Integrated ICAM Platform
+    - capability: 1.2 Conditional User Access
+    - capability: 1.3 Multi-Factor Authentication (MFA)
+    - capability: 1.4 Privileged Access Management (PAM)
+    - capability: 1.5 Identity Federation & User Credentialing
+    - capability: 1.6 Behavioral, Contextual ID, and Biometrics
+    - capability: 1.7 Least Privileged Access
+    - capability: 1.8 Continuous Authentication
+    - capability: 1.9 Integrated ICAM Platform
     key: AU-3
   - categories:
-    - pillar: 1.6 Behavioral, Contextual ID, and Biometrics
+    - capability: 1.6 Behavioral, Contextual ID, and Biometrics
     key: AU-3(3)
   - categories:
-    - pillar: 1.6 Behavioral, Contextual ID, and Biometrics
+    - capability: 1.6 Behavioral, Contextual ID, and Biometrics
     key: AU-6
   - categories:
-    - pillar: 1.6 Behavioral, Contextual ID, and Biometrics
+    - capability: 1.6 Behavioral, Contextual ID, and Biometrics
     key: AU-6(8)
   - categories:
-    - pillar: 1.6 Behavioral, Contextual ID, and Biometrics
+    - capability: 1.6 Behavioral, Contextual ID, and Biometrics
     key: AU-7
   - categories:
-    - pillar: 1.6 Behavioral, Contextual ID, and Biometrics
+    - capability: 1.6 Behavioral, Contextual ID, and Biometrics
     key: AU-7(1)
   - categories:
-    - pillar: 1.2 Conditional User Access
-    - pillar: 1.3 Multi-Factor Authentication (MFA)
-    - pillar: 1.4 Privileged Access Management (PAM)
-    - pillar: 1.5 Identity Federation & User Credentialing
-    - pillar: 1.6 Behavioral, Contextual ID, and Biometrics
-    - pillar: 1.7 Least Privileged Access
-    - pillar: 1.8 Continuous Authentication
-    - pillar: 1.9 Integrated ICAM Platform
+    - capability: 1.2 Conditional User Access
+    - capability: 1.3 Multi-Factor Authentication (MFA)
+    - capability: 1.4 Privileged Access Management (PAM)
+    - capability: 1.5 Identity Federation & User Credentialing
+    - capability: 1.6 Behavioral, Contextual ID, and Biometrics
+    - capability: 1.7 Least Privileged Access
+    - capability: 1.8 Continuous Authentication
+    - capability: 1.9 Integrated ICAM Platform
     key: AU-8
   - categories:
-    - pillar: 1.2 Conditional User Access
-    - pillar: 1.3 Multi-Factor Authentication (MFA)
-    - pillar: 1.4 Privileged Access Management (PAM)
-    - pillar: 1.5 Identity Federation & User Credentialing
-    - pillar: 1.6 Behavioral, Contextual ID, and Biometrics
-    - pillar: 1.7 Least Privileged Access
-    - pillar: 1.8 Continuous Authentication
-    - pillar: 1.9 Integrated ICAM Platform
+    - capability: 1.2 Conditional User Access
+    - capability: 1.3 Multi-Factor Authentication (MFA)
+    - capability: 1.4 Privileged Access Management (PAM)
+    - capability: 1.5 Identity Federation & User Credentialing
+    - capability: 1.6 Behavioral, Contextual ID, and Biometrics
+    - capability: 1.7 Least Privileged Access
+    - capability: 1.8 Continuous Authentication
+    - capability: 1.9 Integrated ICAM Platform
     key: AU-9
   - categories:
-    - pillar: 1.2 Conditional User Access
-    - pillar: 1.3 Multi-Factor Authentication (MFA)
-    - pillar: 1.4 Privileged Access Management (PAM)
-    - pillar: 1.5 Identity Federation & User Credentialing
-    - pillar: 1.6 Behavioral, Contextual ID, and Biometrics
-    - pillar: 1.7 Least Privileged Access
-    - pillar: 1.8 Continuous Authentication
-    - pillar: 1.9 Integrated ICAM Platform
+    - capability: 1.2 Conditional User Access
+    - capability: 1.3 Multi-Factor Authentication (MFA)
+    - capability: 1.4 Privileged Access Management (PAM)
+    - capability: 1.5 Identity Federation & User Credentialing
+    - capability: 1.6 Behavioral, Contextual ID, and Biometrics
+    - capability: 1.7 Least Privileged Access
+    - capability: 1.8 Continuous Authentication
+    - capability: 1.9 Integrated ICAM Platform
     key: AU-9(4)
   - categories:
-    - pillar: 1.2 Conditional User Access
-    - pillar: 1.3 Multi-Factor Authentication (MFA)
-    - pillar: 1.4 Privileged Access Management (PAM)
-    - pillar: 1.5 Identity Federation & User Credentialing
-    - pillar: 1.6 Behavioral, Contextual ID, and Biometrics
-    - pillar: 1.7 Least Privileged Access
-    - pillar: 1.8 Continuous Authentication
-    - pillar: 1.9 Integrated ICAM Platform
+    - capability: 1.2 Conditional User Access
+    - capability: 1.3 Multi-Factor Authentication (MFA)
+    - capability: 1.4 Privileged Access Management (PAM)
+    - capability: 1.5 Identity Federation & User Credentialing
+    - capability: 1.6 Behavioral, Contextual ID, and Biometrics
+    - capability: 1.7 Least Privileged Access
+    - capability: 1.8 Continuous Authentication
+    - capability: 1.9 Integrated ICAM Platform
     key: AU-10
   - categories:
-    - pillar: 1.2 Conditional User Access
-    - pillar: 1.3 Multi-Factor Authentication (MFA)
-    - pillar: 1.4 Privileged Access Management (PAM)
-    - pillar: 1.5 Identity Federation & User Credentialing
-    - pillar: 1.6 Behavioral, Contextual ID, and Biometrics
-    - pillar: 1.7 Least Privileged Access
-    - pillar: 1.8 Continuous Authentication
-    - pillar: 1.9 Integrated ICAM Platform
+    - capability: 1.2 Conditional User Access
+    - capability: 1.3 Multi-Factor Authentication (MFA)
+    - capability: 1.4 Privileged Access Management (PAM)
+    - capability: 1.5 Identity Federation & User Credentialing
+    - capability: 1.6 Behavioral, Contextual ID, and Biometrics
+    - capability: 1.7 Least Privileged Access
+    - capability: 1.8 Continuous Authentication
+    - capability: 1.9 Integrated ICAM Platform
     key: AU-10(1)
   - categories:
-    - pillar: 1.2 Conditional User Access
-    - pillar: 1.3 Multi-Factor Authentication (MFA)
-    - pillar: 1.4 Privileged Access Management (PAM)
-    - pillar: 1.5 Identity Federation & User Credentialing
-    - pillar: 1.6 Behavioral, Contextual ID, and Biometrics
-    - pillar: 1.7 Least Privileged Access
-    - pillar: 1.8 Continuous Authentication
-    - pillar: 1.9 Integrated ICAM Platform
+    - capability: 1.2 Conditional User Access
+    - capability: 1.3 Multi-Factor Authentication (MFA)
+    - capability: 1.4 Privileged Access Management (PAM)
+    - capability: 1.5 Identity Federation & User Credentialing
+    - capability: 1.6 Behavioral, Contextual ID, and Biometrics
+    - capability: 1.7 Least Privileged Access
+    - capability: 1.8 Continuous Authentication
+    - capability: 1.9 Integrated ICAM Platform
     key: AU-12
   - categories:
-    - pillar: 1.6 Behavioral, Contextual ID, and Biometrics
+    - capability: 1.6 Behavioral, Contextual ID, and Biometrics
     key: AU-14
   - categories:
-    - pillar: 1.5 Identity Federation & User Credentialing
+    - capability: 1.5 Identity Federation & User Credentialing
     key: IA-1
   - categories:
-    - pillar: 1.1 User Inventory
-    - pillar: 1.2 Conditional User Access
-    - pillar: 1.3 Multi-Factor Authentication (MFA)
-    - pillar: 1.4 Privileged Access Management (PAM)
-    - pillar: 1.5 Identity Federation & User Credentialing
-    - pillar: 1.9 Integrated ICAM Platform
+    - capability: 1.1 User Inventory
+    - capability: 1.2 Conditional User Access
+    - capability: 1.3 Multi-Factor Authentication (MFA)
+    - capability: 1.4 Privileged Access Management (PAM)
+    - capability: 1.5 Identity Federation & User Credentialing
+    - capability: 1.9 Integrated ICAM Platform
     key: IA-2
   - categories:
-    - pillar: 1.3 Multi-Factor Authentication (MFA)
-    - pillar: 1.9 Integrated ICAM Platform
+    - capability: 1.3 Multi-Factor Authentication (MFA)
+    - capability: 1.9 Integrated ICAM Platform
     key: IA-2(1)
   - categories:
-    - pillar: 1.3 Multi-Factor Authentication (MFA)
-    - pillar: 1.9 Integrated ICAM Platform
+    - capability: 1.3 Multi-Factor Authentication (MFA)
+    - capability: 1.9 Integrated ICAM Platform
     key: IA-2(2)
   - categories:
-    - pillar: 1.4 Privileged Access Management (PAM)
+    - capability: 1.4 Privileged Access Management (PAM)
     key: IA-2(5)
   - categories:
-    - pillar: 1.3 Multi-Factor Authentication (MFA)
+    - capability: 1.3 Multi-Factor Authentication (MFA)
     key: IA-2(6)
   - categories:
-    - pillar: 1.3 Multi-Factor Authentication (MFA)
-    - pillar: 1.9 Integrated ICAM Platform
+    - capability: 1.3 Multi-Factor Authentication (MFA)
+    - capability: 1.9 Integrated ICAM Platform
     key: IA-2(12)
   - categories:
-    - pillar: 1.2 Conditional User Access
-    - pillar: 1.5 Identity Federation & User Credentialing
+    - capability: 1.2 Conditional User Access
+    - capability: 1.5 Identity Federation & User Credentialing
     key: IA-4
   - categories:
-    - pillar: 1.5 Identity Federation & User Credentialing
+    - capability: 1.5 Identity Federation & User Credentialing
     key: IA-4(4)
   - categories:
-    - pillar: 1.5 Identity Federation & User Credentialing
+    - capability: 1.5 Identity Federation & User Credentialing
     key: IA-4(5)
   - categories:
-    - pillar: 1.5 Identity Federation & User Credentialing
+    - capability: 1.5 Identity Federation & User Credentialing
     key: IA-4(6)
   - categories:
-    - pillar: 1.2 Conditional User Access
-    - pillar: 1.3 Multi-Factor Authentication (MFA)
-    - pillar: 1.4 Privileged Access Management (PAM)
-    - pillar: 1.5 Identity Federation & User Credentialing
-    - pillar: 1.9 Integrated ICAM Platform
+    - capability: 1.2 Conditional User Access
+    - capability: 1.3 Multi-Factor Authentication (MFA)
+    - capability: 1.4 Privileged Access Management (PAM)
+    - capability: 1.5 Identity Federation & User Credentialing
+    - capability: 1.9 Integrated ICAM Platform
     key: IA-4(9)
   - categories:
-    - pillar: 1.3 Multi-Factor Authentication (MFA)
-    - pillar: 1.4 Privileged Access Management (PAM)
-    - pillar: 1.5 Identity Federation & User Credentialing
-    - pillar: 1.8 Continuous Authentication
+    - capability: 1.3 Multi-Factor Authentication (MFA)
+    - capability: 1.4 Privileged Access Management (PAM)
+    - capability: 1.5 Identity Federation & User Credentialing
+    - capability: 1.8 Continuous Authentication
     key: IA-5
   - categories:
-    - pillar: 1.4 Privileged Access Management (PAM)
-    - pillar: 1.8 Continuous Authentication
+    - capability: 1.4 Privileged Access Management (PAM)
+    - capability: 1.8 Continuous Authentication
     key: IA-5(1)
   - categories:
-    - pillar: 1.4 Privileged Access Management (PAM)
-    - pillar: 1.8 Continuous Authentication
-    - pillar: 1.9 Integrated ICAM Platform
+    - capability: 1.4 Privileged Access Management (PAM)
+    - capability: 1.8 Continuous Authentication
+    - capability: 1.9 Integrated ICAM Platform
     key: IA-5(2)
   - categories:
-    - pillar: 1.5 Identity Federation & User Credentialing
-    - pillar: 1.9 Integrated ICAM Platform
+    - capability: 1.5 Identity Federation & User Credentialing
+    - capability: 1.9 Integrated ICAM Platform
     key: IA-5(9)
   - categories:
-    - pillar: 1.5 Identity Federation & User Credentialing
+    - capability: 1.5 Identity Federation & User Credentialing
     key: IA-5(10)
   - categories:
-    - pillar: 1.9 Integrated ICAM Platform
+    - capability: 1.9 Integrated ICAM Platform
     key: IA-5(12)
   - categories:
-    - pillar: 1.9 Integrated ICAM Platform
+    - capability: 1.9 Integrated ICAM Platform
     key: IA-5(14)
   - categories:
-    - pillar: 1.9 Integrated ICAM Platform
+    - capability: 1.9 Integrated ICAM Platform
     key: IA-5(17)
   - categories:
-    - pillar: 1.4 Privileged Access Management (PAM)
-    - pillar: 1.8 Continuous Authentication
+    - capability: 1.4 Privileged Access Management (PAM)
+    - capability: 1.8 Continuous Authentication
     key: IA-5(18)
   - categories:
-    - pillar: 1.1 User Inventory
-    - pillar: 1.2 Conditional User Access
-    - pillar: 1.5 Identity Federation & User Credentialing
-    - pillar: 1.9 Integrated ICAM Platform
+    - capability: 1.1 User Inventory
+    - capability: 1.2 Conditional User Access
+    - capability: 1.5 Identity Federation & User Credentialing
+    - capability: 1.9 Integrated ICAM Platform
     key: IA-8
   - categories:
-    - pillar: 1.5 Identity Federation & User Credentialing
-    - pillar: 1.9 Integrated ICAM Platform
+    - capability: 1.5 Identity Federation & User Credentialing
+    - capability: 1.9 Integrated ICAM Platform
     key: IA-8(1)
   - categories:
-    - pillar: 1.3 Multi-Factor Authentication (MFA)
+    - capability: 1.3 Multi-Factor Authentication (MFA)
     key: IA-8(2)
   - categories:
-    - pillar: 1.2 Conditional User Access
-    - pillar: 1.3 Multi-Factor Authentication (MFA)
+    - capability: 1.2 Conditional User Access
+    - capability: 1.3 Multi-Factor Authentication (MFA)
     key: IA-8(4)
   - categories:
-    - pillar: 1.5 Identity Federation & User Credentialing
-    - pillar: 1.9 Integrated ICAM Platform
+    - capability: 1.5 Identity Federation & User Credentialing
+    - capability: 1.9 Integrated ICAM Platform
     key: IA-8(5)
   - categories:
-    - pillar: 1.2 Conditional User Access
-    - pillar: 1.3 Multi-Factor Authentication (MFA)
+    - capability: 1.2 Conditional User Access
+    - capability: 1.3 Multi-Factor Authentication (MFA)
     key: IA-10
   - categories:
-    - pillar: 1.7 Least Privileged Access
-    - pillar: 1.8 Continuous Authentication
+    - capability: 1.7 Least Privileged Access
+    - capability: 1.8 Continuous Authentication
     key: IA-11
   - categories:
-    - pillar: 1.5 Identity Federation & User Credentialing
+    - capability: 1.5 Identity Federation & User Credentialing
     key: IA-12
   - categories:
-    - pillar: 1.5 Identity Federation & User Credentialing
+    - capability: 1.5 Identity Federation & User Credentialing
     key: PL-4
   - categories:
-    - pillar: 1.6 Behavioral, Contextual ID, and Biometrics
+    - capability: 1.6 Behavioral, Contextual ID, and Biometrics
     key: PM-12
   - categories:
-    - pillar: 1.5 Identity Federation & User Credentialing
+    - capability: 1.5 Identity Federation & User Credentialing
     key: PS-4
   - categories:
-    - pillar: 1.5 Identity Federation & User Credentialing
+    - capability: 1.5 Identity Federation & User Credentialing
     key: PS-5
   - categories:
-    - pillar: 1.4 Privileged Access Management (PAM)
+    - capability: 1.4 Privileged Access Management (PAM)
     key: RA-5
   - categories:
-    - pillar: 1.4 Privileged Access Management (PAM)
+    - capability: 1.4 Privileged Access Management (PAM)
     key: RA-5(2)
   - categories:
-    - pillar: 1.4 Privileged Access Management (PAM)
+    - capability: 1.4 Privileged Access Management (PAM)
     key: RA-5(5)
   - categories:
-    - pillar: 1.3 Multi-Factor Authentication (MFA)
+    - capability: 1.3 Multi-Factor Authentication (MFA)
     key: RA-9
   - categories:
-    - pillar: 1.9 Integrated ICAM Platform
+    - capability: 1.9 Integrated ICAM Platform
     key: SC-12
   - categories:
-    - pillar: 1.2 Conditional User Access
-    - pillar: 1.3 Multi-Factor Authentication (MFA)
-    - pillar: 1.9 Integrated ICAM Platform
+    - capability: 1.2 Conditional User Access
+    - capability: 1.3 Multi-Factor Authentication (MFA)
+    - capability: 1.9 Integrated ICAM Platform
     key: SC-16
   - categories:
-    - pillar: 1.2 Conditional User Access
-    - pillar: 1.3 Multi-Factor Authentication (MFA)
-    - pillar: 1.9 Integrated ICAM Platform
+    - capability: 1.2 Conditional User Access
+    - capability: 1.3 Multi-Factor Authentication (MFA)
+    - capability: 1.9 Integrated ICAM Platform
     key: SC-16(1)
   - categories:
-    - pillar: 1.2 Conditional User Access
-    - pillar: 1.3 Multi-Factor Authentication (MFA)
-    - pillar: 1.9 Integrated ICAM Platform
+    - capability: 1.2 Conditional User Access
+    - capability: 1.3 Multi-Factor Authentication (MFA)
+    - capability: 1.9 Integrated ICAM Platform
     key: SC-16(2)
   - categories:
-    - pillar: 1.2 Conditional User Access
-    - pillar: 1.3 Multi-Factor Authentication (MFA)
-    - pillar: 1.9 Integrated ICAM Platform
+    - capability: 1.2 Conditional User Access
+    - capability: 1.3 Multi-Factor Authentication (MFA)
+    - capability: 1.9 Integrated ICAM Platform
     key: SC-16(3)
   - categories:
-    - pillar: 1.7 Least Privileged Access
-    - pillar: 1.8 Continuous Authentication
+    - capability: 1.7 Least Privileged Access
+    - capability: 1.8 Continuous Authentication
     key: SC-23
   - categories:
-    - pillar: 1.7 Least Privileged Access
-    - pillar: 1.8 Continuous Authentication
+    - capability: 1.7 Least Privileged Access
+    - capability: 1.8 Continuous Authentication
     key: SC-23(5)
   - categories:
-    - pillar: 1.2 Conditional User Access
-    - pillar: 1.3 Multi-Factor Authentication (MFA)
-    - pillar: 1.4 Privileged Access Management (PAM)
-    - pillar: 1.5 Identity Federation & User Credentialing
-    - pillar: 1.6 Behavioral, Contextual ID, and Biometrics
-    - pillar: 1.7 Least Privileged Access
-    - pillar: 1.8 Continuous Authentication
-    - pillar: 1.9 Integrated ICAM Platform
+    - capability: 1.2 Conditional User Access
+    - capability: 1.3 Multi-Factor Authentication (MFA)
+    - capability: 1.4 Privileged Access Management (PAM)
+    - capability: 1.5 Identity Federation & User Credentialing
+    - capability: 1.6 Behavioral, Contextual ID, and Biometrics
+    - capability: 1.7 Least Privileged Access
+    - capability: 1.8 Continuous Authentication
+    - capability: 1.9 Integrated ICAM Platform
     key: SC-45
   - categories:
-    - pillar: 1.2 Conditional User Access
-    - pillar: 1.3 Multi-Factor Authentication (MFA)
-    - pillar: 1.4 Privileged Access Management (PAM)
-    - pillar: 1.5 Identity Federation & User Credentialing
-    - pillar: 1.6 Behavioral, Contextual ID, and Biometrics
-    - pillar: 1.7 Least Privileged Access
-    - pillar: 1.8 Continuous Authentication
-    - pillar: 1.9 Integrated ICAM Platform
+    - capability: 1.2 Conditional User Access
+    - capability: 1.3 Multi-Factor Authentication (MFA)
+    - capability: 1.4 Privileged Access Management (PAM)
+    - capability: 1.5 Identity Federation & User Credentialing
+    - capability: 1.6 Behavioral, Contextual ID, and Biometrics
+    - capability: 1.7 Least Privileged Access
+    - capability: 1.8 Continuous Authentication
+    - capability: 1.9 Integrated ICAM Platform
     key: SC-45(1)
   - categories:
-    - pillar: 1.6 Behavioral, Contextual ID, and Biometrics
+    - capability: 1.6 Behavioral, Contextual ID, and Biometrics
     key: SI-4
   - categories:
-    - pillar: 1.6 Behavioral, Contextual ID, and Biometrics
+    - capability: 1.6 Behavioral, Contextual ID, and Biometrics
     key: SI-4(2)
   - categories:
-    - pillar: 1.6 Behavioral, Contextual ID, and Biometrics
+    - capability: 1.6 Behavioral, Contextual ID, and Biometrics
     key: SI-4(4)
   - categories:
-    - pillar: 1.6 Behavioral, Contextual ID, and Biometrics
+    - capability: 1.6 Behavioral, Contextual ID, and Biometrics
     key: SI-4(9)
   - categories:
-    - pillar: 1.6 Behavioral, Contextual ID, and Biometrics
+    - capability: 1.6 Behavioral, Contextual ID, and Biometrics
     key: SI-4(10)
   - categories:
-    - pillar: 1.6 Behavioral, Contextual ID, and Biometrics
+    - capability: 1.6 Behavioral, Contextual ID, and Biometrics
     key: SI-4(13)
   - categories:
-    - pillar: 1.6 Behavioral, Contextual ID, and Biometrics
+    - capability: 1.6 Behavioral, Contextual ID, and Biometrics
     key: SI-4(19)
   - categories:
-    - pillar: 1.4 Privileged Access Management (PAM)
-    - pillar: 1.6 Behavioral, Contextual ID, and Biometrics
+    - capability: 1.4 Privileged Access Management (PAM)
+    - capability: 1.6 Behavioral, Contextual ID, and Biometrics
     key: SI-4(20)
   name: Appendix C - User Pillar Overlay
 - mappings:
   - categories:
-    - pillar: 2.7 EDR & XDR
+    - capability: 2.7 EDR & XDR
     key: AU-6(4)
   - categories:
-    - pillar: 2.7 EDR & XDR
+    - capability: 2.7 EDR & XDR
     key: AU-6(5)
   - categories:
-    - pillar: 2.3 Device Authorization w/ Real Time Inspection
-    - pillar: 2.7 EDR & XDR
+    - capability: 2.3 Device Authorization w/ Real Time Inspection
+    - capability: 2.7 EDR & XDR
     key: AU-7
   - categories:
-    - pillar: 2.3 Device Authorization w/ Real Time Inspection
-    - pillar: 2.7 EDR & XDR
+    - capability: 2.3 Device Authorization w/ Real Time Inspection
+    - capability: 2.7 EDR & XDR
     key: AU-7(1)
   - categories:
-    - pillar: 2.1 Device Inventory
-    - pillar: 2.3 Device Authorization w/ Real Time Inspection
-    - pillar: 2.4 Remote Access
-    - pillar: 2.5 Partially & Fully Automated Asset, Vulnerability and Patch Mgmt
-    - pillar: 2.7 EDR & XDR
+    - capability: 2.1 Device Inventory
+    - capability: 2.3 Device Authorization w/ Real Time Inspection
+    - capability: 2.4 Remote Access
+    - capability: 2.5 Partially & Fully Automated Asset, Vulnerability and Patch Mgmt
+    - capability: 2.7 EDR & XDR
     key: AU-8
   - categories:
-    - pillar: 2.1 Device Inventory
-    - pillar: 2.3 Device Authorization w/ Real Time Inspection
-    - pillar: 2.4 Remote Access
-    - pillar: 2.5 Partially & Fully Automated Asset, Vulnerability and Patch Mgmt
-    - pillar: 2.7 EDR & XDR
+    - capability: 2.1 Device Inventory
+    - capability: 2.3 Device Authorization w/ Real Time Inspection
+    - capability: 2.4 Remote Access
+    - capability: 2.5 Partially & Fully Automated Asset, Vulnerability and Patch Mgmt
+    - capability: 2.7 EDR & XDR
     key: AU-9
   - categories:
-    - pillar: 2.1 Device Inventory
-    - pillar: 2.3 Device Authorization w/ Real Time Inspection
-    - pillar: 2.4 Remote Access
-    - pillar: 2.5 Partially & Fully Automated Asset, Vulnerability and Patch Mgmt
-    - pillar: 2.7 EDR & XDR
+    - capability: 2.1 Device Inventory
+    - capability: 2.3 Device Authorization w/ Real Time Inspection
+    - capability: 2.4 Remote Access
+    - capability: 2.5 Partially & Fully Automated Asset, Vulnerability and Patch Mgmt
+    - capability: 2.7 EDR & XDR
     key: AU-9(4)
   - categories:
-    - pillar: 2.1 Device Inventory
-    - pillar: 2.3 Device Authorization w/ Real Time Inspection
-    - pillar: 2.4 Remote Access
-    - pillar: 2.5 Partially & Fully Automated Asset, Vulnerability and Patch Mgmt
-    - pillar: 2.7 EDR & XDR
+    - capability: 2.1 Device Inventory
+    - capability: 2.3 Device Authorization w/ Real Time Inspection
+    - capability: 2.4 Remote Access
+    - capability: 2.5 Partially & Fully Automated Asset, Vulnerability and Patch Mgmt
+    - capability: 2.7 EDR & XDR
     key: AU-10
   - categories:
-    - pillar: 2.1 Device Inventory
-    - pillar: 2.3 Device Authorization w/ Real Time Inspection
-    - pillar: 2.4 Remote Access
-    - pillar: 2.5 Partially & Fully Automated Asset, Vulnerability and Patch Mgmt
-    - pillar: 2.7 EDR & XDR
+    - capability: 2.1 Device Inventory
+    - capability: 2.3 Device Authorization w/ Real Time Inspection
+    - capability: 2.4 Remote Access
+    - capability: 2.5 Partially & Fully Automated Asset, Vulnerability and Patch Mgmt
+    - capability: 2.7 EDR & XDR
     key: AU-10(1)
   - categories:
-    - pillar: 2.1 Device Inventory
-    - pillar: 2.3 Device Authorization w/ Real Time Inspection
-    - pillar: 2.4 Remote Access
-    - pillar: 2.5 Partially & Fully Automated Asset, Vulnerability and Patch Mgmt
-    - pillar: 2.6 UEM & MDM
-    - pillar: 2.7 EDR & XDR
+    - capability: 2.1 Device Inventory
+    - capability: 2.3 Device Authorization w/ Real Time Inspection
+    - capability: 2.4 Remote Access
+    - capability: 2.5 Partially & Fully Automated Asset, Vulnerability and Patch Mgmt
+    - capability: 2.6 UEM & MDM
+    - capability: 2.7 EDR & XDR
     key: AU-12
   - categories:
-    - pillar: 2.7 EDR & XDR
+    - capability: 2.7 EDR & XDR
     key: AU-12(1)
   - categories:
-    - pillar: 2.5 Partially & Fully Automated Asset, Vulnerability and Patch Mgmt
+    - capability: 2.5 Partially & Fully Automated Asset, Vulnerability and Patch Mgmt
     key: CM-2
   - categories:
-    - pillar: 2.5 Partially & Fully Automated Asset, Vulnerability and Patch Mgmt
+    - capability: 2.5 Partially & Fully Automated Asset, Vulnerability and Patch Mgmt
     key: CM-2(2)
   - categories:
-    - pillar: 2.2 Device Detection and Compliance
+    - capability: 2.2 Device Detection and Compliance
     key: CM-3
   - categories:
-    - pillar: 2.2 Device Detection and Compliance
+    - capability: 2.2 Device Detection and Compliance
     key: CM-3(5)
   - categories:
-    - pillar: 2.2 Device Detection and Compliance
-    - pillar: 2.5 Partially & Fully Automated Asset, Vulnerability and Patch Mgmt
+    - capability: 2.2 Device Detection and Compliance
+    - capability: 2.5 Partially & Fully Automated Asset, Vulnerability and Patch Mgmt
     key: CM-6
   - categories:
-    - pillar: 2.2 Device Detection and Compliance
-    - pillar: 2.5 Partially & Fully Automated Asset, Vulnerability and Patch Mgmt
+    - capability: 2.2 Device Detection and Compliance
+    - capability: 2.5 Partially & Fully Automated Asset, Vulnerability and Patch Mgmt
     key: CM-6(1)
   - categories:
-    - pillar: 2.2 Device Detection and Compliance
+    - capability: 2.2 Device Detection and Compliance
     key: CM-6(2)
   - categories: []
     key: CM-7
   - categories:
-    - pillar: 2.3 Device Authorization w/ Real Time Inspection
+    - capability: 2.3 Device Authorization w/ Real Time Inspection
     key: CM-7(2)
   - categories:
-    - pillar: 2.3 Device Authorization w/ Real Time Inspection
+    - capability: 2.3 Device Authorization w/ Real Time Inspection
     key: CM-7(5)
   - categories:
-    - pillar: 2.6 UEM & MDM
+    - capability: 2.6 UEM & MDM
     key: CM-8
   - categories:
-    - pillar: 2.2 Device Detection and Compliance
-    - pillar: 2.6 UEM & MDM
+    - capability: 2.2 Device Detection and Compliance
+    - capability: 2.6 UEM & MDM
     key: CM-8(2)
   - categories:
-    - pillar: 2.2 Device Detection and Compliance
+    - capability: 2.2 Device Detection and Compliance
     key: CM-8(3)
   - categories:
-    - pillar: 2.6 UEM & MDM
+    - capability: 2.6 UEM & MDM
     key: CM-8(6)
   - categories:
-    - pillar: 2.6 UEM & MDM
+    - capability: 2.6 UEM & MDM
     key: CM-8(9)
   - categories:
-    - pillar: 2.1 Device Inventory
+    - capability: 2.1 Device Inventory
     key: CM-9
   - categories:
-    - pillar: 2.3 Device Authorization w/ Real Time Inspection
-    - pillar: 2.6 UEM & MDM
+    - capability: 2.3 Device Authorization w/ Real Time Inspection
+    - capability: 2.6 UEM & MDM
     key: CM-11
   - categories:
-    - pillar: 2.3 Device Authorization w/ Real Time Inspection
-    - pillar: 2.6 UEM & MDM
+    - capability: 2.3 Device Authorization w/ Real Time Inspection
+    - capability: 2.6 UEM & MDM
     key: CM-11(3)
   - categories:
-    - pillar: 2.6 UEM & MDM
+    - capability: 2.6 UEM & MDM
     key: CM-14
   - categories:
-    - pillar: 2.1 Device Inventory
+    - capability: 2.1 Device Inventory
     key: IA-2
   - categories:
-    - pillar: 2.1 Device Inventory
+    - capability: 2.1 Device Inventory
     key: IA-3
   - categories:
-    - pillar: 2.1 Device Inventory
+    - capability: 2.1 Device Inventory
     key: IA-4
   - categories:
-    - pillar: 2.1 Device Inventory
-    - pillar: 2.3 Device Authorization w/ Real Time Inspection
+    - capability: 2.1 Device Inventory
+    - capability: 2.3 Device Authorization w/ Real Time Inspection
     key: IA-4(6)
   - categories:
-    - pillar: 2.1 Device Inventory
+    - capability: 2.1 Device Inventory
     key: IA-4(9)
   - categories:
-    - pillar: 2.1 Device Inventory
+    - capability: 2.1 Device Inventory
     key: IA-5
   - categories:
-    - pillar: 2.1 Device Inventory
+    - capability: 2.1 Device Inventory
     key: IA-5(2)
   - categories:
-    - pillar: 2.3 Device Authorization w/ Real Time Inspection
+    - capability: 2.3 Device Authorization w/ Real Time Inspection
     key: IA-5(9)
   - categories:
-    - pillar: 2.3 Device Authorization w/ Real Time Inspection
+    - capability: 2.3 Device Authorization w/ Real Time Inspection
     key: IA-5(14)
   - categories:
-    - pillar: 2.1 Device Inventory
+    - capability: 2.1 Device Inventory
     key: IA-8
   - categories:
-    - pillar: 2.1 Device Inventory
+    - capability: 2.1 Device Inventory
     key: IA-9
   - categories:
-    - pillar: 2.5 Partially & Fully Automated Asset, Vulnerability and Patch Mgmt
+    - capability: 2.5 Partially & Fully Automated Asset, Vulnerability and Patch Mgmt
     key: RA-5
   - categories:
-    - pillar: 2.5 Partially & Fully Automated Asset, Vulnerability and Patch Mgmt
+    - capability: 2.5 Partially & Fully Automated Asset, Vulnerability and Patch Mgmt
     key: RA-5(2)
   - categories:
-    - pillar: 2.3 Device Authorization w/ Real Time Inspection
-    - pillar: 2.6 UEM & MDM
+    - capability: 2.3 Device Authorization w/ Real Time Inspection
+    - capability: 2.6 UEM & MDM
     key: RA-9
   - categories: []
     key: SC-7
   - categories:
-    - pillar: 2.2 Device Detection and Compliance
+    - capability: 2.2 Device Detection and Compliance
     key: SC-7(20)
   - categories:
-    - pillar: 2.3 Device Authorization w/ Real Time Inspection
+    - capability: 2.3 Device Authorization w/ Real Time Inspection
     key: SC-12
   - categories:
-    - pillar: 2.3 Device Authorization w/ Real Time Inspection
+    - capability: 2.3 Device Authorization w/ Real Time Inspection
     key: SC-12(1)
   - categories:
-    - pillar: 2.3 Device Authorization w/ Real Time Inspection
+    - capability: 2.3 Device Authorization w/ Real Time Inspection
     key: SC-12(3)
   - categories:
-    - pillar: 2.3 Device Authorization w/ Real Time Inspection
+    - capability: 2.3 Device Authorization w/ Real Time Inspection
     key: SC-13
   - categories:
-    - pillar: 2.1 Device Inventory
-    - pillar: 2.2 Device Detection and Compliance
-    - pillar: 2.3 Device Authorization w/ Real Time Inspection
-    - pillar: 2.6 UEM & MDM
+    - capability: 2.1 Device Inventory
+    - capability: 2.2 Device Detection and Compliance
+    - capability: 2.3 Device Authorization w/ Real Time Inspection
+    - capability: 2.6 UEM & MDM
     key: SC-16
   - categories:
-    - pillar: 2.1 Device Inventory
-    - pillar: 2.2 Device Detection and Compliance
-    - pillar: 2.3 Device Authorization w/ Real Time Inspection
-    - pillar: 2.6 UEM & MDM
+    - capability: 2.1 Device Inventory
+    - capability: 2.2 Device Detection and Compliance
+    - capability: 2.3 Device Authorization w/ Real Time Inspection
+    - capability: 2.6 UEM & MDM
     key: SC-16(1)
   - categories:
-    - pillar: 2.1 Device Inventory
-    - pillar: 2.2 Device Detection and Compliance
-    - pillar: 2.3 Device Authorization w/ Real Time Inspection
-    - pillar: 2.6 UEM & MDM
+    - capability: 2.1 Device Inventory
+    - capability: 2.2 Device Detection and Compliance
+    - capability: 2.3 Device Authorization w/ Real Time Inspection
+    - capability: 2.6 UEM & MDM
     key: SC-16(2)
   - categories:
-    - pillar: 2.1 Device Inventory
-    - pillar: 2.2 Device Detection and Compliance
-    - pillar: 2.3 Device Authorization w/ Real Time Inspection
-    - pillar: 2.6 UEM & MDM
+    - capability: 2.1 Device Inventory
+    - capability: 2.2 Device Detection and Compliance
+    - capability: 2.3 Device Authorization w/ Real Time Inspection
+    - capability: 2.6 UEM & MDM
     key: SC-16(3)
   - categories:
-    - pillar: 2.3 Device Authorization w/ Real Time Inspection
+    - capability: 2.3 Device Authorization w/ Real Time Inspection
     key: SC-17
   - categories:
-    - pillar: 2.6 UEM & MDM
+    - capability: 2.6 UEM & MDM
     key: SC-25
   - categories:
-    - pillar: 2.1 Device Inventory
-    - pillar: 2.3 Device Authorization w/ Real Time Inspection
-    - pillar: 2.4 Remote Access
-    - pillar: 2.6 UEM & MDM
-    - pillar: 2.7 EDR & XDR
+    - capability: 2.1 Device Inventory
+    - capability: 2.3 Device Authorization w/ Real Time Inspection
+    - capability: 2.4 Remote Access
+    - capability: 2.6 UEM & MDM
+    - capability: 2.7 EDR & XDR
     key: SC-45
   - categories:
-    - pillar: 2.1 Device Inventory
-    - pillar: 2.3 Device Authorization w/ Real Time Inspection
-    - pillar: 2.4 Remote Access
-    - pillar: 2.6 UEM & MDM
-    - pillar: 2.7 EDR & XDR
+    - capability: 2.1 Device Inventory
+    - capability: 2.3 Device Authorization w/ Real Time Inspection
+    - capability: 2.4 Remote Access
+    - capability: 2.6 UEM & MDM
+    - capability: 2.7 EDR & XDR
     key: SC-45(1)
   - categories:
-    - pillar: 2.5 Partially & Fully Automated Asset, Vulnerability and Patch Mgmt
+    - capability: 2.5 Partially & Fully Automated Asset, Vulnerability and Patch Mgmt
     key: SI-2
   - categories:
-    - pillar: 2.2 Device Detection and Compliance
-    - pillar: 2.5 Partially & Fully Automated Asset, Vulnerability and Patch Mgmt
+    - capability: 2.2 Device Detection and Compliance
+    - capability: 2.5 Partially & Fully Automated Asset, Vulnerability and Patch Mgmt
     key: SI-2(2)
   - categories:
-    - pillar: 2.5 Partially & Fully Automated Asset, Vulnerability and Patch Mgmt
+    - capability: 2.5 Partially & Fully Automated Asset, Vulnerability and Patch Mgmt
     key: SI-2(4)
   - categories:
-    - pillar: 2.5 Partially & Fully Automated Asset, Vulnerability and Patch Mgmt
+    - capability: 2.5 Partially & Fully Automated Asset, Vulnerability and Patch Mgmt
     key: SI-2(5)
   - categories:
-    - pillar: 2.3 Device Authorization w/ Real Time Inspection
+    - capability: 2.3 Device Authorization w/ Real Time Inspection
     key: SI-3
   - categories:
-    - pillar: 2.3 Device Authorization w/ Real Time Inspection
+    - capability: 2.3 Device Authorization w/ Real Time Inspection
     key: SI-3(8)
   - categories:
-    - pillar: 2.7 EDR & XDR
+    - capability: 2.7 EDR & XDR
     key: SI-4
   - categories:
-    - pillar: 2.7 EDR & XDR
+    - capability: 2.7 EDR & XDR
     key: SI-4(1)
   - categories:
-    - pillar: 2.7 EDR & XDR
+    - capability: 2.7 EDR & XDR
     key: SI-4(2)
   - categories:
-    - pillar: 2.3 Device Authorization w/ Real Time Inspection
+    - capability: 2.3 Device Authorization w/ Real Time Inspection
     key: SI-4(3)
   - categories:
-    - pillar: 2.7 EDR & XDR
+    - capability: 2.7 EDR & XDR
     key: SI-4(4)
   - categories:
-    - pillar: 2.7 EDR & XDR
+    - capability: 2.7 EDR & XDR
     key: SI-4(10)
   - categories:
-    - pillar: 2.7 EDR & XDR
+    - capability: 2.7 EDR & XDR
     key: SI-4(11)
   - categories:
-    - pillar: 2.7 EDR & XDR
+    - capability: 2.7 EDR & XDR
     key: SI-4(13)
   - categories:
-    - pillar: 2.7 EDR & XDR
+    - capability: 2.7 EDR & XDR
     key: SI-4(16)
   - categories:
-    - pillar: 2.6 UEM & MDM
-    - pillar: 2.7 EDR & XDR
+    - capability: 2.6 UEM & MDM
+    - capability: 2.7 EDR & XDR
     key: SI-4(23)
   - categories:
-    - pillar: 2.7 EDR & XDR
+    - capability: 2.7 EDR & XDR
     key: SI-4(24)
   - categories:
-    - pillar: 2.3 Device Authorization w/ Real Time Inspection
+    - capability: 2.3 Device Authorization w/ Real Time Inspection
     key: SI-7
   - categories:
-    - pillar: 2.3 Device Authorization w/ Real Time Inspection
+    - capability: 2.3 Device Authorization w/ Real Time Inspection
     key: SI-7(8)
   name: Appendix D - Device Pillar Overlay
 - mappings:
   - categories:
-    - pillar: 3.4 Resource Authorization & Integration
+    - capability: 3.4 Resource Authorization & Integration
     key: AC-2
   - categories:
-    - pillar: 3.4 Resource Authorization & Integration
+    - capability: 3.4 Resource Authorization & Integration
     key: AC-3
   - categories:
-    - pillar: 3.2 Secure Software Development & Integration
-    - pillar: 3.4 Resource Authorization & Integration
+    - capability: 3.2 Secure Software Development & Integration
+    - capability: 3.4 Resource Authorization & Integration
     key: AC-3(12)
   - categories:
-    - pillar: 3.4 Resource Authorization & Integration
+    - capability: 3.4 Resource Authorization & Integration
     key: AC-3(13)
   - categories:
-    - pillar: 3.2 Secure Software Development & Integration
-    - pillar: 3.4 Resource Authorization & Integration
+    - capability: 3.2 Secure Software Development & Integration
+    - capability: 3.4 Resource Authorization & Integration
     key: AC-4
   - categories:
-    - pillar: 3.2 Secure Software Development & Integration
+    - capability: 3.2 Secure Software Development & Integration
     key: AC-4(1)
   - categories:
-    - pillar: 3.4 Resource Authorization & Integration
+    - capability: 3.4 Resource Authorization & Integration
     key: AC-4(3)
   - categories:
-    - pillar: 3.4 Resource Authorization & Integration
+    - capability: 3.4 Resource Authorization & Integration
     key: AC-4(8)
   - categories:
-    - pillar: 3.4 Resource Authorization & Integration
+    - capability: 3.4 Resource Authorization & Integration
     key: AC-4(10)
   - categories:
-    - pillar: 3.4 Resource Authorization & Integration
+    - capability: 3.4 Resource Authorization & Integration
     key: AC-4(11)
   - categories:
-    - pillar: 3.2 Secure Software Development & Integration
-    - pillar: 3.4 Resource Authorization & Integration
+    - capability: 3.2 Secure Software Development & Integration
+    - capability: 3.4 Resource Authorization & Integration
     key: AC-4(17)
   - categories:
-    - pillar: 3.4 Resource Authorization & Integration
+    - capability: 3.4 Resource Authorization & Integration
     key: AC-16
   - categories:
-    - pillar: 3.4 Resource Authorization & Integration
+    - capability: 3.4 Resource Authorization & Integration
     key: AC-16(1)
   - categories:
-    - pillar: 3.4 Resource Authorization & Integration
+    - capability: 3.4 Resource Authorization & Integration
     key: AC-16(2)
   - categories:
-    - pillar: 3.4 Resource Authorization & Integration
+    - capability: 3.4 Resource Authorization & Integration
     key: AC-16(3)
   - categories:
-    - pillar: 3.4 Resource Authorization & Integration
+    - capability: 3.4 Resource Authorization & Integration
     key: AC-16(4)
   - categories:
-    - pillar: 3.4 Resource Authorization & Integration
+    - capability: 3.4 Resource Authorization & Integration
     key: AC-16(6)
   - categories:
-    - pillar: 3.4 Resource Authorization & Integration
+    - capability: 3.4 Resource Authorization & Integration
     key: AC-16(7)
   - categories:
-    - pillar: 3.4 Resource Authorization & Integration
+    - capability: 3.4 Resource Authorization & Integration
     key: AC-16(8)
   - categories:
-    - pillar: 3.4 Resource Authorization & Integration
+    - capability: 3.4 Resource Authorization & Integration
     key: AC-16(9)
   - categories:
-    - pillar: 3.4 Resource Authorization & Integration
+    - capability: 3.4 Resource Authorization & Integration
     key: AC-16(10)
   - categories:
-    - pillar: 3.4 Resource Authorization & Integration
+    - capability: 3.4 Resource Authorization & Integration
     key: AC-17
   - categories:
-    - pillar: 3.4 Resource Authorization & Integration
+    - capability: 3.4 Resource Authorization & Integration
     key: AC-17(1)
   - categories:
-    - pillar: 3.4 Resource Authorization & Integration
+    - capability: 3.4 Resource Authorization & Integration
     key: AC-17(2)
   - categories:
-    - pillar: 3.2 Secure Software Development & Integration
-    - pillar: 3.3 Software Risk Management
+    - capability: 3.2 Secure Software Development & Integration
+    - capability: 3.3 Software Risk Management
     key: AU-2
   - categories:
-    - pillar: 3.2 Secure Software Development & Integration
-    - pillar: 3.3 Software Risk Management
+    - capability: 3.2 Secure Software Development & Integration
+    - capability: 3.3 Software Risk Management
     key: AU-3
   - categories:
-    - pillar: 3.2 Secure Software Development & Integration
-    - pillar: 3.3 Software Risk Management
+    - capability: 3.2 Secure Software Development & Integration
+    - capability: 3.3 Software Risk Management
     key: AU-8
   - categories:
-    - pillar: 3.2 Secure Software Development & Integration
-    - pillar: 3.3 Software Risk Management
+    - capability: 3.2 Secure Software Development & Integration
+    - capability: 3.3 Software Risk Management
     key: AU-9
   - categories:
-    - pillar: 3.2 Secure Software Development & Integration
-    - pillar: 3.3 Software Risk Management
+    - capability: 3.2 Secure Software Development & Integration
+    - capability: 3.3 Software Risk Management
     key: AU-9(4)
   - categories:
-    - pillar: 3.2 Secure Software Development & Integration
-    - pillar: 3.3 Software Risk Management
+    - capability: 3.2 Secure Software Development & Integration
+    - capability: 3.3 Software Risk Management
     key: AU-10
   - categories:
-    - pillar: 3.2 Secure Software Development & Integration
-    - pillar: 3.3 Software Risk Management
+    - capability: 3.2 Secure Software Development & Integration
+    - capability: 3.3 Software Risk Management
     key: AU-10(1)
   - categories:
-    - pillar: 3.2 Secure Software Development & Integration
-    - pillar: 3.3 Software Risk Management
+    - capability: 3.2 Secure Software Development & Integration
+    - capability: 3.3 Software Risk Management
     key: AU-12
   - categories:
-    - pillar: 3.2 Secure Software Development & Integration
-    - pillar: 3.3 Software Risk Management
-    - pillar: 3.5 Continuous Monitoring and Ongoing Authorizations
+    - capability: 3.2 Secure Software Development & Integration
+    - capability: 3.3 Software Risk Management
+    - capability: 3.5 Continuous Monitoring and Ongoing Authorizations
     key: CA-2
   - categories:
-    - pillar: 3.2 Secure Software Development & Integration
-    - pillar: 3.3 Software Risk Management
-    - pillar: 3.5 Continuous Monitoring and Ongoing Authorizations
+    - capability: 3.2 Secure Software Development & Integration
+    - capability: 3.3 Software Risk Management
+    - capability: 3.5 Continuous Monitoring and Ongoing Authorizations
     key: CA-5
   - categories:
-    - pillar: 3.2 Secure Software Development & Integration
-    - pillar: 3.3 Software Risk Management
-    - pillar: 3.5 Continuous Monitoring and Ongoing Authorizations
+    - capability: 3.2 Secure Software Development & Integration
+    - capability: 3.3 Software Risk Management
+    - capability: 3.5 Continuous Monitoring and Ongoing Authorizations
     key: CA-5(1)
   - categories:
-    - pillar: 3.5 Continuous Monitoring and Ongoing Authorizations
+    - capability: 3.5 Continuous Monitoring and Ongoing Authorizations
     key: CA-6
   - categories:
-    - pillar: 3.3 Software Risk Management
-    - pillar: 3.5 Continuous Monitoring and Ongoing Authorizations
+    - capability: 3.3 Software Risk Management
+    - capability: 3.5 Continuous Monitoring and Ongoing Authorizations
     key: CA-7
   - categories:
-    - pillar: 3.3 Software Risk Management
-    - pillar: 3.5 Continuous Monitoring and Ongoing Authorizations
+    - capability: 3.3 Software Risk Management
+    - capability: 3.5 Continuous Monitoring and Ongoing Authorizations
     key: CA-7(6)
   - categories:
-    - pillar: 3.2 Secure Software Development & Integration
-    - pillar: 3.3 Software Risk Management
+    - capability: 3.2 Secure Software Development & Integration
+    - capability: 3.3 Software Risk Management
     key: CM-2
   - categories:
-    - pillar: 3.2 Secure Software Development & Integration
-    - pillar: 3.3 Software Risk Management
+    - capability: 3.2 Secure Software Development & Integration
+    - capability: 3.3 Software Risk Management
     key: CM-2(2)
   - categories:
-    - pillar: 3.3 Software Risk Management
+    - capability: 3.3 Software Risk Management
     key: CM-2(6)
   - categories:
-    - pillar: 3.2 Secure Software Development & Integration
-    - pillar: 3.3 Software Risk Management
+    - capability: 3.2 Secure Software Development & Integration
+    - capability: 3.3 Software Risk Management
     key: CM-3
   - categories:
-    - pillar: 3.2 Secure Software Development & Integration
+    - capability: 3.2 Secure Software Development & Integration
     key: CM-3(1)
   - categories:
-    - pillar: 3.3 Software Risk Management
+    - capability: 3.3 Software Risk Management
     key: CM-3(2)
   - categories:
-    - pillar: 3.2 Secure Software Development & Integration
+    - capability: 3.2 Secure Software Development & Integration
     key: CM-3(3)
   - categories:
-    - pillar: 3.2 Secure Software Development & Integration
+    - capability: 3.2 Secure Software Development & Integration
     key: CM-4
   - categories:
-    - pillar: 3.3 Software Risk Management
+    - capability: 3.3 Software Risk Management
     key: CM-4(1)
   - categories:
-    - pillar: 3.3 Software Risk Management
+    - capability: 3.3 Software Risk Management
     key: CM-4(2)
   - categories:
-    - pillar: 3.2 Secure Software Development & Integration
-    - pillar: 3.3 Software Risk Management
+    - capability: 3.2 Secure Software Development & Integration
+    - capability: 3.3 Software Risk Management
     key: CM-6
   - categories:
-    - pillar: 3.2 Secure Software Development & Integration
-    - pillar: 3.3 Software Risk Management
+    - capability: 3.2 Secure Software Development & Integration
+    - capability: 3.3 Software Risk Management
     key: CM-6(1)
   - categories:
-    - pillar: 3.2 Secure Software Development & Integration
+    - capability: 3.2 Secure Software Development & Integration
     key: CM-7
   - categories:
-    - pillar: 3.3 Software Risk Management
+    - capability: 3.3 Software Risk Management
     key: CM-7(8)
   - categories:
-    - pillar: 3.1 Application Inventory
+    - capability: 3.1 Application Inventory
     key: CM-8
   - categories:
-    - pillar: 3.1 Application Inventory
+    - capability: 3.1 Application Inventory
     key: CM-8(9)
   - categories:
-    - pillar: 3.2 Secure Software Development & Integration
+    - capability: 3.2 Secure Software Development & Integration
     key: CM-9
   - categories:
-    - pillar: 3.3 Software Risk Management
+    - capability: 3.3 Software Risk Management
     key: CM-10
   - categories:
-    - pillar: 3.3 Software Risk Management
+    - capability: 3.3 Software Risk Management
     key: CM-10(1)
   - categories: []
     key: IA-3
   - categories:
-    - pillar: 3.4 Resource Authorization & Integration
+    - capability: 3.4 Resource Authorization & Integration
     key: IA-3(1)
   - categories: []
     key: IA-5
   - categories:
-    - pillar: 3.2 Secure Software Development & Integration
+    - capability: 3.2 Secure Software Development & Integration
     key: IA-5(5)
   - categories:
-    - pillar: 3.2 Secure Software Development & Integration
+    - capability: 3.2 Secure Software Development & Integration
     key: IA-5(7)
   - categories:
-    - pillar: 3.2 Secure Software Development & Integration
+    - capability: 3.2 Secure Software Development & Integration
     key: IA-6
   - categories:
-    - pillar: 3.3 Software Risk Management
+    - capability: 3.3 Software Risk Management
     key: PM-15
   - categories: []
     key: RA-3
   - categories:
-    - pillar: 3.3 Software Risk Management
+    - capability: 3.3 Software Risk Management
     key: RA-3(1)
   - categories:
-    - pillar: 3.2 Secure Software Development & Integration
-    - pillar: 3.3 Software Risk Management
+    - capability: 3.2 Secure Software Development & Integration
+    - capability: 3.3 Software Risk Management
     key: RA-5
   - categories:
-    - pillar: 3.2 Secure Software Development & Integration
-    - pillar: 3.3 Software Risk Management
+    - capability: 3.2 Secure Software Development & Integration
+    - capability: 3.3 Software Risk Management
     key: RA-5(2)
   - categories:
-    - pillar: 3.2 Secure Software Development & Integration
-    - pillar: 3.3 Software Risk Management
+    - capability: 3.2 Secure Software Development & Integration
+    - capability: 3.3 Software Risk Management
     key: RA-5(5)
   - categories:
-    - pillar: 3.3 Software Risk Management
+    - capability: 3.3 Software Risk Management
     key: RA-5(11)
   - categories: []
     key: SA-8
   - categories:
-    - pillar: 3.2 Secure Software Development & Integration
+    - capability: 3.2 Secure Software Development & Integration
     key: SA-8(14)
   - categories:
-    - pillar: 3.3 Software Risk Management
+    - capability: 3.3 Software Risk Management
     key: SA-10
   - categories:
-    - pillar: 3.3 Software Risk Management
+    - capability: 3.3 Software Risk Management
     key: SA-10(1)
   - categories:
-    - pillar: 3.3 Software Risk Management
+    - capability: 3.3 Software Risk Management
     key: SA-10(4)
   - categories:
-    - pillar: 3.3 Software Risk Management
+    - capability: 3.3 Software Risk Management
     key: SA-10(6)
   - categories:
-    - pillar: 3.2 Secure Software Development & Integration
-    - pillar: 3.3 Software Risk Management
+    - capability: 3.2 Secure Software Development & Integration
+    - capability: 3.3 Software Risk Management
     key: SA-11
   - categories:
-    - pillar: 3.2 Secure Software Development & Integration
-    - pillar: 3.3 Software Risk Management
+    - capability: 3.2 Secure Software Development & Integration
+    - capability: 3.3 Software Risk Management
     key: SA-11(1)
   - categories:
-    - pillar: 3.2 Secure Software Development & Integration
-    - pillar: 3.3 Software Risk Management
+    - capability: 3.2 Secure Software Development & Integration
+    - capability: 3.3 Software Risk Management
     key: SA-11(4)
   - categories:
-    - pillar: 3.2 Secure Software Development & Integration
-    - pillar: 3.3 Software Risk Management
+    - capability: 3.2 Secure Software Development & Integration
+    - capability: 3.3 Software Risk Management
     key: SA-11(8)
   - categories:
-    - pillar: 3.2 Secure Software Development & Integration
-    - pillar: 3.3 Software Risk Management
+    - capability: 3.2 Secure Software Development & Integration
+    - capability: 3.3 Software Risk Management
     key: SA-11(9)
   - categories:
-    - pillar: 3.2 Secure Software Development & Integration
-    - pillar: 3.3 Software Risk Management
+    - capability: 3.2 Secure Software Development & Integration
+    - capability: 3.3 Software Risk Management
     key: SA-15
   - categories:
-    - pillar: 3.3 Software Risk Management
+    - capability: 3.3 Software Risk Management
     key: SA-15(1)
   - categories:
-    - pillar: 3.2 Secure Software Development & Integration
+    - capability: 3.2 Secure Software Development & Integration
     key: SA-15(2)
   - categories:
-    - pillar: 3.2 Secure Software Development & Integration
-    - pillar: 3.3 Software Risk Management
+    - capability: 3.2 Secure Software Development & Integration
+    - capability: 3.3 Software Risk Management
     key: SA-15(7)
   - categories: []
     key: SA-17
   - categories:
-    - pillar: 3.2 Secure Software Development & Integration
+    - capability: 3.2 Secure Software Development & Integration
     key: SA-17(7)
   - categories: []
     key: SC-7
   - categories:
-    - pillar: 3.4 Resource Authorization & Integration
+    - capability: 3.4 Resource Authorization & Integration
     key: SC-7(8)
   - categories:
-    - pillar: 3.4 Resource Authorization & Integration
+    - capability: 3.4 Resource Authorization & Integration
     key: SC-7(11)
   - categories:
-    - pillar: 3.4 Resource Authorization & Integration
+    - capability: 3.4 Resource Authorization & Integration
     key: SC-7(16)
   - categories:
-    - pillar: 3.2 Secure Software Development & Integration
+    - capability: 3.2 Secure Software Development & Integration
     key: SC-7(17)
   - categories:
-    - pillar: 3.4 Resource Authorization & Integration
+    - capability: 3.4 Resource Authorization & Integration
     key: SC-10
   - categories:
-    - pillar: 3.4 Resource Authorization & Integration
+    - capability: 3.4 Resource Authorization & Integration
     key: SC-16
   - categories:
-    - pillar: 3.4 Resource Authorization & Integration
+    - capability: 3.4 Resource Authorization & Integration
     key: SC-16(1)
   - categories:
-    - pillar: 3.4 Resource Authorization & Integration
+    - capability: 3.4 Resource Authorization & Integration
     key: SC-16(2)
   - categories:
-    - pillar: 3.4 Resource Authorization & Integration
+    - capability: 3.4 Resource Authorization & Integration
     key: SC-16(3)
   - categories:
-    - pillar: 3.4 Resource Authorization & Integration
+    - capability: 3.4 Resource Authorization & Integration
     key: SC-23
   - categories:
-    - pillar: 3.4 Resource Authorization & Integration
+    - capability: 3.4 Resource Authorization & Integration
     key: SC-23(5)
   - categories:
-    - pillar: 3.2 Secure Software Development & Integration
+    - capability: 3.2 Secure Software Development & Integration
     key: SC-27
   - categories:
-    - pillar: 3.4 Resource Authorization & Integration
+    - capability: 3.4 Resource Authorization & Integration
     key: SC-30
   - categories:
-    - pillar: 3.2 Secure Software Development & Integration
-    - pillar: 3.3 Software Risk Management
+    - capability: 3.2 Secure Software Development & Integration
+    - capability: 3.3 Software Risk Management
     key: SC-45
   - categories:
-    - pillar: 3.2 Secure Software Development & Integration
-    - pillar: 3.3 Software Risk Management
+    - capability: 3.2 Secure Software Development & Integration
+    - capability: 3.3 Software Risk Management
     key: SC-45(1)
   - categories:
-    - pillar: 3.2 Secure Software Development & Integration
-    - pillar: 3.3 Software Risk Management
+    - capability: 3.2 Secure Software Development & Integration
+    - capability: 3.3 Software Risk Management
     key: SI-2
   - categories:
-    - pillar: 3.2 Secure Software Development & Integration
+    - capability: 3.2 Secure Software Development & Integration
     key: SI-2(2)
   - categories:
-    - pillar: 3.2 Secure Software Development & Integration
+    - capability: 3.2 Secure Software Development & Integration
     key: SI-2(4)
   - categories:
-    - pillar: 3.2 Secure Software Development & Integration
+    - capability: 3.2 Secure Software Development & Integration
     key: SI-2(5)
   - categories: []
     key: SI-7
   - categories:
-    - pillar: 3.2 Secure Software Development & Integration
+    - capability: 3.2 Secure Software Development & Integration
     key: SI-7(17)
   - categories:
-    - pillar: 3.2 Secure Software Development & Integration
+    - capability: 3.2 Secure Software Development & Integration
     key: SI-10
   - categories:
-    - pillar: 3.2 Secure Software Development & Integration
+    - capability: 3.2 Secure Software Development & Integration
     key: SI-10(2)
   - categories:
-    - pillar: 3.2 Secure Software Development & Integration
+    - capability: 3.2 Secure Software Development & Integration
     key: SI-10(4)
   - categories:
-    - pillar: 3.2 Secure Software Development & Integration
-    - pillar: 3.4 Resource Authorization & Integration
+    - capability: 3.2 Secure Software Development & Integration
+    - capability: 3.4 Resource Authorization & Integration
     key: SI-10(5)
   - categories:
-    - pillar: 3.2 Secure Software Development & Integration
+    - capability: 3.2 Secure Software Development & Integration
     key: SI-10(6)
   - categories:
-    - pillar: 3.2 Secure Software Development & Integration
+    - capability: 3.2 Secure Software Development & Integration
     key: SI-11
   - categories:
-    - pillar: 3.2 Secure Software Development & Integration
+    - capability: 3.2 Secure Software Development & Integration
     key: SI-14
   - categories:
-    - pillar: 3.2 Secure Software Development & Integration
+    - capability: 3.2 Secure Software Development & Integration
     key: SI-15
   - categories:
-    - pillar: 3.2 Secure Software Development & Integration
+    - capability: 3.2 Secure Software Development & Integration
     key: SI-23
   - categories:
-    - pillar: 3.3 Software Risk Management
+    - capability: 3.3 Software Risk Management
     key: SR-3
   - categories: []
     key: SR-4
   - categories:
-    - pillar: 3.3 Software Risk Management
+    - capability: 3.3 Software Risk Management
     key: SR-4(3)
   - categories:
-    - pillar: 3.3 Software Risk Management
+    - capability: 3.3 Software Risk Management
     key: SR-4(4)
   - categories:
-    - pillar: 3.3 Software Risk Management
+    - capability: 3.3 Software Risk Management
     key: SR-9
   - categories:
-    - pillar: 3.3 Software Risk Management
+    - capability: 3.3 Software Risk Management
     key: SR-10
   - categories:
-    - pillar: 3.3 Software Risk Management
+    - capability: 3.3 Software Risk Management
     key: SR-11
   name: Appendix E - Application & Workload Pillar Overlay
 - mappings:
   - categories:
-    - pillar: 4.5 Data Encryption & Rights Management
+    - capability: 4.5 Data Encryption & Rights Management
     key: AC-3
   - categories:
-    - pillar: 4.5 Data Encryption & Rights Management
+    - capability: 4.5 Data Encryption & Rights Management
     key: AC-3(11)
   - categories:
-    - pillar: 4.5 Data Encryption & Rights Management
+    - capability: 4.5 Data Encryption & Rights Management
     key: AC-3(13)
   - categories:
-    - pillar: 4.6 Data Loss Prevention
+    - capability: 4.6 Data Loss Prevention
     key: AC-4
   - categories:
-    - pillar: 4.6 Data Loss Prevention
-    - pillar: 4.7 Data Access Control
+    - capability: 4.6 Data Loss Prevention
+    - capability: 4.7 Data Access Control
     key: AC-4(1)
   - categories:
-    - pillar: 4.6 Data Loss Prevention
+    - capability: 4.6 Data Loss Prevention
     key: AC-4(3)
   - categories:
-    - pillar: 4.6 Data Loss Prevention
+    - capability: 4.6 Data Loss Prevention
     key: AC-4(6)
   - categories:
-    - pillar: 4.6 Data Loss Prevention
+    - capability: 4.6 Data Loss Prevention
     key: AC-4(8)
   - categories:
-    - pillar: 4.6 Data Loss Prevention
+    - capability: 4.6 Data Loss Prevention
     key: AC-4(10)
   - categories:
-    - pillar: 4.6 Data Loss Prevention
+    - capability: 4.6 Data Loss Prevention
     key: AC-4(11)
   - categories:
-    - pillar: 4.6 Data Loss Prevention
+    - capability: 4.6 Data Loss Prevention
     key: AC-4(12)
   - categories:
-    - pillar: 4.6 Data Loss Prevention
+    - capability: 4.6 Data Loss Prevention
     key: AC-4(19)
   - categories:
-    - pillar: 4.6 Data Loss Prevention
+    - capability: 4.6 Data Loss Prevention
     key: AC-4(23)
   - categories:
-    - pillar: 4.4 Data Monitoring and Sensing
-    - pillar: 4.6 Data Loss Prevention
+    - capability: 4.4 Data Monitoring and Sensing
+    - capability: 4.6 Data Loss Prevention
     key: AC-4(26)
   - categories:
-    - pillar: 4.2 DoD Enterprise Data Governance
-    - pillar: 4.3 Data Labeling and Tagging
+    - capability: 4.2 DoD Enterprise Data Governance
+    - capability: 4.3 Data Labeling and Tagging
     key: AC-16
   - categories:
-    - pillar: 4.2 DoD Enterprise Data Governance
-    - pillar: 4.3 Data Labeling and Tagging
+    - capability: 4.2 DoD Enterprise Data Governance
+    - capability: 4.3 Data Labeling and Tagging
     key: AC-16(1)
   - categories:
-    - pillar: 4.2 DoD Enterprise Data Governance
-    - pillar: 4.3 Data Labeling and Tagging
+    - capability: 4.2 DoD Enterprise Data Governance
+    - capability: 4.3 Data Labeling and Tagging
     key: AC-16(2)
   - categories:
-    - pillar: 4.2 DoD Enterprise Data Governance
-    - pillar: 4.3 Data Labeling and Tagging
+    - capability: 4.2 DoD Enterprise Data Governance
+    - capability: 4.3 Data Labeling and Tagging
     key: AC-16(3)
   - categories:
-    - pillar: 4.2 DoD Enterprise Data Governance
-    - pillar: 4.3 Data Labeling and Tagging
+    - capability: 4.2 DoD Enterprise Data Governance
+    - capability: 4.3 Data Labeling and Tagging
     key: AC-16(4)
   - categories:
-    - pillar: 4.2 DoD Enterprise Data Governance
-    - pillar: 4.3 Data Labeling and Tagging
+    - capability: 4.2 DoD Enterprise Data Governance
+    - capability: 4.3 Data Labeling and Tagging
     key: AC-16(6)
   - categories:
-    - pillar: 4.2 DoD Enterprise Data Governance
-    - pillar: 4.3 Data Labeling and Tagging
+    - capability: 4.2 DoD Enterprise Data Governance
+    - capability: 4.3 Data Labeling and Tagging
     key: AC-16(7)
   - categories:
-    - pillar: 4.2 DoD Enterprise Data Governance
-    - pillar: 4.3 Data Labeling and Tagging
+    - capability: 4.2 DoD Enterprise Data Governance
+    - capability: 4.3 Data Labeling and Tagging
     key: AC-16(8)
   - categories:
-    - pillar: 4.2 DoD Enterprise Data Governance
-    - pillar: 4.3 Data Labeling and Tagging
+    - capability: 4.2 DoD Enterprise Data Governance
+    - capability: 4.3 Data Labeling and Tagging
     key: AC-16(9)
   - categories:
-    - pillar: 4.2 DoD Enterprise Data Governance
-    - pillar: 4.3 Data Labeling and Tagging
+    - capability: 4.2 DoD Enterprise Data Governance
+    - capability: 4.3 Data Labeling and Tagging
     key: AC-16(10)
   - categories:
-    - pillar: 4.5 Data Encryption & Rights Management
+    - capability: 4.5 Data Encryption & Rights Management
     key: AC-21
   - categories:
-    - pillar: 4.5 Data Encryption & Rights Management
+    - capability: 4.5 Data Encryption & Rights Management
     key: AC-21(1)
   - categories:
-    - pillar: 4.4 Data Monitoring and Sensing
-    - pillar: 4.5 Data Encryption & Rights Management
+    - capability: 4.4 Data Monitoring and Sensing
+    - capability: 4.5 Data Encryption & Rights Management
     key: AC-23
   - categories:
-    - pillar: 4.5 Data Encryption & Rights Management
+    - capability: 4.5 Data Encryption & Rights Management
     key: AC-24
   - categories:
-    - pillar: 4.5 Data Encryption & Rights Management
+    - capability: 4.5 Data Encryption & Rights Management
     key: AC-24(1)
   - categories:
-    - pillar: 4.3 Data Labeling and Tagging
-    - pillar: 4.4 Data Monitoring and Sensing
-    - pillar: 4.5 Data Encryption & Rights Management
-    - pillar: 4.6 Data Loss Prevention
+    - capability: 4.3 Data Labeling and Tagging
+    - capability: 4.4 Data Monitoring and Sensing
+    - capability: 4.5 Data Encryption & Rights Management
+    - capability: 4.6 Data Loss Prevention
     key: AU-2
   - categories:
-    - pillar: 4.3 Data Labeling and Tagging
-    - pillar: 4.4 Data Monitoring and Sensing
-    - pillar: 4.5 Data Encryption & Rights Management
-    - pillar: 4.6 Data Loss Prevention
+    - capability: 4.3 Data Labeling and Tagging
+    - capability: 4.4 Data Monitoring and Sensing
+    - capability: 4.5 Data Encryption & Rights Management
+    - capability: 4.6 Data Loss Prevention
     key: AU-3
   - categories:
-    - pillar: 4.4 Data Monitoring and Sensing
+    - capability: 4.4 Data Monitoring and Sensing
     key: AU-6
   - categories:
-    - pillar: 4.4 Data Monitoring and Sensing
+    - capability: 4.4 Data Monitoring and Sensing
     key: AU-6(3)
   - categories:
-    - pillar: 4.4 Data Monitoring and Sensing
+    - capability: 4.4 Data Monitoring and Sensing
     key: AU-6(4)
   - categories:
-    - pillar: 4.3 Data Labeling and Tagging
-    - pillar: 4.4 Data Monitoring and Sensing
-    - pillar: 4.5 Data Encryption & Rights Management
-    - pillar: 4.6 Data Loss Prevention
+    - capability: 4.3 Data Labeling and Tagging
+    - capability: 4.4 Data Monitoring and Sensing
+    - capability: 4.5 Data Encryption & Rights Management
+    - capability: 4.6 Data Loss Prevention
     key: AU-8
   - categories:
-    - pillar: 4.3 Data Labeling and Tagging
-    - pillar: 4.4 Data Monitoring and Sensing
-    - pillar: 4.5 Data Encryption & Rights Management
-    - pillar: 4.6 Data Loss Prevention
+    - capability: 4.3 Data Labeling and Tagging
+    - capability: 4.4 Data Monitoring and Sensing
+    - capability: 4.5 Data Encryption & Rights Management
+    - capability: 4.6 Data Loss Prevention
     key: AU-9
   - categories:
-    - pillar: 4.3 Data Labeling and Tagging
-    - pillar: 4.4 Data Monitoring and Sensing
-    - pillar: 4.5 Data Encryption & Rights Management
-    - pillar: 4.6 Data Loss Prevention
+    - capability: 4.3 Data Labeling and Tagging
+    - capability: 4.4 Data Monitoring and Sensing
+    - capability: 4.5 Data Encryption & Rights Management
+    - capability: 4.6 Data Loss Prevention
     key: AU-9(4)
   - categories:
-    - pillar: 4.3 Data Labeling and Tagging
-    - pillar: 4.4 Data Monitoring and Sensing
-    - pillar: 4.5 Data Encryption & Rights Management
-    - pillar: 4.6 Data Loss Prevention
+    - capability: 4.3 Data Labeling and Tagging
+    - capability: 4.4 Data Monitoring and Sensing
+    - capability: 4.5 Data Encryption & Rights Management
+    - capability: 4.6 Data Loss Prevention
     key: AU-10
   - categories:
-    - pillar: 4.3 Data Labeling and Tagging
-    - pillar: 4.4 Data Monitoring and Sensing
-    - pillar: 4.5 Data Encryption & Rights Management
-    - pillar: 4.6 Data Loss Prevention
+    - capability: 4.3 Data Labeling and Tagging
+    - capability: 4.4 Data Monitoring and Sensing
+    - capability: 4.5 Data Encryption & Rights Management
+    - capability: 4.6 Data Loss Prevention
     key: AU-10(1)
   - categories:
-    - pillar: 4.3 Data Labeling and Tagging
-    - pillar: 4.4 Data Monitoring and Sensing
-    - pillar: 4.5 Data Encryption & Rights Management
-    - pillar: 4.6 Data Loss Prevention
+    - capability: 4.3 Data Labeling and Tagging
+    - capability: 4.4 Data Monitoring and Sensing
+    - capability: 4.5 Data Encryption & Rights Management
+    - capability: 4.6 Data Loss Prevention
     key: AU-12
   - categories:
-    - pillar: 4.2 DoD Enterprise Data Governance
-    - pillar: 4.5 Data Encryption & Rights Management
+    - capability: 4.2 DoD Enterprise Data Governance
+    - capability: 4.5 Data Encryption & Rights Management
     key: PT-2
   - categories:
-    - pillar: 4.2 DoD Enterprise Data Governance
+    - capability: 4.2 DoD Enterprise Data Governance
     key: PT-2(1)
   - categories:
-    - pillar: 4.2 DoD Enterprise Data Governance
-    - pillar: 4.5 Data Encryption & Rights Management
-    - pillar: 4.6 Data Loss Prevention
+    - capability: 4.2 DoD Enterprise Data Governance
+    - capability: 4.5 Data Encryption & Rights Management
+    - capability: 4.6 Data Loss Prevention
     key: PT-2(2)
   - categories:
-    - pillar: 4.2 DoD Enterprise Data Governance
+    - capability: 4.2 DoD Enterprise Data Governance
     key: PT-3
   - categories:
-    - pillar: 4.2 DoD Enterprise Data Governance
+    - capability: 4.2 DoD Enterprise Data Governance
     key: PT-3(1)
   - categories:
-    - pillar: 4.2 DoD Enterprise Data Governance
+    - capability: 4.2 DoD Enterprise Data Governance
     key: PT-3(2)
   - categories:
-    - pillar: 4.1 Data Catalog Risk Alignment
+    - capability: 4.1 Data Catalog Risk Alignment
     key: RA-3
   - categories: []
     key: SC-7
   - categories:
-    - pillar: 4.6 Data Loss Prevention
+    - capability: 4.6 Data Loss Prevention
     key: SC-7(10)
   - categories:
-    - pillar: 4.5 Data Encryption & Rights Management
+    - capability: 4.5 Data Encryption & Rights Management
     key: SC-8
   - categories:
-    - pillar: 4.5 Data Encryption & Rights Management
+    - capability: 4.5 Data Encryption & Rights Management
     key: SC-8(1)
   - categories:
-    - pillar: 4.5 Data Encryption & Rights Management
+    - capability: 4.5 Data Encryption & Rights Management
     key: SC-12
   - categories:
-    - pillar: 4.5 Data Encryption & Rights Management
+    - capability: 4.5 Data Encryption & Rights Management
     key: SC-12(1)
   - categories:
-    - pillar: 4.5 Data Encryption & Rights Management
+    - capability: 4.5 Data Encryption & Rights Management
     key: SC-12(2)
   - categories:
-    - pillar: 4.5 Data Encryption & Rights Management
+    - capability: 4.5 Data Encryption & Rights Management
     key: SC-12(3)
   - categories:
-    - pillar: 4.5 Data Encryption & Rights Management
+    - capability: 4.5 Data Encryption & Rights Management
     key: SC-13
   - categories:
-    - pillar: 4.2 DoD Enterprise Data Governance
-    - pillar: 4.3 Data Labeling and Tagging
+    - capability: 4.2 DoD Enterprise Data Governance
+    - capability: 4.3 Data Labeling and Tagging
     key: SC-16
   - categories:
-    - pillar: 4.2 DoD Enterprise Data Governance
-    - pillar: 4.3 Data Labeling and Tagging
+    - capability: 4.2 DoD Enterprise Data Governance
+    - capability: 4.3 Data Labeling and Tagging
     key: SC-16(1)
   - categories:
-    - pillar: 4.2 DoD Enterprise Data Governance
-    - pillar: 4.3 Data Labeling and Tagging
+    - capability: 4.2 DoD Enterprise Data Governance
+    - capability: 4.3 Data Labeling and Tagging
     key: SC-16(2)
   - categories:
-    - pillar: 4.2 DoD Enterprise Data Governance
-    - pillar: 4.3 Data Labeling and Tagging
+    - capability: 4.2 DoD Enterprise Data Governance
+    - capability: 4.3 Data Labeling and Tagging
     key: SC-16(3)
   - categories:
-    - pillar: 4.5 Data Encryption & Rights Management
+    - capability: 4.5 Data Encryption & Rights Management
     key: SC-28
   - categories:
-    - pillar: 4.5 Data Encryption & Rights Management
+    - capability: 4.5 Data Encryption & Rights Management
     key: SC-28(1)
   - categories:
-    - pillar: 4.5 Data Encryption & Rights Management
+    - capability: 4.5 Data Encryption & Rights Management
     key: SC-28(3)
   - categories:
-    - pillar: 4.3 Data Labeling and Tagging
-    - pillar: 4.4 Data Monitoring and Sensing
-    - pillar: 4.5 Data Encryption & Rights Management
-    - pillar: 4.6 Data Loss Prevention
+    - capability: 4.3 Data Labeling and Tagging
+    - capability: 4.4 Data Monitoring and Sensing
+    - capability: 4.5 Data Encryption & Rights Management
+    - capability: 4.6 Data Loss Prevention
     key: SC-45
   - categories:
-    - pillar: 4.3 Data Labeling and Tagging
-    - pillar: 4.4 Data Monitoring and Sensing
-    - pillar: 4.5 Data Encryption & Rights Management
-    - pillar: 4.6 Data Loss Prevention
+    - capability: 4.3 Data Labeling and Tagging
+    - capability: 4.4 Data Monitoring and Sensing
+    - capability: 4.5 Data Encryption & Rights Management
+    - capability: 4.6 Data Loss Prevention
     key: SC-45(1)
   - categories: []
     key: SI-4
   - categories:
-    - pillar: 4.6 Data Loss Prevention
+    - capability: 4.6 Data Loss Prevention
     key: SI-4(10)
   - categories:
-    - pillar: 4.6 Data Loss Prevention
+    - capability: 4.6 Data Loss Prevention
     key: SI-4(18)
   - categories: []
     key: SI-18
   - categories:
-    - pillar: 4.3 Data Labeling and Tagging
+    - capability: 4.3 Data Labeling and Tagging
     key: SI-18(2)
   - categories:
-    - pillar: 4.5 Data Encryption & Rights Management
-    - pillar: 4.6 Data Loss Prevention
+    - capability: 4.5 Data Encryption & Rights Management
+    - capability: 4.6 Data Loss Prevention
     key: SI-20
   name: Appendix F - Data Pillar Overlay
 - mappings:
   - categories:
-    - pillar: 5.2 Software Defined Networking (SDN)
+    - capability: 5.2 Software Defined Networking (SDN)
     key: AC-3
   - categories:
-    - pillar: 5.2 Software Defined Networking (SDN)
+    - capability: 5.2 Software Defined Networking (SDN)
     key: AC-3(7)
   - categories:
-    - pillar: 5.2 Software Defined Networking (SDN)
+    - capability: 5.2 Software Defined Networking (SDN)
     key: AC-3(13)
   - categories:
-    - pillar: 5.1 Data Flow Mapping
-    - pillar: 5.2 Software Defined Networking (SDN)
-    - pillar: 5.3 Macro-segmentation
-    - pillar: 5.4 Micro-segmentation
+    - capability: 5.1 Data Flow Mapping
+    - capability: 5.2 Software Defined Networking (SDN)
+    - capability: 5.3 Macro-segmentation
+    - capability: 5.4 Micro-segmentation
     key: AC-4
   - categories:
-    - pillar: 5.1 Data Flow Mapping
-    - pillar: 5.4 Micro-segmentation
+    - capability: 5.1 Data Flow Mapping
+    - capability: 5.4 Micro-segmentation
     key: AC-4(1)
   - categories:
-    - pillar: 5.4 Micro-segmentation
+    - capability: 5.4 Micro-segmentation
     key: AC-4(2)
   - categories:
-    - pillar: 5.1 Data Flow Mapping
-    - pillar: 5.4 Micro-segmentation
+    - capability: 5.1 Data Flow Mapping
+    - capability: 5.4 Micro-segmentation
     key: AC-4(3)
   - categories:
-    - pillar: 5.1 Data Flow Mapping
+    - capability: 5.1 Data Flow Mapping
     key: AC-4(6)
   - categories:
-    - pillar: 5.1 Data Flow Mapping
+    - capability: 5.1 Data Flow Mapping
     key: AC-4(8)
   - categories:
-    - pillar: 5.1 Data Flow Mapping
+    - capability: 5.1 Data Flow Mapping
     key: AC-4(11)
   - categories:
-    - pillar: 5.1 Data Flow Mapping
+    - capability: 5.1 Data Flow Mapping
     key: AC-4(12)
   - categories:
-    - pillar: 5.4 Micro-segmentation
+    - capability: 5.4 Micro-segmentation
     key: AC-4(17)
   - categories:
-    - pillar: 5.1 Data Flow Mapping
+    - capability: 5.1 Data Flow Mapping
     key: AC-4(19)
   - categories:
-    - pillar: 5.2 Software Defined Networking (SDN)
-    - pillar: 5.3 Macro-segmentation
+    - capability: 5.2 Software Defined Networking (SDN)
+    - capability: 5.3 Macro-segmentation
     key: AC-4(21)
   - categories:
-    - pillar: 5.2 Software Defined Networking (SDN)
-    - pillar: 5.3 Macro-segmentation
+    - capability: 5.2 Software Defined Networking (SDN)
+    - capability: 5.3 Macro-segmentation
     key: CA-9
   - categories:
-    - pillar: 5.3 Macro-segmentation
+    - capability: 5.3 Macro-segmentation
     key: CA-9(1)
   - categories:
-    - pillar: 5.1 Data Flow Mapping
+    - capability: 5.1 Data Flow Mapping
     key: CM-12
   - categories:
-    - pillar: 5.2 Software Defined Networking (SDN)
-    - pillar: 5.3 Macro-segmentation
+    - capability: 5.2 Software Defined Networking (SDN)
+    - capability: 5.3 Macro-segmentation
     key: SC-2
   - categories:
-    - pillar: 5.2 Software Defined Networking (SDN)
-    - pillar: 5.3 Macro-segmentation
+    - capability: 5.2 Software Defined Networking (SDN)
+    - capability: 5.3 Macro-segmentation
     key: SC-2(1)
   - categories:
-    - pillar: 5.4 Micro-segmentation
+    - capability: 5.4 Micro-segmentation
     key: SC-4
   - categories:
-    - pillar: 5.3 Macro-segmentation
+    - capability: 5.3 Macro-segmentation
     key: SC-7
   - categories:
-    - pillar: 5.3 Macro-segmentation
+    - capability: 5.3 Macro-segmentation
     key: SC-7(4)
   - categories:
-    - pillar: 5.3 Macro-segmentation
+    - capability: 5.3 Macro-segmentation
     key: SC-7(5)
   - categories:
-    - pillar: 5.4 Micro-segmentation
+    - capability: 5.4 Micro-segmentation
     key: SC-7(12)
   - categories:
-    - pillar: 5.2 Software Defined Networking (SDN)
+    - capability: 5.2 Software Defined Networking (SDN)
     key: SC-7(15)
   - categories:
-    - pillar: 5.3 Macro-segmentation
+    - capability: 5.3 Macro-segmentation
     key: SC-7(18)
   - categories:
-    - pillar: 5.3 Macro-segmentation
+    - capability: 5.3 Macro-segmentation
     key: SC-7(21)
   - categories:
-    - pillar: 5.3 Macro-segmentation
+    - capability: 5.3 Macro-segmentation
     key: SC-7(22)
   - categories:
-    - pillar: 5.3 Macro-segmentation
+    - capability: 5.3 Macro-segmentation
     key: SC-7(29)
   - categories:
-    - pillar: 5.4 Micro-segmentation
+    - capability: 5.4 Micro-segmentation
     key: SC-8
   - categories:
-    - pillar: 5.4 Micro-segmentation
+    - capability: 5.4 Micro-segmentation
     key: SC-8(1)
   - categories:
-    - pillar: 5.4 Micro-segmentation
+    - capability: 5.4 Micro-segmentation
     key: SC-13
   - categories:
-    - pillar: 5.4 Micro-segmentation
+    - capability: 5.4 Micro-segmentation
     key: SC-39
   - categories:
-    - pillar: 5.4 Micro-segmentation
+    - capability: 5.4 Micro-segmentation
     key: SC-39(2)
   - categories: []
     key: SI-4
   - categories:
-    - pillar: 5.2 Software Defined Networking (SDN)
+    - capability: 5.2 Software Defined Networking (SDN)
     key: SI-4(3)
   - categories:
-    - pillar: 5.4 Micro-segmentation
+    - capability: 5.4 Micro-segmentation
     key: SI-4(10)
   - categories:
-    - pillar: 5.2 Software Defined Networking (SDN)
+    - capability: 5.2 Software Defined Networking (SDN)
     key: SI-4(25)
   name: Appendix G - Network & Environment Pillar Overlay
 - mappings:
   - categories:
-    - pillar: 6.1 Policy Decision Point & Policy Orchestration
+    - capability: 6.1 Policy Decision Point & Policy Orchestration
     key: AC-1
   - categories:
-    - pillar: 6.1 Policy Decision Point & Policy Orchestration
+    - capability: 6.1 Policy Decision Point & Policy Orchestration
     key: AC-2
   - categories:
-    - pillar: 6.1 Policy Decision Point & Policy Orchestration
+    - capability: 6.1 Policy Decision Point & Policy Orchestration
     key: AC-2(11)
   - categories: []
     key: AC-4
   - categories:
-    - pillar: 6.1 Policy Decision Point & Policy Orchestration
+    - capability: 6.1 Policy Decision Point & Policy Orchestration
     key: AC-4(3)
   - categories:
-    - pillar: 6.1 Policy Decision Point & Policy Orchestration
+    - capability: 6.1 Policy Decision Point & Policy Orchestration
     key: AC-4(6)
   - categories:
-    - pillar: 6.1 Policy Decision Point & Policy Orchestration
+    - capability: 6.1 Policy Decision Point & Policy Orchestration
     key: AC-4(8)
   - categories:
-    - pillar: 6.1 Policy Decision Point & Policy Orchestration
+    - capability: 6.1 Policy Decision Point & Policy Orchestration
     key: AC-4(10)
   - categories:
-    - pillar: 6.1 Policy Decision Point & Policy Orchestration
+    - capability: 6.1 Policy Decision Point & Policy Orchestration
     key: AC-4(11)
   - categories:
-    - pillar: 6.1 Policy Decision Point & Policy Orchestration
+    - capability: 6.1 Policy Decision Point & Policy Orchestration
     key: AC-4(19)
   - categories:
-    - pillar: 6.1 Policy Decision Point & Policy Orchestration
+    - capability: 6.1 Policy Decision Point & Policy Orchestration
     key: AC-4(29)
   - categories:
-    - pillar: 6.1 Policy Decision Point & Policy Orchestration
+    - capability: 6.1 Policy Decision Point & Policy Orchestration
     key: AC-6
   - categories:
-    - pillar: 6.1 Policy Decision Point & Policy Orchestration
-    - pillar: 6.3 Machine Learning
+    - capability: 6.1 Policy Decision Point & Policy Orchestration
+    - capability: 6.3 Machine Learning
     key: AC-16
   - categories:
-    - pillar: 6.1 Policy Decision Point & Policy Orchestration
-    - pillar: 6.3 Machine Learning
+    - capability: 6.1 Policy Decision Point & Policy Orchestration
+    - capability: 6.3 Machine Learning
     key: AC-16(1)
   - categories:
-    - pillar: 6.1 Policy Decision Point & Policy Orchestration
-    - pillar: 6.3 Machine Learning
+    - capability: 6.1 Policy Decision Point & Policy Orchestration
+    - capability: 6.3 Machine Learning
     key: AC-16(2)
   - categories:
-    - pillar: 6.1 Policy Decision Point & Policy Orchestration
-    - pillar: 6.3 Machine Learning
+    - capability: 6.1 Policy Decision Point & Policy Orchestration
+    - capability: 6.3 Machine Learning
     key: AC-16(3)
   - categories:
-    - pillar: 6.1 Policy Decision Point & Policy Orchestration
-    - pillar: 6.3 Machine Learning
+    - capability: 6.1 Policy Decision Point & Policy Orchestration
+    - capability: 6.3 Machine Learning
     key: AC-16(4)
   - categories:
-    - pillar: 6.1 Policy Decision Point & Policy Orchestration
-    - pillar: 6.3 Machine Learning
+    - capability: 6.1 Policy Decision Point & Policy Orchestration
+    - capability: 6.3 Machine Learning
     key: AC-16(6)
   - categories:
-    - pillar: 6.1 Policy Decision Point & Policy Orchestration
-    - pillar: 6.3 Machine Learning
+    - capability: 6.1 Policy Decision Point & Policy Orchestration
+    - capability: 6.3 Machine Learning
     key: AC-16(7)
   - categories:
-    - pillar: 6.3 Machine Learning
+    - capability: 6.3 Machine Learning
     key: AC-16(8)
   - categories:
-    - pillar: 6.1 Policy Decision Point & Policy Orchestration
-    - pillar: 6.3 Machine Learning
+    - capability: 6.1 Policy Decision Point & Policy Orchestration
+    - capability: 6.3 Machine Learning
     key: AC-16(9)
   - categories:
-    - pillar: 6.1 Policy Decision Point & Policy Orchestration
-    - pillar: 6.3 Machine Learning
+    - capability: 6.1 Policy Decision Point & Policy Orchestration
+    - capability: 6.3 Machine Learning
     key: AC-16(10)
   - categories:
-    - pillar: 6.1 Policy Decision Point & Policy Orchestration
+    - capability: 6.1 Policy Decision Point & Policy Orchestration
     key: AC-24
   - categories:
-    - pillar: 6.1 Policy Decision Point & Policy Orchestration
+    - capability: 6.1 Policy Decision Point & Policy Orchestration
     key: AC-24(1)
   - categories:
-    - pillar: 6.3 Machine Learning
-    - pillar: 6.5 Security Orchestration, Automation & Response
+    - capability: 6.3 Machine Learning
+    - capability: 6.5 Security Orchestration, Automation & Response
     key: AU-2
   - categories:
-    - pillar: 6.3 Machine Learning
-    - pillar: 6.5 Security Orchestration, Automation & Response
+    - capability: 6.3 Machine Learning
+    - capability: 6.5 Security Orchestration, Automation & Response
     key: AU-3
   - categories:
-    - pillar: 6.3 Machine Learning
+    - capability: 6.3 Machine Learning
     key: AU-8
   - categories:
-    - pillar: 6.3 Machine Learning
+    - capability: 6.3 Machine Learning
     key: AU-9
   - categories:
-    - pillar: 6.3 Machine Learning
+    - capability: 6.3 Machine Learning
     key: AU-9(4)
   - categories:
-    - pillar: 6.3 Machine Learning
+    - capability: 6.3 Machine Learning
     key: AU-10
   - categories:
-    - pillar: 6.3 Machine Learning
+    - capability: 6.3 Machine Learning
     key: AU-10(1)
   - categories:
-    - pillar: 6.3 Machine Learning
-    - pillar: 6.5 Security Orchestration, Automation & Response
+    - capability: 6.3 Machine Learning
+    - capability: 6.5 Security Orchestration, Automation & Response
     key: AU-12
   - categories:
-    - pillar: 6.1 Policy Decision Point & Policy Orchestration
+    - capability: 6.1 Policy Decision Point & Policy Orchestration
     key: IA-1
   - categories:
-    - pillar: 6.2 Critical Process Automation
-    - pillar: 6.5 Security Orchestration, Automation & Response
-    - pillar: 6.7 Security Operations Center & Incident Response
+    - capability: 6.2 Critical Process Automation
+    - capability: 6.5 Security Orchestration, Automation & Response
+    - capability: 6.7 Security Operations Center & Incident Response
     key: IR-4
   - categories:
-    - pillar: 6.2 Critical Process Automation
-    - pillar: 6.4 Artificial Intelligence
-    - pillar: 6.5 Security Orchestration, Automation & Response
-    - pillar: 6.7 Security Operations Center & Incident Response
+    - capability: 6.2 Critical Process Automation
+    - capability: 6.4 Artificial Intelligence
+    - capability: 6.5 Security Orchestration, Automation & Response
+    - capability: 6.7 Security Operations Center & Incident Response
     key: IR-4(1)
   - categories:
-    - pillar: 6.5 Security Orchestration, Automation & Response
-    - pillar: 6.7 Security Operations Center & Incident Response
+    - capability: 6.5 Security Orchestration, Automation & Response
+    - capability: 6.7 Security Operations Center & Incident Response
     key: IR-4(2)
   - categories:
-    - pillar: 6.5 Security Orchestration, Automation & Response
-    - pillar: 6.7 Security Operations Center & Incident Response
+    - capability: 6.5 Security Orchestration, Automation & Response
+    - capability: 6.7 Security Operations Center & Incident Response
     key: IR-4(9)
   - categories:
-    - pillar: 6.7 Security Operations Center & Incident Response
+    - capability: 6.7 Security Operations Center & Incident Response
     key: IR-4(14)
   - categories:
-    - pillar: 6.7 Security Operations Center & Incident Response
+    - capability: 6.7 Security Operations Center & Incident Response
     key: IR-5
   - categories:
-    - pillar: 6.7 Security Operations Center & Incident Response
+    - capability: 6.7 Security Operations Center & Incident Response
     key: IR-5(1)
   - categories:
-    - pillar: 6.7 Security Operations Center & Incident Response
+    - capability: 6.7 Security Operations Center & Incident Response
     key: IR-6
   - categories:
-    - pillar: 6.7 Security Operations Center & Incident Response
+    - capability: 6.7 Security Operations Center & Incident Response
     key: IR-6(1)
   - categories:
-    - pillar: 6.7 Security Operations Center & Incident Response
+    - capability: 6.7 Security Operations Center & Incident Response
     key: IR-6(2)
   - categories:
-    - pillar: 6.7 Security Operations Center & Incident Response
+    - capability: 6.7 Security Operations Center & Incident Response
     key: IR-8
   - categories:
-    - pillar: 6.3 Machine Learning
+    - capability: 6.3 Machine Learning
     key: PT-2
   - categories:
-    - pillar: 6.3 Machine Learning
+    - capability: 6.3 Machine Learning
     key: PT-2(1)
   - categories:
-    - pillar: 6.3 Machine Learning
+    - capability: 6.3 Machine Learning
     key: PT-2(2)
   - categories: []
     key: PT-3
   - categories:
-    - pillar: 6.3 Machine Learning
+    - capability: 6.3 Machine Learning
     key: PT-3(1)
   - categories:
-    - pillar: 6.3 Machine Learning
+    - capability: 6.3 Machine Learning
     key: PT-3(2)
   - categories: []
     key: RA-3
   - categories:
-    - pillar: 6.4 Artificial Intelligence
+    - capability: 6.4 Artificial Intelligence
     key: RA-3(4)
   - categories:
-    - pillar: 6.5 Security Orchestration, Automation & Response
+    - capability: 6.5 Security Orchestration, Automation & Response
     key: RA-7
   - categories: []
     key: SA-17
   - categories:
-    - pillar: 6.5 Security Orchestration, Automation & Response
+    - capability: 6.5 Security Orchestration, Automation & Response
     key: SA-17(8)
   - categories:
-    - pillar: 6.1 Policy Decision Point & Policy Orchestration
-    - pillar: 6.3 Machine Learning
+    - capability: 6.1 Policy Decision Point & Policy Orchestration
+    - capability: 6.3 Machine Learning
     key: SC-16
   - categories:
-    - pillar: 6.1 Policy Decision Point & Policy Orchestration
-    - pillar: 6.3 Machine Learning
+    - capability: 6.1 Policy Decision Point & Policy Orchestration
+    - capability: 6.3 Machine Learning
     key: SC-16(1)
   - categories:
-    - pillar: 6.1 Policy Decision Point & Policy Orchestration
-    - pillar: 6.3 Machine Learning
+    - capability: 6.1 Policy Decision Point & Policy Orchestration
+    - capability: 6.3 Machine Learning
     key: SC-16(2)
   - categories:
-    - pillar: 6.1 Policy Decision Point & Policy Orchestration
-    - pillar: 6.3 Machine Learning
+    - capability: 6.1 Policy Decision Point & Policy Orchestration
+    - capability: 6.3 Machine Learning
     key: SC-16(3)
   - categories:
-    - pillar: 6.3 Machine Learning
-    - pillar: 6.5 Security Orchestration, Automation & Response
+    - capability: 6.3 Machine Learning
+    - capability: 6.5 Security Orchestration, Automation & Response
     key: SC-45
   - categories:
-    - pillar: 6.3 Machine Learning
-    - pillar: 6.5 Security Orchestration, Automation & Response
+    - capability: 6.3 Machine Learning
+    - capability: 6.5 Security Orchestration, Automation & Response
     key: SC-45(1)
   - categories: []
     key: SI-4
   - categories:
-    - pillar: 6.7 Security Operations Center & Incident Response
+    - capability: 6.7 Security Operations Center & Incident Response
     key: SI-4(7)
   - categories: []
     key: SI-7
   - categories:
-    - pillar: 6.7 Security Operations Center & Incident Response
+    - capability: 6.7 Security Operations Center & Incident Response
     key: SI-7(7)
   name: Appendix H - Automation & Orchestration Pillar Overlay
 - mappings:
   - categories: []
     key: AC-2
   - categories:
-    - pillar: 7.6 Automated Dynamic Policies
+    - capability: 7.6 Automated Dynamic Policies
     key: AC-2(6)
   - categories:
-    - pillar: 7.6 Automated Dynamic Policies
+    - capability: 7.6 Automated Dynamic Policies
     key: AC-2(11)
   - categories:
-    - pillar: 7.2 Security Information and Event Management (SIEM)
-    - pillar: 7.3 Common Security and Risk Analytics
-    - pillar: 7.4 User and Entity Behavior Analytics
+    - capability: 7.2 Security Information and Event Management (SIEM)
+    - capability: 7.3 Common Security and Risk Analytics
+    - capability: 7.4 User and Entity Behavior Analytics
     key: AC-2(12)
   - categories:
-    - pillar: 7.6 Automated Dynamic Policies
+    - capability: 7.6 Automated Dynamic Policies
     key: AC-3
   - categories:
-    - pillar: 7.6 Automated Dynamic Policies
+    - capability: 7.6 Automated Dynamic Policies
     key: AC-3(8)
   - categories:
-    - pillar: 7.6 Automated Dynamic Policies
+    - capability: 7.6 Automated Dynamic Policies
     key: AC-3(11)
   - categories:
-    - pillar: 7.6 Automated Dynamic Policies
+    - capability: 7.6 Automated Dynamic Policies
     key: AC-3(13)
   - categories: []
     key: AC-6
   - categories:
-    - pillar: 7.1 Log All Traffic (Network, Data, Apps, Users)
+    - capability: 7.1 Log All Traffic (Network, Data, Apps, Users)
     key: AC-6(9)
   - categories:
-    - pillar: 7.6 Automated Dynamic Policies
+    - capability: 7.6 Automated Dynamic Policies
     key: AC-16
   - categories:
-    - pillar: 7.6 Automated Dynamic Policies
+    - capability: 7.6 Automated Dynamic Policies
     key: AC-16(1)
   - categories:
-    - pillar: 7.6 Automated Dynamic Policies
+    - capability: 7.6 Automated Dynamic Policies
     key: AC-16(2)
   - categories:
-    - pillar: 7.6 Automated Dynamic Policies
+    - capability: 7.6 Automated Dynamic Policies
     key: AC-16(3)
   - categories:
-    - pillar: 7.6 Automated Dynamic Policies
+    - capability: 7.6 Automated Dynamic Policies
     key: AC-16(4)
   - categories:
-    - pillar: 7.6 Automated Dynamic Policies
+    - capability: 7.6 Automated Dynamic Policies
     key: AC-16(6)
   - categories:
-    - pillar: 7.6 Automated Dynamic Policies
+    - capability: 7.6 Automated Dynamic Policies
     key: AC-16(7)
   - categories:
-    - pillar: 7.6 Automated Dynamic Policies
+    - capability: 7.6 Automated Dynamic Policies
     key: AC-16(8)
   - categories:
-    - pillar: 7.6 Automated Dynamic Policies
+    - capability: 7.6 Automated Dynamic Policies
     key: AC-16(9)
   - categories:
-    - pillar: 7.6 Automated Dynamic Policies
+    - capability: 7.6 Automated Dynamic Policies
     key: AC-16(10)
   - categories:
-    - pillar: 7.6 Automated Dynamic Policies
+    - capability: 7.6 Automated Dynamic Policies
     key: AC-17
   - categories:
-    - pillar: 7.6 Automated Dynamic Policies
+    - capability: 7.6 Automated Dynamic Policies
     key: AC-17(1)
   - categories:
-    - pillar: 7.6 Automated Dynamic Policies
+    - capability: 7.6 Automated Dynamic Policies
     key: AC-17(9)
   - categories:
-    - pillar: 7.6 Automated Dynamic Policies
+    - capability: 7.6 Automated Dynamic Policies
     key: AC-24
   - categories:
-    - pillar: 7.6 Automated Dynamic Policies
+    - capability: 7.6 Automated Dynamic Policies
     key: AC-24(1)
   - categories:
-    - pillar: 7.1 Log All Traffic (Network, Data, Apps, Users)
-    - pillar: 7.2 Security Information and Event Management (SIEM)
+    - capability: 7.1 Log All Traffic (Network, Data, Apps, Users)
+    - capability: 7.2 Security Information and Event Management (SIEM)
     key: AU-2
   - categories:
-    - pillar: 7.1 Log All Traffic (Network, Data, Apps, Users)
-    - pillar: 7.2 Security Information and Event Management (SIEM)
+    - capability: 7.1 Log All Traffic (Network, Data, Apps, Users)
+    - capability: 7.2 Security Information and Event Management (SIEM)
     key: AU-3
   - categories:
-    - pillar: 7.1 Log All Traffic (Network, Data, Apps, Users)
+    - capability: 7.1 Log All Traffic (Network, Data, Apps, Users)
     key: AU-3(1)
   - categories:
-    - pillar: 7.1 Log All Traffic (Network, Data, Apps, Users)
+    - capability: 7.1 Log All Traffic (Network, Data, Apps, Users)
     key: AU-3(3)
   - categories:
-    - pillar: 7.1 Log All Traffic (Network, Data, Apps, Users)
+    - capability: 7.1 Log All Traffic (Network, Data, Apps, Users)
     key: AU-4
   - categories:
-    - pillar: 7.1 Log All Traffic (Network, Data, Apps, Users)
+    - capability: 7.1 Log All Traffic (Network, Data, Apps, Users)
     key: AU-4(1)
   - categories:
-    - pillar: 7.1 Log All Traffic (Network, Data, Apps, Users)
+    - capability: 7.1 Log All Traffic (Network, Data, Apps, Users)
     key: AU-5
   - categories:
-    - pillar: 7.1 Log All Traffic (Network, Data, Apps, Users)
-    - pillar: 7.2 Security Information and Event Management (SIEM)
-    - pillar: 7.3 Common Security and Risk Analytics
+    - capability: 7.1 Log All Traffic (Network, Data, Apps, Users)
+    - capability: 7.2 Security Information and Event Management (SIEM)
+    - capability: 7.3 Common Security and Risk Analytics
     key: AU-6
   - categories:
-    - pillar: 7.2 Security Information and Event Management (SIEM)
-    - pillar: 7.3 Common Security and Risk Analytics
+    - capability: 7.2 Security Information and Event Management (SIEM)
+    - capability: 7.3 Common Security and Risk Analytics
     key: AU-6(1)
   - categories:
-    - pillar: 7.2 Security Information and Event Management (SIEM)
+    - capability: 7.2 Security Information and Event Management (SIEM)
     key: AU-6(3)
   - categories:
-    - pillar: 7.2 Security Information and Event Management (SIEM)
+    - capability: 7.2 Security Information and Event Management (SIEM)
     key: AU-6(4)
   - categories:
-    - pillar: 7.2 Security Information and Event Management (SIEM)
-    - pillar: 7.5 Threat Intelligence Integration
+    - capability: 7.2 Security Information and Event Management (SIEM)
+    - capability: 7.5 Threat Intelligence Integration
     key: AU-6(5)
   - categories:
-    - pillar: 7.2 Security Information and Event Management (SIEM)
+    - capability: 7.2 Security Information and Event Management (SIEM)
     key: AU-6(6)
   - categories:
-    - pillar: 7.5 Threat Intelligence Integration
+    - capability: 7.5 Threat Intelligence Integration
     key: AU-6(9)
   - categories:
-    - pillar: 7.1 Log All Traffic (Network, Data, Apps, Users)
+    - capability: 7.1 Log All Traffic (Network, Data, Apps, Users)
     key: AU-7
   - categories:
-    - pillar: 7.1 Log All Traffic (Network, Data, Apps, Users)
+    - capability: 7.1 Log All Traffic (Network, Data, Apps, Users)
     key: AU-7(1)
   - categories:
-    - pillar: 7.1 Log All Traffic (Network, Data, Apps, Users)
-    - pillar: 7.2 Security Information and Event Management (SIEM)
+    - capability: 7.1 Log All Traffic (Network, Data, Apps, Users)
+    - capability: 7.2 Security Information and Event Management (SIEM)
     key: AU-8
   - categories:
-    - pillar: 7.1 Log All Traffic (Network, Data, Apps, Users)
-    - pillar: 7.2 Security Information and Event Management (SIEM)
+    - capability: 7.1 Log All Traffic (Network, Data, Apps, Users)
+    - capability: 7.2 Security Information and Event Management (SIEM)
     key: AU-9
   - categories:
-    - pillar: 7.1 Log All Traffic (Network, Data, Apps, Users)
-    - pillar: 7.2 Security Information and Event Management (SIEM)
+    - capability: 7.1 Log All Traffic (Network, Data, Apps, Users)
+    - capability: 7.2 Security Information and Event Management (SIEM)
     key: AU-9(4)
   - categories:
-    - pillar: 7.1 Log All Traffic (Network, Data, Apps, Users)
-    - pillar: 7.2 Security Information and Event Management (SIEM)
+    - capability: 7.1 Log All Traffic (Network, Data, Apps, Users)
+    - capability: 7.2 Security Information and Event Management (SIEM)
     key: AU-10
   - categories:
-    - pillar: 7.1 Log All Traffic (Network, Data, Apps, Users)
-    - pillar: 7.2 Security Information and Event Management (SIEM)
+    - capability: 7.1 Log All Traffic (Network, Data, Apps, Users)
+    - capability: 7.2 Security Information and Event Management (SIEM)
     key: AU-10(1)
   - categories:
-    - pillar: 7.1 Log All Traffic (Network, Data, Apps, Users)
-    - pillar: 7.2 Security Information and Event Management (SIEM)
+    - capability: 7.1 Log All Traffic (Network, Data, Apps, Users)
+    - capability: 7.2 Security Information and Event Management (SIEM)
     key: AU-11
   - categories:
-    - pillar: 7.2 Security Information and Event Management (SIEM)
-    - pillar: 7.3 Common Security and Risk Analytics
+    - capability: 7.2 Security Information and Event Management (SIEM)
+    - capability: 7.3 Common Security and Risk Analytics
     key: AU-11(1)
   - categories:
-    - pillar: 7.1 Log All Traffic (Network, Data, Apps, Users)
-    - pillar: 7.2 Security Information and Event Management (SIEM)
+    - capability: 7.1 Log All Traffic (Network, Data, Apps, Users)
+    - capability: 7.2 Security Information and Event Management (SIEM)
     key: AU-12
   - categories:
-    - pillar: 7.2 Security Information and Event Management (SIEM)
+    - capability: 7.2 Security Information and Event Management (SIEM)
     key: AU-12(1)
   - categories:
-    - pillar: 7.1 Log All Traffic (Network, Data, Apps, Users)
-    - pillar: 7.2 Security Information and Event Management (SIEM)
+    - capability: 7.1 Log All Traffic (Network, Data, Apps, Users)
+    - capability: 7.2 Security Information and Event Management (SIEM)
     key: AU-12(2)
   - categories:
-    - pillar: 7.1 Log All Traffic (Network, Data, Apps, Users)
-    - pillar: 7.2 Security Information and Event Management (SIEM)
+    - capability: 7.1 Log All Traffic (Network, Data, Apps, Users)
+    - capability: 7.2 Security Information and Event Management (SIEM)
     key: AU-12(3)
   - categories:
-    - pillar: 7.1 Log All Traffic (Network, Data, Apps, Users)
+    - capability: 7.1 Log All Traffic (Network, Data, Apps, Users)
     key: CP-2
   - categories:
-    - pillar: 7.1 Log All Traffic (Network, Data, Apps, Users)
+    - capability: 7.1 Log All Traffic (Network, Data, Apps, Users)
     key: CP-2(2)
   - categories:
-    - pillar: 7.6 Automated Dynamic Policies
+    - capability: 7.6 Automated Dynamic Policies
     key: IA-10
   - categories:
-    - pillar: 7.2 Security Information and Event Management (SIEM)
+    - capability: 7.2 Security Information and Event Management (SIEM)
     key: IR-4
   - categories:
-    - pillar: 7.2 Security Information and Event Management (SIEM)
+    - capability: 7.2 Security Information and Event Management (SIEM)
     key: IR-4(1)
   - categories:
-    - pillar: 7.2 Security Information and Event Management (SIEM)
+    - capability: 7.2 Security Information and Event Management (SIEM)
     key: IR-4(4)
   - categories:
-    - pillar: 7.2 Security Information and Event Management (SIEM)
-    - pillar: 7.4 User and Entity Behavior Analytics
+    - capability: 7.2 Security Information and Event Management (SIEM)
+    - capability: 7.4 User and Entity Behavior Analytics
     key: IR-4(13)
   - categories:
-    - pillar: 7.5 Threat Intelligence Integration
+    - capability: 7.5 Threat Intelligence Integration
     key: PM-15
   - categories:
-    - pillar: 7.5 Threat Intelligence Integration
+    - capability: 7.5 Threat Intelligence Integration
     key: PM-16
   - categories:
-    - pillar: 7.5 Threat Intelligence Integration
+    - capability: 7.5 Threat Intelligence Integration
     key: PM-16(1)
   - categories: []
     key: RA-3
   - categories:
-    - pillar: 7.5 Threat Intelligence Integration
+    - capability: 7.5 Threat Intelligence Integration
     key: RA-3(3)
   - categories:
-    - pillar: 7.6 Automated Dynamic Policies
+    - capability: 7.6 Automated Dynamic Policies
     key: RA-3(4)
   - categories: []
     key: SC-5
   - categories:
-    - pillar: 7.2 Security Information and Event Management (SIEM)
+    - capability: 7.2 Security Information and Event Management (SIEM)
     key: SC-5(3)
   - categories:
-    - pillar: 7.6 Automated Dynamic Policies
+    - capability: 7.6 Automated Dynamic Policies
     key: SC-16
   - categories:
-    - pillar: 7.6 Automated Dynamic Policies
+    - capability: 7.6 Automated Dynamic Policies
     key: SC-16(1)
   - categories:
-    - pillar: 7.6 Automated Dynamic Policies
+    - capability: 7.6 Automated Dynamic Policies
     key: SC-16(2)
   - categories:
-    - pillar: 7.6 Automated Dynamic Policies
+    - capability: 7.6 Automated Dynamic Policies
     key: SC-16(3)
   - categories:
-    - pillar: 7.2 Security Information and Event Management (SIEM)
+    - capability: 7.2 Security Information and Event Management (SIEM)
     key: SC-26
   - categories:
-    - pillar: 7.2 Security Information and Event Management (SIEM)
+    - capability: 7.2 Security Information and Event Management (SIEM)
     key: SC-44
   - categories:
-    - pillar: 7.2 Security Information and Event Management (SIEM)
-    - pillar: 7.6 Automated Dynamic Policies
+    - capability: 7.2 Security Information and Event Management (SIEM)
+    - capability: 7.6 Automated Dynamic Policies
     key: SC-45
   - categories:
-    - pillar: 7.2 Security Information and Event Management (SIEM)
-    - pillar: 7.6 Automated Dynamic Policies
+    - capability: 7.2 Security Information and Event Management (SIEM)
+    - capability: 7.6 Automated Dynamic Policies
     key: SC-45(1)
   - categories:
-    - pillar: 7.2 Security Information and Event Management (SIEM)
+    - capability: 7.2 Security Information and Event Management (SIEM)
     key: SC-48
   - categories:
-    - pillar: 7.2 Security Information and Event Management (SIEM)
+    - capability: 7.2 Security Information and Event Management (SIEM)
     key: SC-48(1)
   - categories: []
     key: SI-3
   - categories:
-    - pillar: 7.2 Security Information and Event Management (SIEM)
+    - capability: 7.2 Security Information and Event Management (SIEM)
     key: SI-3(10)
   - categories:
-    - pillar: 7.2 Security Information and Event Management (SIEM)
+    - capability: 7.2 Security Information and Event Management (SIEM)
     key: SI-4
   - categories:
-    - pillar: 7.2 Security Information and Event Management (SIEM)
+    - capability: 7.2 Security Information and Event Management (SIEM)
     key: SI-4(1)
   - categories:
-    - pillar: 7.2 Security Information and Event Management (SIEM)
+    - capability: 7.2 Security Information and Event Management (SIEM)
     key: SI-4(2)
   - categories:
-    - pillar: 7.6 Automated Dynamic Policies
+    - capability: 7.6 Automated Dynamic Policies
     key: SI-4(3)
   - categories:
-    - pillar: 7.2 Security Information and Event Management (SIEM)
+    - capability: 7.2 Security Information and Event Management (SIEM)
     key: SI-4(5)
   - categories:
-    - pillar: 7.2 Security Information and Event Management (SIEM)
+    - capability: 7.2 Security Information and Event Management (SIEM)
     key: SI-4(12)
   - categories:
-    - pillar: 7.2 Security Information and Event Management (SIEM)
+    - capability: 7.2 Security Information and Event Management (SIEM)
     key: SI-4(16)
   - categories:
-    - pillar: 7.2 Security Information and Event Management (SIEM)
+    - capability: 7.2 Security Information and Event Management (SIEM)
     key: SI-4(17)
   - categories:
-    - pillar: 7.5 Threat Intelligence Integration
+    - capability: 7.5 Threat Intelligence Integration
     key: SI-4(24)
   - categories:
-    - pillar: 7.5 Threat Intelligence Integration
+    - capability: 7.5 Threat Intelligence Integration
     key: SI-5
   name: Appendix I - Visibility & Analytics Pillar Overlay
 
