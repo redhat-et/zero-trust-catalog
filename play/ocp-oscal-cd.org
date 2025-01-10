@@ -1,0 +1,80 @@
+* OCP OSCAL component definitions
+
+** implementation-status of all implemented requirements
+
+#+begin_src sh :results output
+FILE=../../ocp-oscal-cd/component-definitions/ocp4/component-definition.json
+jq '."component-definition".components[0]."control-implementations"[]
+    | ."implemented-requirements"[]
+    | .props[]
+    | select(.name == "implementation-status").value' $FILE
+#+end_src
+
+
+#+begin_src sh :results output
+FILE=../../ocp-oscal-cd/catalogs/ocp4-cis/catalog.json
+jq '.catalog.groups[] | .groups[] | .id' $FILE
+
+#+end_src
+
+#+RESULTS:
+: "CIS-1.1"
+: "CIS-1.2"
+: "CIS-1.3"
+: "CIS-1.4"
+
+
+
+#+begin_src raku :results output
+use JSON::Tiny;
+
+my $orig = slurp '../oscal_component_schema.json';
+my $spec = from-json($orig);
+my $new = to-json($spec);
+say $new;
+#+end_src
+
+
+#+begin_src python :results output
+import json
+
+ids = {}
+
+def populate_ids(node, path=[]):
+    if isinstance(node, dict):
+        for k, v in node.items():
+            if k == '$id':
+                ids[v] = '/'.join(path)
+            subpath = path.copy()
+            subpath.append(k)
+            if isinstance(v, dict):
+                populate_ids(v, subpath)
+            if isinstance(v, list):
+                for i in v:
+                    populate_ids(v, subpath)
+
+
+def rewrite_refs(node):
+    if isinstance(node, dict):
+        for k, v in node.items():
+            if k == '$ref' and v in ids:
+                path = ids[v]
+                node[k] = f"#/{path}"
+            if isinstance(v, dict):
+                rewrite_refs(v)
+            if isinstance(v, list):
+                for i in v:
+                    rewrite_refs(v)
+
+with open('../oscal_ssp_schema.json') as f:
+    orig = json.load(f)
+populate_ids(orig)
+rewrite_refs(orig)
+with open('../oscal_ssp_schema-fixed.json', 'w') as o:
+    print(json.dumps(orig, indent=2), file=o)
+
+#print(ids)
+#+end_src
+
+#+RESULTS:
+
