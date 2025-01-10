@@ -320,7 +320,26 @@ def resolve_props(control):
     items.append(', '.join(nist_items))
     items.append('</p>')
 
+    # Links
+    items += resolve_links(control)
+
     return "\n".join(items)
+
+def resolve_links(control):
+    if 'links' not in control:
+        return []
+
+    items = []
+    items.append('<div>')
+    items.append('<h5>Links</h5>')
+
+    for link in control['links']:
+        if link['rel'] in [ 'required', 'related' ]:
+            text = link['href']
+            items.append(f'<a href="{text}" data-bs-toggle="offcanvas">{text}</a>')
+
+    items.append('</div>')
+    return items
 
 def resolve_control(id):
     control = controls_by_id[id]
