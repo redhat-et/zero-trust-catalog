@@ -583,3 +583,118 @@ headings = {
 }
 #+end_example
 
+#+begin_src sh :results output
+yq '.catalog.groups[1] | .controls[1] | .controls[0] |  .' ${YAML}
+#+end_src
+
+* Controls Database
+
+** Schema
+
+#+begin_src plantuml :file images/schema.png :exports both
+@startuml
+hide circle
+
+entity control {
+  id
+  description
+}
+
+entity related {
+  id
+  related
+}
+
+control }o--|| related
+related ||--|| control
+@enduml
+#+end_src
+
+#+RESULTS:
+[[file:images/schema.png]]
+
+
+** Populate Controls
+
+#+name: YAML_LINES
+#+begin_src sh :results output
+yq '.catalog.groups[] | .controls[] | .controls[] |  .id + ", " + .title' ${YAML}
+#+end_src
+
+
+#+header: :var CONTROLS=YAML_LINES
+#+begin_src raku :results output
+use DBIish;
+
+my $db = DBIish.connect('SQLite', :database<catalog.sqlite3>);
+$db.execute(q:to/END/);
+CREATE TABLE IF NOT EXISTS control (
+    id VARCHAR(10) not null primary key,
+    description VARCHAR(100) not null
+)
+END
+
+$db.execute(q:to/END/);
+CREATE TABLE IF NOT EXISTS related (
+    id VARCHAR(10) not null,
+    related VARCHAR(10) not null
+)
+END
+my $ins = $db.prepare(q:to/END/);
+INSERT INTO control (id, description) VALUES (?, ?)
+END
+
+for $CONTROLS.lines {
+    my ($name, $title) = .split(', ');
+    $ins.execute($name, $title);
+}
+
+$ins.dispose;
+$db.dispose;
+#+end_src
+
+#+RESULTS:
+
+** Display Controls
+
+#+begin_src raku :results output
+use DBIish;
+
+my $db = DBIish.connect('SQLite', :database<catalog.sqlite3>);
+my $r = $db.execute(q:to/END/);
+SELECT * FROM control limit 10
+END
+.join(', ').say for $r.allrows;
+#+end_src
+
+#+RESULTS:
+#+begin_example
+ac-2.1, Automated System Account Management
+ac-2.2, Automated Temporary and Emergency Account Management
+ac-2.3, Disable Accounts
+ac-2.4, Automated Audit Actions
+ac-2.5, Inactivity Logout
+ac-2.6, Dynamic Privilege Management
+ac-2.7, Privileged User Accounts
+ac-2.8, Dynamic Account Management
+ac-2.9, Restrictions on Use of Shared and Group Accounts
+ac-2.10, Shared and Group Account Credential Change
+#+end_example
+
+* Drop Tables
+
+#+begin_src raku :results output
+use DBIish;
+
+my $db = DBIish.connect('SQLite', :database<catalog.sqlite3>);
+$db.execute(q:to/END/);
+DROP TABLE IF EXISTS control
+END
+
+$db.execute(q:to/END/);
+DROP TABLE IF EXISTS related
+END
+
+#+end_src
+
+#+RESULTS:
